@@ -1,0 +1,306 @@
+{
+  "formatVersion": "1.0",
+  "metadata": {
+    "id": "demo-labirinto-do-arquimago",
+    "title": "O Labirinto do Arquimago",
+    "author": { "name": "Equipe IFT", "email": "contato@interactivefantastictales.com" },
+    "version": "1.0.0",
+    "language": "pt-BR",
+    "genre": ["fantasy", "dungeon"],
+    "description": "Você é um aventureiro que decide explorar o lendário Labirinto do Arquimago Malachar. Dizem que um tesouro imenso aguarda no centro do labirinto, mas perigos mortais espreitam em cada corredor.",
+    "coverImage": "",
+    "startSection": 1,
+    "estimatedDuration": "20-40 minutos",
+    "tags": ["fantasia", "masmorra", "aventura", "demo"]
+  },
+  "characterCreation": {
+    "attributes": {
+      "skill": { "label": "Habilidade", "dice": "1d6+6", "min": 7, "max": 12 },
+      "stamina": { "label": "Vigor", "dice": "2d6+12", "min": 14, "max": 24 },
+      "luck": { "label": "Sorte", "dice": "1d6+6", "min": 7, "max": 12 }
+    },
+    "startingGold": 5,
+    "startingItems": ["espada", "tocha"],
+    "startingProvisions": 10
+  },
+  "flags": {
+    "derrotou_golem": { "type": "boolean", "default": false },
+    "leu_inscricao": { "type": "boolean", "default": false },
+    "encontrou_mapa": { "type": "boolean", "default": false }
+  },
+  "items": {
+    "espada": { "type": "weapon", "description": "Uma espada curta de aço." },
+    "tocha": { "type": "tool", "description": "Ilumina áreas escuras." },
+    "chave_prateada": { "type": "key", "description": "Uma chave prateada encontrada no laboratório." },
+    "pergaminho_antigo": { "type": "lore", "description": "Um pergaminho com runas que revelam o caminho secreto." },
+    "pocao_de_cura": { "type": "consumable", "description": "Restaura 6 pontos de STAMINA.", "effects": { "stamina": 6 } }
+  },
+  "sections": {
+    "1": {
+      "id": 1,
+      "type": "narrative",
+      "text": "Você está diante da entrada do Labirinto do Arquimago Malachar. A porta de pedra está entreaberta, e um cheiro de mofo e magia antiga emana de dentro. Acima da entrada, runas gastas pelo tempo brilham fracamente.\n\nÀ sua esquerda, uma estreita trilha de cabras contorna a montanha. À sua direita, você avista um acampamento abandonado.",
+      "choices": [
+        { "text": "Entrar no labirinto pela porta principal", "targetSection": 2, "conditions": [] },
+        { "text": "Investigar o acampamento abandonado", "targetSection": 10, "conditions": [] },
+        { "text": "Seguir pela trilha de cabras (requer SORTE)", "targetSection": 20, "conditions": [] }
+      ],
+      "presentation": {
+        "illustration": "labirinto_entrada.webp",
+        "ambientSound": "vento_sombrio.ogg",
+        "narration": { "voice": "male_narrator", "speed": 1.0, "emphasis": ["porta de pedra", "runas gastas"] }
+      }
+    },
+
+    "2": {
+      "id": 2,
+      "type": "narrative",
+      "text": "Você empurra a porta de pedra e entra no labirinto. O corredor à sua frente se divide em três direções. À esquerda, você ouve o som de água pingando. À direita, um brilho avermelhado ilumina as paredes. Em frente, há um corredor escuro e silencioso.",
+      "choices": [
+        { "text": "Seguir pelo corredor da esquerda (som de água)", "targetSection": 3, "conditions": [] },
+        { "text": "Seguir pelo corredor da direita (brilho vermelho)", "targetSection": 5, "conditions": [] },
+        { "text": "Seguir em frente pelo corredor escuro", "targetSection": 7, "conditions": [] },
+        { "text": "Voltar. Este lugar é perigoso demais.", "targetSection": 25, "conditions": [] }
+      ]
+    },
+
+    "3": {
+      "id": 3,
+      "type": "test",
+      "text": "Você segue o som da água e chega a uma câmara com um poço no centro. A água parece cristalina, mas há algo estranho... uma névoa paira sobre a superfície. Para atravessar a câmara, você precisa se equilibrar na borda estreita do poço.",
+      "test": { "attribute": "skill", "difficulty": 9, "successTarget": 4, "failTarget": 12 },
+      "presentation": { "ambientSound": "agua_pingando.ogg" }
+    },
+
+    "4": {
+      "id": 4,
+      "type": "narrative",
+      "text": "Com movimentos ágeis, você contorna o poço sem dificuldade. Do outro lado da câmara, você encontra uma pequena bolsa com 3 moedas de ouro e continua sua jornada.",
+      "choices": [
+        { "text": "Continuar pelo corredor seguinte", "targetSection": 7, "conditions": [] }
+      ],
+      "onEnter": { "modifyGold": 3 }
+    },
+
+    "5": {
+      "id": 5,
+      "type": "combat",
+      "text": "Você avança pelo corredor avermelhado e logo descobre a fonte do brilho: um Goblin da Chama está à espreita! A criatura ri com desdém e avança com sua adaga flamejante.",
+      "combat": {
+        "enemyName": "Goblin da Chama",
+        "enemySkill": 5,
+        "enemyStamina": 5,
+        "victoryTarget": 6,
+        "defeatTarget": 22,
+        "fleeTarget": 1,
+        "allowFlee": true,
+        "lootOnVictory": ["pocao_de_cura"]
+      }
+    },
+
+    "6": {
+      "id": 6,
+      "type": "narrative",
+      "text": "Você derrota o Goblin da Chama! A criatura se desfaz em cinzas, deixando para trás uma poção de cura que estava em seu cinto. Você a guarda e segue adiante.",
+      "choices": [
+        { "text": "Continuar explorando", "targetSection": 8, "conditions": [] }
+      ],
+      "onEnter": { "addItems": ["pocao_de_cura"] }
+    },
+
+    "7": {
+      "id": 7,
+      "type": "narrative",
+      "text": "O corredor escuro se abre em uma sala octogonal. No centro, há um pedestal com uma chave prateada. Nas paredes, tochas bruxuleantes revelam inscrições antigas.\n\nVocê pode pegar a chave ou tentar ler as inscrições primeiro.",
+      "choices": [
+        { "text": "Pegar a chave prateada do pedestal", "targetSection": 8, "conditions": [] },
+        { "text": "Ler as inscrições nas paredes primeiro", "targetSection": 9, "conditions": [] }
+      ],
+      "onEnter": { "addItems": ["chave_prateada"] }
+    },
+
+    "8": {
+      "id": 8,
+      "type": "narrative",
+      "text": "Você segue pelo corredor seguinte e chega a uma bifurcação. Uma placa de madeira apodrecida indica: 'CÂMARA DO TESOURO →' apontando para a direita. O corredor da esquerda tem o chão coberto de musgo e parece não ser usado há séculos.",
+      "choices": [
+        { "text": "Seguir a placa para a Câmara do Tesouro", "targetSection": 13, "conditions": [] },
+        { "text": "Ignorar a placa e ir pelo corredor de musgo", "targetSection": 11, "conditions": [] }
+      ]
+    },
+
+    "9": {
+      "id": 9,
+      "type": "narrative",
+      "text": "As inscrições revelam um aviso em élfico antigo: 'Somente aquele que carrega o Pergaminho das Runas conhecerá o caminho verdadeiro. O falso tesouro leva à ruína.'\n\nVocê memoriza a informação e pega a chave antes de seguir.",
+      "choices": [
+        { "text": "Seguir adiante", "targetSection": 8, "conditions": [] }
+      ],
+      "onEnter": { "setFlags": { "leu_inscricao": true }, "addItems": ["chave_prateada"] }
+    },
+
+    "10": {
+      "id": 10,
+      "type": "narrative",
+      "text": "O acampamento está em ruínas. Tendas rasgadas, uma fogueira apagada há dias. Entre os destroços, você encontra um pergaminho antigo enrolado em couro e uma mochila com 2 provisões.",
+      "choices": [
+        { "text": "Examinar o pergaminho antigo", "targetSection": 14, "conditions": [] },
+        { "text": "Entrar no labirinto com os suprimentos", "targetSection": 2, "conditions": [] }
+      ],
+      "onEnter": { "addItems": ["pergaminho_antigo"] }
+    },
+
+    "11": {
+      "id": 11,
+      "type": "random",
+      "text": "O corredor de musgo é traiçoeiro. O chão cede sob seus pés e você cai em uma câmara inferior. O destino agora está nas mãos do acaso...",
+      "random": {
+        "outcomes": [
+          { "targetSection": 15, "weight": 0.4 },
+          { "targetSection": 16, "weight": 0.3 },
+          { "targetSection": 17, "weight": 0.3 }
+        ]
+      }
+    },
+
+    "12": {
+      "id": 12,
+      "type": "narrative",
+      "text": "Você escorrega na borda do poço e cai na água gelada! A correnteza te arrasta por um túnel subterrâneo. Você perde 2 pontos de STAMINA com o impacto, mas consegue emergir em uma câmara diferente do labirinto.",
+      "choices": [
+        { "text": "Continuar explorando a partir da nova câmara", "targetSection": 8, "conditions": [] }
+      ],
+      "onEnter": { "modifyStamina": -2 }
+    },
+
+    "13": {
+      "id": 13,
+      "type": "itemGate",
+      "text": "Uma porta de metal maciça bloqueia a entrada da Câmara do Tesouro. Há uma fechadura prateada. Você precisa de uma chave para abri-la.",
+      "itemGate": { "item": "chave_prateada", "hasItemTarget": 18, "noItemTarget": 19 }
+    },
+
+    "14": {
+      "id": 14,
+      "type": "narrative",
+      "text": "O pergaminho contém um mapa parcial do labirinto e runas que revelam um aviso: a Câmara do Tesouro principal é uma armadilha. O verdadeiro tesouro está escondido atrás da cachoeira, na câmara oeste. Você também nota uma rota alternativa pelo corredor de musgo.",
+      "choices": [
+        { "text": "Entrar no labirinto com o conhecimento do mapa", "targetSection": 2, "conditions": [] }
+      ],
+      "onEnter": { "setFlags": { "encontrou_mapa": true } }
+    },
+
+    "15": {
+      "id": 15,
+      "type": "narrative",
+      "text": "Você cai em uma câmara cheia de teias de aranha. No centro, um baú empoeirado. Você o abre e encontra 10 moedas de ouro e um medalhão brilhante. Uma escada secreta leva de volta ao corredor principal.",
+      "choices": [
+        { "text": "Subir a escada e continuar", "targetSection": 8, "conditions": [] }
+      ],
+      "onEnter": { "modifyGold": 10 }
+    },
+
+    "16": {
+      "id": 16,
+      "type": "combat",
+      "text": "Você cai diretamente no ninho de uma Aranha Gigante! A criatura tem o tamanho de um cão grande e avança com suas presas venenosas.",
+      "combat": {
+        "enemyName": "Aranha Gigante",
+        "enemySkill": 4,
+        "enemyStamina": 4,
+        "victoryTarget": 17,
+        "defeatTarget": 22,
+        "fleeTarget": 0,
+        "allowFlee": false,
+        "lootOnVictory": []
+      }
+    },
+
+    "17": {
+      "id": 17,
+      "type": "narrative",
+      "text": "Você encontra uma fenda na parede que leva de volta ao corredor principal. Com sorte, você não se perdeu completamente. Você ganha confiança e 1 ponto de SORTE pela experiência.",
+      "choices": [
+        { "text": "Continuar a aventura", "targetSection": 8, "conditions": [] }
+      ],
+      "onEnter": { "modifyLuck": 1 }
+    },
+
+    "18": {
+      "id": 18,
+      "type": "narrative",
+      "text": "A chave prateada gira suavemente na fechadura. A porta se abre revelando... uma sala vazia! No centro, apenas um pedestal com uma mensagem: 'O verdadeiro tesouro não é ouro, mas sabedoria.'\n\nDe repente, uma porta secreta se abre na parede dos fundos. Você sente que o verdadeiro desafio está além.",
+      "choices": [
+        { "text": "Atravessar a porta secreta", "targetSection": 21, "conditions": [] },
+        { "text": "Voltar e tentar outro caminho", "targetSection": 8, "conditions": [] }
+      ]
+    },
+
+    "19": {
+      "id": 19,
+      "type": "narrative",
+      "text": "Sem a chave, a porta permanece firmemente trancada. Você vai precisar encontrar outra forma de abri-la — ou desistir deste caminho.",
+      "choices": [
+        { "text": "Voltar e explorar outro corredor", "targetSection": 8, "conditions": [] },
+        { "text": "Desistir e abandonar o labirinto", "targetSection": 25, "conditions": [] }
+      ]
+    },
+
+    "20": {
+      "id": 20,
+      "type": "test",
+      "text": "A trilha de cabras é íngreme e perigosa. Você precisa de sorte para encontrar uma passagem segura entre as rochas. Lá embaixo, você avista uma abertura lateral que parece levar diretamente ao coração do labirinto.",
+      "test": { "attribute": "luck", "difficulty": 8, "successTarget": 21, "failTarget": 23 }
+    },
+
+    "21": {
+      "id": 21,
+      "type": "combat",
+      "text": "Você chega à câmara central do labirinto! Mas ela é guardada por um Golem de Pedra, uma criatura maciça de rocha viva. O chão treme com seus passos. Esta é a batalha final!",
+      "combat": {
+        "enemyName": "Golem de Pedra",
+        "enemySkill": 8,
+        "enemyStamina": 10,
+        "victoryTarget": 24,
+        "defeatTarget": 22,
+        "fleeTarget": 22,
+        "allowFlee": true,
+        "lootOnVictory": []
+      }
+    },
+
+    "22": {
+      "id": 22,
+      "type": "ending",
+      "text": "Sua aventura chega a um fim trágico. As forças das trevas do Labirinto do Arquimago Malachar provaram ser demais para você. Mas talvez, em uma próxima tentativa, a sorte esteja ao seu lado...\n\nSuas conquistas não foram em vão. Outros aventureiros ouvirão falar de sua coragem.",
+      "ending": { "type": "defeat" }
+    },
+
+    "23": {
+      "id": 23,
+      "type": "narrative",
+      "text": "A trilha é traiçoeira demais. Você escorrega e quase cai no abismo, conseguindo se agarrar a uma raiz no último segundo. Exausto mas vivo, você decide que a entrada principal era a melhor opção afinal.",
+      "choices": [
+        { "text": "Voltar e entrar pela porta principal", "targetSection": 2, "conditions": [] }
+      ],
+      "onEnter": { "modifyStamina": -1 }
+    },
+
+    "24": {
+      "id": 24,
+      "type": "ending",
+      "text": "O Golem de Pedra desmorona com um estrondo ensurdecedor! Você derrotou o guardião final do Labirinto do Arquimago Malachar!\n\nAtrás dos escombros do Golem, você encontra o verdadeiro tesouro: o Cajado de Malachar, uma relíquia de poder incalculável, e um baú transbordando de ouro.\n\nVocê emerge do labirinto como uma lenda viva. Bardos cantarão sua história por gerações. O Labirinto do Arquimago foi conquistado — e você é o herói!",
+      "ending": { "type": "victory" },
+      "presentation": {
+        "narration": { "voice": "male_narrator", "speed": 0.9, "emphasis": ["herói", "lenda viva", "Cajado de Malachar"] }
+      }
+    },
+
+    "25": {
+      "id": 25,
+      "type": "ending",
+      "text": "Você decide que os perigos do labirinto são grandes demais. Recuando para a segurança da luz do dia, você percebe que a prudência também é uma forma de sabedoria.\n\nO Labirinto do Arquimago permanece invicto — pelo menos por enquanto. Você vive para lutar outro dia.",
+      "ending": { "type": "neutral" }
+    }
+  }
+}
