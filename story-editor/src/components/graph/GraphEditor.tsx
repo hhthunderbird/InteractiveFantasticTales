@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import ReactFlow, {
   Background,
   Controls,
@@ -294,25 +294,114 @@ export function GraphEditor() {
     [selectSection],
   );
 
-  const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
+  const [contextMenu, setContextMenu] = useState<{ x: number; y: number; nodeId?: number } | null>(null);
+
+  const getNextSectionId = () => {
+    const currentStory = useEditorStore.getState().story;
+    if (!currentStory) return 1;
+    const ids = Object.keys(currentStory.sections).map(Number);
+    return ids.length > 0 ? Math.max(...ids) + 1 : 1;
+  };
+
+  const addNarrativeSection = (atPosition?: { x: number; y: number }) => {
+    const id = getNextSectionId();
+    const section = {
+      id, type: 'narrative' as const, text: '',
+      choices: [],
+    };
+    useEditorStore.getState().addSection(section);
+    if (atPosition) setContextMenu(null);
+  };
+
+  const duplicateSection = (sectionId: number) => {
+    const currentStory = useEditorStore.getState().story;
+    if (!currentStory) return;
+    const original = currentStory.sections[sectionId];
+    if (!original) return;
+    const newId = getNextSectionId();
+    useEditorStore.getState().addSection({ ...original, id: newId });
+    setContextMenu(null);
+  };
+
+  const onPaneContextMenu = useCallback(
+    (e: React.MouseEvent | MouseEvent) => {
+      e.preventDefault();
+      setContextMenu({ x: (e as React.MouseEvent).clientX ?? (e as MouseEvent).clientX, y: (e as React.MouseEvent).clientY ?? (e as MouseEvent).clientY });
+    },
+    [],
+  );
+
+  const onNodeContextMenu = useCallback(
+    (e: React.MouseEvent, node: Node) => {
+      e.preventDefault();
+      setContextMenu({ x: e.clientX, y: e.clientY, nodeId: Number(node.id) });
+    },
+    [],
+  );
+
+  const onPaneClick = useCallback(() => setContextMenu(null), []);
+
+  const onDoubleClickPane = useCallback(
+    (_: React.MouseEvent) => {
+      addNarrativeSection();
+    },
+    [],
+  );
+
+  const onKeyDown = useCallback((e: React.KeyboardEvent) => {
+    if (e.key === 'n' && !e.ctrlKey && !e.metaKey && !e.altKey) {
+      e.preventDefault();
+      addNarrativeSection();
+      return;
+    }
     if ((e.key === 'Delete' || e.key === 'Backspace') && selectedSectionId !== null) {
       if (selectedSectionId === story?.metadata.startSection) return;
       if (confirm(`Excluir seção #${selectedSectionId}?`)) {
         useEditorStore.getState().removeSection(selectedSectionId);
       }
     }
+    if ((e.key === 's' || e.key === 'S') && (e.ctrlKey || e.metaKey)) {
+      e.preventDefault();
+      useEditorStore.getState().triggerLayout();
+    }
   }, [selectedSectionId, story?.metadata.startSection]);
 
   return (
-    <div className="flex-1 bg-[#1a1a2e] relative" onKeyDown={handleKeyDown} tabIndex={0}>
+    <div className="flex-1 bg-[#1a1a2e] relative" onKeyDown={onKeyDown} tabIndex={0}>
       {story && Object.keys(story.sections).length === 1 && (
         <div className="absolute top-4 left-1/2 -translate-x-1/2 z-10 bg-[#0f3460] border border-[#3b82f6] rounded-lg px-5 py-3 text-sm text-white shadow-lg pointer-events-none max-w-sm text-center">
           <p className="font-semibold mb-1">👋 Bem-vindo ao Editor!</p>
           <p className="text-xs text-[#a0a0b0] leading-relaxed">
-            Clique em <span className="text-[#e94560] font-bold">+ Nova Seção</span> para adicionar trechos da história.
-            Depois, clique nos nós para editar texto e escolhas no painel direito.
-            Conecte as seções definindo os <span className="text-[#3b82f6]">números de destino</span> nas escolhas.
+            Clique em <span className="text-[#e94560] font-bold">+ Nova Seção</span> ou pressione <span className="text-[#e94560] font-bold">N</span> para adicionar seções.
+            Clique com <span className="text-[#3b82f6]">botão direito</span> no grafo para mais opções.
           </p>
+        </div>
+      )}
+
+      {contextMenu && (
+        <div
+          className="absolute z-50 bg-[#16213e] border border-[#2a2a4a] rounded-lg shadow-xl py-1 min-w-[180px]"
+          style={{ left: contextMenu.x, top: contextMenu.y }}
+        >
+          {contextMenu.nodeId ? (
+            <>
+              <button onClick={() => { selectSection(contextMenu.nodeId!); setContextMenu(null); }} className="block w-full text-left px-3 py-1.5 text-xs text-[#e0e0e0] hover:bg-[#0f3460]">✏️ Editar</button>
+              <button onClick={() => { duplicateSection(contextMenu.nodeId!); }} className="block w-full text-left px-3 py-1.5 text-xs text-[#e0e0e0] hover:bg-[#0f3460]">📋 Duplicar</button>
+              {contextMenu.nodeId !== story?.metadata.startSection && (
+                <button onClick={() => { if (confirm('Excluir?')) { useEditorStore.getState().removeSection(contextMenu.nodeId!); setContextMenu(null); } }} className="block w-full text-left px-3 py-1.5 text-xs text-[#ef4444] hover:bg-[#0f3460]">🗑️ Excluir</button>
+              )}
+            </>
+          ) : (
+            <>
+              <div className="px-3 py-1 text-[10px] text-[#6b7280] uppercase">Nova Seção</div>
+              <button onClick={() => addNarrativeSection()} className="block w-full text-left px-3 py-1.5 text-xs text-[#e0e0e0] hover:bg-[#0f3460]">📖 Narrativa</button>
+              <button onClick={() => { const id = getNextSectionId(); useEditorStore.getState().addSection({ id, type: 'combat' as const, text: '', combat: { enemyName: 'Inimigo', enemySkill: 5, enemyStamina: 6, victoryTarget: 0, defeatTarget: 0, fleeTarget: 0, allowFlee: true, lootOnVictory: [] } }); setContextMenu(null); }} className="block w-full text-left px-3 py-1.5 text-xs text-[#e0e0e0] hover:bg-[#0f3460]">⚔️ Combate</button>
+              <button onClick={() => { const id = getNextSectionId(); useEditorStore.getState().addSection({ id, type: 'test' as const, text: '', test: { attribute: 'skill', difficulty: 8, successTarget: 0, failTarget: 0 } }); setContextMenu(null); }} className="block w-full text-left px-3 py-1.5 text-xs text-[#e0e0e0] hover:bg-[#0f3460]">🎲 Teste</button>
+              <button onClick={() => { const id = getNextSectionId(); useEditorStore.getState().addSection({ id, type: 'itemGate' as const, text: '', itemGate: { item: '', hasItemTarget: 0, noItemTarget: 0 } }); setContextMenu(null); }} className="block w-full text-left px-3 py-1.5 text-xs text-[#e0e0e0] hover:bg-[#0f3460]">🔑 Item Gate</button>
+              <button onClick={() => { const id = getNextSectionId(); useEditorStore.getState().addSection({ id, type: 'random' as const, text: '', random: { outcomes: [] } }); setContextMenu(null); }} className="block w-full text-left px-3 py-1.5 text-xs text-[#e0e0e0] hover:bg-[#0f3460]">🔀 Aleatório</button>
+              <button onClick={() => { const id = getNextSectionId(); useEditorStore.getState().addSection({ id, type: 'ending' as const, text: '', ending: { type: 'neutral' } }); setContextMenu(null); }} className="block w-full text-left px-3 py-1.5 text-xs text-[#e0e0e0] hover:bg-[#0f3460]">🏁 Final</button>
+            </>
+          )}
         </div>
       )}
 
@@ -323,7 +412,12 @@ export function GraphEditor() {
         onEdgesChange={onEdgesChange}
         onConnect={onConnect}
         onNodeClick={onNodeClick}
+        onNodeContextMenu={onNodeContextMenu}
+        onPaneContextMenu={onPaneContextMenu}
+        onPaneClick={onPaneClick}
+        onDoubleClick={onDoubleClickPane}
         onEdgesDelete={onEdgesDelete}
+        deleteKeyCode={null}
         nodeTypes={nodeTypes}
         fitView
         fitViewOptions={{ padding: 0.3 }}

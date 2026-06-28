@@ -11,23 +11,16 @@ interface SectionNodeData {
   isSelected: boolean;
 }
 
+const HANDLE_SIZE = 10;
+
 const handleStyle: React.CSSProperties = {
-  width: 14,
-  height: 14,
-  border: '2px solid #a0a0b0',
-  background: '#1a1a2e',
+  width: HANDLE_SIZE,
+  height: HANDLE_SIZE,
+  border: '2px solid #64748b',
+  background: '#1e293b',
   borderRadius: '50%',
   cursor: 'crosshair',
-};
-
-const topHandleStyle: React.CSSProperties = {
-  ...handleStyle,
-  top: -10,
-};
-
-const bottomHandleStyle: React.CSSProperties = {
-  ...handleStyle,
-  bottom: -5,
+  zIndex: 10,
 };
 
 export function SectionNode({ data }: { data: SectionNodeData }) {
@@ -36,14 +29,14 @@ export function SectionNode({ data }: { data: SectionNodeData }) {
       <Handle
         type="target"
         position={Position.Top}
-        style={{ ...topHandleStyle, zIndex: 10 }}
-        className="hover:!border-white hover:!bg-[#3b82f6] transition-colors"
+        style={handleStyle}
+        className="!border-[#64748b] hover:!border-[#3b82f6] hover:!bg-[#3b82f6] transition-colors"
       />
       <div
-        className={`px-3 py-2 rounded-lg border-2 min-w-[180px] max-w-[220px] cursor-pointer transition-all relative ${
+        className={`px-3 py-2 rounded-lg border-2 min-w-[180px] max-w-[220px] cursor-pointer transition-all ${
           data.isSelected ? 'border-white shadow-lg shadow-white/20 scale-105' : 'border-transparent hover:border-white/30'
         }`}
-        style={{ background: data.color + '20', borderColor: data.isSelected ? '#fff' : data.color, zIndex: 1 }}
+        style={{ background: data.color + '20', borderColor: data.isSelected ? '#fff' : data.color }}
       >
         <div className="flex items-center gap-1.5 mb-1">
           <span className="text-xs">{SECTION_TYPE_ICONS[data.type]}</span>
@@ -58,8 +51,8 @@ export function SectionNode({ data }: { data: SectionNodeData }) {
       <Handle
         type="source"
         position={Position.Bottom}
-        style={{ ...bottomHandleStyle, zIndex: 10 }}
-        className="hover:!border-white hover:!bg-[#e94560] transition-colors"
+        style={handleStyle}
+        className="!border-[#64748b] hover:!border-[#e94560] hover:!bg-[#e94560] transition-colors"
       />
     </>
   );
