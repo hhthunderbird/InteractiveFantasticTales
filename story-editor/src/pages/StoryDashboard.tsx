@@ -3,6 +3,7 @@ import { useAuth } from '../hooks/useAuth';
 import { useStories } from '../hooks/useStories';
 import { useEditorStore } from '../stores/editor-store';
 import { createEmptyStory, importStoryFromJson } from '../lib/json-handler';
+import { isLocalMode } from '../lib/local-mode';
 
 export function StoryDashboard() {
   const { user, loading: authLoading, error: authError, login, logout, clearError: clearAuthError } = useAuth();
@@ -150,6 +151,13 @@ export function StoryDashboard() {
       </div>
 
       <div className="flex-1 overflow-y-auto p-6">
+        {isLocalMode() && (
+          <div className="mb-4 p-3 bg-[#f59e0b20] border border-[#f59e0b] rounded text-sm text-[#f59e0b]">
+            ⚠️ <strong>Modo Local</strong> — Histórias salvas no navegador (localStorage).
+            Dados NÃO são enviados para a nuvem.
+          </div>
+        )}
+
         {(saveMsg || storiesError || authError) && (
           <div className={`mb-4 p-3 border rounded text-sm ${
             (storiesError || authError)
