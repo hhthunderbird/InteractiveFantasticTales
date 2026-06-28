@@ -68,54 +68,51 @@ export function treeLayout(
   const startId = story.metadata.startSection;
 
   const H_SPACING = 280;
-  const V_SPACING = 140;
+  const V_SPACING = 160;
 
-  const column: Map<number, number> = new Map();
+  // BFS to get depth of each node from start
+  const depth = new Map<number, number>();
+  const queue: number[] = [startId];
+  depth.set(startId, 0);
 
-  function dfs(id: number, depth: number, visited: Set<number>): number {
-    if (visited.has(id)) return 0;
-    visited.add(id);
-
-    const children = (adj.get(id) ?? []).filter((c) => !visited.has(c));
-
-    if (children.length === 0) {
-      const col = column.get(depth) ?? 0;
-      positions.set(id, { x: col * H_SPACING, y: depth * V_SPACING });
-      column.set(depth, col + 1);
-      return 1;
-    }
-
-    let totalLeafSpan = 0;
-    const childColumns: number[] = [];
+  for (let i = 0; i < queue.length; i++) {
+    const id = queue[i];
+    const d = depth.get(id) ?? 0;
+    const children = adj.get(id) ?? [];
     for (const child of children) {
-      const leafCount = dfs(child, depth + 1, new Set(visited));
-      totalLeafSpan += leafCount;
-      childColumns.push(leafCount);
+      if (!depth.has(child)) {
+        depth.set(child, d + 1);
+        queue.push(child);
+      }
     }
-
-    let runningCol = 0;
-    for (let i = 0; i < children.length; i++) {
-      const childId = children[i];
-      const childPos = positions.get(childId)!;
-      const offset = runningCol + (childColumns[i] - 1) * 0.5;
-      childPos.x = (column.get(depth + 1)! - childColumns[i] + offset) * H_SPACING;
-      runningCol += childColumns[i];
-    }
-
-    const avgX = children.reduce((s, c) => s + positions.get(c)!.x, 0) / children.length;
-    const col = Math.round(avgX / H_SPACING);
-    positions.set(id, { x: col * H_SPACING, y: depth * V_SPACING });
-
-    return totalLeafSpan || 1;
   }
 
-  dfs(startId, 0, new Set());
+  // Group nodes by depth
+  const byDepth = new Map<number, number[]>();
+  for (const [id, d] of depth) {
+    if (!byDepth.has(d)) byDepth.set(d, []);
+    byDepth.get(d)!.push(id);
+  }
 
-  let freeRow = 2;
+  // Position nodes: center each depth row horizontally
+  const maxDepth = Math.max(...depth.values(), 0);
+  for (let d = 0; d <= maxDepth; d++) {
+    const nodes = byDepth.get(d) ?? [];
+    const totalWidth = (nodes.length - 1) * H_SPACING;
+    const startX = -totalWidth / 2;
+    nodes.forEach((id, i) => {
+      positions.set(id, { x: startX + i * H_SPACING, y: d * V_SPACING });
+    });
+  }
+
+  // Any unreachable nodes go at the bottom
+  let freeRow = maxDepth + 1;
+  let freeCol = 0;
   for (const section of Object.values(story.sections)) {
     if (!positions.has(section.id)) {
-      positions.set(section.id, { x: 0, y: freeRow * V_SPACING });
-      freeRow++;
+      positions.set(section.id, { x: freeCol * H_SPACING, y: freeRow * V_SPACING });
+      freeCol++;
+      if (freeCol > 5) { freeCol = 0; freeRow++; }
     }
   }
 
