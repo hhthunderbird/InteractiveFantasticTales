@@ -8,6 +8,7 @@ interface EditorState {
   auditVisible: boolean;
   previewVisible: boolean;
   viewMode: 'graph' | 'sheet' | 'text' | 'preview';
+  layoutVersion: number;
 
   setStory: (story: StoryData) => void;
   clearStory: () => void;
@@ -20,6 +21,7 @@ interface EditorState {
   toggleAudit: () => void;
   togglePreview: () => void;
   setViewMode: (mode: EditorState['viewMode']) => void;
+  triggerLayout: () => void;
   getSection: (id: number) => SectionData | undefined;
 }
 
@@ -30,6 +32,7 @@ export const useEditorStore = create<EditorState>((set, get) => ({
   auditVisible: false,
   previewVisible: false,
   viewMode: 'graph',
+  layoutVersion: 0,
 
   setStory: (story) => set({ story, isDirty: false, selectedSectionId: story.metadata.startSection }),
 
@@ -135,6 +138,7 @@ export const useEditorStore = create<EditorState>((set, get) => ({
   toggleAudit: () => set((s) => ({ auditVisible: !s.auditVisible })),
   togglePreview: () => set((s) => ({ previewVisible: !s.previewVisible })),
   setViewMode: (mode) => set({ viewMode: mode }),
+  triggerLayout: () => set((s) => ({ layoutVersion: s.layoutVersion + 1 })),
 
   getSection: (id) => get().story?.sections[id],
 }));

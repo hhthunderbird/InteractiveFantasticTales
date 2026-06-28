@@ -57,7 +57,7 @@ export function createEmptyStory(): StoryData {
       1: {
         id: 1,
         type: 'narrative',
-        text: 'Sua aventura começa aqui...',
+        text: 'Sua aventura começa aqui! Escreva o texto da primeira cena.\n\nDica: use o botão "+ Nova Seção" na barra superior para criar mais trechos da história. Conecte-os definindo os números de destino nas escolhas de cada seção.',
         choices: [],
       },
     },

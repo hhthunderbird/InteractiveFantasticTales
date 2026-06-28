@@ -14,6 +14,7 @@ export function Toolbar() {
   const viewMode = useEditorStore((s) => s.viewMode);
   const setViewMode = useEditorStore((s) => s.setViewMode);
   const toggleAudit = useEditorStore((s) => s.toggleAudit);
+  const triggerLayout = useEditorStore((s) => s.triggerLayout);
   const { manualSave } = useAutoSave();
   const { user } = useAuth();
 
@@ -155,6 +156,14 @@ export function Toolbar() {
           className="px-3 py-1 text-xs bg-[#0f3460] text-[#e0e0e0] rounded-md hover:bg-[#1a4a7a] transition-colors"
         >
           Auditoria
+        </button>
+
+        <button
+          onClick={triggerLayout}
+          className="px-3 py-1 text-xs bg-[#0f3460] text-[#e0e0e0] rounded-md hover:bg-[#1a4a7a] transition-colors"
+          title="Reorganizar nós do grafo"
+        >
+          Organizar
         </button>
 
         <button

@@ -44,11 +44,29 @@ export function InspectorPanel() {
 }
 
 function Header({ sectionId }: { sectionId: number }) {
+  const story = useEditorStore((s) => s.story);
+  const removeSection = useEditorStore((s) => s.removeSection);
+  const isStart = story?.metadata.startSection === sectionId;
+
   return (
     <div className="p-3 border-b border-[#2a2a4a]">
       <div className="flex items-center justify-between">
-        <h3 className="text-sm font-semibold text-white">Seção #{sectionId}</h3>
-        <span className="text-[10px] text-[#6b7280]">ID: {sectionId}</span>
+        <h3 className="text-sm font-semibold text-white">
+          Seção #{sectionId}
+          {isStart && <span className="ml-2 text-[10px] bg-[#e94560] text-white px-1.5 py-0.5 rounded">INÍCIO</span>}
+        </h3>
+        <div className="flex items-center gap-2">
+          <span className="text-[10px] text-[#6b7280]">ID: {sectionId}</span>
+          {!isStart && (
+            <button
+              onClick={() => { if (confirm(`Excluir seção #${sectionId}?`)) removeSection(sectionId); }}
+              className="text-[10px] text-[#ef4444] hover:text-white px-1.5 py-0.5 rounded hover:bg-[#ef444420]"
+              title="Excluir seção"
+            >
+              🗑️
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );
