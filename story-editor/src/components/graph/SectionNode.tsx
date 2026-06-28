@@ -20,13 +20,23 @@ const handleStyle: React.CSSProperties = {
   cursor: 'crosshair',
 };
 
+const topHandleStyle: React.CSSProperties = {
+  ...handleStyle,
+  top: -5,
+};
+
+const bottomHandleStyle: React.CSSProperties = {
+  ...handleStyle,
+  bottom: -5,
+};
+
 export function SectionNode({ data }: { data: SectionNodeData }) {
   return (
     <>
       <Handle
         type="target"
         position={Position.Top}
-        style={handleStyle}
+        style={topHandleStyle}
         className="hover:!border-white hover:!bg-[#3b82f6] transition-colors"
       />
       <div
@@ -48,7 +58,7 @@ export function SectionNode({ data }: { data: SectionNodeData }) {
       <Handle
         type="source"
         position={Position.Bottom}
-        style={handleStyle}
+        style={bottomHandleStyle}
         className="hover:!border-white hover:!bg-[#e94560] transition-colors"
       />
     </>
