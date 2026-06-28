@@ -1968,6 +1968,7 @@ GameObject:
   - component: {fileID: 2037920803}
   - component: {fileID: 2037920802}
   - component: {fileID: 2037920801}
+  - component: {fileID: 2037920804}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -2051,6 +2052,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2fac05d44bb83d42823fa383d3caa6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractiveFantasticTales.Save.SaveManager
+--- !u!114 &2037920804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037920798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be7606743d4673f458c00f8f2aed04ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractiveFantasticTales.Audio.NarrationManager
+  _autoNarrate: 1
+  _speed: 1
 --- !u!1 &2045553890
 GameObject:
   m_ObjectHideFlags: 0
