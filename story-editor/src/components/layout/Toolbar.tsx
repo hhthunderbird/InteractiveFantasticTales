@@ -111,7 +111,7 @@ export function Toolbar() {
 
       <div className="flex items-center gap-2">
         <div className="flex bg-[#0f3460] rounded-lg p-0.5">
-          {(['graph', 'sheet', 'text', 'preview'] as const).map((mode) => (
+          {(['graph', 'sheet', 'text', 'preview', 'project'] as const).map((mode) => (
             <button
               key={mode}
               onClick={() => setViewMode(mode)}
@@ -119,7 +119,7 @@ export function Toolbar() {
                 viewMode === mode ? 'bg-[#e94560] text-white' : 'text-[#a0a0b0] hover:text-white'
               }`}
             >
-              {mode === 'graph' ? 'Grafo' : mode === 'sheet' ? 'Planilha' : mode === 'text' ? 'Texto' : 'Preview'}
+              {mode === 'graph' ? 'Grafo' : mode === 'sheet' ? 'Planilha' : mode === 'text' ? 'Texto' : mode === 'preview' ? 'Preview' : '⚙️ Config'}
             </button>
           ))}
         </div>

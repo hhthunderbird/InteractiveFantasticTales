@@ -240,3 +240,69 @@ export const DEFAULT_NODE_STYLE: NodeStyle = {
   fontSize: 'medium',
   locked: false,
 };
+
+export type ItemType = 'weapon' | 'armor' | 'consumable' | 'key' | 'lore' | 'tool' | 'misc';
+
+export const ITEM_TYPE_LABELS: Record<ItemType, string> = {
+  weapon: 'Arma',
+  armor: 'Armadura',
+  consumable: 'Consumível',
+  key: 'Chave',
+  lore: 'Conhecimento',
+  tool: 'Ferramenta',
+  misc: 'Outro',
+};
+
+export interface ItemTemplate {
+  id: string;
+  name: string;
+  type: ItemType;
+  description: string;
+  effects: Record<string, number>;
+  icon?: string;
+  tags: string[];
+}
+
+export interface EnemyTemplate {
+  id: string;
+  name: string;
+  skill: number;
+  stamina: number;
+  description: string;
+  loot: string[];
+  tags: string[];
+}
+
+export interface CustomAttribute {
+  key: string;
+  label: string;
+  dice: string;
+  min: number;
+  max: number;
+  description: string;
+}
+
+export interface GameRules {
+  combatFormula: string;
+  damageFormula: string;
+  luckTestFormula: string;
+  customAttributes: CustomAttribute[];
+}
+
+export interface ProjectAssets {
+  items: ItemTemplate[];
+  enemies: EnemyTemplate[];
+  rules: GameRules;
+  externalAssets: ExternalAsset[];
+}
+
+export interface ExternalAsset {
+  id: string;
+  name: string;
+  type: 'image' | 'audio' | 'text' | 'other';
+  path: string;
+  url?: string;
+  size: string;
+  tags: string[];
+  uploadedAt?: string;
+}

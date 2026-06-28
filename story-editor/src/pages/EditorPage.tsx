@@ -8,6 +8,7 @@ import { PreviewPanel } from '../components/preview/PreviewPanel';
 import { SheetView } from '../components/sheet/SheetView';
 import { TextMode } from '../components/text/TextMode';
 import { StylePanel } from '../components/style/StylePanel';
+import { ProjectConfig } from '../components/config/ProjectConfig';
 
 export function EditorPage() {
   const viewMode = useEditorStore((s) => s.viewMode);
@@ -45,6 +46,18 @@ export function EditorPage() {
         <Toolbar />
         <div className="flex-1 flex overflow-hidden">
           <TextMode />
+        </div>
+        <StatusBar />
+      </div>
+    );
+  }
+
+  if (viewMode === 'project') {
+    return (
+      <div className="h-screen w-screen flex flex-col overflow-hidden">
+        <Toolbar />
+        <div className="flex-1 flex overflow-hidden">
+          <ProjectConfig />
         </div>
         <StatusBar />
       </div>

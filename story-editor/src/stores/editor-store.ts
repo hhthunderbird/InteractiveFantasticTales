@@ -7,7 +7,7 @@ interface EditorState {
   isDirty: boolean;
   auditVisible: boolean;
   previewVisible: boolean;
-  viewMode: 'graph' | 'sheet' | 'text' | 'preview';
+  viewMode: 'graph' | 'sheet' | 'text' | 'preview' | 'project';
   layoutVersion: number;
 
   setStory: (story: StoryData) => void;
