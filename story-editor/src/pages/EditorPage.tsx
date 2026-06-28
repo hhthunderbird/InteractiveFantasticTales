@@ -7,6 +7,7 @@ import { AuditPanel } from '../components/audit/AuditPanel';
 import { PreviewPanel } from '../components/preview/PreviewPanel';
 import { SheetView } from '../components/sheet/SheetView';
 import { TextMode } from '../components/text/TextMode';
+import { StylePanel } from '../components/style/StylePanel';
 
 export function EditorPage() {
   const viewMode = useEditorStore((s) => s.viewMode);
@@ -59,6 +60,7 @@ export function EditorPage() {
         </div>
         <InspectorPanel />
         <AuditPanel />
+        <StylePanel />
       </div>
       <StatusBar />
     </div>

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useEditorStore } from '../../stores/editor-store';
 
 const steps = [
   {
@@ -104,6 +105,31 @@ export function HelpPanel() {
                       Sempre verifique a Auditoria antes de considerar sua história pronta.
                       Uma história com becos sem saída ou sem final de vitória vai frustrar os jogadores!
                     </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-[#3b82f620] border border-[#3b82f6] rounded-lg p-4">
+                <div className="flex items-start gap-3">
+                  <span className="text-2xl shrink-0">🗺️</span>
+                  <div>
+                    <h3 className="text-sm font-semibold text-[#3b82f6] mb-1">Tutorial Interativo no Grafo</h3>
+                    <p className="text-xs text-[#a0a0b0] leading-relaxed mb-2">
+                      Abra um grafo de exemplo que demonstra todos os conceitos na prática, com setas explicativas conectando cada tópico.
+                    </p>
+                    <button
+                      onClick={async () => {
+                        try {
+                          const res = await fetch('/tutorial-interativo.json');
+                          const json = await res.json();
+                          useEditorStore.getState().setStory(json);
+                          setOpen(false);
+                        } catch { alert('Erro ao carregar tutorial.'); }
+                      }}
+                      className="px-4 py-1.5 bg-[#3b82f6] text-white rounded text-xs font-semibold hover:bg-[#2563eb]"
+                    >
+                      ▶ Abrir Tutorial no Grafo
+                    </button>
                   </div>
                 </div>
               </div>

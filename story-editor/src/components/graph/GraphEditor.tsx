@@ -11,7 +11,9 @@ import ReactFlow, {
 import type { Node, Edge, Connection } from 'reactflow';
 import 'reactflow/dist/style.css';
 import { useEditorStore } from '../../stores/editor-store';
+import { useStyleStore } from '../../stores/style-store';
 import { SECTION_TYPE_COLORS, SECTION_TYPE_LABELS } from '../../types/story';
+import { GroupOverlay } from './GroupOverlay';
 import { SectionNode } from './SectionNode';
 
 const nodeTypes = { sectionNode: SectionNode };
@@ -164,19 +166,30 @@ export function GraphEditor() {
         : '(sem texto)';
 
       const pos = layout.get(section.id) ?? { x: 0, y: 0 };
+      const style = useStyleStore.getState().getSectionStyle(section.id);
+      const locked = useStyleStore.getState().isLocked(section.id);
+      const effectiveColor = style.id !== '__default__' ? style.color : color;
+      const effectiveBg = style.backgroundColor || (style.id !== '__default__' ? style.color + '20' : color + '20');
 
       nodes.push({
         id: `${section.id}`,
         type: 'sectionNode',
         position: pos,
+        draggable: !locked,
         data: {
           id: section.id,
           type: section.type,
           label: SECTION_TYPE_LABELS[section.type],
           preview,
-          color,
+          color: effectiveColor,
+          bgColor: effectiveBg,
+          borderColor: style.borderColor !== 'transparent' ? style.borderColor : effectiveColor,
+          borderStyle: style.borderStyle,
+          borderWidth: style.borderWidth,
           isStart,
           isSelected,
+          locked,
+          styleId: style.id,
         },
       });
 
@@ -387,8 +400,23 @@ export function GraphEditor() {
             <>
               <button onClick={() => { selectSection(contextMenu.nodeId!); setContextMenu(null); }} className="block w-full text-left px-3 py-1.5 text-xs text-[#e0e0e0] hover:bg-[#0f3460]">✏️ Editar</button>
               <button onClick={() => { duplicateSection(contextMenu.nodeId!); }} className="block w-full text-left px-3 py-1.5 text-xs text-[#e0e0e0] hover:bg-[#0f3460]">📋 Duplicar</button>
+              <button onClick={() => { useStyleStore.getState().toggleLock(contextMenu.nodeId!); setContextMenu(null); }} className="block w-full text-left px-3 py-1.5 text-xs text-[#e0e0e0] hover:bg-[#0f3460]">
+                {useStyleStore.getState().isLocked(contextMenu.nodeId!) ? '🔓 Desbloquear' : '🔒 Bloquear'}
+              </button>
+              <div className="border-t border-[#2a2a4a] my-1" />
+              <div className="px-3 py-0.5 text-[10px] text-[#6b7280] uppercase">Aplicar Estilo</div>
+              {useStyleStore.getState().styles.filter((s) => s.id !== '__default__').slice(0, 5).map((style) => (
+                <button key={style.id} onClick={() => { useStyleStore.getState().applyStyle(style.id, [contextMenu.nodeId!]); setContextMenu(null); }} className="block w-full text-left px-3 py-1.5 text-xs text-[#e0e0e0] hover:bg-[#0f3460]">
+                  <span className="inline-block w-2.5 h-2.5 rounded-sm mr-2 border" style={{ background: style.backgroundColor || style.color + '30', borderColor: style.color }} />
+                  {style.name}
+                </button>
+              ))}
+              <button onClick={() => { useStyleStore.getState().removeSectionStyle(contextMenu.nodeId!); setContextMenu(null); }} className="block w-full text-left px-3 py-1.5 text-xs text-[#6b7280] hover:bg-[#0f3460]">Limpar estilo</button>
               {contextMenu.nodeId !== story?.metadata.startSection && (
-                <button onClick={() => { if (confirm('Excluir?')) { useEditorStore.getState().removeSection(contextMenu.nodeId!); setContextMenu(null); } }} className="block w-full text-left px-3 py-1.5 text-xs text-[#ef4444] hover:bg-[#0f3460]">🗑️ Excluir</button>
+                <>
+                  <div className="border-t border-[#2a2a4a] my-1" />
+                  <button onClick={() => { if (confirm('Excluir?')) { useEditorStore.getState().removeSection(contextMenu.nodeId!); setContextMenu(null); } }} className="block w-full text-left px-3 py-1.5 text-xs text-[#ef4444] hover:bg-[#0f3460]">🗑️ Excluir</button>
+                </>
               )}
             </>
           ) : (
@@ -442,6 +470,7 @@ export function GraphEditor() {
             🔍 Centralizar
           </button>
         </div>
+        <GroupOverlay />
       </ReactFlow>
     </div>
   );

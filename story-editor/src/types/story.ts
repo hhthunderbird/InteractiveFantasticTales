@@ -194,3 +194,49 @@ export interface FlowStats {
   totalItems: number;
   totalFlags: number;
 }
+
+export interface NodeStyle {
+  id: string;
+  name: string;
+  color: string;
+  borderColor: string;
+  borderWidth: number;
+  borderStyle: 'solid' | 'dashed' | 'dotted';
+  backgroundColor: string;
+  fontSize: 'small' | 'medium' | 'large';
+  iconBadge?: string;
+  locked?: boolean;
+}
+
+export interface NodeGroup {
+  id: string;
+  title: string;
+  color: string;
+  borderStyle: 'solid' | 'dashed' | 'dotted';
+  borderWidth: number;
+  visible: boolean;
+  nodeIds: number[];
+  collapsed: boolean;
+}
+
+export interface SectionStyleMap {
+  sectionStyles: Record<number, string>;
+}
+
+export interface StyleLibrary {
+  styles: NodeStyle[];
+  groups: NodeGroup[];
+  sectionStyleMap: Record<number, string>;
+}
+
+export const DEFAULT_NODE_STYLE: NodeStyle = {
+  id: '__default__',
+  name: 'Padrão',
+  color: '#a0a0b0',
+  borderColor: 'transparent',
+  borderWidth: 2,
+  borderStyle: 'solid',
+  backgroundColor: '',
+  fontSize: 'medium',
+  locked: false,
+};

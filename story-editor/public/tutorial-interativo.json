@@ -1,0 +1,105 @@
+{
+  "formatVersion": "1.0",
+  "metadata": {
+    "id": "help-graph-demo",
+    "title": "📚 Tutorial Interativo — Como Usar o Editor",
+    "author": { "name": "Equipe IFT", "email": "contato@interactivefantastictales.com" },
+    "version": "1.0.0",
+    "language": "pt-BR",
+    "genre": ["tutorial"],
+    "description": "Um grafo de exemplo que explica como usar o editor de histórias. Cada nó é um tópico de ajuda.",
+    "startSection": 1,
+    "estimatedDuration": "5 minutos",
+    "tags": ["tutorial", "ajuda"]
+  },
+  "characterCreation": {
+    "attributes": {},
+    "startingGold": 0,
+    "startingItems": [],
+    "startingProvisions": 0
+  },
+  "flags": {},
+  "items": {},
+  "sections": {
+    "1": {
+      "id": 1,
+      "type": "narrative",
+      "text": "👋 Bem-vindo ao Editor de Histórias!\n\nEste grafo mostra os conceitos principais. Passe o mouse sobre cada nó para ver a dica. As setas coloridas indicam os tipos de conexão entre seções.\n\n➡️ Siga as setas azuis para o próximo tópico.",
+      "choices": [
+        { "text": "Como criar seções →", "targetSection": 2, "conditions": [] },
+        { "text": "Como o jogador vê a história →", "targetSection": 6, "conditions": [] }
+      ]
+    },
+    "2": {
+      "id": 2,
+      "type": "narrative",
+      "text": "➕ CRIAR SEÇÕES\n\nUse o botão '+ Nova Seção' na barra superior para adicionar trechos. Você também pode:\n• Pressionar a tecla N\n• Clicar com botão direito no grafo\n• Dar duplo clique no espaço vazio",
+      "choices": [
+        { "text": "Tipos de seção →", "targetSection": 3, "conditions": [] },
+        { "text": "Voltar ao início", "targetSection": 1, "conditions": [] }
+      ]
+    },
+    "3": {
+      "id": 3,
+      "type": "narrative",
+      "text": "🎨 TIPOS DE SEÇÃO\n\n📖 Narrativa — texto + escolhas (setas azuis)\n⚔️ Combate — luta contra inimigo\n🎲 Teste — rolagem de dados\n🔑 Item Gate — verifica inventário\n🔀 Aleatório — probabilidade determina caminho\n🏁 Final — vitória, derrota ou neutro",
+      "choices": [
+        { "text": "Conectar seções →", "targetSection": 4, "conditions": [] }
+      ]
+    },
+    "4": {
+      "id": 4,
+      "type": "narrative",
+      "text": "🔗 CONECTAR SEÇÕES\n\nDuas formas de criar conexões entre seções:\n\n1. No painel direito, adicione escolhas e defina o número da seção destino\n2. Arraste do círculo inferior de um nó até o círculo superior de outro\n\nSetas coloridas mostram o fluxo:\n🔵 Azul = escolha narrativa\n🟢 Verde = sucesso/vitória\n🔴 Vermelha = falha/derrota\n🟡 Amarela = fuga",
+      "choices": [
+        { "text": "Organizar e navegar →", "targetSection": 5, "conditions": [] }
+      ]
+    },
+    "5": {
+      "id": 5,
+      "type": "narrative",
+      "text": "📐 ORGANIZAR O GRAFO\n\n• Botão 'Organizar' → rearruma automaticamente o layout\n• Botão '🔍 Centralizar' → enquadra tudo na tela\n• Scroll do mouse → zoom\n• Arrastar fundo → mover a visão\n• Minimapa (canto) → navegação rápida\n• Ctrl+S → reorganizar",
+      "choices": [
+        { "text": "Preview (testar a história) →", "targetSection": 6, "conditions": [] }
+      ]
+    },
+    "6": {
+      "id": 6,
+      "type": "narrative",
+      "text": "▶️ PREVIEW — TESTAR A HISTÓRIA\n\nClique em 'Preview' na barra de modos para jogar sua história como um jogador real.\n\nVocê pode:\n• Navegar pelas seções\n• Lutar contra inimigos\n• Fazer testes de habilidade/sorte\n• Verificar se o fluxo está correto\n• Testar em mobile, tablet ou PC\n• Ativar modo alto contraste",
+      "choices": [
+        { "text": "Auditoria →", "targetSection": 7, "conditions": [] }
+      ]
+    },
+    "7": {
+      "id": 7,
+      "type": "narrative",
+      "text": "🔍 AUDITORIA DE FLUXO\n\nO painel de auditoria detecta automaticamente:\n\n🔴 Becos sem saída\n🟡 Seções órfãs (nunca referenciadas)\n🔴 Loops infinitos\n🟠 Caminhos inalcançáveis\n🟡 Itens e flags não utilizados\n\nSempre verifique a auditoria antes de publicar!",
+      "choices": [
+        { "text": "Estilos e grupos →", "targetSection": 8, "conditions": [] }
+      ]
+    },
+    "8": {
+      "id": 8,
+      "type": "narrative",
+      "text": "🎨 ESTILOS E GRUPOS\n\nPainel '🎨 Estilos' na direita:\n\n• Crie estilos visuais (cores, bordas)\n• Aplique estilos a um ou vários nós\n• Destaque todos os nós com certo estilo\n• Crie grupos com retângulo ao redor\n• Bloqueie nós para não mover acidentalmente\n• Identifique caminhos (ex: caminho da vitória em verde)",
+      "choices": [
+        { "text": "Salvar e exportar →", "targetSection": 9, "conditions": [] }
+      ]
+    },
+    "9": {
+      "id": 9,
+      "type": "narrative",
+      "text": "💾 SALVAR E EXPORTAR\n\n• Auto-save a cada 2 segundos na nuvem\n• Botão 'Salvar' → força salvamento + download JSON\n• Modo Local: histórias salvas no navegador\n• Importar JSON: abra histórias exportadas\n\nPronto para começar? Feche este tutorial e crie sua primeira aventura!",
+      "choices": [
+        { "text": "🎉 Começar a criar!", "targetSection": 10, "conditions": [] }
+      ]
+    },
+    "10": {
+      "id": 10,
+      "type": "ending",
+      "text": "🏁 Agora você conhece os fundamentos!\n\nFeche este grafo de ajuda e comece sua primeira história. Use o botão '?' no canto para rever este tutorial a qualquer momento.\n\nBoa aventura! ✨",
+      "ending": { "type": "neutral" }
+    }
+  }
+}

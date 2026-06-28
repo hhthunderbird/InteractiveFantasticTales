@@ -4,6 +4,7 @@ import { SECTION_TYPE_LABELS, type SectionType } from '../../types/story';
 import type { SectionData } from '../../types/story';
 import { downloadJson } from '../../lib/json-handler';
 import { useAutoSave } from '../../hooks/useAutoSave';
+import { useStyleStore } from '../../stores/style-store';
 
 export function Toolbar() {
   const story = useEditorStore((s) => s.story);
@@ -15,6 +16,7 @@ export function Toolbar() {
   const toggleAudit = useEditorStore((s) => s.toggleAudit);
   const triggerLayout = useEditorStore((s) => s.triggerLayout);
   const { manualSave } = useAutoSave();
+  const toggleStylePanel = useStyleStore((s) => s.toggleStylePanel);
 
   const [title, setTitle] = useState('');
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -154,6 +156,14 @@ export function Toolbar() {
           className="px-3 py-1 text-xs bg-[#0f3460] text-[#e0e0e0] rounded-md hover:bg-[#1a4a7a] transition-colors"
         >
           Auditoria
+        </button>
+
+        <button
+          onClick={toggleStylePanel}
+          className="px-3 py-1 text-xs bg-[#0f3460] text-[#e0e0e0] rounded-md hover:bg-[#1a4a7a] transition-colors"
+          title="Estilos e Grupos"
+        >
+          🎨 Estilos
         </button>
 
         <button
