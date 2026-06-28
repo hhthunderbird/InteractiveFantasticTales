@@ -27,24 +27,6 @@ function ending(id: number, endingType: 'victory' | 'defeat' | 'neutral', text =
   };
 }
 
-function combat(id: number, text: string, enemy: { name: string; skill: number; stamina: number }, targets: { victory: number; defeat: number; flee?: number }) {
-  return {
-    id,
-    type: 'combat' as const,
-    text,
-    combat: {
-      enemyName: enemy.name,
-      enemySkill: enemy.skill,
-      enemyStamina: enemy.stamina,
-      victoryTarget: targets.victory,
-      defeatTarget: targets.defeat,
-      fleeTarget: targets.flee ?? 0,
-      allowFlee: targets.flee != null,
-      lootOnVictory: [] as string[],
-    },
-  };
-}
-
 describe('FlowAnalyzer', () => {
   describe('analyzeFlow — healthy story', () => {
     it('should return no errors for a minimal valid story', () => {

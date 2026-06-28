@@ -4,7 +4,6 @@ import { SECTION_TYPE_LABELS, type SectionType } from '../../types/story';
 import type { SectionData } from '../../types/story';
 import { downloadJson } from '../../lib/json-handler';
 import { useAutoSave } from '../../hooks/useAutoSave';
-import { useAuth } from '../../hooks/useAuth';
 
 export function Toolbar() {
   const story = useEditorStore((s) => s.story);
@@ -16,13 +15,12 @@ export function Toolbar() {
   const toggleAudit = useEditorStore((s) => s.toggleAudit);
   const triggerLayout = useEditorStore((s) => s.triggerLayout);
   const { manualSave } = useAutoSave();
-  const { user } = useAuth();
 
   const [title, setTitle] = useState('');
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [saving, setSaving] = useState(false);
 
-  const debounceRef = useRef<ReturnType<typeof setTimeout>>();
+  const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     if (story) setTitle(story.metadata.title);
@@ -83,7 +81,7 @@ export function Toolbar() {
 
   const handleSave = async () => {
     setSaving(true);
-    const ok = await manualSave();
+    await manualSave();
     if (story) downloadJson(story);
     setSaving(false);
   };

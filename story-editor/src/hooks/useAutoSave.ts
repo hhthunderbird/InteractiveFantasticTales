@@ -8,7 +8,7 @@ export function useAutoSave() {
   const setDirty = useEditorStore((s) => s.setDirty);
   const { user } = useAuth();
   const { saveStory } = useStories(user?.uid ?? null);
-  const timerRef = useRef<ReturnType<typeof setTimeout>>();
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const isDirtyRef = useRef(isDirty);
   isDirtyRef.current = isDirty;
 

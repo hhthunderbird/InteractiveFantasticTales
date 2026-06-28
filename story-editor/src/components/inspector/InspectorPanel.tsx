@@ -151,7 +151,7 @@ function ChoicesEditor({ sectionId, choices }: { sectionId: number; choices: Cho
   );
 }
 
-function ConditionsEditor({ choiceIndex, conditions, onUpdate }: { choiceIndex: number; conditions: ConditionData[]; onUpdate: (c: ConditionData[]) => void }) {
+function ConditionsEditor({ conditions, onUpdate }: { choiceIndex: number; conditions: ConditionData[]; onUpdate: (c: ConditionData[]) => void }) {
   const handleAdd = () => onUpdate([...conditions, { type: 'hasItem', key: '', op: '==', value: '' }]);
   const handleUpdate = (index: number, data: Partial<ConditionData>) => {
     onUpdate(conditions.map((c, i) => (i === index ? { ...c, ...data } : c)));

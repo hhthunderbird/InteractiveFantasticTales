@@ -22,7 +22,7 @@ const handleStyle: React.CSSProperties = {
 
 const topHandleStyle: React.CSSProperties = {
   ...handleStyle,
-  top: -5,
+  top: -10,
 };
 
 const bottomHandleStyle: React.CSSProperties = {
@@ -36,14 +36,14 @@ export function SectionNode({ data }: { data: SectionNodeData }) {
       <Handle
         type="target"
         position={Position.Top}
-        style={topHandleStyle}
+        style={{ ...topHandleStyle, zIndex: 10 }}
         className="hover:!border-white hover:!bg-[#3b82f6] transition-colors"
       />
       <div
-        className={`px-3 py-2 rounded-lg border-2 min-w-[180px] max-w-[220px] cursor-pointer transition-all ${
+        className={`px-3 py-2 rounded-lg border-2 min-w-[180px] max-w-[220px] cursor-pointer transition-all relative ${
           data.isSelected ? 'border-white shadow-lg shadow-white/20 scale-105' : 'border-transparent hover:border-white/30'
         }`}
-        style={{ background: data.color + '20', borderColor: data.isSelected ? '#fff' : data.color }}
+        style={{ background: data.color + '20', borderColor: data.isSelected ? '#fff' : data.color, zIndex: 1 }}
       >
         <div className="flex items-center gap-1.5 mb-1">
           <span className="text-xs">{SECTION_TYPE_ICONS[data.type]}</span>
@@ -58,7 +58,7 @@ export function SectionNode({ data }: { data: SectionNodeData }) {
       <Handle
         type="source"
         position={Position.Bottom}
-        style={bottomHandleStyle}
+        style={{ ...bottomHandleStyle, zIndex: 10 }}
         className="hover:!border-white hover:!bg-[#e94560] transition-colors"
       />
     </>

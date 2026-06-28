@@ -586,7 +586,7 @@ function evalOnEnter(section: SectionData | undefined, char: PreviewState['chara
   const oe = section.onEnter;
   if (!oe) return;
   if (oe.addItems) char.inventory = [...new Set([...char.inventory, ...oe.addItems])];
-  if (oe.removeItems) char.inventory = char.inventory.filter((i) => !oe.removeItems.includes(i));
+  if (oe.removeItems) char.inventory = char.inventory.filter((i) => !(oe.removeItems as string[]).includes(i));
   if (oe.setFlags) Object.assign(char.flags, oe.setFlags);
   if (oe.modifyGold) char.gold += oe.modifyGold;
   if (oe.modifyStamina) char.stamina = Math.min(char.maxStamina, Math.max(0, char.stamina + oe.modifyStamina));
