@@ -78,7 +78,9 @@ export function useStories(userId: string | null) {
     try {
       if (isLocalMode()) {
         const local = getLocalStories();
-        const items = Object.values(local).map((v) => v.meta).sort((a, b) => b.updatedAt.getTime() - a.updatedAt.getTime());
+        const items = Object.values(local)
+          .map((v) => ({ ...v.meta, updatedAt: new Date(v.meta.updatedAt) }))
+          .sort((a, b) => b.updatedAt.getTime() - a.updatedAt.getTime());
         if (mountedRef.current) setStories(items);
       } else {
         const items = await firestoreListStories(userId);

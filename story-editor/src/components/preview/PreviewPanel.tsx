@@ -338,8 +338,10 @@ export function PreviewPanel() {
           : `🎲 Falha! ${total} < ${section.test!.difficulty}`,
       };
     });
-    if (success) goToSection(section.test.successTarget);
-    else goToSection(section.test.failTarget);
+    setTimeout(() => {
+      if (success) goToSection(section.test!.successTarget);
+      else goToSection(section.test!.failTarget);
+    }, 800);
   };
 
   const handleItemGate = (section: SectionData) => {

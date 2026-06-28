@@ -25,8 +25,8 @@ export function GroupOverlay() {
         const width = maxX - minX;
         const height = maxY - minY;
 
-        const screenX = (minX + vpX) * zoom;
-        const screenY = (minY + vpY) * zoom;
+        const screenX = minX * zoom + vpX;
+        const screenY = minY * zoom + vpY;
         const screenW = width * zoom;
         const screenH = height * zoom;
 

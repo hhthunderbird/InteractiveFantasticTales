@@ -12,7 +12,7 @@ import type { Node, Edge, Connection } from 'reactflow';
 import 'reactflow/dist/style.css';
 import { useEditorStore } from '../../stores/editor-store';
 import { useStyleStore } from '../../stores/style-store';
-import { SECTION_TYPE_COLORS, SECTION_TYPE_LABELS } from '../../types/story';
+import { SECTION_TYPE_COLORS, SECTION_TYPE_LABELS, DEFAULT_NODE_STYLE } from '../../types/story';
 import { GroupOverlay } from './GroupOverlay';
 import { SectionNode } from './SectionNode';
 
@@ -128,6 +128,11 @@ export function GraphEditor() {
   const selectedSectionId = useEditorStore((s) => s.selectedSectionId);
   const sectionCount = story ? Object.keys(story.sections).length : 0;
   const prevCount = useRef(sectionCount);
+
+  const sectionStyles = useStyleStore((s) => s.sectionStyles);
+  const sectionLocks = useStyleStore((s) => s.sectionLocks);
+  const styles = useStyleStore((s) => s.styles);
+
   const reactFlowInstance = useReactFlow();
 
   const { initialNodes, initialEdges } = useMemo(() => {
@@ -166,8 +171,9 @@ export function GraphEditor() {
         : '(sem texto)';
 
       const pos = layout.get(section.id) ?? { x: 0, y: 0 };
-      const style = useStyleStore.getState().getSectionStyle(section.id);
-      const locked = useStyleStore.getState().isLocked(section.id);
+      const styleId = sectionStyles[section.id];
+      const style = styleId ? (styles.find((s) => s.id === styleId) ?? DEFAULT_NODE_STYLE) : DEFAULT_NODE_STYLE;
+      const locked = sectionLocks[section.id] ?? false;
       const effectiveColor = style.id !== '__default__' ? style.color : color;
       const effectiveBg = style.backgroundColor || (style.id !== '__default__' ? style.color + '20' : color + '20');
 
@@ -228,7 +234,7 @@ export function GraphEditor() {
     }
 
     return { initialNodes: nodes, initialEdges: edges };
-  }, [story, selectedSectionId]);
+  }, [story, selectedSectionId, sectionStyles, sectionLocks, styles]);
 
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);

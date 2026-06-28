@@ -26,7 +26,7 @@ export function useAutoSave() {
     return () => {
       if (timerRef.current) clearTimeout(timerRef.current);
     };
-  }, [isDirty, user]);
+  }, [isDirty, user, saveStory, setDirty]);
 
   const manualSave = useCallback(async () => {
     const currentStory = useEditorStore.getState().story;

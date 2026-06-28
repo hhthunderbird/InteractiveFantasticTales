@@ -241,8 +241,8 @@ function RulesTab({ rules, updateRules, addCustomAttribute, updateCustomAttribut
           <div className="text-center text-[10px] text-[#6b7280] py-4">Use atributos customizados para adicionar novas mecânicas (ex: MAGIA, HONRA).</div>
         ) : (
           <div className="space-y-2">
-            {rules.customAttributes.map((attr) => (
-              <div key={attr.key} className="bg-[#0f3460] rounded p-2 space-y-1">
+            {rules.customAttributes.map((attr, idx) => (
+              <div key={idx} className="bg-[#0f3460] rounded p-2 space-y-1">
                 <div className="flex items-center gap-2">
                   <input className="flex-1 bg-[#1a1a2e] text-[#e0e0e0] border border-[#2a2a4a] rounded px-2 py-1 text-xs" placeholder="Key (ex: magic)" value={attr.key} onChange={(e) => updateCustomAttribute(attr.key, { key: e.target.value })} />
                   <input className="flex-1 bg-[#1a1a2e] text-[#e0e0e0] border border-[#2a2a4a] rounded px-2 py-1 text-xs" placeholder="Rótulo" value={attr.label} onChange={(e) => updateCustomAttribute(attr.key, { label: e.target.value })} />

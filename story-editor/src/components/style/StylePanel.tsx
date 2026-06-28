@@ -162,7 +162,7 @@ export function StylePanel() {
 function StyleEditor({ style, onSave, onCancel }: { style: NodeStyle; onSave: (s: NodeStyle) => void; onCancel: () => void }) {
   const [s, setS] = useState(style);
   return (
-    <div className="absolute inset-0 z-50 bg-black/60 flex items-center justify-center" onClick={onCancel}>
+    <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center" onClick={onCancel}>
       <div className="bg-[#16213e] border border-[#2a2a4a] rounded-lg p-4 w-64 space-y-2" onClick={(e) => e.stopPropagation()}>
         <h3 className="text-sm font-semibold text-white">Editar Estilo</h3>
         <input className="w-full bg-[#0f3460] text-[#e0e0e0] border border-[#2a2a4a] rounded px-2 py-1 text-xs" value={s.name} onChange={(e) => setS({ ...s, name: e.target.value })} placeholder="Nome" />
@@ -194,7 +194,7 @@ function StyleEditor({ style, onSave, onCancel }: { style: NodeStyle; onSave: (s
 function GroupEditor({ group, onSave, onCancel }: { group: NodeGroup; onSave: (g: NodeGroup) => void; onCancel: () => void }) {
   const [g, setG] = useState(group);
   return (
-    <div className="absolute inset-0 z-50 bg-black/60 flex items-center justify-center" onClick={onCancel}>
+    <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center" onClick={onCancel}>
       <div className="bg-[#16213e] border border-[#2a2a4a] rounded-lg p-4 w-64 space-y-2" onClick={(e) => e.stopPropagation()}>
         <h3 className="text-sm font-semibold text-white">Editar Grupo</h3>
         <input className="w-full bg-[#0f3460] text-[#e0e0e0] border border-[#2a2a4a] rounded px-2 py-1 text-xs" value={g.title} onChange={(e) => setG({ ...g, title: e.target.value })} placeholder="Título" />
