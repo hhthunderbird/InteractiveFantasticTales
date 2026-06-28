@@ -230,7 +230,64 @@ export function GraphEditor() {
     }
   }, [initialNodes, initialEdges, setNodes, setEdges, sectionCount, reactFlowInstance]);
 
-  const onConnect = useCallback((_params: Connection) => {}, []);
+  const onConnect = useCallback(
+    (params: Connection) => {
+      if (!params.source || !params.target) return;
+      const sourceId = Number(params.source);
+      const targetId = Number(params.target);
+
+      const currentStory = useEditorStore.getState().story;
+      if (!currentStory) return;
+
+      const sourceSection = currentStory.sections[sourceId];
+      if (!sourceSection) return;
+
+      if (sourceSection.type === 'combat' || sourceSection.type === 'test' ||
+          sourceSection.type === 'itemGate' || sourceSection.type === 'random' ||
+          sourceSection.type === 'ending') {
+        return;
+      }
+
+      const existingChoices = sourceSection.choices ?? [];
+      const alreadyConnected = existingChoices.some((c) => c.targetSection === targetId);
+
+      if (alreadyConnected) return;
+
+      useEditorStore.getState().updateSection(sourceId, {
+        choices: [...existingChoices, {
+          id: crypto.randomUUID().slice(0, 8),
+          text: `Ir para seção ${targetId}`,
+          targetSection: targetId,
+          conditions: [],
+        }],
+      });
+    },
+    [],
+  );
+
+  const onEdgesDelete = useCallback(
+    (deletedEdges: Edge[]) => {
+      const currentStory = useEditorStore.getState().story;
+      if (!currentStory) return;
+
+      for (const edge of deletedEdges) {
+        const sourceId = Number(edge.source);
+        const targetId = Number(edge.target);
+        const section = currentStory.sections[sourceId];
+        if (!section?.choices) continue;
+
+        const nodeIds = new Set(edge.id.split('-').filter(Boolean));
+        if (nodeIds.has('choice')) {
+          const choiceIdx = parseInt(edge.id.split('-').pop() ?? '0');
+          const filtered = section.choices.filter((_, i) => i !== choiceIdx || section.choices![i]?.targetSection !== targetId);
+          if (filtered.length !== section.choices.length) {
+            useEditorStore.getState().updateSection(sourceId, { choices: filtered });
+          }
+        }
+      }
+    },
+    [],
+  );
 
   const onNodeClick = useCallback(
     (_: React.MouseEvent, node: Node) => selectSection(Number(node.id)),
@@ -266,6 +323,7 @@ export function GraphEditor() {
         onEdgesChange={onEdgesChange}
         onConnect={onConnect}
         onNodeClick={onNodeClick}
+        onEdgesDelete={onEdgesDelete}
         nodeTypes={nodeTypes}
         fitView
         fitViewOptions={{ padding: 0.3 }}
