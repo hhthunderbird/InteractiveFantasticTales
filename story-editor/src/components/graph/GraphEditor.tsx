@@ -231,7 +231,7 @@ export function GraphEditor() {
     }
 
     return { initialNodes: nodes, initialEdges: edges };
-  }, [story, selectedSectionId, sectionStyles, sectionLocks, styles]);
+  }, [story, sectionStyles, sectionLocks, styles]);
 
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
@@ -245,6 +245,19 @@ export function GraphEditor() {
       setTimeout(() => reactFlowInstance.fitView({ padding: 0.3, duration: 300 }), 50);
     }
   }, [initialNodes, initialEdges, setNodes, setEdges, sectionCount, reactFlowInstance]);
+
+  useEffect(() => {
+    setNodes((nds) =>
+      nds.map((n) => {
+        const nodeId = Number(n.id);
+        if (nodeId === selectedSectionId)
+          return { ...n, data: { ...n.data, isSelected: true } };
+        else if (n.data.isSelected)
+          return { ...n, data: { ...n.data, isSelected: false } };
+        return n;
+      }),
+    );
+  }, [selectedSectionId, setNodes]);
 
   const onConnect = useCallback(
     (params: Connection) => {
@@ -378,7 +391,6 @@ export function GraphEditor() {
     }
     if ((e.key === 's' || e.key === 'S') && (e.ctrlKey || e.metaKey)) {
       e.preventDefault();
-      useEditorStore.getState().triggerLayout();
     }
   }, [selectedSectionId, story?.metadata.startSection]);
 

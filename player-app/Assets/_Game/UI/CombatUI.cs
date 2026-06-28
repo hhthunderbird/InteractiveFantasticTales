@@ -44,7 +44,7 @@ namespace InteractiveFantasticTales.UI
             if (_enemyNameText != null) _enemyNameText.text = cs.enemyName;
             if (_enemyStatsText != null)
                 _enemyStatsText.text = $"SKILL {cs.enemySkill}  STAM {Mathf.Max(0, cs.enemyStamina)}/{cs.enemyMaxStamina}";
-            if (_enemyHealthBar != null)
+            if (_enemyHealthBar != null && cs.enemyMaxStamina > 0)
                 _enemyHealthBar.fillAmount = Mathf.Max(0, (float)cs.enemyStamina / cs.enemyMaxStamina);
             if (_playerStatsText != null && _engine?.PlayerCharacter != null)
             {

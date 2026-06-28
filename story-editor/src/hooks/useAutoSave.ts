@@ -10,7 +10,8 @@ export function useAutoSave() {
   const { saveStory } = useStories(user?.uid ?? null);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const isDirtyRef = useRef(isDirty);
-  isDirtyRef.current = isDirty;
+
+  useEffect(() => { isDirtyRef.current = isDirty; }, [isDirty]);
 
   useEffect(() => {
     if (!isDirty || !user) return;

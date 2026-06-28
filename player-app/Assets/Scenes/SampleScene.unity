@@ -1995,8 +1995,6 @@ MonoBehaviour:
   _combatPanel: {fileID: 1427913842}
   _combatEnemyText: {fileID: 1579356622}
   _combatStatsText: {fileID: 1417138380}
-  _attackButton: {fileID: 1600340845}
-  _fleeButton: {fileID: 322493360}
   _choiceButtonPrefab: {fileID: 0}
 --- !u!4 &2037920800
 Transform:

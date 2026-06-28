@@ -13,8 +13,6 @@ namespace InteractiveFantasticTales
         [SerializeField] private GameObject _combatPanel;
         [SerializeField] private Text _combatEnemyText;
         [SerializeField] private Text _combatStatsText;
-        [SerializeField] private Button _attackButton;
-        [SerializeField] private Button _fleeButton;
 
         [Header("Prefabs")]
         [SerializeField] private GameObject _choiceButtonPrefab;
@@ -30,18 +28,10 @@ namespace InteractiveFantasticTales
 
         private void Start()
         {
-            if (_choiceButtonPrefab != null && _choiceButtons != null)
-                _choiceButtons.SendMessage("SetPrefab", _choiceButtonPrefab, SendMessageOptions.DontRequireReceiver);
-
-            if (_attackButton != null) _attackButton.onClick.AddListener(() => _engine.FightRound());
-            if (_fleeButton != null) _fleeButton.onClick.AddListener(() => _engine.FleeCombat());
-
             _engine.OnCombatUpdated += OnCombat;
             _engine.OnStateChanged += OnState;
-
             _characterSheet?.SetActive(false);
             _combatPanel?.SetActive(false);
-
             _engine.LoadDemoStory();
         }
 

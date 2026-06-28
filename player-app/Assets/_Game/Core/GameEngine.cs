@@ -37,36 +37,45 @@ namespace InteractiveFantasticTales.Core
         public void LoadStoryFromJson(string json)
         {
             SetState(GameState.Loading);
-            try { CurrentStory = JsonUtility.FromJson<StoryData>(json); CreateCharacter(); GoToSection(CurrentStory.metadata.startSection); }
-            catch (Exception e) { OnMessage?.Invoke($"Erro: {e.Message}"); }
+            try
+            {
+                CurrentStory = JsonUtility.FromJson<StoryData>(json);
+                if (CurrentStory == null || CurrentStory.sections == null || CurrentStory.sections.Count == 0)
+                { OnMessage?.Invoke("Erro: historia invalida ou vazia."); return; }
+                if (!CurrentStory.sections.ContainsKey(CurrentStory.metadata.startSection.ToString()))
+                { OnMessage?.Invoke($"Erro: secao inicial {CurrentStory.metadata.startSection} nao encontrada."); return; }
+                CreateCharacter();
+                GoToSection(CurrentStory.metadata.startSection);
+            }
+            catch (Exception e) { OnMessage?.Invoke($"Erro ao carregar: {e.Message}"); }
         }
 
         public void LoadDemoStory()
         {
             var ta = Resources.Load<TextAsset>("demo-labirinto-do-arquimago");
             if (ta != null) LoadStoryFromJson(ta.text);
-            else OnMessage?.Invoke("História demo não encontrada em Resources.");
+            else OnMessage?.Invoke("Historia demo nao encontrada.");
         }
 
         private void CreateCharacter()
         {
             var cc = CurrentStory.characterCreation;
             PlayerCharacter = new Character();
-            PlayerCharacter.skill = Character.RollDice(cc.attributes.ContainsKey("skill") ? cc.attributes["skill"].dice : "1d6+6");
-            PlayerCharacter.stamina = Character.RollDice(cc.attributes.ContainsKey("stamina") ? cc.attributes["stamina"].dice : "2d6+12");
+            PlayerCharacter.skill = Character.RollDice(cc != null && cc.attributes.ContainsKey("skill") ? cc.attributes["skill"].dice : "1d6+6");
+            PlayerCharacter.stamina = Character.RollDice(cc != null && cc.attributes.ContainsKey("stamina") ? cc.attributes["stamina"].dice : "2d6+12");
             PlayerCharacter.maxStamina = PlayerCharacter.stamina;
-            PlayerCharacter.luck = Character.RollDice(cc.attributes.ContainsKey("luck") ? cc.attributes["luck"].dice : "1d6+6");
+            PlayerCharacter.luck = Character.RollDice(cc != null && cc.attributes.ContainsKey("luck") ? cc.attributes["luck"].dice : "1d6+6");
             PlayerCharacter.maxLuck = PlayerCharacter.luck;
-            PlayerCharacter.gold = cc.startingGold;
-            PlayerCharacter.provisions = cc.startingProvisions;
-            if (cc.startingItems != null) PlayerCharacter.inventory.AddRange(cc.startingItems);
+            PlayerCharacter.gold = cc?.startingGold ?? 0;
+            PlayerCharacter.provisions = cc?.startingProvisions ?? 10;
+            if (cc?.startingItems != null) PlayerCharacter.inventory.AddRange(cc.startingItems);
             OnCharacterUpdated?.Invoke(PlayerCharacter);
         }
 
         public void GoToSection(int sectionId)
         {
             string key = sectionId.ToString();
-            if (!CurrentStory.sections.TryGetValue(key, out var section)) { OnMessage?.Invoke($"Seção {sectionId} não encontrada."); return; }
+            if (!CurrentStory.sections.TryGetValue(key, out var section)) { OnMessage?.Invoke($"Secao {sectionId} nao encontrada."); return; }
             NavigationHistory.Push(sectionId);
             CurrentSection = section;
             if (section.onEnter != null) EvalOnEnter(section.onEnter);
@@ -84,6 +93,7 @@ namespace InteractiveFantasticTales.Core
 
         public void MakeChoice(int index)
         {
+            if (CurrentState != GameState.Narrative) return;
             if (CurrentSection?.choices == null || index >= CurrentSection.choices.Count) return;
             var choice = CurrentSection.choices[index];
             if (!EvaluateConditions(choice.conditions)) return;
@@ -96,12 +106,12 @@ namespace InteractiveFantasticTales.Core
 
         public void FightRound()
         {
-            if (ActiveCombat == null) return;
+            if (ActiveCombat == null || CurrentState != GameState.CombatActive) return;
             int pr = Character.RollDice("2d6") + PlayerCharacter.skill;
             int er = Character.RollDice("2d6") + ActiveCombat.enemySkill;
-            if (pr > er) { ActiveCombat.enemyStamina -= 2; OnMessage?.Invoke($"Você ataca! {ActiveCombat.enemyName} perde 2 STAMINA."); }
-            else if (er > pr) { PlayerCharacter.stamina -= 2; OnMessage?.Invoke($"{ActiveCombat.enemyName} ataca! Você perde 2 STAMINA."); }
-            else { OnMessage?.Invoke("Empate! Ninguém se fere."); }
+            if (pr > er) { ActiveCombat.enemyStamina -= 2; OnMessage?.Invoke($"Voce ataca! {ActiveCombat.enemyName} perde 2 STAMINA."); }
+            else if (er > pr) { PlayerCharacter.stamina -= 2; OnMessage?.Invoke($"{ActiveCombat.enemyName} ataca! Voce perde 2 STAMINA."); }
+            else { OnMessage?.Invoke("Empate! Ninguem se fere."); }
             OnCombatUpdated?.Invoke(ActiveCombat);
             if (ActiveCombat.enemyStamina <= 0) { ActiveCombat.phase = CombatPhase.Result; OnMessage?.Invoke($"Vitoria sobre {ActiveCombat.enemyName}!"); if (ActiveCombat.lootOnVictory != null) foreach (var item in ActiveCombat.lootOnVictory) PlayerCharacter.AddItem(item); GoToSection(ActiveCombat.victoryTarget); }
             else if (PlayerCharacter.stamina <= 0) { ActiveCombat.phase = CombatPhase.Result; OnMessage?.Invoke("Voce foi derrotado..."); GoToSection(ActiveCombat.defeatTarget); }
@@ -109,16 +119,29 @@ namespace InteractiveFantasticTales.Core
 
         public void FleeCombat()
         {
-            if (ActiveCombat == null || !ActiveCombat.allowFlee) return;
-            if (PlayerCharacter.TestLuck()) { OnMessage?.Invoke("Fuga bem sucedida!"); GoToSection(ActiveCombat.fleeTarget); }
-            else OnMessage?.Invoke("Falha na fuga!");
+            if (ActiveCombat == null || !ActiveCombat.allowFlee || CurrentState != GameState.CombatActive) return;
+            if (PlayerCharacter.TestLuck())
+            {
+                OnMessage?.Invoke("Fuga bem sucedida!");
+                GoToSection(ActiveCombat.fleeTarget);
+            }
+            else
+            {
+                OnMessage?.Invoke("Falha na fuga! O inimigo contra-ataca.");
+                PlayerCharacter.stamina -= 2;
+                if (PlayerCharacter.stamina <= 0) { OnMessage?.Invoke("Voce foi derrotado!"); GoToSection(ActiveCombat.defeatTarget); }
+                else OnCombatUpdated?.Invoke(ActiveCombat);
+            }
         }
 
         public void ResolveTest()
         {
             if (CurrentSection?.test == null) return;
             var t = CurrentSection.test;
-            int val = t.attribute == "skill" ? PlayerCharacter.skill : t.attribute == "luck" ? PlayerCharacter.luck : 7;
+            int val = 7;
+            if (t.attribute == "skill") val = PlayerCharacter.skill;
+            else if (t.attribute == "luck") val = PlayerCharacter.luck;
+            else Debug.LogWarning($"Test: unknown attribute '{t.attribute}', defaulting to 7");
             int roll = Character.RollDice("2d6"); bool ok = roll + val >= t.difficulty;
             OnMessage?.Invoke(ok ? $"Sucesso! {roll + val} >= {t.difficulty}" : $"Falha! {roll + val} < {t.difficulty}");
             StartCoroutine(DelayedGo(ok ? t.successTarget : t.failTarget, 1.2f));
@@ -135,13 +158,14 @@ namespace InteractiveFantasticTales.Core
         private void ResolveRandom(SectionData s)
         {
             float total = 0; foreach (var o in s.random.outcomes) total += o.weight;
+            if (total <= 0) { OnMessage?.Invoke("Random sem outcomes validos."); return; }
             float r = UnityEngine.Random.Range(0f, total); float c = 0;
             foreach (var o in s.random.outcomes) { c += o.weight; if (r <= c) { GoToSection(o.targetSection); return; } }
         }
 
         private void StartCombat(SectionData s)
         {
-            ActiveCombat = new CombatState { enemyName = s.combat.enemyName, enemySkill = s.combat.enemySkill, enemyStamina = s.combat.enemyStamina, enemyMaxStamina = s.combat.enemyStamina, victoryTarget = s.combat.victoryTarget, defeatTarget = s.combat.defeatTarget, fleeTarget = s.combat.fleeTarget, allowFlee = s.combat.allowFlee, lootOnVictory = s.combat.lootOnVictory, phase = CombatPhase.Fighting, combatSectionText = s.text };
+            ActiveCombat = new CombatState { enemyName = s.combat.enemyName, enemySkill = s.combat.enemySkill, enemyStamina = Mathf.Max(1, s.combat.enemyStamina), enemyMaxStamina = Mathf.Max(1, s.combat.enemyStamina), victoryTarget = s.combat.victoryTarget, defeatTarget = s.combat.defeatTarget, fleeTarget = s.combat.fleeTarget, allowFlee = s.combat.allowFlee, lootOnVictory = s.combat.lootOnVictory, phase = CombatPhase.Fighting, combatSectionText = s.text };
             SetState(GameState.CombatActive);
             OnSectionChanged?.Invoke(s); OnCombatUpdated?.Invoke(ActiveCombat);
         }
