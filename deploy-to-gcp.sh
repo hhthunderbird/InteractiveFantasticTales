@@ -24,21 +24,6 @@ done
 echo "[*] Configurando o projeto ativo do gcloud para: $PROJECT_ID"
 gcloud config set project "$PROJECT_ID"
 
-echo "[*] Habilitando as APIs do Google Cloud necessarias..."
-gcloud services enable run.googleapis.com \
-                       artifactregistry.googleapis.com \
-                       cloudbuild.googleapis.com \
-                       firestore.googleapis.com \
-                       firebase.googleapis.com --quiet
-echo "[OK] APIs habilitadas com sucesso."
-
-echo "[*] Verificando configuracao do Firestore..."
-if gcloud firestore databases create --location=us-east1 --quiet >/dev/null 2>&1; then
-    echo "[OK] Banco de dados Firestore provisionado com sucesso na regiao us-east1."
-else
-    echo "[*] Firestore ja ativo ou configurado."
-fi
-
 echo "[*] Verificando variaveis de ambiente (.env) em story-editor..."
 if [ ! -f "story-editor/.env" ]; then
     if [ "$NON_INTERACTIVE" = "1" ]; then
@@ -61,8 +46,8 @@ if [ "$NON_INTERACTIVE" = "1" ]; then
 else
     echo "==================================================="
     echo "Escolha o m?todo de deploy:"
-    echo "[1] Cloud Run (Docker Container - Recomendado, totalmente automatizado)"
-    echo "[2] Firebase Hosting (Requer configuracao manual previa do Firebase no console)"
+    echo "[1] Cloud Run (Docker Container - Requer Billing/Cartao cadastrado no GCP)"
+    echo "[2] Firebase Hosting (Gratuito - Nao requer Billing/Cartao cadastrado)"
     echo "==================================================="
     read -p "Escolha uma opcao (1 ou 2, padrao 1): " DEPLOY_CHOICE
 fi
@@ -73,6 +58,21 @@ if [ -z "$DEPLOY_CHOICE" ]; then
 fi
 
 if [ "$DEPLOY_CHOICE" = "1" ]; then
+    echo "[*] Habilitando as APIs do Google Cloud necessarias para o Cloud Run..."
+    gcloud services enable run.googleapis.com \
+                           artifactregistry.googleapis.com \
+                           cloudbuild.googleapis.com \
+                           firestore.googleapis.com \
+                           firebase.googleapis.com --quiet
+    echo "[OK] APIs do Cloud Run habilitadas com sucesso."
+
+    echo "[*] Verificando configuracao do Firestore..."
+    if gcloud firestore databases create --location=us-east1 --quiet >/dev/null 2>&1; then
+        echo "[OK] Banco de dados Firestore provisionado com sucesso na regiao us-east1."
+    else
+        echo "[*] Firestore ja ativo ou configurado."
+    fi
+
     echo "[*] Iniciando deploy no Google Cloud Run..."
     
     echo "[*] Verificando se o repositorio Artifact Registry existe..."
@@ -101,6 +101,10 @@ if [ "$DEPLOY_CHOICE" = "1" ]; then
     echo "==================================================="
     
 elif [ "$DEPLOY_CHOICE" = "2" ]; then
+    echo "[*] Habilitando as APIs necessarias para o Firebase Hosting..."
+    gcloud services enable firestore.googleapis.com firebase.googleapis.com --quiet
+    echo "[OK] APIs do Firebase habilitadas."
+
     echo "[*] Iniciando deploy no Firebase Hosting..."
     
     echo "[*] Instalando dependencias locais..."
@@ -125,5 +129,6 @@ else
     echo "[ERROR] Opcao invalida. Saindo..."
     exit 1
 fi
+
 
 

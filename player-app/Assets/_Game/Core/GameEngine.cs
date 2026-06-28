@@ -1,36 +1,29 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.IO;
 using UnityEngine;
-using UnityEngine.Networking;
 using InteractiveFantasticTales.Models;
 
 namespace InteractiveFantasticTales.Core
 {
-    public enum GameState
+    public enum GameState { Loading, Narrative, ChoicePending, CombatActive, TestActive, ItemGateCheck, Transitioning, GameOver, Paused }
+    public enum CombatPhase { Fighting, Result }
+
+    public class CombatState
     {
-        Loading,
-        Narrative,
-        ChoicePending,
-        CombatActive,
-        TestActive,
-        ItemGateCheck,
-        Transitioning,
-        GameOver,
-        Paused
+        public string enemyName; public int enemySkill; public int enemyStamina; public int enemyMaxStamina;
+        public int victoryTarget; public int defeatTarget; public int fleeTarget; public bool allowFlee;
+        public List<string> lootOnVictory; public CombatPhase phase; public string combatSectionText;
     }
 
     public class GameEngine : MonoBehaviour
     {
         public static GameEngine Instance { get; private set; }
-
-        [Header("Events")]
-        public System.Action<SectionData> OnSectionChanged;
-        public System.Action<Character> OnCharacterUpdated;
-        public System.Action<GameState> OnStateChanged;
-        public System.Action<string> OnMessage;
-        public System.Action<CombatState> OnCombatUpdated;
+        public event Action<SectionData> OnSectionChanged;
+        public event Action<Character> OnCharacterUpdated;
+        public event Action<GameState> OnStateChanged;
+        public event Action<string> OnMessage;
+        public event Action<CombatState> OnCombatUpdated;
 
         public StoryData CurrentStory { get; private set; }
         public Character PlayerCharacter { get; private set; }
@@ -39,387 +32,139 @@ namespace InteractiveFantasticTales.Core
         public CombatState ActiveCombat { get; private set; }
         public Stack<int> NavigationHistory { get; } = new();
 
-        private void Awake()
-        {
-            if (Instance != null && Instance != this)
-            {
-                Destroy(gameObject);
-                return;
-            }
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
+        private void Awake() { if (Instance == null) { Instance = this; DontDestroyOnLoad(gameObject); } else Destroy(gameObject); }
 
         public void LoadStoryFromJson(string json)
         {
             SetState(GameState.Loading);
-            try
-            {
-                CurrentStory = JsonUtility.FromJson<StoryData>(json);
-                if (CurrentStory?.sections == null)
-                {
-                    OnMessage?.Invoke("Erro: formato de história inválido.");
-                    return;
-                }
-                CreateCharacter();
-                GoToSection(CurrentStory.metadata.startSection);
-            }
-            catch (Exception e)
-            {
-                OnMessage?.Invoke($"Erro ao carregar história: {e.Message}");
-            }
+            try { CurrentStory = JsonUtility.FromJson<StoryData>(json); CreateCharacter(); GoToSection(CurrentStory.metadata.startSection); }
+            catch (Exception e) { OnMessage?.Invoke($"Erro: {e.Message}"); }
         }
 
-        public void LoadStoryFromStreamingAssets(string fileName)
+        public void LoadDemoStory()
         {
-            StartCoroutine(LoadJsonCoroutine(fileName));
-        }
-
-        private IEnumerator LoadJsonCoroutine(string fileName)
-        {
-            SetState(GameState.Loading);
-            string filePath = Path.Combine(Application.streamingAssetsPath, "Stories", fileName);
-
-            if (filePath.Contains("://") || filePath.Contains(":///"))
-            {
-                using var request = UnityWebRequest.Get(filePath);
-                yield return request.SendWebRequest();
-                if (request.result == UnityWebRequest.Result.Success)
-                    LoadStoryFromJson(request.downloadHandler.text);
-                else
-                    OnMessage?.Invoke($"Erro ao carregar arquivo: {request.error}");
-            }
-            else
-            {
-                if (File.Exists(filePath))
-                    LoadStoryFromJson(File.ReadAllText(filePath));
-                else
-                    OnMessage?.Invoke($"Arquivo não encontrado: {fileName}");
-            }
+            var ta = Resources.Load<TextAsset>("demo-labirinto-do-arquimago");
+            if (ta != null) LoadStoryFromJson(ta.text);
+            else OnMessage?.Invoke("História demo não encontrada em Resources.");
         }
 
         private void CreateCharacter()
         {
             var cc = CurrentStory.characterCreation;
             PlayerCharacter = new Character();
-
-            if (cc?.attributes != null)
-            {
-                if (cc.attributes.TryGetValue("skill", out var skillAttr))
-                    PlayerCharacter.skill = Character.RollDice(skillAttr.dice);
-                else
-                    PlayerCharacter.skill = Character.RollDice("1d6+6");
-
-                if (cc.attributes.TryGetValue("stamina", out var staminaAttr))
-                    PlayerCharacter.stamina = Character.RollDice(staminaAttr.dice);
-                else
-                    PlayerCharacter.stamina = Character.RollDice("2d6+12");
-
-                PlayerCharacter.maxStamina = PlayerCharacter.stamina;
-
-                if (cc.attributes.TryGetValue("luck", out var luckAttr))
-                    PlayerCharacter.luck = Character.RollDice(luckAttr.dice);
-                else
-                    PlayerCharacter.luck = Character.RollDice("1d6+6");
-
-                PlayerCharacter.maxLuck = PlayerCharacter.luck;
-            }
-
-            PlayerCharacter.gold = cc?.startingGold ?? 0;
-            PlayerCharacter.provisions = cc?.startingProvisions ?? 10;
-
-            if (cc?.startingItems != null)
-                PlayerCharacter.inventory.AddRange(cc.startingItems);
-
+            PlayerCharacter.skill = Character.RollDice(cc.attributes.ContainsKey("skill") ? cc.attributes["skill"].dice : "1d6+6");
+            PlayerCharacter.stamina = Character.RollDice(cc.attributes.ContainsKey("stamina") ? cc.attributes["stamina"].dice : "2d6+12");
+            PlayerCharacter.maxStamina = PlayerCharacter.stamina;
+            PlayerCharacter.luck = Character.RollDice(cc.attributes.ContainsKey("luck") ? cc.attributes["luck"].dice : "1d6+6");
+            PlayerCharacter.maxLuck = PlayerCharacter.luck;
+            PlayerCharacter.gold = cc.startingGold;
+            PlayerCharacter.provisions = cc.startingProvisions;
+            if (cc.startingItems != null) PlayerCharacter.inventory.AddRange(cc.startingItems);
             OnCharacterUpdated?.Invoke(PlayerCharacter);
         }
 
         public void GoToSection(int sectionId)
         {
-            if (CurrentStory?.sections == null || !CurrentStory.sections.TryGetValue(sectionId.ToString(), out var section))
-            {
-                OnMessage?.Invoke($"Seção {sectionId} não encontrada.");
-                return;
-            }
-
+            string key = sectionId.ToString();
+            if (!CurrentStory.sections.TryGetValue(key, out var section)) { OnMessage?.Invoke($"Seção {sectionId} não encontrada."); return; }
             NavigationHistory.Push(sectionId);
             CurrentSection = section;
-
-            if (section.onEnter != null)
-                EvalOnEnter(section.onEnter);
-
+            if (section.onEnter != null) EvalOnEnter(section.onEnter);
             switch (section.type)
             {
-                case "narrative":
-                    SetState(GameState.Narrative);
-                    break;
-                case "combat":
-                    if (section.combat != null)
-                        StartCombat(section);
-                    break;
-                case "test":
-                    SetState(GameState.TestActive);
-                    break;
-                case "itemGate":
-                    SetState(GameState.ItemGateCheck);
-                    break;
-                case "random":
-                    if (section.random?.outcomes?.Count > 0)
-                        ResolveRandom(section);
-                    else
-                        SetState(GameState.Narrative);
-                    break;
-                case "ending":
-                    SetState(GameState.GameOver);
-                    break;
+                case "narrative": SetState(GameState.Narrative); break;
+                case "combat": if (section.combat != null) StartCombat(section); break;
+                case "test": SetState(GameState.TestActive); break;
+                case "itemGate": SetState(GameState.ItemGateCheck); break;
+                case "random": SetState(GameState.Narrative); if (section.random?.outcomes?.Count > 0) ResolveRandom(section); break;
+                case "ending": SetState(GameState.GameOver); break;
             }
-
             OnSectionChanged?.Invoke(section);
         }
 
-        public void MakeChoice(int choiceIndex)
+        public void MakeChoice(int index)
         {
-            if (CurrentSection?.choices == null || choiceIndex >= CurrentSection.choices.Count) return;
-
-            var choice = CurrentSection.choices[choiceIndex];
-
+            if (CurrentSection?.choices == null || index >= CurrentSection.choices.Count) return;
+            var choice = CurrentSection.choices[index];
             if (!EvaluateConditions(choice.conditions)) return;
-
-            var targetSection = choice.targetSection;
-            if (CurrentStory.sections.TryGetValue(targetSection.ToString(), out var target))
-            {
-                if (target.type == "combat" && target.combat != null)
-                    StartCombat(target);
-                else
-                    GoToSection(targetSection);
-            }
+            int target = choice.targetSection;
+            if (CurrentStory.sections.TryGetValue(target.ToString(), out var t) && t.type == "combat" && t.combat != null)
+                StartCombat(t);
+            else
+                GoToSection(target);
         }
 
         public void FightRound()
         {
             if (ActiveCombat == null) return;
-
-            var playerRoll = Character.RollDice("2d6") + PlayerCharacter.skill;
-            var enemyRoll = Character.RollDice("2d6") + ActiveCombat.enemySkill;
-
-            if (playerRoll > enemyRoll)
-            {
-                ActiveCombat.enemyStamina -= 2;
-                OnMessage?.Invoke($"Você ataca! {ActiveCombat.enemyName} perde 2 STAMINA.");
-            }
-            else if (enemyRoll > playerRoll)
-            {
-                PlayerCharacter.stamina -= 2;
-                OnMessage?.Invoke($"{ActiveCombat.enemyName} ataca! Você perde 2 STAMINA.");
-            }
-            else
-            {
-                OnMessage?.Invoke($"Empate! Ninguém se fere.");
-            }
-
+            int pr = Character.RollDice("2d6") + PlayerCharacter.skill;
+            int er = Character.RollDice("2d6") + ActiveCombat.enemySkill;
+            if (pr > er) { ActiveCombat.enemyStamina -= 2; OnMessage?.Invoke($"Você ataca! {ActiveCombat.enemyName} perde 2 STAMINA."); }
+            else if (er > pr) { PlayerCharacter.stamina -= 2; OnMessage?.Invoke($"{ActiveCombat.enemyName} ataca! Você perde 2 STAMINA."); }
+            else { OnMessage?.Invoke("Empate! Ninguém se fere."); }
             OnCombatUpdated?.Invoke(ActiveCombat);
-
-            if (ActiveCombat.enemyStamina <= 0)
-            {
-                ActiveCombat.phase = CombatPhase.Result;
-                OnMessage?.Invoke($"🏆 {ActiveCombat.enemyName} foi derrotado!");
-                if (ActiveCombat.lootOnVictory?.Count > 0)
-                {
-                    foreach (var item in ActiveCombat.lootOnVictory)
-                        PlayerCharacter.AddItem(item);
-                }
-                GoToSection(ActiveCombat.victoryTarget);
-            }
-            else if (PlayerCharacter.stamina <= 0)
-            {
-                ActiveCombat.phase = CombatPhase.Result;
-                OnMessage?.Invoke("💀 Você foi derrotado...");
-                GoToSection(ActiveCombat.defeatTarget);
-            }
+            if (ActiveCombat.enemyStamina <= 0) { ActiveCombat.phase = CombatPhase.Result; OnMessage?.Invoke($"Vitoria sobre {ActiveCombat.enemyName}!"); if (ActiveCombat.lootOnVictory != null) foreach (var item in ActiveCombat.lootOnVictory) PlayerCharacter.AddItem(item); GoToSection(ActiveCombat.victoryTarget); }
+            else if (PlayerCharacter.stamina <= 0) { ActiveCombat.phase = CombatPhase.Result; OnMessage?.Invoke("Voce foi derrotado..."); GoToSection(ActiveCombat.defeatTarget); }
         }
 
         public void FleeCombat()
         {
             if (ActiveCombat == null || !ActiveCombat.allowFlee) return;
-
-            if (PlayerCharacter.TestLuck())
-            {
-                OnMessage?.Invoke("🏃 Fuga bem sucedida!");
-                GoToSection(ActiveCombat.fleeTarget);
-            }
-            else
-            {
-                OnMessage?.Invoke("❌ Falha na fuga! Continue lutando.");
-                OnCombatUpdated?.Invoke(ActiveCombat);
-            }
+            if (PlayerCharacter.TestLuck()) { OnMessage?.Invoke("Fuga bem sucedida!"); GoToSection(ActiveCombat.fleeTarget); }
+            else OnMessage?.Invoke("Falha na fuga!");
         }
 
         public void ResolveTest()
         {
             if (CurrentSection?.test == null) return;
-            var test = CurrentSection.test;
-
-            int attrValue = test.attribute switch
-            {
-                "skill" => PlayerCharacter.skill,
-                "luck" => PlayerCharacter.luck,
-                _ => 7
-            };
-
-            int roll = Character.RollDice("2d6");
-            bool success = roll + attrValue >= test.difficulty;
-
-            OnMessage?.Invoke(success
-                ? $"🎲 Sucesso! {roll + attrValue} ≥ {test.difficulty}"
-                : $"🎲 Falha! {roll + attrValue} < {test.difficulty}");
-
-            StartCoroutine(DelayedTransition(success ? test.successTarget : test.failTarget, 1.2f));
+            var t = CurrentSection.test;
+            int val = t.attribute == "skill" ? PlayerCharacter.skill : t.attribute == "luck" ? PlayerCharacter.luck : 7;
+            int roll = Character.RollDice("2d6"); bool ok = roll + val >= t.difficulty;
+            OnMessage?.Invoke(ok ? $"Sucesso! {roll + val} >= {t.difficulty}" : $"Falha! {roll + val} < {t.difficulty}");
+            StartCoroutine(DelayedGo(ok ? t.successTarget : t.failTarget, 1.2f));
         }
 
         public void ResolveItemGate()
         {
             if (CurrentSection?.itemGate == null) return;
-            var gate = CurrentSection.itemGate;
-
-            bool hasItem = PlayerCharacter.HasItem(gate.item);
-            OnMessage?.Invoke(hasItem ? $"✅ Você tem {gate.item}!" : $"❌ Você não tem {gate.item}.");
-            StartCoroutine(DelayedTransition(hasItem ? gate.hasItemTarget : gate.noItemTarget, 1.0f));
+            var g = CurrentSection.itemGate; bool has = PlayerCharacter.HasItem(g.item);
+            OnMessage?.Invoke(has ? $"Voce tem {g.item}!" : $"Voce nao tem {g.item}.");
+            StartCoroutine(DelayedGo(has ? g.hasItemTarget : g.noItemTarget, 1f));
         }
 
-        private void ResolveRandom(SectionData section)
+        private void ResolveRandom(SectionData s)
         {
-            float totalWeight = 0;
-            foreach (var o in section.random.outcomes)
-                totalWeight += o.weight;
-
-            float roll = UnityEngine.Random.Range(0f, totalWeight);
-            float cumulative = 0f;
-
-            foreach (var outcome in section.random.outcomes)
-            {
-                cumulative += outcome.weight;
-                if (roll <= cumulative)
-                {
-                    GoToSection(outcome.targetSection);
-                    return;
-                }
-            }
+            float total = 0; foreach (var o in s.random.outcomes) total += o.weight;
+            float r = UnityEngine.Random.Range(0f, total); float c = 0;
+            foreach (var o in s.random.outcomes) { c += o.weight; if (r <= c) { GoToSection(o.targetSection); return; } }
         }
 
-        private void StartCombat(SectionData section)
+        private void StartCombat(SectionData s)
         {
-            ActiveCombat = new CombatState
-            {
-                enemyName = section.combat.enemyName,
-                enemySkill = section.combat.enemySkill,
-                enemyStamina = section.combat.enemyStamina,
-                enemyMaxStamina = section.combat.enemyStamina,
-                victoryTarget = section.combat.victoryTarget,
-                defeatTarget = section.combat.defeatTarget,
-                fleeTarget = section.combat.fleeTarget,
-                allowFlee = section.combat.allowFlee,
-                lootOnVictory = section.combat.lootOnVictory,
-                phase = CombatPhase.Fighting,
-                combatSectionText = section.text,
-            };
-
+            ActiveCombat = new CombatState { enemyName = s.combat.enemyName, enemySkill = s.combat.enemySkill, enemyStamina = s.combat.enemyStamina, enemyMaxStamina = s.combat.enemyStamina, victoryTarget = s.combat.victoryTarget, defeatTarget = s.combat.defeatTarget, fleeTarget = s.combat.fleeTarget, allowFlee = s.combat.allowFlee, lootOnVictory = s.combat.lootOnVictory, phase = CombatPhase.Fighting, combatSectionText = s.text };
             SetState(GameState.CombatActive);
-            OnSectionChanged?.Invoke(section);
-            OnCombatUpdated?.Invoke(ActiveCombat);
+            OnSectionChanged?.Invoke(s); OnCombatUpdated?.Invoke(ActiveCombat);
         }
 
-        private bool EvaluateConditions(List<ConditionData> conditions)
+        private bool EvaluateConditions(List<ConditionData> conds)
         {
-            if (conditions == null || conditions.Count == 0) return true;
-
-            foreach (var cond in conditions)
-            {
-                int actual = 0;
-                switch (cond.type)
-                {
-                    case "hasItem":
-                        if (!PlayerCharacter.HasItem(cond.key)) return false;
-                        continue;
-                    case "hasFlag":
-                        if (!PlayerCharacter.HasFlag(cond.key)) return false;
-                        continue;
-                    case "skill": actual = PlayerCharacter.skill; break;
-                    case "stamina": actual = PlayerCharacter.stamina; break;
-                    case "luck": actual = PlayerCharacter.luck; break;
-                    case "gold": actual = PlayerCharacter.gold; break;
-                    case "counter": actual = PlayerCharacter.GetCounter(cond.key); break;
-                }
-
-                int val = int.TryParse(cond.value?.ToString(), out var parsed) ? parsed : 0;
-                bool result = cond.op switch
-                {
-                    "==" => actual == val,
-                    "!=" => actual != val,
-                    ">=" => actual >= val,
-                    "<=" => actual <= val,
-                    ">" => actual > val,
-                    "<" => actual < val,
-                    _ => true
-                };
-
-                if (!result) return false;
-            }
-
+            if (conds == null || conds.Count == 0) return true;
+            foreach (var c in conds) { if (c.type == "hasItem" && !PlayerCharacter.HasItem(c.key)) return false; if (c.type == "hasFlag" && !PlayerCharacter.HasFlag(c.key)) return false; }
             return true;
         }
 
-        private void EvalOnEnter(OnEnterData onEnter)
+        private void EvalOnEnter(OnEnterData oe)
         {
-            if (onEnter.addItems != null)
-                foreach (var item in onEnter.addItems)
-                    PlayerCharacter.AddItem(item);
-            if (onEnter.removeItems != null)
-                foreach (var item in onEnter.removeItems)
-                    PlayerCharacter.RemoveItem(item);
-            if (onEnter.setFlags != null)
-                foreach (var kvp in onEnter.setFlags)
-                    PlayerCharacter.SetFlag(kvp.Key, kvp.Value);
-            if (onEnter.modifyGold != 0)
-                PlayerCharacter.ModifyGold(onEnter.modifyGold);
-            if (onEnter.modifyStamina != 0)
-                PlayerCharacter.ModifyStamina(onEnter.modifyStamina);
-            if (onEnter.modifyLuck != 0)
-                PlayerCharacter.ModifyLuck(onEnter.modifyLuck);
-
+            if (oe.addItems != null) foreach (var i in oe.addItems) PlayerCharacter.AddItem(i);
+            if (oe.removeItems != null) foreach (var i in oe.removeItems) PlayerCharacter.RemoveItem(i);
+            if (oe.setFlags != null) foreach (var kv in oe.setFlags) PlayerCharacter.SetFlag(kv.Key, kv.Value);
+            if (oe.modifyGold != 0) PlayerCharacter.ModifyGold(oe.modifyGold);
+            if (oe.modifyStamina != 0) PlayerCharacter.ModifyStamina(oe.modifyStamina);
+            if (oe.modifyLuck != 0) PlayerCharacter.ModifyLuck(oe.modifyLuck);
             OnCharacterUpdated?.Invoke(PlayerCharacter);
         }
 
-        private IEnumerator DelayedTransition(int sectionId, float delay)
-        {
-            yield return new WaitForSeconds(delay);
-            GoToSection(sectionId);
-        }
-
-        private void SetState(GameState state)
-        {
-            CurrentState = state;
-            OnStateChanged?.Invoke(state);
-        }
-    }
-
-    public class CombatState
-    {
-        public string enemyName;
-        public int enemySkill;
-        public int enemyStamina;
-        public int enemyMaxStamina;
-        public int victoryTarget;
-        public int defeatTarget;
-        public int fleeTarget;
-        public bool allowFlee;
-        public List<string> lootOnVictory;
-        public CombatPhase phase;
-        public string combatSectionText;
-    }
-
-    public enum CombatPhase
-    {
-        Fighting,
-        Result
+        private IEnumerator DelayedGo(int id, float d) { yield return new WaitForSeconds(d); GoToSection(id); }
+        private void SetState(GameState s) { CurrentState = s; OnStateChanged?.Invoke(s); }
     }
 }

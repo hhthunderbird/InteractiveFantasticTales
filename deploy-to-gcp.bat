@@ -25,22 +25,6 @@ if %ERRORLEVEL% neq 0 (
     exit /b 1
 )
 
-echo [*] Habilitando as APIs do Google Cloud necessarias...
-call gcloud services enable run.googleapis.com artifactregistry.googleapis.com cloudbuild.googleapis.com firestore.googleapis.com firebase.googleapis.com --quiet
-if %ERRORLEVEL% neq 0 (
-    echo [ERROR] Falha ao habilitar APIs do Google Cloud.
-    exit /b 1
-)
-echo [OK] APIs habilitadas com sucesso.
-
-echo [*] Verificando configuracao do Firestore...
-call gcloud firestore databases create --location=us-east1 --quiet >nul 2>&1
-if %ERRORLEVEL% equ 0 (
-    echo [OK] Banco de dados Firestore provisionado com sucesso na regiao us-east1.
-) else (
-    echo [*] Firestore ja ativo ou configurado.
-)
-
 echo [*] Verificando variaveis de ambiente (.env) em story-editor...
 if not exist "story-editor\.env" (
     if "%NON_INTERACTIVE%"=="1" (
@@ -63,16 +47,32 @@ if "%NON_INTERACTIVE%"=="1" (
     echo [*] Modo nao-interativo ativo: selecionando automaticamente Cloud Run.
 ) else (
     echo ===================================================
-    echo Escolha o m?todo de deploy:
-    echo [1] Cloud Run (Docker Container - Recomendado, totalmente automatizado)
-    echo [2] Firebase Hosting (Requer configuracao manual previa do Firebase no console)
+    echo Escolha o metodo de deploy:
+    echo [1] Cloud Run - Docker Container - Requer Billing ou Cartao no GCP
+    echo [2] Firebase Hosting - Gratuito - Nao requer Billing ou Cartao
     echo ===================================================
-    set /p DEPLOY_CHOICE="Escolha uma opcao (1 ou 2, padrao 1): "
+    set /p DEPLOY_CHOICE="Escolha uma opcao [1 ou 2, padrao 1]: "
 )
 
 if "%DEPLOY_CHOICE%"=="" set DEPLOY_CHOICE=1
 
 if "%DEPLOY_CHOICE%"=="1" (
+    echo [*] Habilitando as APIs do Google Cloud necessarias para o Cloud Run...
+    call gcloud services enable run.googleapis.com artifactregistry.googleapis.com cloudbuild.googleapis.com firestore.googleapis.com firebase.googleapis.com --quiet
+    if %ERRORLEVEL% neq 0 (
+        echo [ERROR] Falha ao habilitar APIs do Google Cloud. Certifique-se de que possui uma Conta de Faturamento Billing ativa.
+        exit /b 1
+    )
+    echo [OK] APIs do Cloud Run habilitadas com sucesso.
+
+    echo [*] Verificando configuracao do Firestore...
+    call gcloud firestore databases create --location=us-east1 --quiet >nul 2>&1
+    if %ERRORLEVEL% equ 0 (
+        echo [OK] Banco de dados Firestore provisionado com sucesso na regiao us-east1.
+    ) else (
+        echo [*] Firestore ja ativo ou configurado.
+    )
+
     echo [*] Iniciando deploy no Google Cloud Run...
     
     echo [*] Verificando se o repositorio Artifact Registry existe...
@@ -100,9 +100,17 @@ if "%DEPLOY_CHOICE%"=="1" (
     echo [SUCCESS] Deploy concluido com sucesso no Cloud Run!
     echo ===================================================
 ) else if "%DEPLOY_CHOICE%"=="2" (
+    echo [*] Habilitando as APIs necessarias para o Firebase Hosting...
+    call gcloud services enable firestore.googleapis.com firebase.googleapis.com --quiet
+    if %ERRORLEVEL% neq 0 (
+        echo [ERROR] Falha ao habilitar APIs para o Firebase.
+        exit /b 1
+    )
+    echo [OK] APIs do Firebase habilitadas.
+
     echo [*] Iniciando deploy no Firebase Hosting...
     
-    echo [*] Instalando dependencias locais (incluindo firebase-tools)...
+    echo [*] Instalando dependencias locais, incluindo firebase-tools...
     cd story-editor
     call npm install
     if %ERRORLEVEL% neq 0 (
@@ -111,7 +119,7 @@ if "%DEPLOY_CHOICE%"=="1" (
         exit /b 1
     )
     
-    echo [*] Construindo o build de producao (Vite)...
+    echo [*] Construindo o build de producao Vite...
     call npx vite build
     if %ERRORLEVEL% neq 0 (
         echo [ERROR] Falha no build da aplicacao React.
@@ -140,5 +148,6 @@ if "%DEPLOY_CHOICE%"=="1" (
 )
 
 ENDLOCAL
+
 
 
