@@ -1970,8 +1970,6 @@ GameObject:
   - component: {fileID: 2037920801}
   - component: {fileID: 2037920804}
   - component: {fileID: 2037920805}
-  - component: {fileID: 2037920807}
-  - component: {fileID: 2037920806}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -2079,44 +2077,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6be27111db9cbbd4db6fefcc232ffec9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractiveFantasticTales.Input.VoiceInputManager
---- !u!114 &2037920806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2037920798}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94785bc848f0ef24f87256276c9c45df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InteractiveFantasticTales.UI.UIToolkit.MainUIController
-  _uiDocument: {fileID: 2037920807}
-  _panelSettings: {fileID: 11400000, guid: a27990b52515eed428ee0f4b6055df7f, type: 2}
-  _mainStyleSheet: {fileID: 0}
---- !u!114 &2037920807
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2037920798}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.UIElements.UIDocument
-  m_PanelSettings: {fileID: 11400000, guid: a27990b52515eed428ee0f4b6055df7f, type: 2}
-  m_ParentUI: {fileID: 0}
-  sourceAsset: {fileID: 9197481963319205126, guid: fbd5e98830383e048ae32442fce5cd29, type: 3}
-  m_SortingOrder: 0
-  m_Position: 0
-  m_WorldSpaceSizeMode: 1
-  m_WorldSpaceWidth: 1920
-  m_WorldSpaceHeight: 1080
-  m_PivotReferenceSize: 0
-  m_Pivot: 0
-  m_WorldSpaceCollider: {fileID: 0}
 --- !u!1 &2045553890
 GameObject:
   m_ObjectHideFlags: 0
@@ -2136,7 +2096,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2045553891
 RectTransform:
   m_ObjectHideFlags: 0

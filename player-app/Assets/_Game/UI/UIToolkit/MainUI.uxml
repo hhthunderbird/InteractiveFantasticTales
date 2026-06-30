@@ -1,0 +1,252 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement name="app-shell" class="app-shell">
+        <!-- HEADER -->
+        <ui:VisualElement name="header" class="header">
+            <ui:Button name="hamburger-btn" class="hamburger-btn" text="&#9776;" tabindex="1" />
+            <ui:VisualElement name="title-area" class="title-area">
+                <ui:Label name="story-title" class="story-title" text="O Labirinto do Arquimago" />
+                <ui:Label name="section-badge" class="section-badge" text="Secao 1" />
+            </ui:VisualElement>
+            <ui:VisualElement name="stat-pills" class="stat-pills">
+                <ui:VisualElement name="pill-vigor" class="stat-pill">
+                    <ui:Label name="pill-vigor-val" class="pill-val" text="24" />
+                    <ui:Label name="pill-vigor-label" class="pill-label" text="VIG" />
+                </ui:VisualElement>
+                <ui:VisualElement name="pill-luck" class="stat-pill">
+                    <ui:Label name="pill-luck-val" class="pill-val" text="12" />
+                    <ui:Label name="pill-luck-label" class="pill-label" text="SOR" />
+                </ui:VisualElement>
+                <ui:VisualElement name="pill-gold" class="stat-pill">
+                    <ui:Label name="pill-gold-val" class="pill-val" text="5" />
+                    <ui:Label name="pill-gold-label" class="pill-label" text="OUR" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <!-- ILLUSTRATION -->
+        <ui:VisualElement name="illustration" class="illustration type-narrative">
+            <ui:VisualElement name="illus-bg" class="illus-bg" />
+            <ui:Label name="illus-icon" class="illus-icon" text="&#x1F3F0;" />
+            <ui:Label name="illus-label" class="illus-label" text="Narrativa" />
+        </ui:VisualElement>
+
+        <!-- SCROLL CONTENT -->
+        <ui:ScrollView name="scroll-area" class="scroll-area">
+            <!-- Narrative text -->
+            <ui:Label name="narrative-text" class="narrative-text" text="" />
+
+            <!-- Choices container -->
+            <ui:VisualElement name="choices-container" class="choices-container" />
+
+            <!-- Combat card -->
+            <ui:VisualElement name="combat-card" class="combat-card" style="display: none;">
+                <ui:VisualElement name="combat-top" class="combat-top">
+                    <ui:Label name="combat-enemy-icon" class="combat-enemy-icon" text="&#x1F47A;" />
+                    <ui:VisualElement name="combat-enemy-info" class="combat-enemy-info">
+                        <ui:Label name="combat-enemy-name" class="combat-enemy-name" text="-" />
+                        <ui:Label name="combat-enemy-stats" class="combat-enemy-stats" text="SKILL -  STAM -" />
+                        <ui:VisualElement name="hp-bar-track" class="hp-bar-track">
+                            <ui:VisualElement name="hp-bar-fill" class="hp-bar-fill" style="width: 100%;" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="combat-stats-grid" class="combat-stats-grid">
+                    <ui:VisualElement name="combat-stat-skill" class="combat-stat">
+                        <ui:Label name="combat-stat-label-skill" class="combat-stat-label" text="Seu SKILL " />
+                        <ui:Label name="combat-stat-val-skill" class="combat-stat-value" text="-" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="combat-stat-stam" class="combat-stat">
+                        <ui:Label name="combat-stat-label-stam" class="combat-stat-label" text="Seu STAM " />
+                        <ui:Label name="combat-stat-val-stam" class="combat-stat-value" text="-" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:Label name="combat-dice-result" class="combat-dice-result" text="" style="display: none;" />
+                <ui:VisualElement name="combat-btns" class="combat-btns">
+                    <ui:Button name="btn-attack" class="btn-attack" text="Atacar" tabindex="5" />
+                    <ui:Button name="btn-flee" class="btn-flee" text="Fugir" tabindex="6" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+
+            <!-- Ending card -->
+            <ui:VisualElement name="ending-card" class="ending-card" style="display: none;">
+                <ui:Label name="ending-icon" class="ending-icon" text="" />
+                <ui:Label name="ending-title" class="ending-title" text="" />
+                <ui:Label name="ending-stats" class="ending-stats" text="" />
+            </ui:VisualElement>
+
+            <ui:VisualElement name="scroll-spacer" style="height: 16px;" />
+        </ui:ScrollView>
+
+        <!-- TOOLBAR -->
+        <ui:VisualElement name="toolbar" class="toolbar">
+            <ui:Button name="tb-narrate" class="tb-btn" tabindex="10">
+                <ui:Label name="tb-narrate-icon" class="tb-icon" text="&#x1F50A;" />
+                <ui:Label name="tb-narrate-text" text="Ouvir" />
+            </ui:Button>
+            <ui:Button name="tb-char" class="tb-btn" tabindex="11">
+                <ui:Label name="tb-char-icon" class="tb-icon" text="&#x1F4DC;" />
+                <ui:Label name="tb-char-text" text="Ficha" />
+            </ui:Button>
+            <ui:Button name="tb-items" class="tb-btn" tabindex="12">
+                <ui:Label name="tb-items-icon" class="tb-icon" text="&#x1F392;" />
+                <ui:Label name="tb-items-text" text="Itens" />
+            </ui:Button>
+            <ui:Button name="tb-save" class="tb-btn" tabindex="13">
+                <ui:Label name="tb-save-icon" class="tb-icon" text="&#x1F4BE;" />
+                <ui:Label name="tb-save-text" text="Salvar" />
+            </ui:Button>
+            <ui:Button name="tb-rewind" class="tb-btn" tabindex="14">
+                <ui:Label name="tb-rewind-icon" class="tb-icon" text="&#x21A9;" />
+                <ui:Label name="tb-rewind-text" text="Voltar" />
+            </ui:Button>
+            <ui:Button name="tb-settings" class="tb-btn" tabindex="15">
+                <ui:Label name="tb-settings-icon" class="tb-icon" text="&#x2699;" />
+                <ui:Label name="tb-settings-text" text="Ajustes" />
+            </ui:Button>
+        </ui:VisualElement>
+
+        <!-- BOTTOM SHEETS -->
+        <!-- Character Sheet -->
+        <ui:VisualElement name="char-sheet-overlay" class="sheet-overlay hidden">
+            <ui:VisualElement name="char-sheet-panel" class="sheet-panel">
+                <ui:VisualElement name="char-sheet-handle" class="sheet-handle" />
+                <ui:VisualElement name="char-sheet-header" class="sheet-header">
+                    <ui:Label name="char-sheet-title" class="sheet-title" text="Ficha do Personagem" />
+                    <ui:Button name="char-sheet-close" class="sheet-close" text="X" tabindex="20" />
+                </ui:VisualElement>
+                <ui:ScrollView name="char-sheet-body" class="sheet-body" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <!-- Inventory Sheet -->
+        <ui:VisualElement name="inv-sheet-overlay" class="sheet-overlay hidden">
+            <ui:VisualElement name="inv-sheet-panel" class="sheet-panel">
+                <ui:VisualElement name="inv-sheet-handle" class="sheet-handle" />
+                <ui:VisualElement name="inv-sheet-header" class="sheet-header">
+                    <ui:Label name="inv-sheet-title" class="sheet-title" text="Inventario" />
+                    <ui:Button name="inv-sheet-close" class="sheet-close" text="X" tabindex="21" />
+                </ui:VisualElement>
+                <ui:ScrollView name="inv-sheet-body" class="sheet-body" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <!-- Settings Sheet -->
+        <ui:VisualElement name="settings-sheet-overlay" class="sheet-overlay hidden">
+            <ui:VisualElement name="settings-sheet-panel" class="sheet-panel">
+                <ui:VisualElement name="settings-sheet-handle" class="sheet-handle" />
+                <ui:VisualElement name="settings-sheet-header" class="sheet-header">
+                    <ui:Label name="settings-sheet-title" class="sheet-title" text="Ajustes" />
+                    <ui:Button name="settings-sheet-close" class="sheet-close" text="X" tabindex="22" />
+                </ui:VisualElement>
+                <ui:ScrollView name="settings-sheet-body" class="sheet-body">
+                    <ui:VisualElement name="set-font-size" class="set-row">
+                        <ui:Label class="set-label" text="Tamanho da fonte" />
+                        <ui:VisualElement class="pill-group">
+                            <ui:Button name="fs0" class="pill-btn" text="P" tabindex="30" />
+                            <ui:Button name="fs1" class="pill-btn selected" text="M" tabindex="31" />
+                            <ui:Button name="fs2" class="pill-btn" text="G" tabindex="32" />
+                            <ui:Button name="fs3" class="pill-btn" text="GG" tabindex="33" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="set-theme" class="set-row">
+                        <ui:Label class="set-label" text="Tema" />
+                        <ui:VisualElement class="pill-group">
+                            <ui:Button name="th-dark" class="pill-btn selected" text="Escuro" tabindex="34" />
+                            <ui:Button name="th-sepia" class="pill-btn" text="Sepia" tabindex="35" />
+                            <ui:Button name="th-contrast" class="pill-btn" text="Contraste" tabindex="36" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="set-dyslexic" class="set-row">
+                        <ui:Label class="set-label" text="Fonte Dyslexic" />
+                        <ui:Button name="btn-dys" class="tgl-btn" text="Desligado" tabindex="37" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="set-tts" class="set-row">
+                        <ui:Label class="set-label" text="Narracao TTS" />
+                        <ui:Button name="btn-tts" class="tgl-btn" text="Desligado" tabindex="38" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="set-vibration" class="set-row">
+                        <ui:Label class="set-label" text="Vibracao" />
+                        <ui:Button name="btn-vib" class="tgl-btn on" text="Ligado" tabindex="39" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="set-shortcuts" class="set-row">
+                        <ui:Label class="set-label" text="Atalhos caractere (1-9)" />
+                        <ui:Button name="btn-shortcuts" class="tgl-btn on" text="Ligado" tabindex="40" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="sheet-shortcuts">
+                        <ui:Label text="Pressione ? para ver todos os atalhos." />
+                    </ui:VisualElement>
+                </ui:ScrollView>
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <!-- Save Sheet -->
+        <ui:VisualElement name="save-sheet-overlay" class="sheet-overlay hidden">
+            <ui:VisualElement name="save-sheet-panel" class="sheet-panel">
+                <ui:VisualElement name="save-sheet-handle" class="sheet-handle" />
+                <ui:VisualElement name="save-sheet-header" class="sheet-header">
+                    <ui:Label name="save-sheet-title" class="sheet-title" text="Salvar / Carregar" />
+                    <ui:Button name="save-sheet-close" class="sheet-close" text="X" tabindex="23" />
+                </ui:VisualElement>
+                <ui:ScrollView name="save-sheet-body" class="sheet-body" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <!-- Rewind Sheet -->
+        <ui:VisualElement name="rewind-sheet-overlay" class="sheet-overlay hidden">
+            <ui:VisualElement name="rewind-sheet-panel" class="sheet-panel">
+                <ui:VisualElement name="rewind-sheet-handle" class="sheet-handle" />
+                <ui:VisualElement name="rewind-sheet-header" class="sheet-header">
+                    <ui:Label name="rewind-sheet-title" class="sheet-title" text="Linha do Tempo" />
+                    <ui:Button name="rewind-sheet-close" class="sheet-close" text="X" tabindex="24" />
+                </ui:VisualElement>
+                <ui:ScrollView name="rewind-sheet-body" class="sheet-body" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <!-- Help Overlay -->
+        <ui:VisualElement name="help-overlay" class="help-overlay hidden">
+            <ui:VisualElement name="help-panel" class="help-panel">
+                <ui:Label name="help-title" class="help-title" text="Atalhos de Teclado" />
+                <ui:ScrollView name="help-scroll">
+                    <ui:VisualElement name="help-nav" class="help-section">
+                        <ui:Label class="help-section-title" text="Navegacao" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="help-combat" class="help-section">
+                        <ui:Label class="help-section-title" text="Combate" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="help-narr" class="help-section">
+                        <ui:Label class="help-section-title" text="Narracao" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="help-gestures" class="help-section">
+                        <ui:Label class="help-section-title" text="Gestos (toque)" />
+                    </ui:VisualElement>
+                </ui:ScrollView>
+                <ui:Button name="help-close-btn" class="btn-sm primary" text="Fechar (Esc)" tabindex="50" style="margin-top: 12px;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <!-- Character Creation -->
+        <ui:VisualElement name="char-create" class="char-create" style="display: none;">
+            <ui:Label name="char-create-title" class="char-create-title" text="Criacao do Personagem" />
+            <ui:VisualElement name="roll-grid" class="roll-grid" />
+            <ui:Label name="starting-gear" class="starting-gear" text="" />
+            <ui:Button name="btn-start-adventure" class="btn-start" text="Comecar Aventura" tabindex="60" />
+        </ui:VisualElement>
+
+        <!-- Bridge Overlay -->
+        <ui:VisualElement name="bridge-overlay" class="bridge-overlay hidden">
+            <ui:Label name="bridge-icon" class="bridge-icon" text="" />
+            <ui:Label name="bridge-label" class="bridge-label" text="" />
+        </ui:VisualElement>
+
+        <!-- Dice Overlay -->
+        <ui:VisualElement name="dice-overlay" class="dice-overlay hidden">
+            <ui:Label name="dice-label" class="dice-label" text="" />
+            <ui:VisualElement name="dice-row" class="dice-row" />
+            <ui:Label name="dice-result" class="dice-result" text="" />
+        </ui:VisualElement>
+
+        <!-- Toast -->
+        <ui:Label name="toast" class="toast" text="" />
+    </ui:VisualElement>
+</ui:UXML>
