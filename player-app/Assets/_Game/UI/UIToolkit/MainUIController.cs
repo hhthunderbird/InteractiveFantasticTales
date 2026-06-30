@@ -89,6 +89,8 @@ namespace InteractiveFantasticTales.UI.UIToolkit
 
         [SerializeField] private StyleSheet _mainStyleSheet;
 
+        private LocalizationManager L => LocalizationManager.Instance;
+
         private void Awake()
         {
             if (_uiDocument == null)
@@ -110,6 +112,9 @@ namespace InteractiveFantasticTales.UI.UIToolkit
             BindElements();
             BindEvents();
             BuildHelpContent();
+
+            if (LocalizationManager.Instance != null)
+                LocalizationManager.Instance.OnLocaleChanged += OnLocaleChanged;
         }
 
         private void Start()
@@ -134,6 +139,9 @@ namespace InteractiveFantasticTales.UI.UIToolkit
                 GameEngine.Instance.OnMessage -= ShowToast;
                 GameEngine.Instance.OnStateChanged -= OnGameStateChanged;
             }
+
+            if (LocalizationManager.Instance != null)
+                LocalizationManager.Instance.OnLocaleChanged -= OnLocaleChanged;
         }
 
         private void BindElements()
@@ -246,6 +254,10 @@ namespace InteractiveFantasticTales.UI.UIToolkit
             if (thSepia != null) thSepia.clicked += () => SetTheme("sepia");
             var thContrast = _root.Q<Button>("th-contrast");
             if (thContrast != null) thContrast.clicked += () => SetTheme("contrast");
+
+            var langPt = _root.Q<Button>("lang-pt"); if (langPt != null) langPt.clicked += () => SetLanguage("pt-BR");
+            var langEn = _root.Q<Button>("lang-en"); if (langEn != null) langEn.clicked += () => SetLanguage("en");
+            var langEs = _root.Q<Button>("lang-es"); if (langEs != null) langEs.clicked += () => SetLanguage("es");
 
             _root.RegisterCallback<KeyDownEvent>(OnKeyDown);
 
@@ -1455,6 +1467,48 @@ namespace InteractiveFantasticTales.UI.UIToolkit
             if (state == GameState.Loading)
             {
                 ShowCharacterCreation();
+            }
+        }
+
+        private void OnLocaleChanged(string localeCode)
+        {
+            RestoreUIState();
+        }
+
+        private void RestoreUIState()
+        {
+            if (L == null) return;
+
+            var narrateBtn = _root.Q<Button>("tb-narrate"); if (narrateBtn != null) narrateBtn.text = L["tb_narrate"];
+            var charBtn = _root.Q<Button>("tb-char"); if (charBtn != null) charBtn.text = L["tb_char"];
+            var itemsBtn = _root.Q<Button>("tb-items"); if (itemsBtn != null) itemsBtn.text = L["tb_items"];
+            var saveBtn = _root.Q<Button>("tb-save"); if (saveBtn != null) saveBtn.text = L["tb_save"];
+            var rewindBtn = _root.Q<Button>("tb-rewind"); if (rewindBtn != null) rewindBtn.text = L["tb_rewind"];
+            var settingsBtn = _root.Q<Button>("tb-settings"); if (settingsBtn != null) settingsBtn.text = L["tb_settings"];
+
+            if (_openSheetId == "char-sheet") UpdateCharacterSheet();
+            if (_openSheetId == "inv-sheet") UpdateInventorySheet();
+            if (_openSheetId == "rewind-sheet") UpdateRewindSheet();
+            if (_openSheetId == "save-sheet") UpdateSaveSheet();
+        }
+
+        public void SetLanguage(string langCode)
+        {
+            if (L != null)
+            {
+                L.SetLocale(langCode);
+            }
+
+            var langBtns = new[] { "lang-pt", "lang-en", "lang-es" };
+            var languages = new[] { "pt-BR", "en", "es" };
+            for (int i = 0; i < langBtns.Length; i++)
+            {
+                var btn = _root.Q<Button>(langBtns[i]);
+                if (btn != null)
+                {
+                    if (languages[i] == langCode) btn.AddToClassList("selected");
+                    else btn.RemoveFromClassList("selected");
+                }
             }
         }
 

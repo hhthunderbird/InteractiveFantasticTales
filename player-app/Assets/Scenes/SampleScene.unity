@@ -1972,6 +1972,7 @@ GameObject:
   - component: {fileID: 2037920805}
   - component: {fileID: 2037920807}
   - component: {fileID: 2037920806}
+  - component: {fileID: 2037920808}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -2117,6 +2118,18 @@ MonoBehaviour:
   m_PivotReferenceSize: 0
   m_Pivot: 0
   m_WorldSpaceCollider: {fileID: 0}
+--- !u!114 &2037920808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037920798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cef01ad64106b9f4eaca1bf956806d22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractiveFantasticTales.Core.LocalizationManager
 --- !u!1 &2045553890
 GameObject:
   m_ObjectHideFlags: 0

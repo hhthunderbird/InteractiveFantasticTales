@@ -172,6 +172,14 @@
                         <ui:Label class="set-label" text="Atalhos caractere (1-9)" />
                         <ui:Button name="btn-shortcuts" class="tgl-btn on" text="Ligado" tabindex="40" />
                     </ui:VisualElement>
+                    <ui:VisualElement name="set-lang" class="set-row">
+                        <ui:Label class="set-label" text="Idioma" />
+                        <ui:VisualElement class="pill-group">
+                            <ui:Button name="lang-pt" class="pill-btn selected" text="PT" />
+                            <ui:Button name="lang-en" class="pill-btn" text="EN" />
+                            <ui:Button name="lang-es" class="pill-btn" text="ES" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
                     <ui:VisualElement class="sheet-shortcuts">
                         <ui:Label text="Pressione ? para ver todos os atalhos." />
                     </ui:VisualElement>
