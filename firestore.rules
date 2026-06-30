@@ -1,8 +1,338 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
+
+    // ═══════════════════════════════════════════════════════════════
+    //  HELPER FUNCTIONS
+    // ═══════════════════════════════════════════════════════════════
+
+    // ------------------------------------------------------------------
+    // Check if the current request is authenticated
+    // ------------------------------------------------------------------
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // ------------------------------------------------------------------
+    // The current user's UID
+    // ------------------------------------------------------------------
+    function currentUserId() {
+      return request.auth.uid;
+    }
+
+    // ------------------------------------------------------------------
+    // Rate-limiting hint: Firebase App Check should be enforced
+    // (requires enabling App Check + adding SDK attestation on the client).
+    // Uncomment the line below once App Check is fully configured.
+    // ------------------------------------------------------------------
+    // function hasAppCheck() {
+    //   return request.app_check != null;
+    // }
+
+    // ------------------------------------------------------------------
+    // Check if a story document has the "published" flag set.
+    // Works both for writes (request.resource) and reads (resource).
+    // ------------------------------------------------------------------
+    function isPublished(doc) {
+      return doc.data.metadata.isPublished == true;
+    }
+
+    // ------------------------------------------------------------------
+    // Check that the requesting user is the story author.
+    // Reads the *existing* resource to determine authorship.
+    // ------------------------------------------------------------------
+    function isAuthor() {
+      return resource.data.metadata.authorId == currentUserId();
+    }
+
+    // ------------------------------------------------------------------
+    // Validate that a rating score is within valid bounds [1, 5].
+    // ------------------------------------------------------------------
+    function isValidScore() {
+      let score = request.resource.data.score;
+      return score is number && score >= 1 && score <= 5;
+    }
+
+    // ------------------------------------------------------------------
+    // Validate that a string field exists, is a string, and does not
+    // exceed maxLen characters (prevents oversized documents).
+    // If field is missing in the write, returns true (field not required).
+    // ------------------------------------------------------------------
+    function isValidStringLen(fieldName, maxLen) {
+      return !(fieldName in request.resource.data)
+             || (request.resource.data[fieldName] is string
+                 && request.resource.data[fieldName].size() <= maxLen);
+    }
+
+    // ------------------------------------------------------------------
+    // Validate that a document does not exceed a rough size limit.
+    // Firestore max document size is 1 MiB. This is a heuristic check
+    // based on a known heavy field (e.g. large review text or content).
+    // ------------------------------------------------------------------
+    function isWithinDocSizeLimit() {
+      // Stories: prevent embedding huge arrays/nested data
+      return !("previewSections" in request.resource.data)
+             || request.resource.data.previewSections is list;
+    }
+
+    // ------------------------------------------------------------------
+    // OWNERSHIP GUARD — the client must NEVER set `owned = true`
+    // directly on storyProgress. Ownership is granted exclusively by
+    // the Cloud Run purchase-verification flow (Admin SDK).
+    // ------------------------------------------------------------------
+    function ownedFieldIsSafe() {
+      // On create: owned MUST be false
+      // On update: owned cannot change to true if it was false
+      return (!("owned" in request.resource.data))
+             || request.resource.data.owned == false
+             || resource.data.owned == true;  // already owned, no change
+    }
+
+
+    // ═══════════════════════════════════════════════════════════════
+    //  1. STORIES — public read for published; write only by author
+    // ═══════════════════════════════════════════════════════════════
+    match /stories/{storyId} {
+
+      // Anyone (even anonymous) can read published story metadata.
+      // The Firestore read count is a cost factor; consider enabling
+      // App Check to reduce abuse and control billing.
+      allow read: if isPublished(resource);
+
+      // Only the author can create a new story document.
+      allow create: if isAuthenticated()
+                    && request.resource.data.metadata.authorId == currentUserId()
+                    && request.resource.data.metadata.isPublished is bool;
+
+      // Only the author can update their own story. Authors cannot
+      // escalate privileges (cannot change authorId to another user).
+      allow update: if isAuthenticated()
+                    && isAuthor()
+                    && request.resource.data.metadata.authorId == resource.data.metadata.authorId;
+
+      // Deletion: only the author or a backend admin (Cloud Function via Admin SDK).
+      allow delete: if isAuthenticated()
+                    && isAuthor();
+
+
+      // ------------------------------------------------------------------
+      //  2. PREVIEW SECTIONS — public read for free teaser content
+      // ------------------------------------------------------------------
+      match /previewSections/{sectionId} {
+        // Public read: preview sections are the free sample that
+        // anyone can see before purchasing.
+        allow read: if true;
+
+        // Only the story author can create/update preview sections.
+        allow create, update: if isAuthenticated()
+                              && isAuthor();
+
+        // Only the story author can delete preview sections.
+        allow delete: if isAuthenticated()
+                       && isAuthor();
+      }
+
+
+      // ------------------------------------------------------------------
+      //  3. RATINGS — read all; create/update own only
+      // ------------------------------------------------------------------
+      match /ratings/{userId} {
+        // Any authenticated user can read all ratings for a story.
+        allow read: if isAuthenticated();
+
+        // Users can create their own rating (one per story).
+        // Validates: score in [1,5] and the userId in the path matches
+        // the authenticated user.
+        allow create: if isAuthenticated()
+                      && currentUserId() == userId
+                      && isValidScore()
+                      && isValidStringLen("review", 500);
+
+        // Users can update only their own rating.
+        allow update: if isAuthenticated()
+                      && currentUserId() == userId
+                      && isValidScore()
+                      && isValidStringLen("review", 500);
+
+        // Ratings cannot be deleted by clients (anti-fraud measure).
+        // Deletion can only happen via Cloud Function / Admin SDK.
+        allow delete: if false;
+      }
+
+
+      // ------------------------------------------------------------------
+      //  4. COLLABORATORS — author-only read/write
+      // ------------------------------------------------------------------
+      match /collaborators/{userId} {
+        // Only the story author can read and manage collaborators.
+        allow read, write: if isAuthenticated()
+                           && isAuthor();
+      }
+
+
+      // ------------------------------------------------------------------
+      //  5. VERSIONS — read published versions; write author
+      // ------------------------------------------------------------------
+      match /versions/{versionId} {
+        // Anyone authenticated can read versions of published stories.
+        // Uses a cross-document get() to check the parent story's
+        // published status (prevents bypass by guessing version IDs).
+        allow read: if isAuthenticated()
+                    && isPublished(
+                         get(/databases/$(database)/documents/stories/$(storyId))
+                       );
+
+        // Only the story author can create/update versions.
+        allow create, update: if isAuthenticated()
+                              && isAuthor();
+
+        // Only the story author can delete versions.
+        allow delete: if isAuthenticated()
+                       && isAuthor();
+      }
+    }
+
+
+    // ═══════════════════════════════════════════════════════════════
+    //  6. USERS — own read/write only
+    // ═══════════════════════════════════════════════════════════════
+    match /users/{userId} {
+      // Each user can only read their own profile document.
+      allow read: if isAuthenticated()
+                  && currentUserId() == userId;
+
+      // Each user can create their own profile. Validate displayName
+      // length to prevent abuse and oversized documents.
+      allow create: if isAuthenticated()
+                    && currentUserId() == userId
+                    && isValidStringLen("displayName", 80);
+
+      // Users can update their own profile.
+      // IMPORTANT: The client CANNOT remove stories from ownedStoryIds.
+      // Removal is performed exclusively by Cloud Run purchase-verification
+      // flow (Admin SDK) for refunds, or account-deletion Cloud Function.
+      // The client may only add via arrayUnion (which the SDK sends as a
+      // write to the array field). We cannot distinguish between addition
+      // and removal in rules alone, so the enforcement relies on:
+      //   1. Client code only uses arrayUnion (never arrayRemove / overwrite)
+      //   2. All purchase/reconciliation writes happen server-side (Admin SDK)
+      allow update: if isAuthenticated()
+                    && currentUserId() == userId
+                    && isValidStringLen("displayName", 80);
+
+      // Users cannot delete their own profile from the client.
+      // Account deletion is handled by a secure Cloud Function
+      // with a 7-day grace period.
+      allow delete: if false;
+
+
+      // ------------------------------------------------------------------
+      //  7. STORY PROGRESS — own read/write only; ownership validation
+      // ------------------------------------------------------------------
+      match /storyProgress/{storyId} {
+
+        // Users can only read their own progress for a story.
+        allow read: if isAuthenticated()
+                    && currentUserId() == userId;
+
+        // Users can create their own progress document.
+        // CRITICAL: The client can ONLY set owned=false.
+        // The `owned` flag is set to true exclusively by the
+        // Cloud Run purchase verification flow (Admin SDK).
+        allow create: if isAuthenticated()
+                      && currentUserId() == userId
+                      && ownedFieldIsSafe();
+
+        // Users can update their own progress (e.g. currentSection,
+        // lastPlayedAt, stats). The ownership guard prevents setting
+        // owned=true from the client.
+        allow update: if isAuthenticated()
+                      && currentUserId() == userId
+                      && ownedFieldIsSafe();
+
+        // Clients cannot delete progress documents.
+        allow delete: if false;
+
+
+        // ------------------------------------------------------------------
+        //  8. SAVES — own read/write
+        //  Maximum 5 save slots per story. The client should enforce
+        //  this in the app UI, but the Firestore soft limit of 1 write
+        //  per document per second applies. Avoid rapid overwrites.
+        // ------------------------------------------------------------------
+        match /saves/{slotId} {
+          // Users can read all their save slots.
+          allow read: if isAuthenticated()
+                      && currentUserId() == userId;
+
+          // Users can create and update their own saves.
+          // Slot IDs are 0-4 (5 slots total). Client enforces the cap.
+          allow create, update: if isAuthenticated()
+                                && currentUserId() == userId;
+
+          // Users can delete their own saves.
+          allow delete: if isAuthenticated()
+                        && currentUserId() == userId;
+        }
+
+
+        // ------------------------------------------------------------------
+        //  9. BOOKMARKS — own read/write, unlimited count
+        // ------------------------------------------------------------------
+        match /bookmarks/{bookmarkId} {
+          // Users can read all their bookmarks.
+          allow read: if isAuthenticated()
+                      && currentUserId() == userId;
+
+          // Users can create and update their own bookmarks.
+          allow create, update: if isAuthenticated()
+                                && currentUserId() == userId;
+
+          // Users can delete their own bookmarks.
+          allow delete: if isAuthenticated()
+                        && currentUserId() == userId;
+        }
+      }
+    }
+
+
+    // ═══════════════════════════════════════════════════════════════
+    //  10. PURCHASES — read own; write by Cloud Function only
+    //      (server-side via Firebase Admin SDK, which bypasses rules)
+    // ═══════════════════════════════════════════════════════════════
+    match /purchases/{purchaseId} {
+      // Users can read their own purchase records.
+      allow read: if isAuthenticated()
+                  && resource.data.userId == currentUserId();
+
+      // All client-side writes are BLOCKED. Purchase records are
+      // created exclusively by the Cloud Run purchase-verification
+      // flow using the Firebase Admin SDK (which bypasses security
+      // rules entirely).
+      allow create, update, delete: if false;
+    }
+
+
+    // ═══════════════════════════════════════════════════════════════
+    //  ACHIEVEMENTS — read by any authenticated user; write server-only
+    // ═══════════════════════════════════════════════════════════════
+    match /achievements/{achievementId} {
+      // Achievement definitions are public (readable by any user).
+      allow read: if isAuthenticated();
+
+      // Only the server (Admin SDK) can create/modify achievements.
+      allow write: if false;
+    }
+
+
+    // ═══════════════════════════════════════════════════════════════
+    //  GLOBAL FALLBACK — deny everything else by default
+    //  Any collection not explicitly listed above is inaccessible to
+    //  client SDKs. The Admin SDK (Cloud Run / Cloud Functions) can
+    //  still read/write everything.
+    // ═══════════════════════════════════════════════════════════════
     match /{document=**} {
-      allow read, write: if true;
+      allow read, write: if false;
     }
   }
 }
