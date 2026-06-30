@@ -241,6 +241,17 @@
             <ui:Button name="btn-start-adventure" class="btn-start" text="Comecar Aventura" tabindex="60" />
         </ui:VisualElement>
 
+        <!-- Age Gate (shown on first launch) -->
+        <ui:VisualElement name="age-gate" class="age-gate-screen hidden">
+            <ui:Label name="age-gate-title" class="age-gate-title" text="Verificacao de Idade" />
+            <ui:Label name="age-gate-desc" class="age-gate-desc" text="Para continuar, informe seu ano de nascimento." />
+            <ui:VisualElement class="age-gate-form">
+                <ui:DropdownField name="age-gate-year" class="age-gate-year" tabindex="70" />
+                <ui:Button name="age-gate-confirm" class="btn-start" text="Confirmar" tabindex="71" />
+            </ui:VisualElement>
+            <ui:Label name="age-gate-info" class="age-gate-info" text="Usamos esta informacao apenas para adequar a experiencia a sua faixa etaria." />
+        </ui:VisualElement>
+
         <!-- Bridge Overlay -->
         <ui:VisualElement name="bridge-overlay" class="bridge-overlay hidden">
             <ui:Label name="bridge-icon" class="bridge-icon" text="" />

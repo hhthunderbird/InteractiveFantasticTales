@@ -1094,6 +1094,56 @@
 }
 
 /* ============================================================
+   AGE GATE
+   ============================================================ */
+.age-gate-screen {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg);
+    padding: var(--space-xl);
+    gap: var(--space-lg);
+}
+
+.age-gate-title {
+    font-size: var(--fs-xl);
+    color: var(--accent);
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+}
+
+.age-gate-desc {
+    font-size: var(--fs-md);
+    color: var(--text-secondary);
+    -unity-text-align: middle-center;
+    white-space: normal;
+    max-width: 320px;
+}
+
+.age-gate-form {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+}
+
+.age-gate-form .unity-dropdown {
+    min-width: 120px;
+}
+
+.age-gate-info {
+    font-size: var(--fs-sm);
+    color: var(--text-secondary);
+    -unity-text-align: middle-center;
+    white-space: normal;
+    max-width: 320px;
+    opacity: 0.6;
+    margin-top: var(--space-lg);
+}
+
+/* ============================================================
    FOCUS VISIBLE
    ============================================================ */
 :focus {

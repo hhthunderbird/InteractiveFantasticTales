@@ -115,6 +115,12 @@ namespace InteractiveFantasticTales.UI.UIToolkit
 
             if (LocalizationManager.Instance != null)
                 LocalizationManager.Instance.OnLocaleChanged += OnLocaleChanged;
+
+            // Check age gate
+            if (AgeGate.NeedsAgeGate())
+                ShowAgeGate();
+            else
+                OnAgeGatePassed();
         }
 
         private void Start()
@@ -1217,6 +1223,58 @@ namespace InteractiveFantasticTales.UI.UIToolkit
             {
                 Debug.LogError($"Failed to load save: {e.Message}");
             }
+        }
+
+        // ===== AGE GATE =====
+
+        private VisualElement _ageGate;
+
+        private void ShowAgeGate()
+        {
+            _ageGate = _root.Q<VisualElement>("age-gate");
+            if (_ageGate == null) { OnAgeGatePassed(); return; }
+
+            _header.style.display = DisplayStyle.None;
+            _illustration.style.display = DisplayStyle.None;
+            _scrollArea.style.display = DisplayStyle.None;
+            _toolbar.style.display = DisplayStyle.None;
+            _charCreate.style.display = DisplayStyle.None;
+            _ageGate.style.display = DisplayStyle.Flex;
+
+            // Populate year dropdown (1900 to current year)
+            var yearDropdown = _root.Q<DropdownField>("age-gate-year");
+            if (yearDropdown != null)
+            {
+                var years = new List<string>();
+                var currentYear = System.DateTime.Now.Year;
+                for (int y = currentYear; y >= 1900; y--)
+                    years.Add(y.ToString());
+                yearDropdown.choices = years;
+                yearDropdown.index = years.IndexOf("2000");
+                yearDropdown.RegisterValueChangedCallback(_ => { });
+            }
+
+            var confirmBtn = _root.Q<Button>("age-gate-confirm");
+            if (confirmBtn != null)
+            {
+                confirmBtn.clicked += () =>
+                {
+                    var dd = _root.Q<DropdownField>("age-gate-year");
+                    if (dd != null && int.TryParse(dd.value, out int year))
+                    {
+                        var level = AgeGate.SetBirthYear(year);
+                        Debug.Log($"[AgeGate] Set: {year}, level: {level}");
+                        OnAgeGatePassed();
+                    }
+                };
+            }
+        }
+
+        private void OnAgeGatePassed()
+        {
+            if (_ageGate != null)
+                _ageGate.style.display = DisplayStyle.None;
+            ShowCharacterCreation();
         }
 
         // ===== CHARACTER CREATION =====
