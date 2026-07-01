@@ -927,6 +927,447 @@
 /* ============================================================
    RESPONSIVE — Mobile (max-width 480px)
    ============================================================ */
+/* ============================================================
+   LIBRARY SCREEN
+   ============================================================ */
+.library-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    flex-direction: column;
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+.library-scroll {
+    flex-grow: 1;
+    overflow: auto;
+}
+
+/* ============================================================
+   LIBRARY GRID
+   ============================================================ */
+.library-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: var(--space-sm) var(--space-md) var(--space-lg);
+    gap: var(--space-sm);
+}
+
+.library-grid > .library-card {
+    width: calc(50% - 4px);
+    flex-direction: column;
+}
+
+/* ============================================================
+   LIBRARY CARD
+   ============================================================ */
+.library-card {
+    flex-direction: column;
+    background-color: var(--surface);
+    border-radius: var(--card-radius);
+    overflow: hidden;
+    transition: scale 0.12s ease, background-color 0.12s ease;
+    border-width: 1px;
+    border-color: var(--border);
+}
+
+.library-card:hover {
+    scale: 1.02;
+    background-color: var(--surface2);
+}
+
+.library-card:focus-visible {
+    border-color: var(--accent);
+}
+
+.library-card-thumb {
+    width: 100%;
+    height: var(--card-thumb-size);
+    background-color: var(--surface2);
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.library-card-thumb .thumb-placeholder {
+    flex-grow: 1;
+    background-color: var(--surface2);
+}
+
+.library-card-info {
+    flex-direction: column;
+    padding: var(--space-sm);
+    gap: 4px;
+}
+
+.library-card-title {
+    font-size: var(--fs-sm);
+    -unity-font-style: bold;
+    color: var(--text);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    max-height: 36px;
+}
+
+.library-card-author {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.library-card-meta {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-top: 2px;
+}
+
+.library-card-last-played {
+    font-size: 11px;
+    color: var(--text-secondary);
+}
+
+.library-card-stats-mini {
+    font-size: 11px;
+    color: var(--text-secondary);
+}
+
+.library-card-section-badge {
+    font-size: 11px;
+    color: var(--accent);
+    -unity-font-style: bold;
+}
+
+/* ============================================================
+   LIBRARY CARD — Progress
+   ============================================================ */
+.library-card-progress {
+    flex-shrink: 0;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--surface2);
+    height: 20px;
+}
+
+.library-card-progress-bar {
+    flex-grow: 1;
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+    margin: 0 var(--space-sm);
+}
+
+.library-card-progress-fill {
+    height: 100%;
+    background-color: var(--accent);
+    border-radius: 3px;
+    transition: width 0.3s ease-out;
+}
+
+.library-card-progress-pct {
+    font-size: 10px;
+    color: var(--text-secondary);
+    margin-right: var(--space-sm);
+    min-width: 36px;
+    -unity-text-align: upper-right;
+}
+
+/* ============================================================
+   LIBRARY CARD — Action Buttons
+   ============================================================ */
+.library-card-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: var(--space-xs) var(--space-sm) var(--space-sm);
+    gap: 6px;
+}
+
+.library-action-btn {
+    padding: 5px 10px;
+    border-radius: var(--pill-radius);
+    border-width: 1px;
+    border-color: var(--border-visible);
+    background-color: transparent;
+    color: var(--text-secondary);
+    font-size: 11px;
+    -unity-font-style: normal;
+    transition: background-color 0.12s ease, color 0.12s ease;
+}
+
+.library-action-btn:hover {
+    background-color: var(--surface2);
+    color: var(--text);
+}
+
+.library-action-btn:focus-visible {
+    border-color: var(--accent);
+}
+
+.library-action-btn.primary {
+    background-color: var(--accent);
+    color: #000000;
+    border-color: var(--accent);
+}
+
+.library-action-btn.primary:hover {
+    background-color: var(--accent-dim);
+}
+
+/* ============================================================
+   LIBRARY EMPTY STATE
+   ============================================================ */
+.library-empty {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-xl) var(--space-md);
+    gap: var(--space-sm);
+    flex-grow: 1;
+}
+
+.explore-btn {
+    padding: 12px 24px;
+    border-radius: var(--btn-radius);
+    border-width: 0;
+    background-color: var(--accent);
+    color: #000000;
+    font-size: var(--fs-sm);
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    transition: scale 0.1s ease;
+    margin-top: var(--space-sm);
+}
+
+.explore-btn:hover {
+    scale: 1.03;
+}
+
+.explore-btn:focus-visible {
+    border-width: 2px;
+    border-color: var(--text);
+}
+
+/* ============================================================
+   STATS SCREEN
+   ============================================================ */
+.stats-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    flex-direction: column;
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+/* ============================================================
+   STATS HEADER
+   ============================================================ */
+.stats-header {
+    flex-direction: row;
+    align-items: center;
+    padding: var(--space-sm) var(--space-md);
+    background-color: var(--surface);
+    border-bottom-width: 1px;
+    border-bottom-color: var(--border);
+    min-height: 48px;
+    flex-shrink: 0;
+}
+
+/* ============================================================
+   STATS SCROLL
+   ============================================================ */
+.stats-scroll {
+    flex-grow: 1;
+    overflow: auto;
+}
+
+.stats-story-title {
+    font-size: var(--fs-lg);
+    color: var(--text);
+    -unity-font-style: bold;
+    padding: var(--space-md) var(--space-md) var(--space-sm);
+}
+
+/* ============================================================
+   STATS GRID
+   ============================================================ */
+.stats-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0 var(--space-md) var(--space-md);
+    gap: var(--space-sm);
+}
+
+.stats-item {
+    width: calc(50% - 4px);
+    flex-direction: column;
+    background-color: var(--surface);
+    border-radius: var(--card-radius);
+    border-width: 1px;
+    border-color: var(--border);
+    padding: var(--space-md);
+    gap: 4px;
+}
+
+.stats-item-value {
+    font-size: var(--fs-lg);
+    color: var(--accent);
+    -unity-font-style: bold;
+}
+
+.stats-item-label {
+    font-size: 11px;
+    color: var(--text-secondary);
+}
+
+/* ============================================================
+   DANGER BUTTON
+   ============================================================ */
+.stats-danger {
+    padding: var(--space-md);
+    padding-bottom: var(--space-xl);
+}
+
+.danger-btn {
+    padding: 14px;
+    border-radius: var(--btn-radius);
+    border-width: 1px;
+    border-color: var(--danger);
+    background-color: rgba(217, 74, 74, 0.1);
+    color: var(--danger);
+    font-size: var(--fs-sm);
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    width: 100%;
+    transition: background-color 0.12s ease;
+}
+
+.danger-btn:hover {
+    background-color: rgba(217, 74, 74, 0.2);
+}
+
+.danger-btn:focus-visible {
+    outline-width: 2px;
+    outline-color: var(--danger);
+}
+
+/* ============================================================
+   CONFIRM DIALOG
+   ============================================================ */
+.confirm-dialog {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.confirm-dialog-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    align-items: center;
+    justify-content: center;
+}
+
+.confirm-dialog-card {
+    flex-direction: column;
+    background-color: var(--surface);
+    border-radius: var(--card-radius);
+    border-width: 1px;
+    border-color: var(--border-visible);
+    padding: var(--space-md);
+    gap: var(--space-md);
+    max-width: 340px;
+    width: 80%;
+}
+
+.confirm-dialog-title {
+    font-size: var(--fs-lg);
+    color: var(--text);
+    -unity-font-style: bold;
+}
+
+.confirm-dialog-message {
+    font-size: var(--fs-sm);
+    color: var(--text-secondary);
+    white-space: normal;
+}
+
+.confirm-dialog-buttons {
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: var(--space-sm);
+}
+
+.confirm-dialog-cancel-btn {
+    padding: 8px 16px;
+    border-radius: var(--btn-radius);
+    border-width: 1px;
+    border-color: var(--border-visible);
+    background-color: var(--surface2);
+    color: var(--text);
+    font-size: var(--fs-sm);
+    -unity-font-style: normal;
+    transition: background-color 0.12s ease;
+}
+
+.confirm-dialog-cancel-btn:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.confirm-dialog-ok-btn {
+    padding: 8px 16px;
+    border-radius: var(--btn-radius);
+    border-width: 0;
+    background-color: var(--danger);
+    color: #ffffff;
+    font-size: var(--fs-sm);
+    -unity-font-style: bold;
+    transition: background-color 0.12s ease;
+}
+
+.confirm-dialog-ok-btn:hover {
+    background-color: rgba(217, 74, 74, 0.8);
+}
+
+/* ============================================================
+   FOCUS VISIBLE (global keyboard nav)
+   ============================================================ */
+:focus {
+    background-image: none;
+}
+
+.tab-btn:focus-visible,
+.filter-chip:focus-visible,
+.retry-btn:focus-visible,
+.detail-back-btn:focus-visible,
+.detail-cta:focus-visible,
+.detail-continue-btn:focus-visible,
+.detail-restart-btn:focus-visible,
+.detail-stats-btn:focus-visible,
+.preview-play-btn:focus-visible,
+.story-card:focus-visible,
+.library-card:focus-visible,
+.explore-btn:focus-visible,
+.danger-btn:focus-visible,
+.library-action-btn:focus-visible {
+    border-color: var(--accent);
+}
+
+/* ============================================================
+   RESPONSIVE — Mobile (max-width 480px)
+   ============================================================ */
 @media (max-width: 480px) {
     .story-grid > .story-card {
         width: calc(50% - 4px);
@@ -970,5 +1411,17 @@
 
     .story-card.featured .story-card-thumb.featured-thumb {
         height: 120px;
+    }
+
+    .library-grid > .library-card {
+        width: calc(50% - 4px);
+    }
+
+    .stats-item {
+        width: calc(50% - 4px);
+    }
+
+    .confirm-dialog-card {
+        width: 90%;
     }
 }

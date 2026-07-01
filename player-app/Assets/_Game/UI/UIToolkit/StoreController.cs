@@ -20,12 +20,19 @@ namespace InteractiveFantasticTales.UI.UIToolkit
         private VisualElement _root;
         private VisualElement _storeScreen;
         private VisualElement _storyDetail;
+        private VisualElement _libraryScreen;
+        private VisualElement _libraryGrid;
+        private VisualElement _libraryEmpty;
+        private VisualElement _statsScreen;
+        private VisualElement _confirmDialog;
         private StoryCatalogService _catalog;
 
         private string _activeTab = "store";
         private string _selectedGenre = null;
         private string _selectedSort = "popular";
         private string _selectedStoryId = null;
+        private string _libraryFilter = "all";
+        private string _confirmAction = null;
         private List<StoryCatalogEntry> _currentResults;
 
         private TextField _searchField;
@@ -76,6 +83,9 @@ namespace InteractiveFantasticTales.UI.UIToolkit
 
             _storeScreen.style.display = DisplayStyle.None;
             if (_storyDetail != null) _storyDetail.style.display = DisplayStyle.None;
+            if (_libraryScreen != null) _libraryScreen.style.display = DisplayStyle.None;
+            if (_statsScreen != null) _statsScreen.style.display = DisplayStyle.None;
+            if (_confirmDialog != null) _confirmDialog.style.display = DisplayStyle.None;
 
             ShowLoading();
             _ = LoadCatalogAsync();
@@ -113,6 +123,11 @@ namespace InteractiveFantasticTales.UI.UIToolkit
         {
             _storeScreen = _root.Q<VisualElement>("store-screen");
             _storyDetail = _root.Q<VisualElement>("story-detail");
+            _libraryScreen = _root.Q<VisualElement>("library-screen");
+            _libraryGrid = _root.Q<VisualElement>("library-grid");
+            _libraryEmpty = _root.Q<VisualElement>("library-empty");
+            _statsScreen = _root.Q<VisualElement>("stats-screen");
+            _confirmDialog = _root.Q<VisualElement>("confirm-dialog");
             _searchField = _root.Q<TextField>("search-input");
             _storyGrid = _root.Q<VisualElement>("story-grid");
             _featuredContainer = _root.Q<VisualElement>("featured-container");
@@ -194,6 +209,37 @@ namespace InteractiveFantasticTales.UI.UIToolkit
 
             var retryBtn = _root.Q<Button>("retry-btn");
             if (retryBtn != null) retryBtn.clicked += async () => { ShowLoading(); await LoadCatalogAsync(); };
+
+            var libChipAll = _root.Q<Button>("lib-chip-all");
+            var libChipProgress = _root.Q<Button>("lib-chip-inprogress");
+            var libChipCompleted = _root.Q<Button>("lib-chip-completed");
+            if (libChipAll != null) libChipAll.clicked += () => FilterLibrary("all");
+            if (libChipProgress != null) libChipProgress.clicked += () => FilterLibrary("in_progress");
+            if (libChipCompleted != null) libChipCompleted.clicked += () => FilterLibrary("completed");
+
+            var statsBack = _root.Q<Button>("stats-back-btn");
+            if (statsBack != null) statsBack.clicked += HideStats;
+
+            var exploreBtn = _root.Q<Button>("library-explore-btn");
+            if (exploreBtn != null) exploreBtn.clicked += () => SwitchTab("store");
+
+            var statsClearBtn = _root.Q<Button>("stats-clear-btn");
+            if (statsClearBtn != null) statsClearBtn.clicked += () => ShowConfirmDialog("clear_stats",
+                "Limpar dados", $"Tem certeza que deseja limpar todos os dados de \"{GetSelectedStoryTitle()}\"? Esta acao nao pode ser desfeita.", () =>
+                {
+                    ClearStoryDataInternal(_selectedStoryId);
+                });
+
+            var confirmCancel = _root.Q<Button>("confirm-dialog-cancel");
+            var confirmOk = _root.Q<Button>("confirm-dialog-ok");
+            if (confirmCancel != null) confirmCancel.clicked += HideConfirmDialog;
+            if (confirmOk != null) confirmOk.clicked += ExecuteConfirmAction;
+
+            var detailStatsBtn = _root.Q<Button>("detail-stats-btn");
+            if (detailStatsBtn != null) detailStatsBtn.clicked += () => ShowStatsFromProgress(_selectedStoryId);
+
+            if (_confirmDialog?.Q<VisualElement>("confirm-dialog-bg") is VisualElement bg)
+                bg.RegisterCallback<ClickEvent>(evt => { if (evt.target == bg) HideConfirmDialog(); });
         }
 
         public void ShowStoreScreen()
@@ -215,15 +261,28 @@ namespace InteractiveFantasticTales.UI.UIToolkit
         {
             if (tab == _activeTab) return;
 
-            if (tab == "library" || tab == "profile")
+            if (tab == "profile")
             {
-                var msg = tab == "library" ? "Em breve" : "Em breve";
-                _mainUIController?.ShowToast(msg);
+                _mainUIController?.ShowToast("Em breve");
                 return;
             }
 
             _activeTab = tab;
             UpdateTabSelection();
+
+            if (tab == "store")
+            {
+                _storeScreen.style.display = DisplayStyle.Flex;
+                if (_libraryScreen != null) _libraryScreen.style.display = DisplayStyle.None;
+                if (_storyDetail != null) _storyDetail.style.display = DisplayStyle.None;
+                if (_statsScreen != null) _statsScreen.style.display = DisplayStyle.None;
+                if (_catalog != null && _catalog.IsLoaded)
+                    OnCatalogLoaded(_catalog.AllStories);
+            }
+            else if (tab == "library")
+            {
+                ShowLibrary();
+            }
         }
 
         private void UpdateTabSelection()
@@ -446,6 +505,8 @@ namespace InteractiveFantasticTales.UI.UIToolkit
                     RenderStoryDetail(story);
                 }
                 _mainUIController?.ShowToast(L["store_purchase_success"] ?? "Compra realizada com sucesso!", "good");
+                RefreshLibrary();
+                ApplyFilters();
             }
             else
             {
@@ -511,6 +572,8 @@ namespace InteractiveFantasticTales.UI.UIToolkit
             story.isOwned = true;
             RenderStoryDetail(story);
             _mainUIController?.ShowToast(L["store_ready"] ?? "Historia pronta para jogar!", "good");
+            RefreshLibrary();
+            ApplyFilters();
         }
 
         private void OnCatalogLoaded(List<StoryCatalogEntry> stories)
@@ -881,6 +944,479 @@ namespace InteractiveFantasticTales.UI.UIToolkit
             if (_loadingState != null) _loadingState.style.display = DisplayStyle.None;
             if (_emptyState != null) _emptyState.style.display = DisplayStyle.None;
             if (_errorState != null) _errorState.style.display = DisplayStyle.None;
+        }
+
+        private void ShowLibraryContent()
+        {
+            var libLoading = _root.Q<VisualElement>("library-loading");
+            if (libLoading != null) libLoading.style.display = DisplayStyle.None;
+        }
+
+        private void ShowLibraryEmpty()
+        {
+            var libLoading = _root.Q<VisualElement>("library-loading");
+            if (libLoading != null) libLoading.style.display = DisplayStyle.None;
+            if (_libraryGrid != null) _libraryGrid.Clear();
+            if (_libraryEmpty != null) _libraryEmpty.style.display = DisplayStyle.Flex;
+        }
+
+        private void HideLibraryEmpty()
+        {
+            if (_libraryEmpty != null) _libraryEmpty.style.display = DisplayStyle.None;
+        }
+
+        // ===== LIBRARY =====
+
+        public void ShowLibrary()
+        {
+            _storeScreen.style.display = DisplayStyle.None;
+            if (_storyDetail != null) _storyDetail.style.display = DisplayStyle.None;
+            if (_statsScreen != null) _statsScreen.style.display = DisplayStyle.None;
+            if (_libraryScreen != null) _libraryScreen.style.display = DisplayStyle.Flex;
+
+            RefreshLibrary();
+        }
+
+        public void RefreshLibrary()
+        {
+            if (_catalog == null) return;
+
+            var owned = _catalog.OwnedStories;
+            if (owned == null || owned.Count == 0)
+            {
+                ShowLibraryEmpty();
+                return;
+            }
+
+            HideLibraryEmpty();
+            ShowLibraryContent();
+
+            var stories = owned.Select(s => LoadProgressForStory(s)).ToList();
+
+            if (_libraryFilter == "in_progress")
+                stories = stories.Where(s => s.completionPercent > 0 && s.completionPercent < 100).ToList();
+            else if (_libraryFilter == "completed")
+                stories = stories.Where(s => s.completionPercent >= 100).ToList();
+
+            RenderLibraryCards(stories);
+        }
+
+        public void FilterLibrary(string filter)
+        {
+            _libraryFilter = filter;
+            UpdateLibraryChipSelection();
+            RefreshLibrary();
+        }
+
+        private void UpdateLibraryChipSelection()
+        {
+            var map = new Dictionary<string, string>
+            {
+                { "all", "lib-chip-all" },
+                { "in_progress", "lib-chip-inprogress" },
+                { "completed", "lib-chip-completed" }
+            };
+
+            foreach (var kv in map)
+            {
+                var chip = _root.Q<Button>(kv.Value);
+                if (chip != null)
+                {
+                    if (kv.Key == _libraryFilter) chip.AddToClassList("selected");
+                    else chip.RemoveFromClassList("selected");
+                }
+            }
+        }
+
+        private void RenderLibraryCards(List<StoryProgressData> stories)
+        {
+            _libraryGrid?.Clear();
+
+            foreach (var progress in stories)
+            {
+                _libraryGrid?.Add(CreateLibraryCard(progress));
+            }
+
+            if (stories.Count == 0)
+            {
+                ShowLibraryEmpty();
+            }
+        }
+
+        private VisualElement CreateLibraryCard(StoryProgressData progress)
+        {
+            var card = new VisualElement();
+            card.AddToClassList("library-card");
+            card.tabIndex = 0;
+            card.focusable = true;
+
+            var thumb = new VisualElement();
+            thumb.AddToClassList("library-card-thumb");
+            var placeholder = new VisualElement();
+            placeholder.AddToClassList("thumb-placeholder");
+            thumb.Add(placeholder);
+            card.Add(thumb);
+
+            var info = new VisualElement();
+            info.AddToClassList("library-card-info");
+
+            var title = new Label(progress.title ?? "");
+            title.AddToClassList("library-card-title");
+            info.Add(title);
+
+            var author = new Label(progress.authorName ?? "");
+            author.AddToClassList("library-card-author");
+            info.Add(author);
+
+            var meta = new VisualElement();
+            meta.AddToClassList("library-card-meta");
+
+            if (!string.IsNullOrEmpty(progress.lastPlayedText))
+            {
+                var lastPlayed = new Label(progress.lastPlayedText);
+                lastPlayed.AddToClassList("library-card-last-played");
+                meta.Add(lastPlayed);
+            }
+
+            if (!string.IsNullOrEmpty(progress.statsMini))
+            {
+                var statsMini = new Label(progress.statsMini);
+                statsMini.AddToClassList("library-card-stats-mini");
+                meta.Add(statsMini);
+            }
+
+            info.Add(meta);
+
+            if (progress.lastSectionId > 0)
+            {
+                var sectionBadge = new Label($"Secao {progress.lastSectionId}");
+                sectionBadge.AddToClassList("library-card-section-badge");
+                meta.Add(sectionBadge);
+            }
+
+            card.Add(info);
+
+            var progressBar = new VisualElement();
+            progressBar.AddToClassList("library-card-progress");
+
+            var bar = new VisualElement();
+            bar.AddToClassList("library-card-progress-bar");
+
+            var fill = new VisualElement();
+            fill.AddToClassList("library-card-progress-fill");
+            fill.style.width = Length.Percent(Mathf.Clamp(progress.completionPercent, 0, 100));
+            bar.Add(fill);
+
+            var pctLabel = new Label($"{(int)progress.completionPercent}%");
+            pctLabel.AddToClassList("library-card-progress-pct");
+
+            progressBar.Add(bar);
+            progressBar.Add(pctLabel);
+            card.Add(progressBar);
+
+            var actions = new VisualElement();
+            actions.AddToClassList("library-card-actions");
+
+            var continueBtn = new Button();
+            continueBtn.AddToClassList("library-action-btn");
+            continueBtn.AddToClassList("primary");
+            continueBtn.text = "\u25B6 Continuar";
+            continueBtn.tabIndex = 0;
+            var storyId = progress.storyId;
+            continueBtn.clicked += () => ContinueStoryLib(storyId);
+            actions.Add(continueBtn);
+
+            var restartBtn = new Button();
+            restartBtn.AddToClassList("library-action-btn");
+            restartBtn.text = "\u21BA Recomecar";
+            restartBtn.tabIndex = 0;
+            var rid = storyId;
+            restartBtn.clicked += () => ShowConfirmDialog("restart",
+                "Recomecar historia",
+                $"Tem certeza que deseja recomecar \"{progress.title}\"? Todo o progresso sera perdido.",
+                () => RestartStoryLib(rid));
+            actions.Add(restartBtn);
+
+            var statsBtn = new Button();
+            statsBtn.AddToClassList("library-action-btn");
+            statsBtn.text = "\U0001F4CA Stats";
+            statsBtn.tabIndex = 0;
+            var sid = storyId;
+            statsBtn.clicked += () => ShowStatsFromProgress(sid);
+            actions.Add(statsBtn);
+
+            var clearBtn = new Button();
+            clearBtn.AddToClassList("library-action-btn");
+            clearBtn.text = "\U0001F5D1 Limpar";
+            clearBtn.tabIndex = 0;
+            var cid = storyId;
+            clearBtn.clicked += () => ShowConfirmDialog("clear",
+                "Limpar dados",
+                $"Tem certeza que deseja limpar todos os dados de \"{progress.title}\"?",
+                () => ClearStoryData(cid));
+            actions.Add(clearBtn);
+
+            card.Add(actions);
+
+            return card;
+        }
+
+        private StoryProgressData LoadProgressForStory(StoryCatalogEntry story)
+        {
+            var progress = new StoryProgressData
+            {
+                storyId = story.id,
+                title = story.title,
+                authorName = story.authorName,
+                completionPercent = story.completionPercent,
+                lastSectionId = story.lastSectionId
+            };
+
+            string key = $"ift_progress_{story.id}";
+            string json = PlayerPrefs.GetString(key, "");
+            if (!string.IsNullOrEmpty(json))
+            {
+                try
+                {
+                    var saved = JsonUtility.FromJson<StoryProgressData>(json);
+                    if (saved != null)
+                    {
+                        progress.timePlayed = saved.timePlayed;
+                        progress.sessionsPlayed = saved.sessionsPlayed;
+                        progress.sectionsVisited = saved.sectionsVisited;
+                        progress.totalSections = saved.totalSections > 0 ? saved.totalSections : story.sectionCount;
+                        progress.choicesMade = saved.choicesMade;
+                        progress.endingsFound = saved.endingsFound;
+                        progress.totalEndings = saved.totalEndings > 0 ? saved.totalEndings : story.endingCount;
+                        progress.combatsWon = saved.combatsWon;
+                        progress.combatsLost = saved.combatsLost;
+                        progress.combatsFled = saved.combatsFled;
+                        progress.deaths = saved.deaths;
+                        progress.rewindsUsed = saved.rewindsUsed;
+                        progress.firstSession = saved.firstSession;
+                        progress.lastSession = saved.lastSession;
+                    }
+                }
+                catch { }
+            }
+
+            if (progress.totalSections <= 0) progress.totalSections = story.sectionCount;
+            if (progress.totalEndings <= 0) progress.totalEndings = story.endingCount;
+            if (string.IsNullOrEmpty(progress.firstSession)) progress.firstSession = System.DateTime.Now.ToString("dd/MM/yy");
+            if (string.IsNullOrEmpty(progress.lastSession)) progress.lastSession = System.DateTime.Now.ToString("dd/MM/yy");
+
+            if (progress.lastSession != progress.firstSession)
+                progress.lastPlayedText = $"ha {(System.DateTime.Now - System.DateTime.Now).Days} dias";
+            else
+                progress.lastPlayedText = "hoje";
+
+            progress.statsMini = FormatTimePlayed(progress.timePlayed) + " | " +
+                $"{progress.endingsFound}/{progress.totalEndings} finais";
+
+            return progress;
+        }
+
+        private void SaveProgressForStory(string storyId, StoryProgressData progress)
+        {
+            if (progress == null || string.IsNullOrEmpty(storyId)) return;
+            string key = $"ift_progress_{storyId}";
+            string json = JsonUtility.ToJson(progress);
+            PlayerPrefs.SetString(key, json);
+            PlayerPrefs.Save();
+        }
+
+        public void ContinueStoryLib(string storyId)
+        {
+            if (string.IsNullOrEmpty(storyId)) return;
+
+            if (storyId == "demo")
+            {
+                _mainUIController?.ContinueStoryDemo();
+                return;
+            }
+
+            _mainUIController?.ContinueStory(storyId);
+        }
+
+        public void RestartStoryLib(string storyId)
+        {
+            if (string.IsNullOrEmpty(storyId)) return;
+
+            var progress = new StoryProgressData { storyId = storyId };
+            SaveProgressForStory(storyId, progress);
+
+            _mainUIController?.StartNewStoryFlow(storyId);
+        }
+
+        public void ClearStoryData(string storyId)
+        {
+            if (string.IsNullOrEmpty(storyId)) return;
+            ShowConfirmDialog("clear", "Limpar dados",
+                $"Tem certeza que deseja limpar todos os dados de \"{GetStoryTitle(storyId)}\"?",
+                () => ClearStoryDataInternal(storyId));
+        }
+
+        private void ClearStoryDataInternal(string storyId)
+        {
+            if (string.IsNullOrEmpty(storyId)) return;
+
+            string key = $"ift_progress_{storyId}";
+            PlayerPrefs.DeleteKey(key);
+            PlayerPrefs.DeleteKey($"ift_save_{storyId}_last");
+            PlayerPrefs.Save();
+
+            var story = _catalog?.AllStories.FirstOrDefault(s => s.id == storyId);
+            if (story != null)
+            {
+                story.hasProgress = false;
+                story.completionPercent = 0;
+                story.lastSectionId = 0;
+            }
+
+            _mainUIController?.ShowToast("Dados limpos com sucesso!", "good");
+            HideStats();
+            RefreshLibrary();
+        }
+
+        // ===== STATS SCREEN =====
+
+        public void ShowStatsFromProgress(string storyId)
+        {
+            if (string.IsNullOrEmpty(storyId)) return;
+
+            var story = _catalog?.AllStories.FirstOrDefault(s => s.id == storyId);
+            if (story == null) return;
+
+            var progress = LoadProgressForStory(story);
+            _selectedStoryId = storyId;
+
+            _storeScreen.style.display = DisplayStyle.None;
+            if (_storyDetail != null) _storyDetail.style.display = DisplayStyle.None;
+            if (_libraryScreen != null) _libraryScreen.style.display = DisplayStyle.None;
+            if (_statsScreen != null) _statsScreen.style.display = DisplayStyle.Flex;
+
+            RenderStats(progress);
+        }
+
+        private void RenderStats(StoryProgressData progress)
+        {
+            if (progress == null) return;
+
+            var titleLabel = _root.Q<Label>("stats-story-title");
+            if (titleLabel != null) titleLabel.text = progress.title ?? "";
+
+            SetStat("stats-time", FormatTimePlayed(progress.timePlayed));
+            SetStat("stats-sessions", progress.sessionsPlayed.ToString());
+            SetStat("stats-sections", $"{progress.sectionsVisited} / {progress.totalSections}");
+            SetStat("stats-choices", progress.choicesMade.ToString());
+            SetStat("stats-endings", $"{progress.endingsFound} / {progress.totalEndings}");
+            SetStat("stats-completion", $"{(int)progress.completionPercent}%");
+            SetStat("stats-combat", $"{progress.combatsWon} / {progress.combatsLost} / {progress.combatsFled}");
+            SetStat("stats-deaths", progress.deaths.ToString());
+            SetStat("stats-rewinds", progress.rewindsUsed.ToString());
+            SetStat("stats-first", progress.firstSession ?? "--");
+            SetStat("stats-last", progress.lastSession ?? "--");
+        }
+
+        private void SetStat(string elementName, string value)
+        {
+            var val = _root.Q<Label>($"stats-{elementName}-val");
+            if (val != null) val.text = value ?? "--";
+        }
+
+        public void HideStats()
+        {
+            if (_statsScreen != null) _statsScreen.style.display = DisplayStyle.None;
+
+            if (_activeTab == "library")
+                ShowLibrary();
+            else
+            {
+                _storeScreen.style.display = DisplayStyle.Flex;
+            }
+        }
+
+        private string GetStoryTitle(string storyId)
+        {
+            var story = _catalog?.AllStories.FirstOrDefault(s => s.id == storyId);
+            return story?.title ?? storyId;
+        }
+
+        private string GetSelectedStoryTitle()
+        {
+            return GetStoryTitle(_selectedStoryId);
+        }
+
+        // ===== CONFIRM DIALOG =====
+
+        private void ShowConfirmDialog(string action, string title, string message, Action onConfirm)
+        {
+            _confirmAction = action;
+
+            var titleLabel = _root.Q<Label>("confirm-dialog-title");
+            var messageLabel = _root.Q<Label>("confirm-dialog-message");
+
+            if (titleLabel != null) titleLabel.text = title ?? "Confirmar";
+            if (messageLabel != null) messageLabel.text = message ?? "";
+
+            _confirmActionCallback = onConfirm;
+
+            if (_confirmDialog != null) _confirmDialog.style.display = DisplayStyle.Flex;
+        }
+
+        private Action _confirmActionCallback;
+
+        private void ExecuteConfirmAction()
+        {
+            HideConfirmDialog();
+            _confirmActionCallback?.Invoke();
+            _confirmActionCallback = null;
+        }
+
+        private void HideConfirmDialog()
+        {
+            if (_confirmDialog != null) _confirmDialog.style.display = DisplayStyle.None;
+            _confirmAction = null;
+            _confirmActionCallback = null;
+        }
+
+        // ===== HELPERS =====
+
+        private string FormatTimePlayed(float seconds)
+        {
+            if (seconds <= 0) return "0m";
+            if (seconds < 3600)
+                return $"{(int)(seconds / 60)}min";
+            var hrs = Mathf.FloorToInt(seconds / 3600);
+            var mins = Mathf.FloorToInt((seconds % 3600) / 60);
+            return $"{hrs}h {mins}min";
+        }
+
+        [Serializable]
+        private class StoryProgressData
+        {
+            public string storyId;
+            public string title;
+            public string authorName;
+            public float completionPercent;
+            public int lastSectionId;
+            public float timePlayed;
+            public int sessionsPlayed;
+            public int sectionsVisited;
+            public int totalSections;
+            public int choicesMade;
+            public int endingsFound;
+            public int totalEndings;
+            public int combatsWon;
+            public int combatsLost;
+            public int combatsFled;
+            public int deaths;
+            public int rewindsUsed;
+            public string firstSession;
+            public string lastSession;
+
+            [NonSerialized] public string lastPlayedText;
+            [NonSerialized] public string statsMini;
         }
     }
 }

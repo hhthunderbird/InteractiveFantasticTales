@@ -226,4 +226,137 @@
 
     </ui:VisualElement>
 
+    <!-- ============================================================
+         LIBRARY SCREEN
+         ============================================================ -->
+    <ui:VisualElement name="library-screen" class="library-screen" style="display: none;">
+
+        <!-- Library Filter Chips -->
+        <ui:ScrollView name="library-filter-scroll" class="filter-chips-scroll" horizontal-scroller-visibility="hidden">
+            <ui:VisualElement name="library-filter-chips" class="filter-chips">
+                <ui:Button name="lib-chip-all" class="filter-chip selected" text="Todas" tabindex="300" />
+                <ui:Button name="lib-chip-inprogress" class="filter-chip" text="Em Progresso" tabindex="301" />
+                <ui:Button name="lib-chip-completed" class="filter-chip" text="Completadas" tabindex="302" />
+            </ui:VisualElement>
+        </ui:ScrollView>
+
+        <!-- Library Scroll Content -->
+        <ui:ScrollView name="library-scroll" class="library-scroll">
+
+            <!-- Library Grid -->
+            <ui:VisualElement name="library-grid" class="library-grid">
+                <!-- Library cards added dynamically -->
+            </ui:VisualElement>
+
+            <!-- Library Loading -->
+            <ui:VisualElement name="library-loading" class="store-loading" style="display: none;">
+                <ui:VisualElement class="skeleton-grid">
+                    <ui:VisualElement class="skeleton-card" />
+                    <ui:VisualElement class="skeleton-card" />
+                    <ui:VisualElement class="skeleton-card" />
+                    <ui:VisualElement class="skeleton-card" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+
+            <!-- Library Empty State -->
+            <ui:VisualElement name="library-empty" class="library-empty" style="display: none;">
+                <ui:Label name="library-empty-icon" class="empty-icon" text="&#x1F4DA;" />
+                <ui:Label name="library-empty-title" class="empty-title" text="Nenhuma historia na biblioteca" />
+                <ui:Label name="library-empty-desc" class="empty-desc" text="Visite a Loja para descobrir aventuras!" />
+                <ui:Button name="library-explore-btn" class="explore-btn" text="Explorar Loja &#x2192;" tabindex="310" />
+            </ui:VisualElement>
+
+        </ui:ScrollView>
+
+    </ui:VisualElement>
+
+    <!-- ============================================================
+         STATS SCREEN
+         ============================================================ -->
+    <ui:VisualElement name="stats-screen" class="stats-screen" style="display: none;">
+
+        <!-- Stats Header -->
+        <ui:VisualElement name="stats-header" class="stats-header">
+            <ui:Button name="stats-back-btn" class="detail-back-btn" text="&#x2190; Voltar" tabindex="400" />
+        </ui:VisualElement>
+
+        <!-- Stats Scroll -->
+        <ui:ScrollView name="stats-scroll" class="stats-scroll">
+
+            <!-- Story Title -->
+            <ui:Label name="stats-story-title" class="stats-story-title" text="" />
+
+            <!-- Stats Grid -->
+            <ui:VisualElement name="stats-grid" class="stats-grid">
+                <ui:VisualElement name="stats-time" class="stats-item">
+                    <ui:Label name="stats-time-val" class="stats-item-value" text="" />
+                    <ui:Label name="stats-time-label" class="stats-item-label" text="Tempo total de jogo" />
+                </ui:VisualElement>
+                <ui:VisualElement name="stats-sessions" class="stats-item">
+                    <ui:Label name="stats-sessions-val" class="stats-item-value" text="" />
+                    <ui:Label name="stats-sessions-label" class="stats-item-label" text="Sessoes jogadas" />
+                </ui:VisualElement>
+                <ui:VisualElement name="stats-sections" class="stats-item">
+                    <ui:Label name="stats-sections-val" class="stats-item-value" text="" />
+                    <ui:Label name="stats-sections-label" class="stats-item-label" text="Secoes visitadas (unicas / total)" />
+                </ui:VisualElement>
+                <ui:VisualElement name="stats-choices" class="stats-item">
+                    <ui:Label name="stats-choices-val" class="stats-item-value" text="" />
+                    <ui:Label name="stats-choices-label" class="stats-item-label" text="Escolhas feitas" />
+                </ui:VisualElement>
+                <ui:VisualElement name="stats-endings" class="stats-item">
+                    <ui:Label name="stats-endings-val" class="stats-item-value" text="" />
+                    <ui:Label name="stats-endings-label" class="stats-item-label" text="Finais encontrados" />
+                </ui:VisualElement>
+                <ui:VisualElement name="stats-completion" class="stats-item">
+                    <ui:Label name="stats-completion-val" class="stats-item-value" text="" />
+                    <ui:Label name="stats-completion-label" class="stats-item-label" text="% Completado" />
+                </ui:VisualElement>
+                <ui:VisualElement name="stats-combat" class="stats-item">
+                    <ui:Label name="stats-combat-val" class="stats-item-value" text="" />
+                    <ui:Label name="stats-combat-label" class="stats-item-label" text="Combates vencidos / perdidos / fugas" />
+                </ui:VisualElement>
+                <ui:VisualElement name="stats-deaths" class="stats-item">
+                    <ui:Label name="stats-deaths-val" class="stats-item-value" text="" />
+                    <ui:Label name="stats-deaths-label" class="stats-item-label" text="Mortes do personagem" />
+                </ui:VisualElement>
+                <ui:VisualElement name="stats-rewinds" class="stats-item">
+                    <ui:Label name="stats-rewinds-val" class="stats-item-value" text="" />
+                    <ui:Label name="stats-rewinds-label" class="stats-item-label" text="Rewinds usados" />
+                </ui:VisualElement>
+                <ui:VisualElement name="stats-first" class="stats-item">
+                    <ui:Label name="stats-first-val" class="stats-item-value" text="" />
+                    <ui:Label name="stats-first-label" class="stats-item-label" text="Primeira sessao" />
+                </ui:VisualElement>
+                <ui:VisualElement name="stats-last" class="stats-item">
+                    <ui:Label name="stats-last-val" class="stats-item-value" text="" />
+                    <ui:Label name="stats-last-label" class="stats-item-label" text="Ultima sessao" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+
+            <!-- Danger Zone -->
+            <ui:VisualElement name="stats-danger" class="stats-danger">
+                <ui:Button name="stats-clear-btn" class="danger-btn" text="Limpar todos os dados &#x1F5D1;" tabindex="410" />
+            </ui:VisualElement>
+
+        </ui:ScrollView>
+
+    </ui:VisualElement>
+
+    <!-- ============================================================
+         CONFIRM DIALOG (shared)
+         ============================================================ -->
+    <ui:VisualElement name="confirm-dialog" class="confirm-dialog" style="display: none;">
+        <ui:VisualElement name="confirm-dialog-bg" class="confirm-dialog-bg">
+            <ui:VisualElement name="confirm-dialog-card" class="confirm-dialog-card">
+                <ui:Label name="confirm-dialog-title" class="confirm-dialog-title" text="Confirmar acao" />
+                <ui:Label name="confirm-dialog-message" class="confirm-dialog-message" text="" />
+                <ui:VisualElement name="confirm-dialog-buttons" class="confirm-dialog-buttons">
+                    <ui:Button name="confirm-dialog-cancel" class="confirm-dialog-cancel-btn" text="Cancelar" tabindex="500" />
+                    <ui:Button name="confirm-dialog-ok" class="confirm-dialog-ok-btn" text="Confirmar" tabindex="501" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+
 </ui:UXML>
