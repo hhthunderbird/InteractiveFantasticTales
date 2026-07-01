@@ -1,0 +1,229 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+
+    <!-- ============================================================
+         STORE SCREEN
+         ============================================================ -->
+    <ui:VisualElement name="store-screen" class="store-screen">
+
+        <!-- Tab Bar -->
+        <ui:VisualElement name="store-tab-bar" class="tab-bar">
+            <ui:Button name="tab-store" class="tab-btn selected" text="Loja" tabindex="101" />
+            <ui:Button name="tab-library" class="tab-btn" text="Biblioteca" tabindex="102" />
+            <ui:Button name="tab-profile" class="tab-btn" text="Perfil" tabindex="103" />
+        </ui:VisualElement>
+
+        <!-- Search Bar -->
+        <ui:VisualElement name="search-bar-container" class="search-bar-container">
+            <ui:VisualElement name="search-bar" class="search-bar">
+                <ui:Label name="search-icon" class="search-icon" text="&#x1F50D;" />
+                <ui:TextField name="search-input" class="search-input" tabindex="104" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <!-- Filter Chips -->
+        <ui:ScrollView name="filter-chips-scroll" class="filter-chips-scroll" horizontal-scroller-visibility="hidden">
+            <ui:VisualElement name="filter-chips" class="filter-chips">
+                <ui:Button name="chip-todos" class="filter-chip selected" text="Todos" tabindex="110" />
+                <ui:Button name="chip-fantasia" class="filter-chip" text="Fantasia" tabindex="111" />
+                <ui:Button name="chip-horror" class="filter-chip" text="Horror" tabindex="112" />
+                <ui:Button name="chip-scifi" class="filter-chip" text="Sci-Fi" tabindex="113" />
+                <ui:Button name="chip-steampunk" class="filter-chip" text="Steampunk" tabindex="114" />
+                <ui:Button name="chip-misterio" class="filter-chip" text="Mistério" tabindex="115" />
+            </ui:VisualElement>
+        </ui:ScrollView>
+
+        <!-- Sort Row -->
+        <ui:VisualElement name="sort-row" class="sort-row">
+            <ui:Label name="sort-label" class="sort-label" text="Ordenar:" />
+            <ui:DropdownField name="sort-dropdown" class="sort-dropdown" tabindex="120" />
+        </ui:VisualElement>
+
+        <!-- Store Scroll Content -->
+        <ui:ScrollView name="store-scroll" class="store-scroll">
+
+            <!-- Destaques Section -->
+            <ui:Label name="featured-heading" class="section-heading" text="Destaques" />
+            <ui:ScrollView name="featured-carousel" class="featured-carousel" horizontal-scroller-visibility="hidden">
+                <ui:VisualElement name="featured-container" class="featured-container">
+                    <!-- Featured cards will be added dynamically -->
+                </ui:VisualElement>
+            </ui:ScrollView>
+
+            <!-- Grid Section -->
+            <ui:Label name="grid-heading" class="section-heading" text="Descobrir" />
+            <ui:VisualElement name="story-grid" class="story-grid">
+                <!-- Story cards will be added dynamically -->
+            </ui:VisualElement>
+
+            <!-- Loading State -->
+            <ui:VisualElement name="store-loading" class="store-loading" style="display: none;">
+                <ui:VisualElement name="skeleton-grid" class="skeleton-grid">
+                    <ui:VisualElement class="skeleton-card" />
+                    <ui:VisualElement class="skeleton-card" />
+                    <ui:VisualElement class="skeleton-card" />
+                    <ui:VisualElement class="skeleton-card" />
+                    <ui:VisualElement class="skeleton-card" />
+                    <ui:VisualElement class="skeleton-card" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+
+            <!-- Empty State -->
+            <ui:VisualElement name="store-empty" class="empty-state" style="display: none;">
+                <ui:Label name="empty-icon" class="empty-icon" text="&#x1F4DA;" />
+                <ui:Label name="empty-title" class="empty-title" text="Nenhuma história encontrada" />
+                <ui:Label name="empty-desc" class="empty-desc" text="Tente ajustar os filtros ou buscar por outro termo." />
+            </ui:VisualElement>
+
+            <!-- Error State -->
+            <ui:VisualElement name="store-error" class="error-state" style="display: none;">
+                <ui:Label name="error-icon" class="error-icon" text="&#x26A0;" />
+                <ui:Label name="error-title" class="error-title" text="Falha ao carregar" />
+                <ui:Label name="error-desc" class="error-desc" text="Não foi possível conectar à loja. Verifique sua internet." />
+                <ui:Button name="retry-btn" class="retry-btn" text="Tentar Novamente" tabindex="130" />
+            </ui:VisualElement>
+
+        </ui:ScrollView>
+
+        <!-- Template: Featured Story Card (hidden, used as reference) -->
+        <ui:VisualElement name="featured-card-template" class="story-card featured" style="display: none;">
+            <ui:VisualElement name="featured-card-thumb" class="story-card-thumb featured-thumb">
+                <ui:VisualElement name="featured-card-overlay" class="featured-thumb-overlay" />
+                <ui:VisualElement name="featured-card-info" class="featured-card-info">
+                    <ui:Label name="featured-card-title" class="story-card-title featured-title" text="" />
+                    <ui:Label name="featured-card-author" class="story-card-author featured-author" text="" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="featured-card-tags" class="featured-card-tags">
+                <!-- Tags added dynamically -->
+            </ui:VisualElement>
+            <ui:VisualElement name="featured-card-footer" class="featured-card-footer">
+                <ui:VisualElement name="featured-card-rating" class="story-card-rating" />
+                <ui:Label name="featured-card-badge" class="story-card-badge" text="" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <!-- Template: Story Card (grid item, hidden, used as reference) -->
+        <ui:VisualElement name="story-card-template" class="story-card" style="display: none;">
+            <ui:VisualElement name="card-thumb" class="story-card-thumb">
+                <ui:VisualElement name="card-thumb-placeholder" class="thumb-placeholder" />
+            </ui:VisualElement>
+            <ui:VisualElement name="card-info" class="card-info">
+                <ui:Label name="card-title" class="story-card-title" text="" />
+                <ui:Label name="card-author" class="story-card-author" text="" />
+                <ui:VisualElement name="card-rating" class="story-card-rating">
+                    <ui:Label name="card-rating-stars" class="rating-stars" text="" />
+                    <ui:Label name="card-rating-count" class="rating-count" text="" />
+                </ui:VisualElement>
+                <ui:VisualElement name="card-bottom" class="card-bottom">
+                    <ui:Label name="card-badge" class="story-card-badge" text="" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="card-progress" class="story-card-progress" style="display: none;">
+                <ui:VisualElement name="card-progress-fill" class="progress-fill" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+    </ui:VisualElement>
+
+    <!-- ============================================================
+         STORY DETAIL SCREEN
+         ============================================================ -->
+    <ui:VisualElement name="story-detail" class="story-detail-screen" style="display: none;">
+
+        <!-- Detail Header -->
+        <ui:VisualElement name="detail-header" class="detail-header">
+            <ui:Button name="detail-back-btn" class="detail-back-btn" text="&#x2190; Voltar" tabindex="200" />
+        </ui:VisualElement>
+
+        <!-- Cover Image -->
+        <ui:VisualElement name="detail-cover" class="detail-cover">
+            <ui:VisualElement name="detail-cover-placeholder" class="detail-cover-placeholder" />
+        </ui:VisualElement>
+
+        <!-- Detail Scroll -->
+        <ui:ScrollView name="detail-scroll" class="detail-scroll">
+
+            <!-- Title + Author -->
+            <ui:VisualElement name="detail-hero" class="detail-hero">
+                <ui:Label name="detail-title" class="detail-title" text="" />
+                <ui:Label name="detail-author" class="detail-author" text="" />
+            </ui:VisualElement>
+
+            <!-- Rating + Difficulty -->
+            <ui:VisualElement name="detail-rating-row" class="detail-rating-row">
+                <ui:VisualElement name="detail-rating" class="story-card-rating">
+                    <ui:Label name="detail-rating-stars" class="rating-stars" text="" />
+                    <ui:Label name="detail-rating-count" class="rating-count" text="" />
+                </ui:VisualElement>
+                <ui:Label name="detail-difficulty" class="detail-difficulty-badge" text="" />
+            </ui:VisualElement>
+
+            <!-- Genre Tags -->
+            <ui:VisualElement name="detail-tags" class="detail-tags">
+                <!-- Tags added dynamically -->
+            </ui:VisualElement>
+
+            <!-- Description -->
+            <ui:Label name="detail-description" class="detail-description" text="" />
+
+            <!-- Stats Row -->
+            <ui:VisualElement name="detail-stats" class="detail-stats">
+                <ui:VisualElement name="detail-stat-sections" class="detail-stat">
+                    <ui:Label name="detail-stat-sections-icon" class="detail-stat-icon" text="&#x1F4C4;" />
+                    <ui:Label name="detail-stat-sections-label" class="detail-stat-label" text="Seções" />
+                    <ui:Label name="detail-stat-sections-value" class="detail-stat-value" text="" />
+                </ui:VisualElement>
+                <ui:VisualElement name="detail-stat-endings" class="detail-stat">
+                    <ui:Label name="detail-stat-endings-icon" class="detail-stat-icon" text="&#x1F3C1;" />
+                    <ui:Label name="detail-stat-endings-label" class="detail-stat-label" text="Finais" />
+                    <ui:Label name="detail-stat-endings-value" class="detail-stat-value" text="" />
+                </ui:VisualElement>
+                <ui:VisualElement name="detail-stat-duration" class="detail-stat">
+                    <ui:Label name="detail-stat-duration-icon" class="detail-stat-icon" text="&#x23F1;" />
+                    <ui:Label name="detail-stat-duration-label" class="detail-stat-label" text="Duração" />
+                    <ui:Label name="detail-stat-duration-value" class="detail-stat-value" text="" />
+                </ui:VisualElement>
+                <ui:VisualElement name="detail-stat-words" class="detail-stat">
+                    <ui:Label name="detail-stat-words-icon" class="detail-stat-icon" text="&#x1F4DD;" />
+                    <ui:Label name="detail-stat-words-label" class="detail-stat-label" text="Palavras" />
+                    <ui:Label name="detail-stat-words-value" class="detail-stat-value" text="" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+
+            <!-- Available Actions Section -->
+            <ui:VisualElement name="detail-actions" class="detail-actions">
+
+                <!-- NOT OWNED: Preview Card -->
+                <ui:VisualElement name="detail-preview-card" class="preview-card" style="display: none;">
+                    <ui:Label name="preview-heading" class="preview-heading" text="Prévia Grátis" />
+                    <ui:Label name="preview-text" class="preview-text" text="" />
+                    <ui:Button name="preview-play-btn" class="preview-play-btn" text="Jogar Prévia Grátis" tabindex="201" />
+                </ui:VisualElement>
+
+                <!-- NOT OWNED: Purchase CTA -->
+                <ui:Button name="detail-buy-btn" class="detail-cta" text="" style="display: none;" tabindex="202" />
+
+                <!-- FREE NOT OWNED: Download CTA -->
+                <ui:Button name="detail-download-btn" class="detail-cta" text="Baixar e Jogar" style="display: none;" tabindex="203" />
+
+                <!-- OWNED: Progress info -->
+                <ui:VisualElement name="detail-owned-section" class="detail-owned-section" style="display: none;">
+                    <ui:VisualElement name="detail-progress-info" class="detail-progress-info">
+                        <ui:Label name="detail-progress-label" class="detail-progress-label" text="Progresso" />
+                        <ui:Label name="detail-progress-pct" class="detail-progress-pct" text="" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="detail-progress-bar" class="detail-progress-bar">
+                        <ui:VisualElement name="detail-progress-fill" class="detail-progress-fill" />
+                    </ui:VisualElement>
+                    <ui:Button name="detail-continue-btn" class="detail-continue-btn" text="▶ Continuar" style="display: none;" tabindex="204" />
+                    <ui:Button name="detail-restart-btn" class="detail-restart-btn" text="↺ Recomeçar" tabindex="205" />
+                    <ui:Button name="detail-stats-btn" class="detail-stats-btn" text="📊 Ver Estatísticas" tabindex="206" />
+                </ui:VisualElement>
+
+            </ui:VisualElement>
+
+        </ui:ScrollView>
+
+    </ui:VisualElement>
+
+</ui:UXML>

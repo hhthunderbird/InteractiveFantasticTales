@@ -12,6 +12,7 @@ namespace InteractiveFantasticTales.UI.UIToolkit
     {
         [SerializeField] private UIDocument _uiDocument;
         [SerializeField] private PanelSettings _panelSettings;
+        [SerializeField] private StoreController _storeController;
 
         private VisualElement _root;
         private VisualElement _appShell;
@@ -1274,6 +1275,141 @@ namespace InteractiveFantasticTales.UI.UIToolkit
         {
             if (_ageGate != null)
                 _ageGate.style.display = DisplayStyle.None;
+
+            HideGameUI();
+
+            if (_storeController != null)
+            {
+                _storeController.ShowStoreScreen();
+            }
+        }
+
+        public void HideStoreUI()
+        {
+            if (_storeController != null)
+                _storeController.HideStoreScreen();
+
+            ShowGameUI();
+        }
+
+        private void HideGameUI()
+        {
+            _header.style.display = DisplayStyle.None;
+            _illustration.style.display = DisplayStyle.None;
+            _scrollArea.style.display = DisplayStyle.None;
+            _choicesContainer.style.display = DisplayStyle.None;
+            _toolbar.style.display = DisplayStyle.None;
+            _charCreate.style.display = DisplayStyle.None;
+            _combatCard.style.display = DisplayStyle.None;
+            _endingCard.style.display = DisplayStyle.None;
+        }
+
+        private void ShowGameUI()
+        {
+            _header.style.display = DisplayStyle.Flex;
+            _illustration.style.display = DisplayStyle.Flex;
+            _scrollArea.style.display = DisplayStyle.Flex;
+            _toolbar.style.display = DisplayStyle.Flex;
+        }
+
+        public void StartStory(string storyId)
+        {
+            var engine = GameEngine.Instance;
+            if (engine == null)
+            {
+                Debug.LogError("MainUIController: GameEngine.Instance is null");
+                return;
+            }
+
+            if (storyId == "demo")
+            {
+                engine.LoadDemoStory();
+            }
+            else
+            {
+                Debug.LogWarning($"MainUIController: Loading story '{storyId}' not yet implemented");
+                return;
+            }
+
+            HideStoreUI();
+            ShowCharacterCreation();
+        }
+
+        public void StartNewStoryFlow(string storyId)
+        {
+            HideStoreUI();
+            ShowCharacterCreation();
+        }
+
+        public void ContinueStory(string storyId)
+        {
+            var engine = GameEngine.Instance;
+            if (engine == null) return;
+
+            string json = PlayerPrefs.GetString($"ift_save_{storyId}_last", "");
+            if (!string.IsNullOrEmpty(json))
+            {
+                try
+                {
+                    var data = JsonUtility.FromJson<SaveSlotData>(json);
+                    if (data != null)
+                    {
+                        var player = engine.PlayerCharacter;
+                        if (player != null)
+                        {
+                            JsonUtility.FromJsonOverwrite(data.playerJson, player);
+                        }
+                        engine.GoToSection(data.sectionId);
+                        HideStoreUI();
+                        _header.style.display = DisplayStyle.Flex;
+                        _illustration.style.display = DisplayStyle.Flex;
+                        _scrollArea.style.display = DisplayStyle.Flex;
+                        _toolbar.style.display = DisplayStyle.Flex;
+                        return;
+                    }
+                }
+                catch (Exception e)
+                {
+                    Debug.LogError($"Failed to load save for '{storyId}': {e.Message}");
+                }
+            }
+
+            StartStory(storyId);
+        }
+
+        public void ContinueStoryDemo()
+        {
+            var engine = GameEngine.Instance;
+            if (engine == null) return;
+
+            string json = PlayerPrefs.GetString("ift_save_demo_last", "");
+            if (!string.IsNullOrEmpty(json))
+            {
+                try
+                {
+                    var data = JsonUtility.FromJson<SaveSlotData>(json);
+                    if (data != null)
+                    {
+                        var player = engine.PlayerCharacter;
+                        if (player != null)
+                            JsonUtility.FromJsonOverwrite(data.playerJson, player);
+                        engine.GoToSection(data.sectionId);
+                        HideStoreUI();
+                        _header.style.display = DisplayStyle.Flex;
+                        _illustration.style.display = DisplayStyle.Flex;
+                        _scrollArea.style.display = DisplayStyle.Flex;
+                        _toolbar.style.display = DisplayStyle.Flex;
+                        return;
+                    }
+                }
+                catch (Exception e)
+                {
+                    Debug.LogError($"Failed to load demo save: {e.Message}");
+                }
+            }
+
+            engine.LoadDemoStory();
+            HideStoreUI();
             ShowCharacterCreation();
         }
 

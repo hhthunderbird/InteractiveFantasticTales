@@ -2094,6 +2094,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InteractiveFantasticTales.UI.UIToolkit.MainUIController
   _uiDocument: {fileID: 2037920807}
   _panelSettings: {fileID: 11400000, guid: a27990b52515eed428ee0f4b6055df7f, type: 2}
+  _storeController: {fileID: 0}
   _mainStyleSheet: {fileID: 0}
 --- !u!114 &2037920807
 MonoBehaviour:
