@@ -1,0 +1,755 @@
+- generic [ref=f13e3]:
+  - banner [ref=f13e4]:
+    - generic [ref=f13e5]:
+      - link "Link to the Steam Homepage" [ref=f13e8] [cursor=pointer]:
+        - /url: https://store.steampowered.com/?snr=1_7_7_151_global-header
+        - img "Link to the Steam Homepage" [ref=f13e9]
+      - navigation "Global Menu" [ref=f13e10]:
+        - link "STORE" [ref=f13e11] [cursor=pointer]:
+          - /url: https://store.steampowered.com/?snr=1_7_7_151_global-header
+        - link "COMMUNITY" [ref=f13e12] [cursor=pointer]:
+          - /url: https://steamcommunity.com/
+        - link "About" [ref=f13e13] [cursor=pointer]:
+          - /url: https://store.steampowered.com/about/?snr=1_7_7_151_global-header
+        - link "SUPPORT" [ref=f13e14] [cursor=pointer]:
+          - /url: https://help.steampowered.com/en/
+      - navigation "Account Menu" [ref=f13e16]:
+        - link "Install Steam" [ref=f13e17] [cursor=pointer]:
+          - /url: https://store.steampowered.com/about/?snr=1_7_7_151_global-header
+          - generic [ref=f13e18]: Install Steam
+        - link "sign in" [ref=f13e19] [cursor=pointer]:
+          - /url: https://store.steampowered.com/login/?redir=search%2F%3Fterm%3D%2522hosted%2Bgames%2522%26category1%3D998%26ndl%3D1&redir_ssl=1&snr=1_7_7_151_global-header
+        - text: "| language"
+  - navigation "Store menu" [ref=f13e22]:
+    - generic [ref=f13e23]:
+      - generic [ref=f13e25]:
+        - button "Browse" [ref=f13e26] [cursor=pointer]:
+          - generic [ref=f13e27]: Browse
+        - button "Recommendations" [ref=f13e30] [cursor=pointer]:
+          - generic [ref=f13e31]: Recommendations
+        - button "Categories" [ref=f13e34] [cursor=pointer]:
+          - generic [ref=f13e35]: Categories
+        - button "Ways to Play" [ref=f13e38] [cursor=pointer]:
+          - generic [ref=f13e39]: Ways to Play
+        - button "Special Sections" [ref=f13e42] [cursor=pointer]:
+          - generic [ref=f13e43]: Special Sections
+      - generic [ref=f13e46]:
+        - search [ref=f13e47]:
+          - combobox "Search the store" [ref=f13e49]
+          - button "Search" [ref=f13e50] [cursor=pointer]:
+            - img "Search" [ref=f13e51]
+        - link "Advanced Search" [ref=f13e54] [cursor=pointer]:
+          - /url: https://store.steampowered.com/search/?term=&snr=1_7_15__advancedsearch
+  - main [ref=f13e56]:
+    - generic [ref=f13e58]:
+      - heading [level=2] [ref=f13e60]
+      - generic [ref=f13e62]:
+        - text: "\"\"hosted games\"\""
+        - link [ref=f13e63] [cursor=pointer]:
+          - /url: "#"
+    - generic [ref=f13e66]:
+      - generic [ref=f13e67]:
+        - generic [ref=f13e68]:
+          - generic [ref=f13e69]:
+            - generic [ref=f13e70]: Sort by
+            - combobox [ref=f13e72] [cursor=pointer]: Relevance
+          - generic [ref=f13e73]:
+            - textbox [ref=f13e74]: "\"hosted games\""
+            - button "Search" [ref=f13e75] [cursor=pointer]:
+              - generic [ref=f13e76]: Search
+        - generic [ref=f13e77]:
+          - generic [ref=f13e78]: 173 results match your search.
+          - generic [ref=f13e80]:
+            - link "TCG Card Shop Simulator 15 Sep, 2024 40% off. R$41,99 normally, discounted to R$25,19" [ref=f13e81] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/3070070/TCG_Card_Shop_Simulator/?snr=1_7_7_151_150_1
+              - img [ref=f13e83]
+              - generic [ref=f13e84]:
+                - generic [ref=f13e85]: TCG Card Shop Simulator
+                - generic [ref=f13e88]: 15 Sep, 2024
+                - link "40% off. R$41,99 normally, discounted to R$25,19" [ref=f13e93]:
+                  - generic [ref=f13e94]: "-40%"
+                  - generic [ref=f13e95]:
+                    - generic [ref=f13e96]: R$41,99
+                    - generic [ref=f13e97]: R$25,19
+            - link "Forts 19 Apr, 2017 50% off. R$46,99 normally, discounted to R$23,49" [ref=f13e98] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/410900/Forts/?snr=1_7_7_151_150_1
+              - img [ref=f13e100]
+              - generic [ref=f13e101]:
+                - generic [ref=f13e102]: Forts
+                - generic [ref=f13e105]: 19 Apr, 2017
+                - link "50% off. R$46,99 normally, discounted to R$23,49" [ref=f13e110]:
+                  - generic [ref=f13e111]: "-50%"
+                  - generic [ref=f13e112]:
+                    - generic [ref=f13e113]: R$46,99
+                    - generic [ref=f13e114]: R$23,49
+            - link "Fireworks Mania - An Explosive Simulator 17 Dec, 2020 35% off. R$46,99 normally, discounted to R$30,54" [ref=f13e115] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/1079260/Fireworks_Mania__An_Explosive_Simulator/?snr=1_7_7_151_150_1
+              - img [ref=f13e117]
+              - generic [ref=f13e118]:
+                - generic [ref=f13e119]: Fireworks Mania - An Explosive Simulator
+                - generic [ref=f13e122]: 17 Dec, 2020
+                - link "35% off. R$46,99 normally, discounted to R$30,54" [ref=f13e127]:
+                  - generic [ref=f13e128]: "-35%"
+                  - generic [ref=f13e129]:
+                    - generic [ref=f13e130]: R$46,99
+                    - generic [ref=f13e131]: R$30,54
+            - 'link "TCG Card Shop Simulator: Prologue 6 Aug, 2024 Free" [ref=f13e132] [cursor=pointer]':
+              - /url: https://store.steampowered.com/app/3103840/TCG_Card_Shop_Simulator_Prologue/?snr=1_7_7_151_150_1
+              - img [ref=f13e134]
+              - generic [ref=f13e135]:
+                - generic [ref=f13e136]: "TCG Card Shop Simulator: Prologue"
+                - generic [ref=f13e139]: 6 Aug, 2024
+                - generic [ref=f13e146]: Free
+            - link "King Of The Castle 2 Mar, 2023 66% off. R$35,98 normally, discounted to R$12,23" [ref=f13e147] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/1839880/King_Of_The_Castle/?snr=1_7_7_151_150_1
+              - img [ref=f13e149]
+              - generic [ref=f13e150]:
+                - generic [ref=f13e151]: King Of The Castle
+                - generic [ref=f13e154]: 2 Mar, 2023
+                - link "66% off. R$35,98 normally, discounted to R$12,23" [ref=f13e159]:
+                  - generic [ref=f13e160]: "-66%"
+                  - generic [ref=f13e161]:
+                    - generic [ref=f13e162]: R$35,98
+                    - generic [ref=f13e163]: R$12,23
+            - 'link "Zombie Exodus: Safe Haven 28 Oct, 2016 40% off. R$26,49 normally, discounted to R$15,89" [ref=f13e164] [cursor=pointer]':
+              - /url: https://store.steampowered.com/app/543980/Zombie_Exodus_Safe_Haven/?snr=1_7_7_151_150_1
+              - img [ref=f13e166]
+              - generic [ref=f13e167]:
+                - generic [ref=f13e168]: "Zombie Exodus: Safe Haven"
+                - generic [ref=f13e173]: 28 Oct, 2016
+                - link "40% off. R$26,49 normally, discounted to R$15,89" [ref=f13e178]:
+                  - generic [ref=f13e179]: "-40%"
+                  - generic [ref=f13e180]:
+                    - generic [ref=f13e181]: R$26,49
+                    - generic [ref=f13e182]: R$15,89
+            - 'link "Fallen Hero: Rebirth 15 Mar, 2018 30% off. R$23,50 normally, discounted to R$16,45" [ref=f13e183] [cursor=pointer]':
+              - /url: https://store.steampowered.com/app/800620/Fallen_Hero_Rebirth/?snr=1_7_7_151_150_1
+              - img [ref=f13e185]
+              - generic [ref=f13e186]:
+                - generic [ref=f13e187]: "Fallen Hero: Rebirth"
+                - generic [ref=f13e192]: 15 Mar, 2018
+                - link "30% off. R$23,50 normally, discounted to R$16,45" [ref=f13e197]:
+                  - generic [ref=f13e198]: "-30%"
+                  - generic [ref=f13e199]:
+                    - generic [ref=f13e200]: R$23,50
+                    - generic [ref=f13e201]: R$16,45
+            - link "Chat Ragdoll Racing 20 Mar, 2025 R$16,99" [ref=f13e202] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/3511350/Chat_Ragdoll_Racing/?snr=1_7_7_151_150_1
+              - img [ref=f13e204]
+              - generic [ref=f13e205]:
+                - generic [ref=f13e206]: Chat Ragdoll Racing
+                - generic [ref=f13e209]: 20 Mar, 2025
+                - generic [ref=f13e216]: R$16,99
+            - 'link "Fallen Hero: Retribution 2 Feb, 2023 34% off. R$38,49 normally, discounted to R$25,40" [ref=f13e217] [cursor=pointer]':
+              - /url: https://store.steampowered.com/app/1343810/Fallen_Hero_Retribution/?snr=1_7_7_151_150_1
+              - img [ref=f13e219]
+              - generic [ref=f13e220]:
+                - generic [ref=f13e221]: "Fallen Hero: Retribution"
+                - generic [ref=f13e226]: 2 Feb, 2023
+                - link "34% off. R$38,49 normally, discounted to R$25,40" [ref=f13e231]:
+                  - generic [ref=f13e232]: "-34%"
+                  - generic [ref=f13e233]:
+                    - generic [ref=f13e234]: R$38,49
+                    - generic [ref=f13e235]: R$25,40
+            - link "Lords of Infinity 2 Mar, 2023 34% off. R$38,49 normally, discounted to R$25,40" [ref=f13e236] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/2169120/Lords_of_Infinity/?snr=1_7_7_151_150_1
+              - img [ref=f13e238]
+              - generic [ref=f13e239]:
+                - generic [ref=f13e240]: Lords of Infinity
+                - generic [ref=f13e245]: 2 Mar, 2023
+                - link "34% off. R$38,49 normally, discounted to R$25,40" [ref=f13e250]:
+                  - generic [ref=f13e251]: "-34%"
+                  - generic [ref=f13e252]:
+                    - generic [ref=f13e253]: R$38,49
+                    - generic [ref=f13e254]: R$25,40
+            - link "The First Foreigner 18 May, 2025 Free" [ref=f13e255] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/3634090/The_First_Foreigner/?snr=1_7_7_151_150_1
+              - img [ref=f13e257]
+              - generic [ref=f13e258]:
+                - generic [ref=f13e259]: The First Foreigner
+                - generic [ref=f13e262]: 18 May, 2025
+                - generic [ref=f13e269]: Free
+            - 'link "Wayhaven Chronicles: Book One 8 Mar, 2018 40% off. R$26,49 normally, discounted to R$15,89" [ref=f13e270] [cursor=pointer]':
+              - /url: https://store.steampowered.com/app/800600/Wayhaven_Chronicles_Book_One/?snr=1_7_7_151_150_1
+              - img [ref=f13e272]
+              - generic [ref=f13e273]:
+                - generic [ref=f13e274]: "Wayhaven Chronicles: Book One"
+                - generic [ref=f13e279]: 8 Mar, 2018
+                - link "40% off. R$26,49 normally, discounted to R$15,89" [ref=f13e284]:
+                  - generic [ref=f13e285]: "-40%"
+                  - generic [ref=f13e286]:
+                    - generic [ref=f13e287]: R$26,49
+                    - generic [ref=f13e288]: R$15,89
+            - 'link "Wayhaven Chronicles: Book Three 6 Apr, 2023 34% off. R$38,49 normally, discounted to R$25,40" [ref=f13e289] [cursor=pointer]':
+              - /url: https://store.steampowered.com/app/2120320/Wayhaven_Chronicles_Book_Three/?snr=1_7_7_151_150_1
+              - img [ref=f13e291]
+              - generic [ref=f13e292]:
+                - generic [ref=f13e293]: "Wayhaven Chronicles: Book Three"
+                - generic [ref=f13e298]: 6 Apr, 2023
+                - link "34% off. R$38,49 normally, discounted to R$25,40" [ref=f13e303]:
+                  - generic [ref=f13e304]: "-34%"
+                  - generic [ref=f13e305]:
+                    - generic [ref=f13e306]: R$38,49
+                    - generic [ref=f13e307]: R$25,40
+            - link "Wildshape - Map Editor (free demo) 9 Apr, 2021 Free" [ref=f13e308] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/1543590/Wildshape__Map_Editor_free_demo/?snr=1_7_7_151_150_1
+              - img [ref=f13e310]
+              - generic [ref=f13e311]:
+                - generic [ref=f13e312]: Wildshape - Map Editor (free demo)
+                - generic [ref=f13e317]: 9 Apr, 2021
+                - generic [ref=f13e324]: Free
+            - 'link "Wayhaven Chronicles: Book Two 7 May, 2020 34% off. R$29,99 normally, discounted to R$19,79" [ref=f13e325] [cursor=pointer]':
+              - /url: https://store.steampowered.com/app/1233950/Wayhaven_Chronicles_Book_Two/?snr=1_7_7_151_150_1
+              - img [ref=f13e327]
+              - generic [ref=f13e328]:
+                - generic [ref=f13e329]: "Wayhaven Chronicles: Book Two"
+                - generic [ref=f13e334]: 7 May, 2020
+                - link "34% off. R$29,99 normally, discounted to R$19,79" [ref=f13e339]:
+                  - generic [ref=f13e340]: "-34%"
+                  - generic [ref=f13e341]:
+                    - generic [ref=f13e342]: R$29,99
+                    - generic [ref=f13e343]: R$19,79
+            - link "Samurai of Hyuga Book 4 29 Aug, 2019 30% off. R$23,50 normally, discounted to R$16,45" [ref=f13e344] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/1132100/Samurai_of_Hyuga_Book_4/?snr=1_7_7_151_150_1
+              - img [ref=f13e346]
+              - generic [ref=f13e347]:
+                - generic [ref=f13e348]: Samurai of Hyuga Book 4
+                - generic [ref=f13e353]: 29 Aug, 2019
+                - link "30% off. R$23,50 normally, discounted to R$16,45" [ref=f13e358]:
+                  - generic [ref=f13e359]: "-30%"
+                  - generic [ref=f13e360]:
+                    - generic [ref=f13e361]: R$23,50
+                    - generic [ref=f13e362]: R$16,45
+            - link "Guns of Infinity 29 Mar, 2016 40% off. R$26,49 normally, discounted to R$15,89" [ref=f13e363] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/446330/Guns_of_Infinity/?snr=1_7_7_151_150_1
+              - img [ref=f13e365]
+              - generic [ref=f13e366]:
+                - generic [ref=f13e367]: Guns of Infinity
+                - generic [ref=f13e372]: 29 Mar, 2016
+                - link "40% off. R$26,49 normally, discounted to R$15,89" [ref=f13e377]:
+                  - generic [ref=f13e378]: "-40%"
+                  - generic [ref=f13e379]:
+                    - generic [ref=f13e380]: R$26,49
+                    - generic [ref=f13e381]: R$15,89
+            - link "Sabres of Infinity 29 Mar, 2016 34% off. R$20,49 normally, discounted to R$13,52" [ref=f13e382] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/446310/Sabres_of_Infinity/?snr=1_7_7_151_150_1
+              - img [ref=f13e384]
+              - generic [ref=f13e385]:
+                - generic [ref=f13e386]: Sabres of Infinity
+                - generic [ref=f13e391]: 29 Mar, 2016
+                - link "34% off. R$20,49 normally, discounted to R$13,52" [ref=f13e396]:
+                  - generic [ref=f13e397]: "-34%"
+                  - generic [ref=f13e398]:
+                    - generic [ref=f13e399]: R$20,49
+                    - generic [ref=f13e400]: R$13,52
+            - link "Blood Moon 20 Apr, 2023 40% off. R$26,49 normally, discounted to R$15,89" [ref=f13e401] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/2249040/Blood_Moon/?snr=1_7_7_151_150_1
+              - img [ref=f13e403]
+              - generic [ref=f13e404]:
+                - generic [ref=f13e405]: Blood Moon
+                - generic [ref=f13e410]: 20 Apr, 2023
+                - link "40% off. R$26,49 normally, discounted to R$15,89" [ref=f13e415]:
+                  - generic [ref=f13e416]: "-40%"
+                  - generic [ref=f13e417]:
+                    - generic [ref=f13e418]: R$26,49
+                    - generic [ref=f13e419]: R$15,89
+            - link "I, the Forgotten One 22 Jun, 2023 40% off. R$26,49 normally, discounted to R$15,89" [ref=f13e420] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/2251580/I_the_Forgotten_One/?snr=1_7_7_151_150_1
+              - img [ref=f13e422]
+              - generic [ref=f13e423]:
+                - generic [ref=f13e424]: I, the Forgotten One
+                - generic [ref=f13e429]: 22 Jun, 2023
+                - link "40% off. R$26,49 normally, discounted to R$15,89" [ref=f13e434]:
+                  - generic [ref=f13e435]: "-40%"
+                  - generic [ref=f13e436]:
+                    - generic [ref=f13e437]: R$26,49
+                    - generic [ref=f13e438]: R$15,89
+            - 'link "The Golden Rose: Book One 2 Jun, 2022 34% off. R$38,49 normally, discounted to R$25,40" [ref=f13e439] [cursor=pointer]':
+              - /url: https://store.steampowered.com/app/1892950/The_Golden_Rose_Book_One/?snr=1_7_7_151_150_1
+              - img [ref=f13e441]
+              - generic [ref=f13e442]:
+                - generic [ref=f13e443]: "The Golden Rose: Book One"
+                - generic [ref=f13e448]: 2 Jun, 2022
+                - link "34% off. R$38,49 normally, discounted to R$25,40" [ref=f13e453]:
+                  - generic [ref=f13e454]: "-34%"
+                  - generic [ref=f13e455]:
+                    - generic [ref=f13e456]: R$38,49
+                    - generic [ref=f13e457]: R$25,40
+            - link "Tin Star 5 Jun, 2015 34% off. R$38,49 normally, discounted to R$25,40" [ref=f13e458] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/375130/Tin_Star/?snr=1_7_7_151_150_1
+              - img [ref=f13e460]
+              - generic [ref=f13e461]:
+                - generic [ref=f13e462]: Tin Star
+                - generic [ref=f13e467]: 5 Jun, 2015
+                - link "34% off. R$38,49 normally, discounted to R$25,40" [ref=f13e472]:
+                  - generic [ref=f13e473]: "-34%"
+                  - generic [ref=f13e474]:
+                    - generic [ref=f13e475]: R$38,49
+                    - generic [ref=f13e476]: R$25,40
+            - link "The War for the West 14 Nov, 2019 40% off. R$26,49 normally, discounted to R$15,89" [ref=f13e477] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/1137400/The_War_for_the_West/?snr=1_7_7_151_150_1
+              - img [ref=f13e479]
+              - generic [ref=f13e480]:
+                - generic [ref=f13e481]: The War for the West
+                - generic [ref=f13e486]: 14 Nov, 2019
+                - link "40% off. R$26,49 normally, discounted to R$15,89" [ref=f13e491]:
+                  - generic [ref=f13e492]: "-40%"
+                  - generic [ref=f13e493]:
+                    - generic [ref=f13e494]: R$26,49
+                    - generic [ref=f13e495]: R$15,89
+            - link "The Passenger 29 Dec, 2022 30% off. R$23,50 normally, discounted to R$16,45" [ref=f13e496] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/2162160/The_Passenger/?snr=1_7_7_151_150_1
+              - img [ref=f13e498]
+              - generic [ref=f13e499]:
+                - generic [ref=f13e500]: The Passenger
+                - generic [ref=f13e505]: 29 Dec, 2022
+                - link "30% off. R$23,50 normally, discounted to R$16,45" [ref=f13e510]:
+                  - generic [ref=f13e511]: "-30%"
+                  - generic [ref=f13e512]:
+                    - generic [ref=f13e513]: R$23,50
+                    - generic [ref=f13e514]: R$16,45
+            - link "Zombie Exodus 23 Oct, 2015 25% off. R$59,99 normally, discounted to R$44,99" [ref=f13e515] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/411570/Zombie_Exodus/?snr=1_7_7_151_150_1
+              - img [ref=f13e517]
+              - generic [ref=f13e518]:
+                - generic [ref=f13e519]: Zombie Exodus
+                - generic [ref=f13e524]: 23 Oct, 2015
+                - link "25% off. R$59,99 normally, discounted to R$44,99" [ref=f13e529]:
+                  - generic [ref=f13e530]: "-25%"
+                  - generic [ref=f13e531]:
+                    - generic [ref=f13e532]: R$59,99
+                    - generic [ref=f13e533]: R$44,99
+            - link "Fields of Asphodel 5 Sep, 2024 34% off. R$38,49 normally, discounted to R$25,40" [ref=f13e534] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/3013740/Fields_of_Asphodel/?snr=1_7_7_151_150_1
+              - img [ref=f13e536]
+              - generic [ref=f13e537]:
+                - generic [ref=f13e538]: Fields of Asphodel
+                - generic [ref=f13e543]: 5 Sep, 2024
+                - link "34% off. R$38,49 normally, discounted to R$25,40" [ref=f13e548]:
+                  - generic [ref=f13e549]: "-34%"
+                  - generic [ref=f13e550]:
+                    - generic [ref=f13e551]: R$38,49
+                    - generic [ref=f13e552]: R$25,40
+            - link "Turbo Tempest 8 Jul, 2021 Free" [ref=f13e553] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/1655840/Turbo_Tempest/?snr=1_7_7_151_150_1
+              - img [ref=f13e555]
+              - generic [ref=f13e556]:
+                - generic [ref=f13e557]: Turbo Tempest
+                - generic [ref=f13e560]: 8 Jul, 2021
+                - generic [ref=f13e567]: Free
+            - link "The Parenting Simulator 7 May, 2020 34% off. R$20,49 normally, discounted to R$13,52" [ref=f13e568] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/1233720/The_Parenting_Simulator/?snr=1_7_7_151_150_1
+              - img [ref=f13e570]
+              - generic [ref=f13e571]:
+                - generic [ref=f13e572]: The Parenting Simulator
+                - generic [ref=f13e577]: 7 May, 2020
+                - link "34% off. R$20,49 normally, discounted to R$13,52" [ref=f13e582]:
+                  - generic [ref=f13e583]: "-34%"
+                  - generic [ref=f13e584]:
+                    - generic [ref=f13e585]: R$20,49
+                    - generic [ref=f13e586]: R$13,52
+            - link "Life of a Space Force Captain 5 May, 2022 30% off. R$23,50 normally, discounted to R$16,45" [ref=f13e587] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/1838820/Life_of_a_Space_Force_Captain/?snr=1_7_7_151_150_1
+              - img [ref=f13e589]
+              - generic [ref=f13e590]:
+                - generic [ref=f13e591]: Life of a Space Force Captain
+                - generic [ref=f13e596]: 5 May, 2022
+                - link "30% off. R$23,50 normally, discounted to R$16,45" [ref=f13e601]:
+                  - generic [ref=f13e602]: "-30%"
+                  - generic [ref=f13e603]:
+                    - generic [ref=f13e604]: R$23,50
+                    - generic [ref=f13e605]: R$16,45
+            - link "Whiskey-Four 7 Nov, 2024 30% off. R$23,50 normally, discounted to R$16,45" [ref=f13e606] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/3089700/WhiskeyFour/?snr=1_7_7_151_150_1
+              - img [ref=f13e608]
+              - generic [ref=f13e609]:
+                - generic [ref=f13e610]: Whiskey-Four
+                - generic [ref=f13e615]: 7 Nov, 2024
+                - link "30% off. R$23,50 normally, discounted to R$16,45" [ref=f13e620]:
+                  - generic [ref=f13e621]: "-30%"
+                  - generic [ref=f13e622]:
+                    - generic [ref=f13e623]: R$23,50
+                    - generic [ref=f13e624]: R$16,45
+            - link "A Mage Reborn 4 Aug, 2022 40% off. R$16,99 normally, discounted to R$10,19" [ref=f13e625] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/2004610/A_Mage_Reborn/?snr=1_7_7_151_150_1
+              - img [ref=f13e627]
+              - generic [ref=f13e628]:
+                - generic [ref=f13e629]: A Mage Reborn
+                - generic [ref=f13e634]: 4 Aug, 2022
+                - link "40% off. R$16,99 normally, discounted to R$10,19" [ref=f13e639]:
+                  - generic [ref=f13e640]: "-40%"
+                  - generic [ref=f13e641]:
+                    - generic [ref=f13e642]: R$16,99
+                    - generic [ref=f13e643]: R$10,19
+            - 'link "A Study in Steampunk: Choice by Gaslight 20 Nov, 2015 30% off. R$23,50 normally, discounted to R$16,45" [ref=f13e644] [cursor=pointer]':
+              - /url: https://store.steampowered.com/app/421630/A_Study_in_Steampunk_Choice_by_Gaslight/?snr=1_7_7_151_150_1
+              - img [ref=f13e646]
+              - generic [ref=f13e647]:
+                - generic [ref=f13e648]: "A Study in Steampunk: Choice by Gaslight"
+                - generic [ref=f13e653]: 20 Nov, 2015
+                - link "30% off. R$23,50 normally, discounted to R$16,45" [ref=f13e658]:
+                  - generic [ref=f13e659]: "-30%"
+                  - generic [ref=f13e660]:
+                    - generic [ref=f13e661]: R$23,50
+                    - generic [ref=f13e662]: R$16,45
+            - 'link "Zombie Demolition: Infinite Zombie Shooter 16 Jun, 2025 Free" [ref=f13e663] [cursor=pointer]':
+              - /url: https://store.steampowered.com/app/3599220/Zombie_Demolition_Infinite_Zombie_Shooter/?snr=1_7_7_151_150_1
+              - img [ref=f13e665]
+              - generic [ref=f13e666]:
+                - generic [ref=f13e667]: "Zombie Demolition: Infinite Zombie Shooter"
+                - generic [ref=f13e670]: 16 Jun, 2025
+                - generic [ref=f13e677]: Free
+            - 'link "Breach: The Archangel Job 14 Nov, 2019 34% off. R$29,99 normally, discounted to R$19,79" [ref=f13e678] [cursor=pointer]':
+              - /url: https://store.steampowered.com/app/1166840/Breach_The_Archangel_Job/?snr=1_7_7_151_150_1
+              - img [ref=f13e680]
+              - generic [ref=f13e681]:
+                - generic [ref=f13e682]: "Breach: The Archangel Job"
+                - generic [ref=f13e687]: 14 Nov, 2019
+                - link "34% off. R$29,99 normally, discounted to R$19,79" [ref=f13e692]:
+                  - generic [ref=f13e693]: "-34%"
+                  - generic [ref=f13e694]:
+                    - generic [ref=f13e695]: R$29,99
+                    - generic [ref=f13e696]: R$19,79
+            - 'link "Green: An Orc''s Life 17 Mar, 2020 R$6,49" [ref=f13e697] [cursor=pointer]':
+              - /url: https://store.steampowered.com/app/1208810/Green_An_Orcs_Life/?snr=1_7_7_151_150_1
+              - img [ref=f13e699]
+              - generic [ref=f13e700]:
+                - generic [ref=f13e701]: "Green: An Orc's Life"
+                - generic [ref=f13e704]: 17 Mar, 2020
+                - generic [ref=f13e711]: R$6,49
+            - 'link "Community College Hero: Trial by Fire 4 Dec, 2015 40% off. R$16,99 normally, discounted to R$10,19" [ref=f13e712] [cursor=pointer]':
+              - /url: https://store.steampowered.com/app/423120/Community_College_Hero_Trial_by_Fire/?snr=1_7_7_151_150_1
+              - img [ref=f13e714]
+              - generic [ref=f13e715]:
+                - generic [ref=f13e716]: "Community College Hero: Trial by Fire"
+                - generic [ref=f13e721]: 4 Dec, 2015
+                - link "40% off. R$16,99 normally, discounted to R$10,19" [ref=f13e726]:
+                  - generic [ref=f13e727]: "-40%"
+                  - generic [ref=f13e728]:
+                    - generic [ref=f13e729]: R$16,99
+                    - generic [ref=f13e730]: R$10,19
+            - link "An Unexpectedly Green Journey 3 Oct, 2024 34% off. R$38,49 normally, discounted to R$25,40" [ref=f13e731] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/3053420/An_Unexpectedly_Green_Journey/?snr=1_7_7_151_150_1
+              - img [ref=f13e733]
+              - generic [ref=f13e734]:
+                - generic [ref=f13e735]: An Unexpectedly Green Journey
+                - generic [ref=f13e740]: 3 Oct, 2024
+                - link "34% off. R$38,49 normally, discounted to R$25,40" [ref=f13e745]:
+                  - generic [ref=f13e746]: "-34%"
+                  - generic [ref=f13e747]:
+                    - generic [ref=f13e748]: R$38,49
+                    - generic [ref=f13e749]: R$25,40
+            - link "Samurai of Hyuga Book 2 16 Sep, 2016 34% off. R$12,39 normally, discounted to R$8,17" [ref=f13e750] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/524560/Samurai_of_Hyuga_Book_2/?snr=1_7_7_151_150_1
+              - img [ref=f13e752]
+              - generic [ref=f13e753]:
+                - generic [ref=f13e754]: Samurai of Hyuga Book 2
+                - generic [ref=f13e759]: 16 Sep, 2016
+                - link "34% off. R$12,39 normally, discounted to R$8,17" [ref=f13e764]:
+                  - generic [ref=f13e765]: "-34%"
+                  - generic [ref=f13e766]:
+                    - generic [ref=f13e767]: R$12,39
+                    - generic [ref=f13e768]: R$8,17
+            - 'link "Sordwin: The Evertree Saga 7 Mar, 2019 40% off. R$26,49 normally, discounted to R$15,89" [ref=f13e769] [cursor=pointer]':
+              - /url: https://store.steampowered.com/app/1029130/Sordwin_The_Evertree_Saga/?snr=1_7_7_151_150_1
+              - img [ref=f13e771]
+              - generic [ref=f13e772]:
+                - generic [ref=f13e773]: "Sordwin: The Evertree Saga"
+                - generic [ref=f13e778]: 7 Mar, 2019
+                - link "40% off. R$26,49 normally, discounted to R$15,89" [ref=f13e783]:
+                  - generic [ref=f13e784]: "-40%"
+                  - generic [ref=f13e785]:
+                    - generic [ref=f13e786]: R$26,49
+                    - generic [ref=f13e787]: R$15,89
+            - link "World War II Armored Recon 3 Jul, 2025 34% off. R$29,99 normally, discounted to R$19,79" [ref=f13e788] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/3579720/World_War_II_Armored_Recon/?snr=1_7_7_151_150_1
+              - img [ref=f13e790]
+              - generic [ref=f13e791]:
+                - generic [ref=f13e792]: World War II Armored Recon
+                - generic [ref=f13e797]: 3 Jul, 2025
+                - link "34% off. R$29,99 normally, discounted to R$19,79" [ref=f13e802]:
+                  - generic [ref=f13e803]: "-34%"
+                  - generic [ref=f13e804]:
+                    - generic [ref=f13e805]: R$29,99
+                    - generic [ref=f13e806]: R$19,79
+            - link "The Vampire Regent 9 Sep, 2021 40% off. R$26,49 normally, discounted to R$15,89" [ref=f13e807] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/1515420/The_Vampire_Regent/?snr=1_7_7_151_150_1
+              - img [ref=f13e809]
+              - generic [ref=f13e810]:
+                - generic [ref=f13e811]: The Vampire Regent
+                - generic [ref=f13e816]: 9 Sep, 2021
+                - link "40% off. R$26,49 normally, discounted to R$15,89" [ref=f13e821]:
+                  - generic [ref=f13e822]: "-40%"
+                  - generic [ref=f13e823]:
+                    - generic [ref=f13e824]: R$26,49
+                    - generic [ref=f13e825]: R$15,89
+            - link "Life of a Mercenary 4 Jun, 2020 30% off. R$23,50 normally, discounted to R$16,45" [ref=f13e826] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/1245820/Life_of_a_Mercenary/?snr=1_7_7_151_150_1
+              - img [ref=f13e828]
+              - generic [ref=f13e829]:
+                - generic [ref=f13e830]: Life of a Mercenary
+                - generic [ref=f13e835]: 4 Jun, 2020
+                - link "30% off. R$23,50 normally, discounted to R$16,45" [ref=f13e840]:
+                  - generic [ref=f13e841]: "-30%"
+                  - generic [ref=f13e842]:
+                    - generic [ref=f13e843]: R$23,50
+                    - generic [ref=f13e844]: R$16,45
+            - link "The Soul Stone War 2 13 Jan, 2022 40% off. R$26,49 normally, discounted to R$15,89" [ref=f13e845] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/1775520/The_Soul_Stone_War_2/?snr=1_7_7_151_150_1
+              - img [ref=f13e847]
+              - generic [ref=f13e848]:
+                - generic [ref=f13e849]: The Soul Stone War 2
+                - generic [ref=f13e854]: 13 Jan, 2022
+                - link "40% off. R$26,49 normally, discounted to R$15,89" [ref=f13e859]:
+                  - generic [ref=f13e860]: "-40%"
+                  - generic [ref=f13e861]:
+                    - generic [ref=f13e862]: R$26,49
+                    - generic [ref=f13e863]: R$15,89
+            - link "Ghost Simulator 5 Oct, 2023 30% off. R$23,50 normally, discounted to R$16,45" [ref=f13e864] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/2434400/Ghost_Simulator/?snr=1_7_7_151_150_1
+              - img [ref=f13e866]
+              - generic [ref=f13e867]:
+                - generic [ref=f13e868]: Ghost Simulator
+                - generic [ref=f13e873]: 5 Oct, 2023
+                - link "30% off. R$23,50 normally, discounted to R$16,45" [ref=f13e878]:
+                  - generic [ref=f13e879]: "-30%"
+                  - generic [ref=f13e880]:
+                    - generic [ref=f13e881]: R$23,50
+                    - generic [ref=f13e882]: R$16,45
+            - link "Totem Force 4 Apr, 2019 30% off. R$23,50 normally, discounted to R$16,45" [ref=f13e883] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/1029150/Totem_Force/?snr=1_7_7_151_150_1
+              - img [ref=f13e885]
+              - generic [ref=f13e886]:
+                - generic [ref=f13e887]: Totem Force
+                - generic [ref=f13e892]: 4 Apr, 2019
+                - link "30% off. R$23,50 normally, discounted to R$16,45" [ref=f13e897]:
+                  - generic [ref=f13e898]: "-30%"
+                  - generic [ref=f13e899]:
+                    - generic [ref=f13e900]: R$23,50
+                    - generic [ref=f13e901]: R$16,45
+            - link "Life of a Mobster 17 Mar, 2017 40% off. R$16,99 normally, discounted to R$10,19" [ref=f13e902] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/596890/Life_of_a_Mobster/?snr=1_7_7_151_150_1
+              - img [ref=f13e904]
+              - generic [ref=f13e905]:
+                - generic [ref=f13e906]: Life of a Mobster
+                - generic [ref=f13e911]: 17 Mar, 2017
+                - link "40% off. R$16,99 normally, discounted to R$10,19" [ref=f13e916]:
+                  - generic [ref=f13e917]: "-40%"
+                  - generic [ref=f13e918]:
+                    - generic [ref=f13e919]: R$16,99
+                    - generic [ref=f13e920]: R$10,19
+            - link "Keeper of the Sun and Moon 8 Aug, 2019 30% off. R$23,50 normally, discounted to R$16,45" [ref=f13e921] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/1097670/Keeper_of_the_Sun_and_Moon/?snr=1_7_7_151_150_1
+              - img [ref=f13e923]
+              - generic [ref=f13e924]:
+                - generic [ref=f13e925]: Keeper of the Sun and Moon
+                - generic [ref=f13e930]: 8 Aug, 2019
+                - link "30% off. R$23,50 normally, discounted to R$16,45" [ref=f13e935]:
+                  - generic [ref=f13e936]: "-30%"
+                  - generic [ref=f13e937]:
+                    - generic [ref=f13e938]: R$23,50
+                    - generic [ref=f13e939]: R$16,45
+            - link "Keeper of the Day and Night 1 Apr, 2021 40% off. R$26,49 normally, discounted to R$15,89" [ref=f13e940] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/1552430/Keeper_of_the_Day_and_Night/?snr=1_7_7_151_150_1
+              - img [ref=f13e942]
+              - generic [ref=f13e943]:
+                - generic [ref=f13e944]: Keeper of the Day and Night
+                - generic [ref=f13e949]: 1 Apr, 2021
+                - link "40% off. R$26,49 normally, discounted to R$15,89" [ref=f13e954]:
+                  - generic [ref=f13e955]: "-40%"
+                  - generic [ref=f13e956]:
+                    - generic [ref=f13e957]: R$26,49
+                    - generic [ref=f13e958]: R$15,89
+            - link "Highlands, Deep Waters 28 Sep, 2017 30% off. R$23,50 normally, discounted to R$16,45" [ref=f13e959] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/721760/Highlands_Deep_Waters/?snr=1_7_7_151_150_1
+              - img [ref=f13e961]
+              - generic [ref=f13e962]:
+                - generic [ref=f13e963]: Highlands, Deep Waters
+                - generic [ref=f13e968]: 28 Sep, 2017
+                - link "30% off. R$23,50 normally, discounted to R$16,45" [ref=f13e973]:
+                  - generic [ref=f13e974]: "-30%"
+                  - generic [ref=f13e975]:
+                    - generic [ref=f13e976]: R$23,50
+                    - generic [ref=f13e977]: R$16,45
+            - link "Samurai of Hyuga 16 Sep, 2016 40% off. R$16,99 normally, discounted to R$10,19" [ref=f13e978] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/524540/Samurai_of_Hyuga/?snr=1_7_7_151_150_1
+              - img [ref=f13e980]
+              - generic [ref=f13e981]:
+                - generic [ref=f13e982]: Samurai of Hyuga
+                - generic [ref=f13e987]: 16 Sep, 2016
+                - link "40% off. R$16,99 normally, discounted to R$10,19" [ref=f13e992]:
+                  - generic [ref=f13e993]: "-40%"
+                  - generic [ref=f13e994]:
+                    - generic [ref=f13e995]: R$16,99
+                    - generic [ref=f13e996]: R$10,19
+      - generic [ref=f13e997]:
+        - generic [ref=f13e998]:
+          - button "Narrow by Price" [ref=f13e999] [cursor=pointer]:
+            - generic [ref=f13e1000]: Narrow by Price
+          - generic [ref=f13e1001]:
+            - generic [ref=f13e1002]:
+              - button [ref=f13e1004]: "13"
+              - generic [ref=f13e1005]: Any Price
+            - button "Discounts & Events" [ref=f13e1008] [cursor=pointer]:
+              - generic [ref=f13e1011]: Discounts & Events
+            - button "Hide free to play items" [ref=f13e1013] [cursor=pointer]:
+              - generic [ref=f13e1016]: Hide free to play items
+        - generic [ref=f13e1017]:
+          - button "Narrow by tag" [ref=f13e1018] [cursor=pointer]:
+            - generic [ref=f13e1019]: Narrow by tag
+          - generic [ref=f13e1020]:
+            - generic [ref=f13e1021]:
+              - generic [ref=f13e1022] [cursor=pointer]:
+                - button "Indie 144" [ref=f13e1023]:
+                  - generic [ref=f13e1024]:
+                    - generic [ref=f13e1026]: Indie
+                    - generic [ref=f13e1027]: "144"
+                - img [ref=f13e1029]
+              - generic [ref=f13e1030] [cursor=pointer]:
+                - button "RPG 131" [ref=f13e1031]:
+                  - generic [ref=f13e1032]:
+                    - generic [ref=f13e1034]: RPG
+                    - generic [ref=f13e1035]: "131"
+                - img [ref=f13e1037]
+              - generic [ref=f13e1038] [cursor=pointer]:
+                - button "Text-Based 126" [ref=f13e1039]:
+                  - generic [ref=f13e1040]:
+                    - generic [ref=f13e1042]: Text-Based
+                    - generic [ref=f13e1043]: "126"
+                - img [ref=f13e1045]
+              - generic [ref=f13e1046] [cursor=pointer]:
+                - button "Adventure 112" [ref=f13e1047]:
+                  - generic [ref=f13e1048]:
+                    - generic [ref=f13e1050]: Adventure
+                    - generic [ref=f13e1051]: "112"
+                - img [ref=f13e1053]
+              - generic [ref=f13e1054] [cursor=pointer]:
+                - button "Choose Your Own Adventure 98" [ref=f13e1055]:
+                  - generic [ref=f13e1056]:
+                    - generic [ref=f13e1058]: Choose Your Own Adventure
+                    - generic [ref=f13e1059]: "98"
+                - img [ref=f13e1061]
+              - generic [ref=f13e1062] [cursor=pointer]:
+                - button "Interactive Fiction 84" [ref=f13e1063]:
+                  - generic [ref=f13e1064]:
+                    - generic [ref=f13e1066]: Interactive Fiction
+                    - generic [ref=f13e1067]: "84"
+                - img [ref=f13e1069]
+              - generic [ref=f13e1070] [cursor=pointer]:
+                - button "Singleplayer 83" [ref=f13e1071]:
+                  - generic [ref=f13e1072]:
+                    - generic [ref=f13e1074]: Singleplayer
+                    - generic [ref=f13e1075]: "83"
+                - img [ref=f13e1077]
+              - generic [ref=f13e1078] [cursor=pointer]:
+                - button "Choices Matter 66" [ref=f13e1079]:
+                  - generic [ref=f13e1080]:
+                    - generic [ref=f13e1082]: Choices Matter
+                    - generic [ref=f13e1083]: "66"
+                - img [ref=f13e1085]
+              - generic [ref=f13e1086] [cursor=pointer]:
+                - button "Casual 64" [ref=f13e1087]:
+                  - generic [ref=f13e1088]:
+                    - generic [ref=f13e1090]: Casual
+                    - generic [ref=f13e1091]: "64"
+                - img [ref=f13e1093]
+              - generic [ref=f13e1094] [cursor=pointer]:
+                - button "Multiple Endings 44" [ref=f13e1095]:
+                  - generic [ref=f13e1096]:
+                    - generic [ref=f13e1098]: Multiple Endings
+                    - generic [ref=f13e1099]: "44"
+                - img [ref=f13e1101]
+              - generic [ref=f13e1102] [cursor=pointer]:
+                - button "Character Customization 35" [ref=f13e1103]:
+                  - generic [ref=f13e1104]:
+                    - generic [ref=f13e1106]: Character Customization
+                    - generic [ref=f13e1107]: "35"
+                - img [ref=f13e1109]
+              - generic [ref=f13e1110] [cursor=pointer]:
+                - button "Action 31" [ref=f13e1111]:
+                  - generic [ref=f13e1112]:
+                    - generic [ref=f13e1114]: Action
+                    - generic [ref=f13e1115]: "31"
+                - img [ref=f13e1117]
+              - generic [ref=f13e1118] [cursor=pointer]:
+                - button "Fantasy 31" [ref=f13e1119]:
+                  - generic [ref=f13e1120]:
+                    - generic [ref=f13e1122]: Fantasy
+                    - generic [ref=f13e1123]: "31"
+                - img [ref=f13e1125]
+              - generic [ref=f13e1126] [cursor=pointer]:
+                - button "Story Rich 31" [ref=f13e1127]:
+                  - generic [ref=f13e1128]:
+                    - generic [ref=f13e1130]: Story Rich
+                    - generic [ref=f13e1131]: "31"
+                - img [ref=f13e1133]
+              - generic [ref=f13e1134] [cursor=pointer]:
+                - button "3D 29" [ref=f13e1135]:
+                  - generic [ref=f13e1136]:
+                    - generic [ref=f13e1138]: 3D
+                    - generic [ref=f13e1139]: "29"
+                - img [ref=f13e1141]
+              - generic [ref=f13e1142] [cursor=pointer]:
+                - button "Multiplayer 24" [ref=f13e1143]:
+                  - generic [ref=f13e1144]:
+                    - generic [ref=f13e1146]: Multiplayer
+                    - generic [ref=f13e1147]: "24"
+                - img [ref=f13e1149]
+            - textbox [ref=f13e1150]: search for more tags
+        - generic [ref=f13e1151]:
+          - button "Show selected types" [ref=f13e1152] [cursor=pointer]:
+            - generic [ref=f13e1153]: Show selected types
+          - generic [ref=f13e1154]:
+            - button "Games" [ref=f13e1156] [cursor=pointer]:
+              - generic [ref=f13e1159]: Games
+            - button "Software" [ref=f13e1161] [cursor=pointer]:
+              - generic [ref=f13e1164]: Software
+            - button "Downloadable Content" [ref=f13e1166] [cursor=pointer]:
+              - generic [ref=f13e1169]: Downloadable Content
+            - button "Demos" [ref=f13e1171] [cursor=pointer]:
+              - generic [ref=f13e1174]: Demos
+            - button "Soundtracks" [ref=f13e1176] [cursor=pointer]:
+              - generic [ref=f13e1179]: Soundtracks
+            - button "Playtests" [ref=f13e1181] [cursor=pointer]:
+              - generic [ref=f13e1184]: Playtests
+            - button "Videos" [ref=f13e1186] [cursor=pointer]:
+              - generic [ref=f13e1189]: Videos
+            - button "Mods" [ref=f13e1191] [cursor=pointer]:
+              - generic [ref=f13e1194]: Mods
+            - button "Hardware" [ref=f13e1196] [cursor=pointer]:
+              - generic [ref=f13e1199]: Hardware
+        - button "Narrow by number of players" [ref=f13e1201] [cursor=pointer]:
+          - generic [ref=f13e1202]: Narrow by number of players
+        - button "Narrow by feature" [ref=f13e1204] [cursor=pointer]:
+          - generic [ref=f13e1205]: Narrow by feature
+        - button "Narrow by Controller Support" [ref=f13e1207] [cursor=pointer]:
+          - generic [ref=f13e1208]: Narrow by Controller Support
+        - button "Narrow by accessibility feature" [ref=f13e1210] [cursor=pointer]:
+          - generic [ref=f13e1211]: Narrow by accessibility feature
+        - generic [ref=f13e1212]:
+          - generic [ref=f13e1214]: Narrow by Deck Compatibility
+          - generic [ref=f13e1215]:
+            - button "Verified 16" [ref=f13e1217] [cursor=pointer]:
+              - generic [ref=f13e1218]:
+                - generic [ref=f13e1220]: Verified
+                - generic [ref=f13e1221]: "16"
+            - button "Playable 14" [ref=f13e1223] [cursor=pointer]:
+              - generic [ref=f13e1224]:
+                - generic [ref=f13e1226]: Playable
+                - generic [ref=f13e1227]: "14"
+            - link "Learn More" [ref=f13e1228] [cursor=pointer]:
+              - /url: https://steamdeck.com/en/verified
+        - button "Narrow by VR Support" [ref=f13e1230] [cursor=pointer]:
+          - generic [ref=f13e1231]: Narrow by VR Support
+        - generic [ref=f13e1232]:
+          - button "Narrow by OS" [ref=f13e1233] [cursor=pointer]:
+            - generic [ref=f13e1234]: Narrow by OS
+          - generic [ref=f13e1235]:
+            - button "Windows" [ref=f13e1237] [cursor=pointer]:
+              - generic [ref=f13e1240]: Windows
+            - button "macOS" [ref=f13e1242] [cursor=pointer]:
+              - generic [ref=f13e1245]: macOS
+            - button "SteamOS + Linux" [ref=f13e1247] [cursor=pointer]:
+              - generic [ref=f13e1250]: SteamOS + Linux
+        - button "Narrow by language" [ref=f13e1252] [cursor=pointer]:
+          - generic [ref=f13e1253]: Narrow by language

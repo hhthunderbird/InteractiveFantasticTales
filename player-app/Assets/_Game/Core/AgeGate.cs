@@ -12,6 +12,7 @@ namespace InteractiveFantasticTales.Core
     {
         private const string PrefKeyBirthYear = "agegate_birth_year";
         private const string PrefKeyAgeGateDone = "agegate_completed";
+        private const string PrefKeyPurchasePinHash = "agegate_purchase_pin_hash";
         private const string PrefKeyPurchasePin = "agegate_purchase_pin";
 
         public enum AccessLevel { Unknown, Child, Teen, Adult }
@@ -65,6 +66,7 @@ namespace InteractiveFantasticTales.Core
             SecureStorage.ObfuscatedPrefs.DeleteKey(PrefKeyBirthYear);
             SecureStorage.ObfuscatedPrefs.DeleteKey(PrefKeyAgeGateDone);
             SecureStorage.ObfuscatedPrefs.DeleteKey(PrefKeyPurchasePin);
+            SecureStorage.ObfuscatedPrefs.DeleteKey(PrefKeyPurchasePinHash);
             SecureStorage.ObfuscatedPrefs.Save();
         }
 
@@ -99,7 +101,7 @@ namespace InteractiveFantasticTales.Core
         {
             if (pin.Length != 4 || !int.TryParse(pin, out _)) return;
             var hash = ComputeSimpleHash(pin);
-            SecureStorage.ObfuscatedPrefs.SetString(PrefKeyPurchasePin, hash);
+            SecureStorage.ObfuscatedPrefs.SetString(PrefKeyPurchasePinHash, hash);
             SecureStorage.ObfuscatedPrefs.SetInt(PrefKeyPurchasePin, 1);
             SecureStorage.ObfuscatedPrefs.Save();
         }
@@ -107,7 +109,7 @@ namespace InteractiveFantasticTales.Core
         public static bool ValidatePin(string pin)
         {
             if (!HasPurchasePin) return true; // No PIN set, allow
-            var storedHash = SecureStorage.ObfuscatedPrefs.GetString(PrefKeyPurchasePin, "");
+            var storedHash = SecureStorage.ObfuscatedPrefs.GetString(PrefKeyPurchasePinHash, "");
             var inputHash = ComputeSimpleHash(pin);
             return storedHash == inputHash;
         }

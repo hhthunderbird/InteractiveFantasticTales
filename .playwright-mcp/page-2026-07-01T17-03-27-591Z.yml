@@ -1,0 +1,445 @@
+- generic [ref=f14e3]:
+  - banner [ref=f14e4]:
+    - generic [ref=f14e5]:
+      - link "Link to the Steam Homepage" [ref=f14e8] [cursor=pointer]:
+        - /url: https://store.steampowered.com/?snr=1_1056_4_18_global-header&curator_clanid=45205635
+        - img "Link to the Steam Homepage" [ref=f14e9]
+      - navigation "Global Menu" [ref=f14e10]:
+        - link "STORE" [ref=f14e11] [cursor=pointer]:
+          - /url: https://store.steampowered.com/?snr=1_1056_4_18_global-header&curator_clanid=45205635
+        - link "COMMUNITY" [ref=f14e12] [cursor=pointer]:
+          - /url: https://steamcommunity.com/
+        - link "About" [ref=f14e13] [cursor=pointer]:
+          - /url: https://store.steampowered.com/about/?snr=1_1056_4_18_global-header&curator_clanid=45205635
+        - link "SUPPORT" [ref=f14e14] [cursor=pointer]:
+          - /url: https://help.steampowered.com/en/
+      - navigation "Account Menu" [ref=f14e16]:
+        - link "Install Steam" [ref=f14e17] [cursor=pointer]:
+          - /url: https://store.steampowered.com/about/?snr=1_1056_4_18_global-header&curator_clanid=45205635
+          - generic [ref=f14e18]: Install Steam
+        - link "sign in" [ref=f14e19] [cursor=pointer]:
+          - /url: https://store.steampowered.com/login/?redir=publisher%2Fhostedgames%2F&redir_ssl=1&snr=1_1056_4_18_global-header
+        - text: "| language"
+  - navigation "Store menu" [ref=f14e22]:
+    - generic [ref=f14e23]:
+      - generic [ref=f14e25]:
+        - button "Browse" [ref=f14e26] [cursor=pointer]:
+          - generic [ref=f14e27]: Browse
+        - button "Recommendations" [ref=f14e30] [cursor=pointer]:
+          - generic [ref=f14e31]: Recommendations
+        - button "Categories" [ref=f14e34] [cursor=pointer]:
+          - generic [ref=f14e35]: Categories
+        - button "Ways to Play" [ref=f14e38] [cursor=pointer]:
+          - generic [ref=f14e39]: Ways to Play
+        - button "Special Sections" [ref=f14e42] [cursor=pointer]:
+          - generic [ref=f14e43]: Special Sections
+      - generic [ref=f14e46]:
+        - search [ref=f14e47]:
+          - combobox "Search the store" [ref=f14e49]
+          - button "Search" [ref=f14e50] [cursor=pointer]:
+            - img "Search" [ref=f14e51]
+        - link "Advanced Search" [ref=f14e54] [cursor=pointer]:
+          - /url: https://store.steampowered.com/search/?term=&snr=1_7_15__advancedsearch
+  - main [ref=f14e56]:
+    - generic [ref=f14e62]:
+      - link [ref=f14e64] [cursor=pointer]:
+        - /url: https://store.steampowered.com/publisher/hostedgames/
+        - img [ref=f14e65]
+      - generic [ref=f14e66]:
+        - heading "Hosted Games LLC" [level=2] [ref=f14e67]:
+          - link "Hosted Games LLC" [ref=f14e68] [cursor=pointer]:
+            - /url: https://store.steampowered.com/publisher/hostedgames/
+        - link "Hosted Games" [ref=f14e71] [cursor=pointer]:
+          - /url: https://steamcommunity.com/linkfilter/?u=https%3A%2F%2Fhostedgames.org%2F
+          - text: Hosted Games
+          - img [ref=f14e72]
+        - generic [ref=f14e73]:
+          - button "Follow" [ref=f14e75] [cursor=pointer]:
+            - generic [ref=f14e76]: Follow
+          - generic [ref=f14e77]:
+            - generic [ref=f14e78]: 2,687
+            - generic [ref=f14e79]: Followers
+    - generic [ref=f14e81]:
+      - generic [ref=f14e82]:
+        - link "Featured" [ref=f14e83] [cursor=pointer]:
+          - /url: https://store.steampowered.com/publisher/hostedgames/
+        - link "Lists" [ref=f14e84] [cursor=pointer]:
+          - /url: https://store.steampowered.com/publisher/hostedgames/lists/
+        - link "About" [ref=f14e85] [cursor=pointer]:
+          - /url: https://store.steampowered.com/publisher/hostedgames/about/
+        - link [ref=f14e88] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=f14e89]
+      - paragraph [ref=f14e91]: Authors just like you have developed games using ChoiceScript, a simple programming language for writing interactive novels like these.
+      - generic [ref=f14e94]:
+        - heading "Top Sellers" [level=2] [ref=f14e96]
+        - generic [ref=f14e98]:
+          - generic [ref=f14e99]:
+            - 'link "Zombie Exodus: Safe Haven 40% off. R$ 26,49 normally, discounted to R$ 15,89" [ref=f14e100] [cursor=pointer]':
+              - /url: https://store.steampowered.com/app/543980/Zombie_Exodus_Safe_Haven/?snr=1_1056_4_18_1057&curator_clanid=45205635
+              - 'img "Zombie Exodus: Safe Haven" [ref=f14e102]'
+              - link "40% off. R$ 26,49 normally, discounted to R$ 15,89" [ref=f14e103]:
+                - generic [ref=f14e104]: "-40%"
+                - generic [ref=f14e105]:
+                  - generic [ref=f14e106]: R$ 26,49
+                  - generic [ref=f14e107]: R$ 15,89
+            - 'link "Fallen Hero: Rebirth 30% off. R$ 23,50 normally, discounted to R$ 16,45" [ref=f14e108] [cursor=pointer]':
+              - /url: https://store.steampowered.com/app/800620/Fallen_Hero_Rebirth/?snr=1_1056_4_18_1057&curator_clanid=45205635
+              - 'img "Fallen Hero: Rebirth" [ref=f14e110]'
+              - link "30% off. R$ 23,50 normally, discounted to R$ 16,45" [ref=f14e111]:
+                - generic [ref=f14e112]: "-30%"
+                - generic [ref=f14e113]:
+                  - generic [ref=f14e114]: R$ 23,50
+                  - generic [ref=f14e115]: R$ 16,45
+            - 'link "The Golden Rose: Book One 34% off. R$ 38,49 normally, discounted to R$ 25,40" [ref=f14e116] [cursor=pointer]':
+              - /url: https://store.steampowered.com/app/1892950/The_Golden_Rose_Book_One/?snr=1_1056_4_18_1057&curator_clanid=45205635
+              - 'img "The Golden Rose: Book One" [ref=f14e118]'
+              - link "34% off. R$ 38,49 normally, discounted to R$ 25,40" [ref=f14e119]:
+                - generic [ref=f14e120]: "-34%"
+                - generic [ref=f14e121]:
+                  - generic [ref=f14e122]: R$ 38,49
+                  - generic [ref=f14e123]: R$ 25,40
+            - link "Zombie Exodus 25% off. R$ 59,99 normally, discounted to R$ 44,99" [ref=f14e124] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/411570/Zombie_Exodus/?snr=1_1056_4_18_1057&curator_clanid=45205635
+              - img "Zombie Exodus" [ref=f14e126]
+              - link "25% off. R$ 59,99 normally, discounted to R$ 44,99" [ref=f14e127]:
+                - generic [ref=f14e128]: "-25%"
+                - generic [ref=f14e129]:
+                  - generic [ref=f14e130]: R$ 59,99
+                  - generic [ref=f14e131]: R$ 44,99
+            - 'link "Zombie Exodus: Safe Haven - Part Four 34% off. R$ 38,49 normally, discounted to R$ 25,40" [ref=f14e132] [cursor=pointer]':
+              - /url: https://store.steampowered.com/app/4132680/Zombie_Exodus_Safe_Haven__Part_Four/?snr=1_1056_4_18_1057&curator_clanid=45205635
+              - 'img "Zombie Exodus: Safe Haven - Part Four" [ref=f14e134]'
+              - link "34% off. R$ 38,49 normally, discounted to R$ 25,40" [ref=f14e135]:
+                - generic [ref=f14e136]: "-34%"
+                - generic [ref=f14e137]:
+                  - generic [ref=f14e138]: R$ 38,49
+                  - generic [ref=f14e139]: R$ 25,40
+          - generic:
+            - 'link "Fallen Hero: Retribution 34% off. R$ 38,49 normally, discounted to R$ 25,40"':
+              - /url: https://store.steampowered.com/app/1343810/Fallen_Hero_Retribution/?snr=1_1056_4_18_1057&curator_clanid=45205635
+              - generic:
+                - 'img "Fallen Hero: Retribution"'
+              - link "34% off. R$ 38,49 normally, discounted to R$ 25,40":
+                - generic: "-34%"
+                - generic:
+                  - generic: R$ 38,49
+                  - generic: R$ 25,40
+            - link "Lords of Infinity 34% off. R$ 38,49 normally, discounted to R$ 25,40":
+              - /url: https://store.steampowered.com/app/2169120/Lords_of_Infinity/?snr=1_1056_4_18_1057&curator_clanid=45205635
+              - generic:
+                - img "Lords of Infinity"
+              - link "34% off. R$ 38,49 normally, discounted to R$ 25,40":
+                - generic: "-34%"
+                - generic:
+                  - generic: R$ 38,49
+                  - generic: R$ 25,40
+            - 'link "Wayhaven Chronicles: Book Three 34% off. R$ 38,49 normally, discounted to R$ 25,40"':
+              - /url: https://store.steampowered.com/app/2120320/Wayhaven_Chronicles_Book_Three/?snr=1_1056_4_18_1057&curator_clanid=45205635
+              - generic:
+                - 'img "Wayhaven Chronicles: Book Three"'
+              - link "34% off. R$ 38,49 normally, discounted to R$ 25,40":
+                - generic: "-34%"
+                - generic:
+                  - generic: R$ 38,49
+                  - generic: R$ 25,40
+            - link "Tin Star 34% off. R$ 38,49 normally, discounted to R$ 25,40":
+              - /url: https://store.steampowered.com/app/375130/Tin_Star/?snr=1_1056_4_18_1057&curator_clanid=45205635
+              - generic:
+                - img "Tin Star"
+              - link "34% off. R$ 38,49 normally, discounted to R$ 25,40":
+                - generic: "-34%"
+                - generic:
+                  - generic: R$ 38,49
+                  - generic: R$ 25,40
+            - link "An Unexpectedly Green Journey 34% off. R$ 38,49 normally, discounted to R$ 25,40":
+              - /url: https://store.steampowered.com/app/3053420/An_Unexpectedly_Green_Journey/?snr=1_1056_4_18_1057&curator_clanid=45205635
+              - generic:
+                - img "An Unexpectedly Green Journey"
+              - link "34% off. R$ 38,49 normally, discounted to R$ 25,40":
+                - generic: "-34%"
+                - generic:
+                  - generic: R$ 38,49
+                  - generic: R$ 25,40
+      - generic [ref=f14e149]:
+        - generic [ref=f14e150]:
+          - generic [ref=f14e151] [cursor=pointer]: Top Sellers
+          - generic [ref=f14e152] [cursor=pointer]: New Releases
+          - generic [ref=f14e153] [cursor=pointer]: Upcoming Releases
+          - generic [ref=f14e154] [cursor=pointer]: Discounts
+        - generic [ref=f14e156]:
+          - generic [ref=f14e157]:
+            - generic [ref=f14e158]:
+              - generic [ref=f14e159]:
+                - heading "Type" [level=4] [ref=f14e160]
+                - generic [ref=f14e161] [cursor=pointer]:
+                  - text: All
+                  - generic [ref=f14e162]: "253"
+                - generic [ref=f14e163] [cursor=pointer]:
+                  - text: Game
+                  - generic [ref=f14e164]: "116"
+                - generic [ref=f14e165] [cursor=pointer]:
+                  - text: Demo
+                  - generic [ref=f14e166]: "115"
+                - generic [ref=f14e167] [cursor=pointer]:
+                  - text: DLC
+                  - generic [ref=f14e168]: "22"
+              - generic [ref=f14e169]:
+                - heading "Filter to" [level=4] [ref=f14e170]
+                - generic [ref=f14e171] [cursor=pointer]:
+                  - text: All
+                  - generic [ref=f14e172]: "253"
+                - generic [ref=f14e173] [cursor=pointer]:
+                  - text: Action
+                  - generic [ref=f14e174]: "21"
+                - generic [ref=f14e175] [cursor=pointer]:
+                  - text: Adventure
+                  - generic [ref=f14e176]: "210"
+                - generic [ref=f14e177] [cursor=pointer]:
+                  - text: Casual
+                  - generic [ref=f14e178]: "86"
+                - generic [ref=f14e179] [cursor=pointer]:
+                  - text: Indie
+                  - generic [ref=f14e180]: "245"
+                - generic [ref=f14e181] [cursor=pointer]:
+                  - text: RPG
+                  - generic [ref=f14e182]: "251"
+            - generic [ref=f14e183]:
+              - heading "Narrow by preferences" [level=4] [ref=f14e184]
+              - generic [ref=f14e185] [cursor=pointer]: Hide ignored items
+              - generic [ref=f14e186] [cursor=pointer]: Hide items in my library
+          - generic [ref=f14e187]:
+            - generic [ref=f14e188]:
+              - text: Results may exclude some products based on
+              - link "your content or language preferences" [ref=f14e189] [cursor=pointer]:
+                - /url: https://store.steampowered.com/account/preferences/
+            - generic [ref=f14e191]:
+              - button "Dawn of Heroes 40% off. R$ 26,49 normally, discounted to R$ 15,89 Dawn of Heroes 2 Apr, 2026 “ By day, you're just another citizen. By night, you defend the city. But don’t quit your day job, hero. A text-based superhero novel, 450,000 words and hundreds of choices, without graphics or sound effects. ”" [ref=f14e192]:
+                - link "Dawn of Heroes 40% off. R$ 26,49 normally, discounted to R$ 15,89" [ref=f14e194] [cursor=pointer]:
+                  - /url: https://store.steampowered.com/app/4426590/Dawn_of_Heroes/?snr=1_1056_4_18_curator-tabs&curator_clanid=45205635
+                  - img "Dawn of Heroes" [ref=f14e196]
+                  - link "40% off. R$ 26,49 normally, discounted to R$ 15,89" [ref=f14e197]:
+                    - generic [ref=f14e198]: "-40%"
+                    - generic [ref=f14e199]:
+                      - generic [ref=f14e200]: R$ 26,49
+                      - generic [ref=f14e201]: R$ 15,89
+                - link "Dawn of Heroes 2 Apr, 2026 “ By day, you're just another citizen. By night, you defend the city. But don’t quit your day job, hero. A text-based superhero novel, 450,000 words and hundreds of choices, without graphics or sound effects. ”" [ref=f14e202] [cursor=pointer]:
+                  - /url: https://store.steampowered.com/app/4426590/Dawn_of_Heroes/?snr=1_1056_4_18_curator-tabs&curator_clanid=45205635
+                  - generic [ref=f14e203]:
+                    - generic [ref=f14e205]:
+                      - text: Dawn of Heroes
+                      - generic [ref=f14e206]: 2 Apr, 2026
+                    - generic [ref=f14e211]: “ By day, you're just another citizen. By night, you defend the city. But don’t quit your day job, hero. A text-based superhero novel, 450,000 words and hundreds of choices, without graphics or sound effects. ”
+              - button "Saturnine 34% off. R$ 29,99 normally, discounted to R$ 19,79 Saturnine 7 Aug, 2025 “ You are the Veteran. You’re the oldest android in the Solar System, a relic and survivor of the ancient past. Now it’s time for you to fight again. A text-based science-fantasy novel, 700,000 words and hundreds of choices, without graphics or sound effects. ”" [ref=f14e212]:
+                - link "Saturnine 34% off. R$ 29,99 normally, discounted to R$ 19,79" [ref=f14e214] [cursor=pointer]:
+                  - /url: https://store.steampowered.com/app/3701770/Saturnine/?snr=1_1056_4_18_curator-tabs&curator_clanid=45205635
+                  - img "Saturnine" [ref=f14e216]
+                  - link "34% off. R$ 29,99 normally, discounted to R$ 19,79" [ref=f14e217]:
+                    - generic [ref=f14e218]: "-34%"
+                    - generic [ref=f14e219]:
+                      - generic [ref=f14e220]: R$ 29,99
+                      - generic [ref=f14e221]: R$ 19,79
+                - link "Saturnine 7 Aug, 2025 “ You are the Veteran. You’re the oldest android in the Solar System, a relic and survivor of the ancient past. Now it’s time for you to fight again. A text-based science-fantasy novel, 700,000 words and hundreds of choices, without graphics or sound effects. ”" [ref=f14e222] [cursor=pointer]:
+                  - /url: https://store.steampowered.com/app/3701770/Saturnine/?snr=1_1056_4_18_curator-tabs&curator_clanid=45205635
+                  - generic [ref=f14e223]:
+                    - generic [ref=f14e225]:
+                      - text: Saturnine
+                      - generic [ref=f14e226]: 7 Aug, 2025
+                    - generic [ref=f14e231]: “ You are the Veteran. You’re the oldest android in the Solar System, a relic and survivor of the ancient past. Now it’s time for you to fight again. A text-based science-fantasy novel, 700,000 words and hundreds of choices, without graphics or sound effects. ”
+              - button "World War II Armored Recon 34% off. R$ 29,99 normally, discounted to R$ 19,79 World War II Armored Recon 3 Jul, 2025 “ North Africa, 1942. Command a U.S. tank. Lead your men against the Axis powers. Learn the hard lessons of war. The odds are against you. A text-based historical novel, 900,000 words and hundreds of choices, without graphics or sound effects. ”" [ref=f14e232]:
+                - link "World War II Armored Recon 34% off. R$ 29,99 normally, discounted to R$ 19,79" [ref=f14e234] [cursor=pointer]:
+                  - /url: https://store.steampowered.com/app/3579720/World_War_II_Armored_Recon/?snr=1_1056_4_18_curator-tabs&curator_clanid=45205635
+                  - img "World War II Armored Recon" [ref=f14e236]
+                  - link "34% off. R$ 29,99 normally, discounted to R$ 19,79" [ref=f14e237]:
+                    - generic [ref=f14e238]: "-34%"
+                    - generic [ref=f14e239]:
+                      - generic [ref=f14e240]: R$ 29,99
+                      - generic [ref=f14e241]: R$ 19,79
+                - link "World War II Armored Recon 3 Jul, 2025 “ North Africa, 1942. Command a U.S. tank. Lead your men against the Axis powers. Learn the hard lessons of war. The odds are against you. A text-based historical novel, 900,000 words and hundreds of choices, without graphics or sound effects. ”" [ref=f14e242] [cursor=pointer]:
+                  - /url: https://store.steampowered.com/app/3579720/World_War_II_Armored_Recon/?snr=1_1056_4_18_curator-tabs&curator_clanid=45205635
+                  - generic [ref=f14e243]:
+                    - generic [ref=f14e245]:
+                      - text: World War II Armored Recon
+                      - generic [ref=f14e246]: 3 Jul, 2025
+                    - generic [ref=f14e251]: “ North Africa, 1942. Command a U.S. tank. Lead your men against the Axis powers. Learn the hard lessons of war. The odds are against you. A text-based historical novel, 900,000 words and hundreds of choices, without graphics or sound effects. ”
+              - button "The Soul Stone War 3 30% off. R$ 23,50 normally, discounted to R$ 16,45 The Soul Stone War 3 12 Jun, 2025 “ By the power of your Soul Stone and the strength of your own indomitable soul, uncover secrets held in blood and lead the charge that will change the world. A text-based fantasy novel, 260,000 words and hundreds of choices, without graphics or sound effects. ”" [ref=f14e252]:
+                - link "The Soul Stone War 3 30% off. R$ 23,50 normally, discounted to R$ 16,45" [ref=f14e254] [cursor=pointer]:
+                  - /url: https://store.steampowered.com/app/3692050/The_Soul_Stone_War_3/?snr=1_1056_4_18_curator-tabs&curator_clanid=45205635
+                  - img "The Soul Stone War 3" [ref=f14e256]
+                  - link "30% off. R$ 23,50 normally, discounted to R$ 16,45" [ref=f14e257]:
+                    - generic [ref=f14e258]: "-30%"
+                    - generic [ref=f14e259]:
+                      - generic [ref=f14e260]: R$ 23,50
+                      - generic [ref=f14e261]: R$ 16,45
+                - link "The Soul Stone War 3 12 Jun, 2025 “ By the power of your Soul Stone and the strength of your own indomitable soul, uncover secrets held in blood and lead the charge that will change the world. A text-based fantasy novel, 260,000 words and hundreds of choices, without graphics or sound effects. ”" [ref=f14e262] [cursor=pointer]:
+                  - /url: https://store.steampowered.com/app/3692050/The_Soul_Stone_War_3/?snr=1_1056_4_18_curator-tabs&curator_clanid=45205635
+                  - generic [ref=f14e263]:
+                    - generic [ref=f14e265]:
+                      - text: The Soul Stone War 3
+                      - generic [ref=f14e266]: 12 Jun, 2025
+                    - generic [ref=f14e271]: “ By the power of your Soul Stone and the strength of your own indomitable soul, uncover secrets held in blood and lead the charge that will change the world. A text-based fantasy novel, 260,000 words and hundreds of choices, without graphics or sound effects. ”
+              - button "Scarlet Sails 25% off. R$ 13,79 normally, discounted to R$ 10,34 Scarlet Sails 1 May, 2025 “ Hoist the Jolly Roger and set sail to find the legendary Titan’s Treasure! Do you fight with a cutlass or with magic? Are you biding your time until you can shoot your captain in the back, or are you the reason the rum is gone? ”" [ref=f14e272]:
+                - link "Scarlet Sails 25% off. R$ 13,79 normally, discounted to R$ 10,34" [ref=f14e274] [cursor=pointer]:
+                  - /url: https://store.steampowered.com/app/2870030/Scarlet_Sails/?snr=1_1056_4_18_curator-tabs&curator_clanid=45205635
+                  - img "Scarlet Sails" [ref=f14e276]
+                  - link "25% off. R$ 13,79 normally, discounted to R$ 10,34" [ref=f14e277]:
+                    - generic [ref=f14e278]: "-25%"
+                    - generic [ref=f14e279]:
+                      - generic [ref=f14e280]: R$ 13,79
+                      - generic [ref=f14e281]: R$ 10,34
+                - link "Scarlet Sails 1 May, 2025 “ Hoist the Jolly Roger and set sail to find the legendary Titan’s Treasure! Do you fight with a cutlass or with magic? Are you biding your time until you can shoot your captain in the back, or are you the reason the rum is gone? ”" [ref=f14e282] [cursor=pointer]:
+                  - /url: https://store.steampowered.com/app/2870030/Scarlet_Sails/?snr=1_1056_4_18_curator-tabs&curator_clanid=45205635
+                  - generic [ref=f14e283]:
+                    - generic [ref=f14e285]:
+                      - text: Scarlet Sails
+                      - generic [ref=f14e286]: 1 May, 2025
+                    - generic [ref=f14e291]: “ Hoist the Jolly Roger and set sail to find the legendary Titan’s Treasure! Do you fight with a cutlass or with magic? Are you biding your time until you can shoot your captain in the back, or are you the reason the rum is gone? ”
+              - button "Kitsune 30% off. R$ 23,50 normally, discounted to R$ 16,45 Kitsune 3 Apr, 2025 “ Meet the enigmatic stranger who’s been haunting your dreams and embark on a supernatural adventure of twists and turns, love and heartbreak, and foxes. A text-based interactive supernatural romance, 300,000 words and hundreds of choices, without graphics or sound effects. ”" [ref=f14e292]:
+                - link "Kitsune 30% off. R$ 23,50 normally, discounted to R$ 16,45" [ref=f14e294] [cursor=pointer]:
+                  - /url: https://store.steampowered.com/app/3544460/Kitsune/?snr=1_1056_4_18_curator-tabs&curator_clanid=45205635
+                  - img "Kitsune" [ref=f14e296]
+                  - link "30% off. R$ 23,50 normally, discounted to R$ 16,45" [ref=f14e297]:
+                    - generic [ref=f14e298]: "-30%"
+                    - generic [ref=f14e299]:
+                      - generic [ref=f14e300]: R$ 23,50
+                      - generic [ref=f14e301]: R$ 16,45
+                - link "Kitsune 3 Apr, 2025 “ Meet the enigmatic stranger who’s been haunting your dreams and embark on a supernatural adventure of twists and turns, love and heartbreak, and foxes. A text-based interactive supernatural romance, 300,000 words and hundreds of choices, without graphics or sound effects. ”" [ref=f14e302] [cursor=pointer]:
+                  - /url: https://store.steampowered.com/app/3544460/Kitsune/?snr=1_1056_4_18_curator-tabs&curator_clanid=45205635
+                  - generic [ref=f14e303]:
+                    - generic [ref=f14e305]:
+                      - text: Kitsune
+                      - generic [ref=f14e306]: 3 Apr, 2025
+                    - generic [ref=f14e311]: “ Meet the enigmatic stranger who’s been haunting your dreams and embark on a supernatural adventure of twists and turns, love and heartbreak, and foxes. A text-based interactive supernatural romance, 300,000 words and hundreds of choices, without graphics or sound effects. ”
+              - 'button "Leas: City of the Sun 40% off. R$ 26,49 normally, discounted to R$ 15,89 Leas: City of the Sun 6 Mar, 2025 “ When a new magic is discovered, it''s up to you to unravel the mystery! Find answers from fae and humans, save your city, and maybe even fall in love! A text-based interactive fantasy novel, 400,000 words and hundreds of choices, without graphics or sound effects. ”" [ref=f14e312]':
+                - 'link "Leas: City of the Sun 40% off. R$ 26,49 normally, discounted to R$ 15,89" [ref=f14e314] [cursor=pointer]':
+                  - /url: https://store.steampowered.com/app/3361380/Leas_City_of_the_Sun/?snr=1_1056_4_18_curator-tabs&curator_clanid=45205635
+                  - 'img "Leas: City of the Sun" [ref=f14e316]'
+                  - link "40% off. R$ 26,49 normally, discounted to R$ 15,89" [ref=f14e317]:
+                    - generic [ref=f14e318]: "-40%"
+                    - generic [ref=f14e319]:
+                      - generic [ref=f14e320]: R$ 26,49
+                      - generic [ref=f14e321]: R$ 15,89
+                - 'link "Leas: City of the Sun 6 Mar, 2025 “ When a new magic is discovered, it''s up to you to unravel the mystery! Find answers from fae and humans, save your city, and maybe even fall in love! A text-based interactive fantasy novel, 400,000 words and hundreds of choices, without graphics or sound effects. ”" [ref=f14e322] [cursor=pointer]':
+                  - /url: https://store.steampowered.com/app/3361380/Leas_City_of_the_Sun/?snr=1_1056_4_18_curator-tabs&curator_clanid=45205635
+                  - generic [ref=f14e323]:
+                    - generic [ref=f14e325]:
+                      - text: "Leas: City of the Sun"
+                      - generic [ref=f14e326]: 6 Mar, 2025
+                    - generic [ref=f14e331]: “ When a new magic is discovered, it's up to you to unravel the mystery! Find answers from fae and humans, save your city, and maybe even fall in love! A text-based interactive fantasy novel, 400,000 words and hundreds of choices, without graphics or sound effects. ”
+              - button "Message in a Melody 40% off. R$ 16,99 normally, discounted to R$ 10,19 Message in a Melody 6 Feb, 2025 “ Can music save the human race? You and the Raqullan Empire will soon find out. Decide whether music, and the humans who make it, should survive. ”" [ref=f14e332]:
+                - link "Message in a Melody 40% off. R$ 16,99 normally, discounted to R$ 10,19" [ref=f14e334] [cursor=pointer]:
+                  - /url: https://store.steampowered.com/app/3086950/Message_in_a_Melody/?snr=1_1056_4_18_curator-tabs&curator_clanid=45205635
+                  - img "Message in a Melody" [ref=f14e336]
+                  - link "40% off. R$ 16,99 normally, discounted to R$ 10,19" [ref=f14e337]:
+                    - generic [ref=f14e338]: "-40%"
+                    - generic [ref=f14e339]:
+                      - generic [ref=f14e340]: R$ 16,99
+                      - generic [ref=f14e341]: R$ 10,19
+                - link "Message in a Melody 6 Feb, 2025 “ Can music save the human race? You and the Raqullan Empire will soon find out. Decide whether music, and the humans who make it, should survive. ”" [ref=f14e342] [cursor=pointer]:
+                  - /url: https://store.steampowered.com/app/3086950/Message_in_a_Melody/?snr=1_1056_4_18_curator-tabs&curator_clanid=45205635
+                  - generic [ref=f14e343]:
+                    - generic [ref=f14e345]:
+                      - text: Message in a Melody
+                      - generic [ref=f14e346]: 6 Feb, 2025
+                    - generic [ref=f14e351]: “ Can music save the human race? You and the Raqullan Empire will soon find out. Decide whether music, and the humans who make it, should survive. ”
+              - button "Scales of Justice 40% off. R$ 26,49 normally, discounted to R$ 15,89 Scales of Justice 2 Jan, 2025 “ Travel across a magical kingdom with four eccentric individuals! Will you find your destiny—or will you write it for yourself? A text-based interactive fantasy novel, 600,000 words and hundreds of choices, without graphics or sound effects. ”" [ref=f14e352]:
+                - link "Scales of Justice 40% off. R$ 26,49 normally, discounted to R$ 15,89" [ref=f14e354] [cursor=pointer]:
+                  - /url: https://store.steampowered.com/app/3089710/Scales_of_Justice/?snr=1_1056_4_18_curator-tabs&curator_clanid=45205635
+                  - img "Scales of Justice" [ref=f14e356]
+                  - link "40% off. R$ 26,49 normally, discounted to R$ 15,89" [ref=f14e357]:
+                    - generic [ref=f14e358]: "-40%"
+                    - generic [ref=f14e359]:
+                      - generic [ref=f14e360]: R$ 26,49
+                      - generic [ref=f14e361]: R$ 15,89
+                - link "Scales of Justice 2 Jan, 2025 “ Travel across a magical kingdom with four eccentric individuals! Will you find your destiny—or will you write it for yourself? A text-based interactive fantasy novel, 600,000 words and hundreds of choices, without graphics or sound effects. ”" [ref=f14e362] [cursor=pointer]:
+                  - /url: https://store.steampowered.com/app/3089710/Scales_of_Justice/?snr=1_1056_4_18_curator-tabs&curator_clanid=45205635
+                  - generic [ref=f14e363]:
+                    - generic [ref=f14e365]:
+                      - text: Scales of Justice
+                      - generic [ref=f14e366]: 2 Jan, 2025
+                    - generic [ref=f14e371]: “ Travel across a magical kingdom with four eccentric individuals! Will you find your destiny—or will you write it for yourself? A text-based interactive fantasy novel, 600,000 words and hundreds of choices, without graphics or sound effects. ”
+              - button "Whiskey-Four 30% off. R$ 23,50 normally, discounted to R$ 16,45 Whiskey-Four 7 Nov, 2024 “ Never stop running, not with the galaxy at stake. Save it at all costs, and save yourself if you can. ”" [ref=f14e372]:
+                - link "Whiskey-Four 30% off. R$ 23,50 normally, discounted to R$ 16,45" [ref=f14e374] [cursor=pointer]:
+                  - /url: https://store.steampowered.com/app/3089700/WhiskeyFour/?snr=1_1056_4_18_curator-tabs&curator_clanid=45205635
+                  - img "Whiskey-Four" [ref=f14e376]
+                  - link "30% off. R$ 23,50 normally, discounted to R$ 16,45" [ref=f14e377]:
+                    - generic [ref=f14e378]: "-30%"
+                    - generic [ref=f14e379]:
+                      - generic [ref=f14e380]: R$ 23,50
+                      - generic [ref=f14e381]: R$ 16,45
+                - link "Whiskey-Four 7 Nov, 2024 “ Never stop running, not with the galaxy at stake. Save it at all costs, and save yourself if you can. ”" [ref=f14e382] [cursor=pointer]:
+                  - /url: https://store.steampowered.com/app/3089700/WhiskeyFour/?snr=1_1056_4_18_curator-tabs&curator_clanid=45205635
+                  - generic [ref=f14e383]:
+                    - generic [ref=f14e385]:
+                      - text: Whiskey-Four
+                      - generic [ref=f14e386]: 7 Nov, 2024
+                    - generic [ref=f14e391]: “ Never stop running, not with the galaxy at stake. Save it at all costs, and save yourself if you can. ”
+  - contentinfo [ref=f14e395]:
+    - generic [ref=f14e396]:
+      - generic [ref=f14e397]:
+        - link [ref=f14e398] [cursor=pointer]:
+          - /url: https://store.steampowered.com/?snr=1_44_44_18
+          - img [ref=f14e399]
+        - link [ref=f14e409] [cursor=pointer]:
+          - /url: https://valvesoftware.com
+          - img [ref=f14e410]
+      - paragraph [ref=f14e415]:
+        - text: © 2026 Valve Corporation. All rights reserved. All trademarks are property of their respective owners in the US and other countries.
+        - text: VAT included in all prices where applicable.
+      - generic [ref=f14e416]:
+        - link [ref=f14e417] [cursor=pointer]:
+          - /url: https://www.youtube.com/@Steam
+          - img [ref=f14e418]
+        - link [ref=f14e420] [cursor=pointer]:
+          - /url: https://bsky.app/profile/steampowered.com
+          - img [ref=f14e421]
+        - link [ref=f14e423] [cursor=pointer]:
+          - /url: https://facebook.com/steam
+          - img [ref=f14e424]
+        - link [ref=f14e426] [cursor=pointer]:
+          - /url: https://twitter.com/steam
+          - img [ref=f14e427]
+    - generic [ref=f14e429]:
+      - heading "STEAM" [level=3] [ref=f14e430]
+      - link "About Steam" [ref=f14e431] [cursor=pointer]:
+        - /url: https://store.steampowered.com/about/?snr=1_44_44_18
+      - link "Steam SSA" [ref=f14e432] [cursor=pointer]:
+        - /url: https://store.steampowered.com/subscriber_agreement/?snr=1_44_44_18
+      - link "Steamworks" [ref=f14e433] [cursor=pointer]:
+        - /url: https://partner.steamgames.com/
+      - link "Steam Distribution" [ref=f14e434] [cursor=pointer]:
+        - /url: https://partner.steamgames.com/steamdirect
+      - link "Gift Cards" [ref=f14e435] [cursor=pointer]:
+        - /url: https://store.steampowered.com/digitalgiftcards/?snr=1_44_44_18
+    - generic [ref=f14e436]:
+      - heading "VALVE" [level=3] [ref=f14e437]
+      - link "About Valve" [ref=f14e438] [cursor=pointer]:
+        - /url: https://valvesoftware.com/about
+      - link "Jobs" [ref=f14e439] [cursor=pointer]:
+        - /url: https://valvesoftware.com/
+      - link "Hardware" [ref=f14e440] [cursor=pointer]:
+        - /url: https://store.steampowered.com/hardware/?snr=1_44_44_18
+      - link "Recycling" [ref=f14e441] [cursor=pointer]:
+        - /url: https://store.steampowered.com/hardware_recycling/?snr=1_44_44_18
+    - generic [ref=f14e442]:
+      - heading "LEGAL" [level=3] [ref=f14e443]
+      - link "Privacy" [ref=f14e444] [cursor=pointer]:
+        - /url: https://store.steampowered.com/privacy_agreement/?snr=1_44_44_18
+      - link "Accessibility" [ref=f14e445] [cursor=pointer]:
+        - /url: https://help.steampowered.com/faqs/view/10BB-D27A-6378-4436
+      - link "Notices & Policies" [ref=f14e446] [cursor=pointer]:
+        - /url: https://store.steampowered.com/legal/?snr=1_44_44_18
+      - link "Cookies" [ref=f14e447] [cursor=pointer]:
+        - /url: https://store.steampowered.com/account/cookiepreferences/?snr=1_44_44_18
+      - link "Refunds" [ref=f14e448] [cursor=pointer]:
+        - /url: https://store.steampowered.com/steam_refunds/?snr=1_44_44_18
+    - generic [ref=f14e449]:
+      - heading "MORE" [level=3] [ref=f14e450]
+      - link "Get Steam" [ref=f14e451] [cursor=pointer]:
+        - /url: https://store.steampowered.com/about/?snr=1_44_44_18
+      - link "Get Mobile Apps" [ref=f14e452] [cursor=pointer]:
+        - /url: https://store.steampowered.com/mobile/?snr=1_44_44_18
+      - link "Get Support" [ref=f14e453] [cursor=pointer]:
+        - /url: https://help.steampowered.com/
+      - link "My Account" [ref=f14e454] [cursor=pointer]:
+        - /url: https://store.steampowered.com/account/?snr=1_44_44_18

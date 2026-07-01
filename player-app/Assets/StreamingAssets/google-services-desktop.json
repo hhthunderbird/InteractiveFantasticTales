@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "201008727431",
+    "project_id": "interactive-tales-2026",
+    "storage_bucket": "interactive-tales-2026.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:201008727431:android:fad85dfc1ee8a623763f22",
+        "android_client_info": {
+          "package_name": "com.felina.interactivetales"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvOjWVr_Gcmj6lIGMCp5coIQsCo-J6GLE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

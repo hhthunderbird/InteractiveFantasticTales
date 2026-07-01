@@ -1,0 +1,129 @@
+name: Build iOS
+
+on:
+  workflow_dispatch:
+    inputs:
+      scheme:
+        description: 'Build scheme'
+        type: choice
+        options: [xcode_project, archive]
+        default: 'xcode_project'
+
+env:
+  UNITY_VERSION: 6000.3.11f1
+  PROJECT_PATH: player-app
+  XCODE_VERSION: '16.0'
+
+jobs:
+  build-ios:
+    name: Build iOS (${{ inputs.scheme || 'xcode_project' }})
+    runs-on: macos-latest
+    timeout-minutes: 90
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Select Xcode
+        run: |
+          ls -d /Applications/Xcode*.app
+          sudo xcode-select -s /Applications/Xcode_16.app || \
+            sudo xcode-select -s /Applications/Xcode_16.0.app
+
+      - name: Cache Unity Library
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.PROJECT_PATH }}/Library
+          key: iOS-${{ env.UNITY_VERSION }}-${{ hashFiles('player-app/Assets/**', 'player-app/Packages/**', 'player-app/ProjectSettings/**', 'player-app/*.csproj') }}
+          restore-keys: |
+            iOS-${{ env.UNITY_VERSION }}-
+            iOS-
+
+      # ── Unity → Xcode Project ────────────────────────────────
+      - name: Export Xcode Project
+        uses: game-ci/unity-builder@v4
+        env:
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+          UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+        with:
+          projectPath: ${{ env.PROJECT_PATH }}
+          unityVersion: ${{ env.UNITY_VERSION }}
+          targetPlatform: iOS
+          buildMethod: IFT.BuildScripts.BuildIOS
+          versioning: Semantic
+
+      - name: Upload Xcode Project
+        uses: actions/upload-artifact@v4
+        with:
+          name: IFT-iOS-Xcode
+          path: ${{ env.PROJECT_PATH }}/build/iOS/
+          retention-days: 30
+
+      # ── Archive → IPA ─────────────────────────────────────────
+      - name: Build IPA
+        if: ${{ inputs.scheme == 'archive' }}
+        env:
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+          CERT_BASE64: ${{ secrets.APPLE_DISTRIBUTION_CERT_BASE64 }}
+          CERT_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
+          PP_BASE64: ${{ secrets.APPLE_PROVISIONING_PROFILE_BASE64 }}
+        run: |
+          KEYCHAIN_PATH="$RUNNER_TEMP/app-signing.keychain-db"
+          CERT_PATH="$RUNNER_TEMP/build_cert.p12"
+          PP_PATH="$RUNNER_TEMP/build_pp.mobileprovision"
+          KC_PASSWORD=$(openssl rand -base64 32)
+
+          # Import certificate
+          echo -n "$CERT_BASE64" | base64 --decode > "$CERT_PATH"
+          echo -n "$PP_BASE64" | base64 --decode > "$PP_PATH"
+
+          security create-keychain -p "$KC_PASSWORD" "$KEYCHAIN_PATH"
+          security set-keychain-settings -lut 21600 "$KEYCHAIN_PATH"
+          security unlock-keychain -p "$KC_PASSWORD" "$KEYCHAIN_PATH"
+          security import "$CERT_PATH" -P "$CERT_PASSWORD" -A \
+            -t cert -f pkcs12 -k "$KEYCHAIN_PATH"
+          security list-keychain -d user -s "$KEYCHAIN_PATH"
+
+          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+          cp "$PP_PATH" ~/Library/MobileDevice/Provisioning\ Profiles/
+
+          # Find scheme dynamically
+          cd "${{ env.PROJECT_PATH }}/build/iOS"
+          SCHEME=$(find . -name "*.xcodeproj" -exec basename {} .xcodeproj \; | head -1)
+          echo "Xcode scheme: $SCHEME"
+
+          # Use absolute paths (CWD was changed by cd)
+          WS="${{ github.workspace }}"
+          xcodebuild archive \
+            -project "${SCHEME}.xcodeproj" \
+            -scheme "$SCHEME" \
+            -sdk iphoneos \
+            -configuration Release \
+            -archivePath "$RUNNER_TEMP/IFT.xcarchive" \
+            DEVELOPMENT_TEAM="$APPLE_TEAM_ID" \
+            CODE_SIGN_STYLE=Manual \
+            PROVISIONING_PROFILE_SPECIFIER="${{ vars.PROVISIONING_PROFILE_SPECIFIER }}"
+
+          xcodebuild -exportArchive \
+            -archivePath "$RUNNER_TEMP/IFT.xcarchive" \
+            -exportPath "$RUNNER_TEMP/IFT-ipa" \
+            -exportOptionsPlist "$WS/${{ env.PROJECT_PATH }}/ExportOptions.plist"
+
+          cp "$RUNNER_TEMP/IFT-ipa"/*.ipa "$WS/${{ env.PROJECT_PATH }}/build/"
+
+      - name: Upload IPA
+        if: ${{ inputs.scheme == 'archive' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: IFT-iOS-IPA
+          path: ${{ env.PROJECT_PATH }}/build/*.ipa
+          retention-days: 60
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "### iOS Build" >> $GITHUB_STEP_SUMMARY
+          echo "**Unity:** ${{ env.UNITY_VERSION }}" >> $GITHUB_STEP_SUMMARY

@@ -1,0 +1,170 @@
+- generic [active] [ref=f7e1]:
+  - generic [ref=f7e2]:
+    - status [ref=f7e3]: Secao 3. Teste. Voce precisa se equilibrar na borda estreita de um poco.
+    - banner "Cabecalho do jogo" [ref=f7e18]:
+      - 'button "Menu principal (atalho: , )" [ref=f7e19] [cursor=pointer]': ☰
+      - generic [ref=f7e20]:
+        - generic [ref=f7e21]: O Labirinto do Arquimago
+        - status [ref=f7e22]: Secao 3
+      - status "Status do personagem" [ref=f7e23]:
+        - generic "Vigor" [ref=f7e24]:
+          - generic [ref=f7e25]: "19"
+          - generic [ref=f7e26]: VIG
+        - generic "Sorte" [ref=f7e27]:
+          - generic [ref=f7e28]: "8"
+          - generic [ref=f7e29]: SOR
+        - generic "Ouro" [ref=f7e30]:
+          - generic [ref=f7e31]: "5"
+          - generic [ref=f7e32]: OUR
+    - img "Ilustracao da secao" [ref=f7e33]:
+      - img [ref=f7e105]:
+        - generic [ref=f7e120]: Roll 2d6 + SKILL
+      - generic [ref=f7e46]: Teste
+    - main "Conteudo da historia" [ref=f7e47]:
+      - article "Texto narrativo" [ref=f7e48]: Voce precisa se equilibrar na borda estreita de um poco.
+      - listbox "Escolhas disponiveis"
+    - navigation "Barra de ferramentas" [ref=f7e61]:
+      - button "🔊 Ouvir" [ref=f7e62] [cursor=pointer]:
+        - generic [ref=f7e63]: "N"
+        - generic [ref=f7e64]: 🔊
+        - text: Ouvir
+      - button "📜 Ficha" [ref=f7e65] [cursor=pointer]:
+        - generic [ref=f7e66]: C
+        - generic [ref=f7e67]: 📜
+        - text: Ficha
+      - button "🎒 Itens" [ref=f7e68] [cursor=pointer]:
+        - generic [ref=f7e69]: I
+        - generic [ref=f7e70]: 🎒
+        - text: Itens
+      - button "💾 Salvar" [ref=f7e71] [cursor=pointer]:
+        - generic [ref=f7e72]: S
+        - generic [ref=f7e73]: 💾
+        - text: Salvar
+      - button "↩ Voltar" [ref=f7e74] [cursor=pointer]:
+        - generic [ref=f7e75]: T
+        - generic [ref=f7e76]: ↩
+        - text: Voltar
+      - button "⚙ Ajustes" [ref=f7e77] [cursor=pointer]:
+        - generic [ref=f7e78]: ","
+        - generic [ref=f7e79]: ⚙
+        - text: Ajustes
+  - generic:
+    - dialog "Ficha do Personagem":
+      - generic:
+        - heading "Ficha do Personagem" [level=3]
+        - 'button "Fechar ficha (atalho: Escape)"': ×
+  - generic:
+    - dialog "Inventario":
+      - generic:
+        - heading "Inventario" [level=3]
+        - 'button "Fechar inventario (atalho: Escape)"': ×
+  - generic:
+    - dialog "Ajustes":
+      - generic:
+        - heading "Ajustes" [level=3]
+        - 'button "Fechar ajustes (atalho: Escape)"': ×
+      - generic:
+        - generic:
+          - generic: Tamanho da fonte
+          - radiogroup "Tamanho da fonte":
+            - radio "P"
+            - radio "M" [checked]
+            - radio "G"
+            - radio "GG"
+        - generic:
+          - generic: Tema
+          - radiogroup "Tema de cores":
+            - radio "Escuro" [checked]
+            - radio "Sepia"
+            - radio "Contraste"
+        - generic:
+          - generic: Fonte Dyslexic
+          - switch "Desligado"
+        - generic:
+          - generic: Narracao TTS
+          - switch "Desligado"
+        - generic:
+          - generic: Vibracao
+          - switch "Ligado" [checked]
+        - generic:
+          - generic: Atalhos caractere (1-9)
+          - switch "Ligado" [checked]
+        - generic:
+          - text: Pressione
+          - generic: "?"
+          - text: para ver todos os atalhos.
+  - generic:
+    - dialog "Salvar / Carregar":
+      - generic:
+        - heading "Salvar / Carregar" [level=3]
+        - 'button "Fechar (atalho: Escape)"': ×
+  - generic:
+    - dialog "Linha do Tempo":
+      - generic:
+        - heading "Linha do Tempo" [level=3]
+        - 'button "Fechar (atalho: Escape)"': ×
+  - generic:
+    - dialog "Atalhos de Teclado":
+      - heading "Atalhos de Teclado" [level=2]
+      - generic:
+        - heading "Navegacao" [level=4]
+        - generic:
+          - generic: Escolher opcao 1-4
+          - generic: "1"
+          - generic: "2"
+          - generic: "3"
+          - generic: "4"
+        - generic:
+          - generic: Ficha do personagem
+          - generic: C
+        - generic:
+          - generic: Inventario
+          - generic: I
+        - generic:
+          - generic: Salvar/Carregar
+          - generic: S
+        - generic:
+          - generic: Linha do tempo
+          - generic: T
+        - generic:
+          - generic: Ajustes
+          - generic: ","
+        - generic:
+          - generic: Fechar painel / Voltar
+          - generic: Esc
+        - generic:
+          - generic: Esta ajuda
+          - generic: "?"
+      - generic:
+        - heading "Combate" [level=4]
+        - generic:
+          - generic: Atacar
+          - generic: A
+        - generic:
+          - generic: Fugir
+          - generic: F
+      - generic:
+        - heading "Narracao" [level=4]
+        - generic:
+          - generic: Ligar/Desligar TTS
+          - generic: "N"
+        - generic:
+          - generic: Ler secao atual
+          - generic: L
+      - generic:
+        - heading "Gestos (toque)" [level=4]
+        - generic:
+          - generic: Cima/Baixo/Esq/Dir
+          - generic: Escolhas 1-4
+        - generic:
+          - generic: Circulo horario
+          - generic: Avancar
+        - generic:
+          - generic: Circulo anti-horario
+          - generic: Voltar
+      - button "Fechar (Esc)"
+  - alert:
+    - generic: 🎲
+    - generic: "Teste de Habilidade Dificuldade: 9"
+  - status
+  - alert

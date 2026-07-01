@@ -1,0 +1,139 @@
+- generic [ref=f2e1]:
+  - status [ref=f2e3]
+  - generic:
+    - dialog "Ficha do Personagem":
+      - generic:
+        - heading "Ficha do Personagem" [level=3]
+        - 'button "Fechar ficha (atalho: Escape)"': ×
+  - generic:
+    - dialog "Inventario":
+      - generic:
+        - heading "Inventario" [level=3]
+        - 'button "Fechar inventario (atalho: Escape)"': ×
+  - generic:
+    - dialog "Ajustes":
+      - generic:
+        - heading "Ajustes" [level=3]
+        - 'button "Fechar ajustes (atalho: Escape)"': ×
+      - generic:
+        - generic:
+          - generic: Tamanho da fonte
+          - radiogroup "Tamanho da fonte":
+            - radio "P"
+            - radio "M" [checked]
+            - radio "G"
+            - radio "GG"
+        - generic:
+          - generic: Tema
+          - radiogroup "Tema de cores":
+            - radio "Escuro" [checked]
+            - radio "Sepia"
+            - radio "Contraste"
+        - generic:
+          - generic: Fonte Dyslexic
+          - switch "Desligado"
+        - generic:
+          - generic: Narracao TTS
+          - switch "Desligado"
+        - generic:
+          - generic: Vibracao
+          - switch "Ligado" [checked]
+        - generic:
+          - generic: Atalhos caractere (1-9)
+          - switch "Ligado" [checked]
+        - generic:
+          - text: Pressione
+          - generic: "?"
+          - text: para ver todos os atalhos.
+  - generic:
+    - dialog "Salvar / Carregar":
+      - generic:
+        - heading "Salvar / Carregar" [level=3]
+        - 'button "Fechar (atalho: Escape)"': ×
+  - generic:
+    - dialog "Linha do Tempo":
+      - generic:
+        - heading "Linha do Tempo" [level=3]
+        - 'button "Fechar (atalho: Escape)"': ×
+  - generic:
+    - dialog "Atalhos de Teclado":
+      - heading "Atalhos de Teclado" [level=2]
+      - generic:
+        - heading "Navegacao" [level=4]
+        - generic:
+          - generic: Escolher opcao 1-4
+          - generic: "1"
+          - generic: "2"
+          - generic: "3"
+          - generic: "4"
+        - generic:
+          - generic: Ficha do personagem
+          - generic: C
+        - generic:
+          - generic: Inventario
+          - generic: I
+        - generic:
+          - generic: Salvar/Carregar
+          - generic: S
+        - generic:
+          - generic: Linha do tempo
+          - generic: T
+        - generic:
+          - generic: Ajustes
+          - generic: ","
+        - generic:
+          - generic: Fechar painel / Voltar
+          - generic: Esc
+        - generic:
+          - generic: Esta ajuda
+          - generic: "?"
+      - generic:
+        - heading "Combate" [level=4]
+        - generic:
+          - generic: Atacar
+          - generic: A
+        - generic:
+          - generic: Fugir
+          - generic: F
+      - generic:
+        - heading "Narracao" [level=4]
+        - generic:
+          - generic: Ligar/Desligar TTS
+          - generic: "N"
+        - generic:
+          - generic: Ler secao atual
+          - generic: L
+      - generic:
+        - heading "Gestos (toque)" [level=4]
+        - generic:
+          - generic: Cima/Baixo/Esq/Dir
+          - generic: Escolhas 1-4
+        - generic:
+          - generic: Circulo horario
+          - generic: Avancar
+        - generic:
+          - generic: Circulo anti-horario
+          - generic: Voltar
+      - button "Fechar (Esc)"
+  - dialog "Criacao do Personagem" [ref=f2e4]:
+    - heading "Criacao do Personagem" [level=2] [ref=f2e5]
+    - generic [ref=f2e6]:
+      - generic [ref=f2e7]:
+        - generic [ref=f2e8]: "11"
+        - generic [ref=f2e9]:
+          - text: Habilidade
+          - text: 1d6+6
+      - generic [ref=f2e10]:
+        - generic [ref=f2e11]: "19"
+        - generic [ref=f2e12]:
+          - text: Vigor
+          - text: 2d6+12
+      - generic [ref=f2e13]:
+        - generic [ref=f2e14]: "7"
+        - generic [ref=f2e15]:
+          - text: Sorte
+          - text: 1d6+6
+    - generic [ref=f2e16]: "Itens: espada, tocha | Ouro: 5"
+    - button "Comecar Aventura" [active] [ref=f2e17] [cursor=pointer]
+  - status
+  - alert

@@ -1,0 +1,750 @@
+- generic [ref=f12e3]:
+  - banner [ref=f12e4]:
+    - generic [ref=f12e5]:
+      - link "Link to the Steam Homepage" [ref=f12e8] [cursor=pointer]:
+        - /url: https://store.steampowered.com/?snr=1_7_7_151_global-header
+        - img "Link to the Steam Homepage" [ref=f12e9]
+      - navigation "Global Menu" [ref=f12e10]:
+        - link "STORE" [ref=f12e11] [cursor=pointer]:
+          - /url: https://store.steampowered.com/?snr=1_7_7_151_global-header
+        - link "COMMUNITY" [ref=f12e12] [cursor=pointer]:
+          - /url: https://steamcommunity.com/
+        - link "About" [ref=f12e13] [cursor=pointer]:
+          - /url: https://store.steampowered.com/about/?snr=1_7_7_151_global-header
+        - link "SUPPORT" [ref=f12e14] [cursor=pointer]:
+          - /url: https://help.steampowered.com/en/
+      - navigation "Account Menu" [ref=f12e16]:
+        - link "Install Steam" [ref=f12e17] [cursor=pointer]:
+          - /url: https://store.steampowered.com/about/?snr=1_7_7_151_global-header
+          - generic [ref=f12e18]: Install Steam
+        - link "sign in" [ref=f12e19] [cursor=pointer]:
+          - /url: https://store.steampowered.com/login/?redir=search%2F%3Fterm%3Dfighting%2Bfantasy%26ndl%3D1&redir_ssl=1&snr=1_7_7_151_global-header
+        - text: "| language"
+  - navigation "Store menu" [ref=f12e22]:
+    - generic [ref=f12e23]:
+      - generic [ref=f12e25]:
+        - button "Browse" [ref=f12e26] [cursor=pointer]:
+          - generic [ref=f12e27]: Browse
+        - button "Recommendations" [ref=f12e30] [cursor=pointer]:
+          - generic [ref=f12e31]: Recommendations
+        - button "Categories" [ref=f12e34] [cursor=pointer]:
+          - generic [ref=f12e35]: Categories
+        - button "Ways to Play" [ref=f12e38] [cursor=pointer]:
+          - generic [ref=f12e39]: Ways to Play
+        - button "Special Sections" [ref=f12e42] [cursor=pointer]:
+          - generic [ref=f12e43]: Special Sections
+      - generic [ref=f12e46]:
+        - search [ref=f12e47]:
+          - combobox "Search the store" [ref=f12e49]
+          - button "Search" [ref=f12e50] [cursor=pointer]:
+            - img "Search" [ref=f12e51]
+        - link "Advanced Search" [ref=f12e54] [cursor=pointer]:
+          - /url: https://store.steampowered.com/search/?term=&snr=1_7_15__advancedsearch
+  - main [ref=f12e56]:
+    - generic [ref=f12e58]:
+      - heading [level=2] [ref=f12e60]
+      - generic [ref=f12e62]:
+        - text: "\"fighting fantasy\""
+        - link [ref=f12e63] [cursor=pointer]:
+          - /url: "#"
+    - generic [ref=f12e66]:
+      - generic [ref=f12e67]:
+        - generic [ref=f12e68]:
+          - generic [ref=f12e69]:
+            - generic [ref=f12e70]: Sort by
+            - combobox [ref=f12e72] [cursor=pointer]: Relevance
+          - generic [ref=f12e73]:
+            - textbox [ref=f12e74]: fighting fantasy
+            - button "Search" [ref=f12e75] [cursor=pointer]:
+              - generic [ref=f12e76]: Search
+        - generic [ref=f12e77]:
+          - generic [ref=f12e78]: 10,290 results match your search.
+          - generic [ref=f12e80]:
+            - link "Fighting Fantasy Classics 5 Jun, 2018 Free" [ref=f12e81] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/856880/Fighting_Fantasy_Classics/?snr=1_7_7_151_150_1
+              - img [ref=f12e83]
+              - generic [ref=f12e84]:
+                - generic [ref=f12e85]: Fighting Fantasy Classics
+                - generic [ref=f12e89]: 5 Jun, 2018
+                - generic [ref=f12e96]: Free
+            - link "Fighting Fantasy Legends 27 Jul, 2017 65% off. R$23,50 normally, discounted to R$8,22" [ref=f12e97] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/496340/Fighting_Fantasy_Legends/?snr=1_7_7_151_150_1
+              - img [ref=f12e99]
+              - generic [ref=f12e100]:
+                - generic [ref=f12e101]: Fighting Fantasy Legends
+                - generic [ref=f12e105]: 27 Jul, 2017
+                - link "65% off. R$23,50 normally, discounted to R$8,22" [ref=f12e110]:
+                  - generic [ref=f12e111]: "-65%"
+                  - generic [ref=f12e112]:
+                    - generic [ref=f12e113]: R$23,50
+                    - generic [ref=f12e114]: R$8,22
+            - link "Scorpion Swamp (Fighting Fantasy Classics) 10 Dec, 2025 10% off. R$13,79 normally, discounted to R$12,41" [ref=f12e115] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/4138770/Scorpion_Swamp_Fighting_Fantasy_Classics/?snr=1_7_7_151_150_1
+              - img [ref=f12e117]
+              - generic [ref=f12e118]:
+                - generic [ref=f12e119]: Scorpion Swamp (Fighting Fantasy Classics)
+                - generic [ref=f12e123]: 10 Dec, 2025
+                - link "10% off. R$13,79 normally, discounted to R$12,41" [ref=f12e127]:
+                  - generic [ref=f12e128]: "-10%"
+                  - generic [ref=f12e129]:
+                    - generic [ref=f12e130]: R$13,79
+                    - generic [ref=f12e131]: R$12,41
+            - link "Starship Traveller (Fighting Fantasy Classics) 25 Feb, 2025 40% off. R$13,79 normally, discounted to R$8,27" [ref=f12e132] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/3510410/Starship_Traveller_Fighting_Fantasy_Classics/?snr=1_7_7_151_150_1
+              - img [ref=f12e134]
+              - generic [ref=f12e135]:
+                - generic [ref=f12e136]: Starship Traveller (Fighting Fantasy Classics)
+                - generic [ref=f12e140]: 25 Feb, 2025
+                - link "40% off. R$13,79 normally, discounted to R$8,27" [ref=f12e144]:
+                  - generic [ref=f12e145]: "-40%"
+                  - generic [ref=f12e146]:
+                    - generic [ref=f12e147]: R$13,79
+                    - generic [ref=f12e148]: R$8,27
+            - link "Deathtrap Dungeon (Fighting Fantasy Classics) 5 Jun, 2018 50% off. R$13,79 normally, discounted to R$6,89" [ref=f12e149] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/856920/Deathtrap_Dungeon_Fighting_Fantasy_Classics/?snr=1_7_7_151_150_1
+              - img [ref=f12e151]
+              - generic [ref=f12e152]:
+                - generic [ref=f12e153]: Deathtrap Dungeon (Fighting Fantasy Classics)
+                - generic [ref=f12e157]: 5 Jun, 2018
+                - link "50% off. R$13,79 normally, discounted to R$6,89" [ref=f12e161]:
+                  - generic [ref=f12e162]: "-50%"
+                  - generic [ref=f12e163]:
+                    - generic [ref=f12e164]: R$13,79
+                    - generic [ref=f12e165]: R$6,89
+            - link "Freeway Fighter (Fighting Fantasy Classics) 11 May, 2022 50% off. R$13,79 normally, discounted to R$6,89" [ref=f12e166] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/1960520/Freeway_Fighter_Fighting_Fantasy_Classics/?snr=1_7_7_151_150_1
+              - img [ref=f12e168]
+              - generic [ref=f12e169]:
+                - generic [ref=f12e170]: Freeway Fighter (Fighting Fantasy Classics)
+                - generic [ref=f12e174]: 11 May, 2022
+                - link "50% off. R$13,79 normally, discounted to R$6,89" [ref=f12e178]:
+                  - generic [ref=f12e179]: "-50%"
+                  - generic [ref=f12e180]:
+                    - generic [ref=f12e181]: R$13,79
+                    - generic [ref=f12e182]: R$6,89
+            - link "Fantasy Grounds - Advanced Fighting Fantasy 2E Ruleset 20 Jul, 2021 R$37,99" [ref=f12e183] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/1677320/Fantasy_Grounds__Advanced_Fighting_Fantasy_2E_Ruleset/?snr=1_7_7_151_150_1
+              - img [ref=f12e185]
+              - generic [ref=f12e186]:
+                - generic [ref=f12e187]: Fantasy Grounds - Advanced Fighting Fantasy 2E Ruleset
+                - generic [ref=f12e191]: 20 Jul, 2021
+                - generic [ref=f12e197]: R$37,99
+            - link "Armies of Death (Fighting Fantasy Classics) 21 Aug, 2024 50% off. R$13,79 normally, discounted to R$6,89" [ref=f12e198] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/2081033/Armies_of_Death_Fighting_Fantasy_Classics/?snr=1_7_7_151_150_1
+              - img [ref=f12e200]
+              - generic [ref=f12e201]:
+                - generic [ref=f12e202]: Armies of Death (Fighting Fantasy Classics)
+                - generic [ref=f12e206]: 21 Aug, 2024
+                - link "50% off. R$13,79 normally, discounted to R$6,89" [ref=f12e210]:
+                  - generic [ref=f12e211]: "-50%"
+                  - generic [ref=f12e212]:
+                    - generic [ref=f12e213]: R$13,79
+                    - generic [ref=f12e214]: R$6,89
+            - link "House of Hell (Fighting Fantasy Classics) 17 Jul, 2018 50% off. R$13,79 normally, discounted to R$6,89" [ref=f12e215] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/897180/House_of_Hell_Fighting_Fantasy_Classics/?snr=1_7_7_151_150_1
+              - img [ref=f12e217]
+              - generic [ref=f12e218]:
+                - generic [ref=f12e219]: House of Hell (Fighting Fantasy Classics)
+                - generic [ref=f12e223]: 17 Jul, 2018
+                - link "50% off. R$13,79 normally, discounted to R$6,89" [ref=f12e227]:
+                  - generic [ref=f12e228]: "-50%"
+                  - generic [ref=f12e229]:
+                    - generic [ref=f12e230]: R$13,79
+                    - generic [ref=f12e231]: R$6,89
+            - link "Citadel of Chaos (Fighting Fantasy Classics) 5 Jun, 2018 50% off. R$13,79 normally, discounted to R$6,89" [ref=f12e232] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/856900/Citadel_of_Chaos_Fighting_Fantasy_Classics/?snr=1_7_7_151_150_1
+              - img [ref=f12e234]
+              - generic [ref=f12e235]:
+                - generic [ref=f12e236]: Citadel of Chaos (Fighting Fantasy Classics)
+                - generic [ref=f12e240]: 5 Jun, 2018
+                - link "50% off. R$13,79 normally, discounted to R$6,89" [ref=f12e244]:
+                  - generic [ref=f12e245]: "-50%"
+                  - generic [ref=f12e246]:
+                    - generic [ref=f12e247]: R$13,79
+                    - generic [ref=f12e248]: R$6,89
+            - link "Creature of Havoc (Fighting Fantasy Classics) 26 Aug, 2021 50% off. R$13,79 normally, discounted to R$6,89" [ref=f12e249] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/1647470/Creature_of_Havoc_Fighting_Fantasy_Classics/?snr=1_7_7_151_150_1
+              - img [ref=f12e251]
+              - generic [ref=f12e252]:
+                - generic [ref=f12e253]: Creature of Havoc (Fighting Fantasy Classics)
+                - generic [ref=f12e257]: 26 Aug, 2021
+                - link "50% off. R$13,79 normally, discounted to R$6,89" [ref=f12e261]:
+                  - generic [ref=f12e262]: "-50%"
+                  - generic [ref=f12e263]:
+                    - generic [ref=f12e264]: R$13,79
+                    - generic [ref=f12e265]: R$6,89
+            - link "City of Thieves (Fighting Fantasy Classics) 5 Jun, 2018 50% off. R$13,79 normally, discounted to R$6,89" [ref=f12e266] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/856910/City_of_Thieves_Fighting_Fantasy_Classics/?snr=1_7_7_151_150_1
+              - img [ref=f12e268]
+              - generic [ref=f12e269]:
+                - generic [ref=f12e270]: City of Thieves (Fighting Fantasy Classics)
+                - generic [ref=f12e274]: 5 Jun, 2018
+                - link "50% off. R$13,79 normally, discounted to R$6,89" [ref=f12e278]:
+                  - generic [ref=f12e279]: "-50%"
+                  - generic [ref=f12e280]:
+                    - generic [ref=f12e281]: R$13,79
+                    - generic [ref=f12e282]: R$6,89
+            - link "Temple of Terror (Fighting Fantasy Classics) 1 Jun, 2021 50% off. R$13,79 normally, discounted to R$6,89" [ref=f12e283] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/1588350/Temple_of_Terror_Fighting_Fantasy_Classics/?snr=1_7_7_151_150_1
+              - img [ref=f12e285]
+              - generic [ref=f12e286]:
+                - generic [ref=f12e287]: Temple of Terror (Fighting Fantasy Classics)
+                - generic [ref=f12e291]: 1 Jun, 2021
+                - link "50% off. R$13,79 normally, discounted to R$6,89" [ref=f12e295]:
+                  - generic [ref=f12e296]: "-50%"
+                  - generic [ref=f12e297]:
+                    - generic [ref=f12e298]: R$13,79
+                    - generic [ref=f12e299]: R$6,89
+            - link "Trial of Champions (Fighting Fantasy Classics) 17 Jul, 2018 50% off. R$13,79 normally, discounted to R$6,89" [ref=f12e300] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/897190/Trial_of_Champions_Fighting_Fantasy_Classics/?snr=1_7_7_151_150_1
+              - img [ref=f12e302]
+              - generic [ref=f12e303]:
+                - generic [ref=f12e304]: Trial of Champions (Fighting Fantasy Classics)
+                - generic [ref=f12e308]: 17 Jul, 2018
+                - link "50% off. R$13,79 normally, discounted to R$6,89" [ref=f12e312]:
+                  - generic [ref=f12e313]: "-50%"
+                  - generic [ref=f12e314]:
+                    - generic [ref=f12e315]: R$13,79
+                    - generic [ref=f12e316]: R$6,89
+            - link "Assassins of Allansia (Fighting Fantasy Classics) 8 Sep, 2022 50% off. R$13,79 normally, discounted to R$6,89" [ref=f12e317] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/2081030/Assassins_of_Allansia_Fighting_Fantasy_Classics/?snr=1_7_7_151_150_1
+              - img [ref=f12e319]
+              - generic [ref=f12e320]:
+                - generic [ref=f12e321]: Assassins of Allansia (Fighting Fantasy Classics)
+                - generic [ref=f12e325]: 8 Sep, 2022
+                - link "50% off. R$13,79 normally, discounted to R$6,89" [ref=f12e329]:
+                  - generic [ref=f12e330]: "-50%"
+                  - generic [ref=f12e331]:
+                    - generic [ref=f12e332]: R$13,79
+                    - generic [ref=f12e333]: R$6,89
+            - link "The Warlock of Firetop Mountain (Fighting Fantasy Classics) 5 Jun, 2018 50% off. R$13,79 normally, discounted to R$6,89" [ref=f12e334] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/856960/The_Warlock_of_Firetop_Mountain_Fighting_Fantasy_Classics/?snr=1_7_7_151_150_1
+              - img [ref=f12e336]
+              - generic [ref=f12e337]:
+                - generic [ref=f12e338]: The Warlock of Firetop Mountain (Fighting Fantasy Classics)
+                - generic [ref=f12e342]: 5 Jun, 2018
+                - link "50% off. R$13,79 normally, discounted to R$6,89" [ref=f12e347]:
+                  - generic [ref=f12e348]: "-50%"
+                  - generic [ref=f12e349]:
+                    - generic [ref=f12e350]: R$13,79
+                    - generic [ref=f12e351]: R$6,89
+            - link "Crypt of the Sorcerer (Fighting Fantasy Classics) 30 Jul, 2025 30% off. R$13,79 normally, discounted to R$9,65" [ref=f12e352] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/3855210/Crypt_of_the_Sorcerer_Fighting_Fantasy_Classics/?snr=1_7_7_151_150_1
+              - img [ref=f12e354]
+              - generic [ref=f12e355]:
+                - generic [ref=f12e356]: Crypt of the Sorcerer (Fighting Fantasy Classics)
+                - generic [ref=f12e360]: 30 Jul, 2025
+                - link "30% off. R$13,79 normally, discounted to R$9,65" [ref=f12e364]:
+                  - generic [ref=f12e365]: "-30%"
+                  - generic [ref=f12e366]:
+                    - generic [ref=f12e367]: R$13,79
+                    - generic [ref=f12e368]: R$9,65
+            - link "Eye of the Dragon (Fighting Fantasy Classics) 22 Apr, 2025 40% off. R$13,79 normally, discounted to R$8,27" [ref=f12e369] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/3588900/Eye_of_the_Dragon_Fighting_Fantasy_Classics/?snr=1_7_7_151_150_1
+              - img [ref=f12e371]
+              - generic [ref=f12e372]:
+                - generic [ref=f12e373]: Eye of the Dragon (Fighting Fantasy Classics)
+                - generic [ref=f12e377]: 22 Apr, 2025
+                - link "40% off. R$13,79 normally, discounted to R$8,27" [ref=f12e381]:
+                  - generic [ref=f12e382]: "-40%"
+                  - generic [ref=f12e383]:
+                    - generic [ref=f12e384]: R$13,79
+                    - generic [ref=f12e385]: R$8,27
+            - 'link "Avatar Legends: The Fighting Game 23 Jul, 2026 R$88,99" [ref=f12e386] [cursor=pointer]':
+              - /url: https://store.steampowered.com/app/2424420/Avatar_Legends_The_Fighting_Game/?snr=1_7_7_151_150_1
+              - img [ref=f12e388]
+              - generic [ref=f12e389]:
+                - generic [ref=f12e390]: "Avatar Legends: The Fighting Game"
+                - generic [ref=f12e393]: 23 Jul, 2026
+                - generic [ref=f12e399]: R$88,99
+            - link "Return to Firetop Mountain (Fighting Fantasy Classics) 10 Jun, 2026 R$15,75" [ref=f12e400] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/4692040/Return_to_Firetop_Mountain_Fighting_Fantasy_Classics/?snr=1_7_7_151_150_1
+              - img [ref=f12e402]
+              - generic [ref=f12e403]:
+                - generic [ref=f12e404]: Return to Firetop Mountain (Fighting Fantasy Classics)
+                - generic [ref=f12e408]: 10 Jun, 2026
+                - generic [ref=f12e414]: R$15,75
+            - link "The Port of Peril (Fighting Fantasy Classics) 3 Oct, 2024 50% off. R$13,79 normally, discounted to R$6,89" [ref=f12e415] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/2081032/The_Port_of_Peril_Fighting_Fantasy_Classics/?snr=1_7_7_151_150_1
+              - img [ref=f12e417]
+              - generic [ref=f12e418]:
+                - generic [ref=f12e419]: The Port of Peril (Fighting Fantasy Classics)
+                - generic [ref=f12e423]: 3 Oct, 2024
+                - link "50% off. R$13,79 normally, discounted to R$6,89" [ref=f12e427]:
+                  - generic [ref=f12e428]: "-50%"
+                  - generic [ref=f12e429]:
+                    - generic [ref=f12e430]: R$13,79
+                    - generic [ref=f12e431]: R$6,89
+            - link "The Forest of Doom (Fighting Fantasy Classics) 5 Jun, 2018 50% off. R$13,79 normally, discounted to R$6,89" [ref=f12e432] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/856950/The_Forest_of_Doom_Fighting_Fantasy_Classics/?snr=1_7_7_151_150_1
+              - img [ref=f12e434]
+              - generic [ref=f12e435]:
+                - generic [ref=f12e436]: The Forest of Doom (Fighting Fantasy Classics)
+                - generic [ref=f12e440]: 5 Jun, 2018
+                - link "50% off. R$13,79 normally, discounted to R$6,89" [ref=f12e444]:
+                  - generic [ref=f12e445]: "-50%"
+                  - generic [ref=f12e446]:
+                    - generic [ref=f12e447]: R$13,79
+                    - generic [ref=f12e448]: R$6,89
+            - link "Island of the Lizard King (Fighting Fantasy Classics) 5 Jun, 2018 50% off. R$13,79 normally, discounted to R$6,89" [ref=f12e449] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/856940/Island_of_the_Lizard_King_Fighting_Fantasy_Classics/?snr=1_7_7_151_150_1
+              - img [ref=f12e451]
+              - generic [ref=f12e452]:
+                - generic [ref=f12e453]: Island of the Lizard King (Fighting Fantasy Classics)
+                - generic [ref=f12e457]: 5 Jun, 2018
+                - link "50% off. R$13,79 normally, discounted to R$6,89" [ref=f12e461]:
+                  - generic [ref=f12e462]: "-50%"
+                  - generic [ref=f12e463]:
+                    - generic [ref=f12e464]: R$13,79
+                    - generic [ref=f12e465]: R$6,89
+            - link "Caverns of the Snow Witch (Fighting Fantasy Classics) 5 Jun, 2018 50% off. R$13,79 normally, discounted to R$6,89" [ref=f12e466] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/856930/Caverns_of_the_Snow_Witch_Fighting_Fantasy_Classics/?snr=1_7_7_151_150_1
+              - img [ref=f12e468]
+              - generic [ref=f12e469]:
+                - generic [ref=f12e470]: Caverns of the Snow Witch (Fighting Fantasy Classics)
+                - generic [ref=f12e474]: 5 Jun, 2018
+                - link "50% off. R$13,79 normally, discounted to R$6,89" [ref=f12e478]:
+                  - generic [ref=f12e479]: "-50%"
+                  - generic [ref=f12e480]:
+                    - generic [ref=f12e481]: R$13,79
+                    - generic [ref=f12e482]: R$6,89
+            - link "Appointment with FEAR (Fighting Fantasy Classics) 12 Jan, 2023 50% off. R$13,79 normally, discounted to R$6,89" [ref=f12e483] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/2081031/Appointment_with_FEAR_Fighting_Fantasy_Classics/?snr=1_7_7_151_150_1
+              - img [ref=f12e485]
+              - generic [ref=f12e486]:
+                - generic [ref=f12e487]: Appointment with FEAR (Fighting Fantasy Classics)
+                - generic [ref=f12e491]: 12 Jan, 2023
+                - link "50% off. R$13,79 normally, discounted to R$6,89" [ref=f12e495]:
+                  - generic [ref=f12e496]: "-50%"
+                  - generic [ref=f12e497]:
+                    - generic [ref=f12e498]: R$13,79
+                    - generic [ref=f12e499]: R$6,89
+            - link "FINAL FANTASY VII REVELATION 2027" [ref=f12e500] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/4354570/FINAL_FANTASY_VII_REVELATION/?snr=1_7_7_151_150_1
+              - img [ref=f12e502]
+              - generic [ref=f12e503]:
+                - generic [ref=f12e504]: FINAL FANTASY VII REVELATION
+                - generic [ref=f12e507]: "2027"
+            - link "FINAL FANTASY XIV Online 18 Feb, 2014 R$52,99" [ref=f12e509] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/39210/FINAL_FANTASY_XIV_Online/?snr=1_7_7_151_150_1
+              - img [ref=f12e511]
+              - generic [ref=f12e512]:
+                - generic [ref=f12e513]: FINAL FANTASY XIV Online
+                - generic [ref=f12e516]: 18 Feb, 2014
+                - generic [ref=f12e523]: R$52,99
+            - link "Monster Fantasy To be announced" [ref=f12e524] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/4713940/Monster_Fantasy/?snr=1_7_7_151_150_1
+              - img [ref=f12e526]
+              - generic [ref=f12e527]:
+                - generic [ref=f12e528]: Monster Fantasy
+                - generic [ref=f12e531]: To be announced
+            - link "Virtual Fighting Championship 2 2026" [ref=f12e533] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/3729170/Virtual_Fighting_Championship_2/?snr=1_7_7_151_150_1
+              - img [ref=f12e535]
+              - generic [ref=f12e536]:
+                - generic [ref=f12e537]: Virtual Fighting Championship 2
+                - generic [ref=f12e540]: "2026"
+            - link "The Skeletons Are Fighting 30 Oct, 2025 30% off. R$32,99 normally, discounted to R$23,09" [ref=f12e542] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/3412330/The_Skeletons_Are_Fighting/?snr=1_7_7_151_150_1
+              - img [ref=f12e544]
+              - generic [ref=f12e545]:
+                - generic [ref=f12e546]: The Skeletons Are Fighting
+                - generic [ref=f12e549]: 30 Oct, 2025
+                - link "30% off. R$32,99 normally, discounted to R$23,09" [ref=f12e554]:
+                  - generic [ref=f12e555]: "-30%"
+                  - generic [ref=f12e556]:
+                    - generic [ref=f12e557]: R$32,99
+                    - generic [ref=f12e558]: R$23,09
+            - link "Fighting Moore VR Only 6 Jan, 2020 R$3,49" [ref=f12e559] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/1166130/Fighting_Moore/?snr=1_7_7_151_150_1
+              - img [ref=f12e561]
+              - generic [ref=f12e562]:
+                - generic [ref=f12e563]: Fighting Moore
+                - generic [ref=f12e567]: VR Only
+                - generic [ref=f12e568]: 6 Jan, 2020
+                - generic [ref=f12e574]: R$3,49
+            - link "Fighting Moore Demo VR Only 9 Mar, 2020 Free" [ref=f12e575] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/1166130/Fighting_Moore/?snr=1_7_7_151_150_1
+              - img [ref=f12e577]
+              - generic [ref=f12e578]:
+                - generic [ref=f12e579]: Fighting Moore Demo
+                - generic [ref=f12e583]: VR Only
+                - generic [ref=f12e584]: 9 Mar, 2020
+                - generic [ref=f12e590]: Free
+            - link "FULL BET - FIGHTING CASINO - 2026" [ref=f12e591] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/2941500/FULL_BET___FIGHTING_CASINO/?snr=1_7_7_151_150_1
+              - img [ref=f12e593]
+              - generic [ref=f12e594]:
+                - generic [ref=f12e595]: FULL BET - FIGHTING CASINO -
+                - generic [ref=f12e598]: "2026"
+            - 'link "Granblue Fantasy Versus: Rising 14 Dec, 2023 70% off. R$179,90 normally, discounted to R$53,97" [ref=f12e600] [cursor=pointer]':
+              - /url: https://store.steampowered.com/app/2157560/Granblue_Fantasy_Versus_Rising/?snr=1_7_7_151_150_1
+              - img [ref=f12e602]
+              - generic [ref=f12e603]:
+                - generic [ref=f12e604]: "Granblue Fantasy Versus: Rising"
+                - generic [ref=f12e607]: 14 Dec, 2023
+                - link "70% off. R$179,90 normally, discounted to R$53,97" [ref=f12e612]:
+                  - generic [ref=f12e613]: "-70%"
+                  - generic [ref=f12e614]:
+                    - generic [ref=f12e615]: R$179,90
+                    - generic [ref=f12e616]: R$53,97
+            - link "KeepFighting Coming soon" [ref=f12e617] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/4661510/KeepFighting/?snr=1_7_7_151_150_1
+              - img [ref=f12e619]
+              - generic [ref=f12e620]:
+                - generic [ref=f12e621]: KeepFighting
+                - generic [ref=f12e624]: Coming soon
+            - link "XXX, I Want You to Keep Fighting To be announced" [ref=f12e626] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/2092140/XXX_I_Want_You_to_Keep_Fighting/?snr=1_7_7_151_150_1
+              - img [ref=f12e628]
+              - generic [ref=f12e629]:
+                - generic [ref=f12e630]: XXX, I Want You to Keep Fighting
+                - generic [ref=f12e633]: To be announced
+            - link "FINAL FANTASY XII THE ZODIAC AGE 1 Feb, 2018 70% off. R$165,99 normally, discounted to R$49,79" [ref=f12e635] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/595520/FINAL_FANTASY_XII_THE_ZODIAC_AGE/?snr=1_7_7_151_150_1
+              - img [ref=f12e637]
+              - generic [ref=f12e638]:
+                - generic [ref=f12e639]: FINAL FANTASY XII THE ZODIAC AGE
+                - generic [ref=f12e642]: 1 Feb, 2018
+                - link "70% off. R$165,99 normally, discounted to R$49,79" [ref=f12e647]:
+                  - generic [ref=f12e648]: "-70%"
+                  - generic [ref=f12e649]:
+                    - generic [ref=f12e650]: R$165,99
+                    - generic [ref=f12e651]: R$49,79
+            - link "Diablo® IV 27 Apr, 2026 40% off. R$229,90 normally, discounted to R$137,94" [ref=f12e652] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/2344520/Diablo_IV/?snr=1_7_7_151_150_1
+              - img [ref=f12e654]
+              - generic [ref=f12e655]:
+                - generic [ref=f12e656]: Diablo® IV
+                - generic [ref=f12e659]: 27 Apr, 2026
+                - link "40% off. R$229,90 normally, discounted to R$137,94" [ref=f12e664]:
+                  - generic [ref=f12e665]: "-40%"
+                  - generic [ref=f12e666]:
+                    - generic [ref=f12e667]: R$229,90
+                    - generic [ref=f12e668]: R$137,94
+            - link "Path of Exile 2 6 Dec, 2024 R$79,80" [ref=f12e669] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/2694490/Path_of_Exile_2/?snr=1_7_7_151_150_1
+              - img [ref=f12e671]
+              - generic [ref=f12e672]:
+                - generic [ref=f12e673]: Path of Exile 2
+                - generic [ref=f12e676]: 6 Dec, 2024
+                - generic [ref=f12e683]: R$79,80
+            - link "Baldur's Gate 3 3 Aug, 2023 25% off. R$199,99 normally, discounted to R$149,99" [ref=f12e684] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/1086940/Baldurs_Gate_3/?snr=1_7_7_151_150_1
+              - img [ref=f12e686]
+              - generic [ref=f12e687]:
+                - generic [ref=f12e688]: Baldur's Gate 3
+                - generic [ref=f12e692]: 3 Aug, 2023
+                - link "25% off. R$199,99 normally, discounted to R$149,99" [ref=f12e697]:
+                  - generic [ref=f12e698]: "-25%"
+                  - generic [ref=f12e699]:
+                    - generic [ref=f12e700]: R$199,99
+                    - generic [ref=f12e701]: R$149,99
+            - link "The Skeletons Are Fighting Demo 1 Oct, 2025 Free" [ref=f12e702] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/3412330/The_Skeletons_Are_Fighting/?snr=1_7_7_151_150_1
+              - img [ref=f12e704]
+              - generic [ref=f12e705]:
+                - generic [ref=f12e706]: The Skeletons Are Fighting Demo
+                - generic [ref=f12e709]: 1 Oct, 2025
+                - generic [ref=f12e715]: Free
+            - link "面具格斗:异世界觉醒 Mask Fighting:Otherworldly Awakening 8 Aug, 2025 R$17,11" [ref=f12e716] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/3875020/__Mask_FightingOtherworldly_Awakening/?snr=1_7_7_151_150_1
+              - img [ref=f12e718]
+              - generic [ref=f12e719]:
+                - generic [ref=f12e720]: 面具格斗:异世界觉醒 Mask Fighting:Otherworldly Awakening
+                - generic [ref=f12e723]: 8 Aug, 2025
+                - generic [ref=f12e729]: R$17,11
+            - link "Fighting for Land / 打怪兽抢领地 1 May, 2025 70% off. R$13,79 normally, discounted to R$4,13" [ref=f12e730] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/3402180/Fighting_for_Land/?snr=1_7_7_151_150_1
+              - img [ref=f12e732]
+              - generic [ref=f12e733]:
+                - generic [ref=f12e734]: Fighting for Land / 打怪兽抢领地
+                - generic [ref=f12e737]: 1 May, 2025
+                - link "70% off. R$13,79 normally, discounted to R$4,13" [ref=f12e741]:
+                  - generic [ref=f12e742]: "-70%"
+                  - generic [ref=f12e743]:
+                    - generic [ref=f12e744]: R$13,79
+                    - generic [ref=f12e745]: R$4,13
+            - link "FULL BET - FIGHTING CASINO - Demo 11 Feb, 2026 Free" [ref=f12e746] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/3768540/FULL_BET__FIGHTING_CASINO__Demo/?snr=1_7_7_151_150_1
+              - img [ref=f12e748]
+              - generic [ref=f12e749]:
+                - generic [ref=f12e750]: FULL BET - FIGHTING CASINO - Demo
+                - generic [ref=f12e753]: 11 Feb, 2026
+                - generic [ref=f12e759]: Free
+            - 'link "Warhammer 40,000: Space Marine 2 9 Sep, 2024 70% off. R$199,90 normally, discounted to R$59,97" [ref=f12e760] [cursor=pointer]':
+              - /url: https://store.steampowered.com/app/2183900/Warhammer_40000_Space_Marine_2/?snr=1_7_7_151_150_1
+              - img [ref=f12e762]
+              - generic [ref=f12e763]:
+                - generic [ref=f12e764]: "Warhammer 40,000: Space Marine 2"
+                - generic [ref=f12e767]: 9 Sep, 2024
+                - link "70% off. R$199,90 normally, discounted to R$59,97" [ref=f12e772]:
+                  - generic [ref=f12e773]: "-70%"
+                  - generic [ref=f12e774]:
+                    - generic [ref=f12e775]: R$199,90
+                    - generic [ref=f12e776]: R$59,97
+            - link "DELTARUNE 4 Jun, 2025 20% off. R$73,99 normally, discounted to R$59,19" [ref=f12e777] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/1671210/DELTARUNE/?snr=1_7_7_151_150_1
+              - img [ref=f12e779]
+              - generic [ref=f12e780]:
+                - generic [ref=f12e781]: DELTARUNE
+                - generic [ref=f12e785]: 4 Jun, 2025
+                - link "20% off. R$73,99 normally, discounted to R$59,19" [ref=f12e790]:
+                  - generic [ref=f12e791]: "-20%"
+                  - generic [ref=f12e792]:
+                    - generic [ref=f12e793]: R$73,99
+                    - generic [ref=f12e794]: R$59,19
+            - link "God of War Ragnarök 19 Sep, 2024 33% off. R$249,90 normally, discounted to R$167,43" [ref=f12e795] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/2322010/God_of_War_Ragnark/?snr=1_7_7_151_150_1
+              - img [ref=f12e797]
+              - generic [ref=f12e798]:
+                - generic [ref=f12e799]: God of War Ragnarök
+                - generic [ref=f12e802]: 19 Sep, 2024
+                - link "33% off. R$249,90 normally, discounted to R$167,43" [ref=f12e807]:
+                  - generic [ref=f12e808]: "-33%"
+                  - generic [ref=f12e809]:
+                    - generic [ref=f12e810]: R$249,90
+                    - generic [ref=f12e811]: R$167,43
+            - link "Fantasy World Manager 2026" [ref=f12e812] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/3447280/Fantasy_World_Manager/?snr=1_7_7_151_150_1
+              - img [ref=f12e814]
+              - generic [ref=f12e815]:
+                - generic [ref=f12e816]: Fantasy World Manager
+                - generic [ref=f12e819]: "2026"
+            - link "God of War 14 Jan, 2022 60% off. R$199,90 normally, discounted to R$79,96" [ref=f12e821] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/1593500/God_of_War/?snr=1_7_7_151_150_1
+              - img [ref=f12e823]
+              - generic [ref=f12e824]:
+                - generic [ref=f12e825]: God of War
+                - generic [ref=f12e828]: 14 Jan, 2022
+                - link "60% off. R$199,90 normally, discounted to R$79,96" [ref=f12e833]:
+                  - generic [ref=f12e834]: "-60%"
+                  - generic [ref=f12e835]:
+                    - generic [ref=f12e836]: R$199,90
+                    - generic [ref=f12e837]: R$79,96
+            - link "Mistfall Hunter 29 Jul, 2026" [ref=f12e838] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/3282300/Mistfall_Hunter/?snr=1_7_7_151_150_1
+              - img [ref=f12e840]
+              - generic [ref=f12e841]:
+                - generic [ref=f12e842]: Mistfall Hunter
+                - generic [ref=f12e845]: 29 Jul, 2026
+      - generic [ref=f12e847]:
+        - generic [ref=f12e848]:
+          - button "Narrow by Price" [ref=f12e849] [cursor=pointer]:
+            - generic [ref=f12e850]: Narrow by Price
+          - generic [ref=f12e851]:
+            - generic [ref=f12e852]:
+              - button [ref=f12e854]: "13"
+              - generic [ref=f12e855]: Any Price
+            - button "Discounts & Events" [ref=f12e858] [cursor=pointer]:
+              - generic [ref=f12e861]: Discounts & Events
+            - button "Hide free to play items" [ref=f12e863] [cursor=pointer]:
+              - generic [ref=f12e866]: Hide free to play items
+        - generic [ref=f12e867]:
+          - button "Narrow by tag" [ref=f12e868] [cursor=pointer]:
+            - generic [ref=f12e869]: Narrow by tag
+          - generic [ref=f12e870]:
+            - generic [ref=f12e871]:
+              - generic [ref=f12e872] [cursor=pointer]:
+                - button "Fantasy 7,871" [ref=f12e873]:
+                  - generic [ref=f12e874]:
+                    - generic [ref=f12e876]: Fantasy
+                    - generic [ref=f12e877]: 7,871
+                - img [ref=f12e879]
+              - generic [ref=f12e880] [cursor=pointer]:
+                - button "Singleplayer 7,083" [ref=f12e881]:
+                  - generic [ref=f12e882]:
+                    - generic [ref=f12e884]: Singleplayer
+                    - generic [ref=f12e885]: 7,083
+                - img [ref=f12e887]
+              - generic [ref=f12e888] [cursor=pointer]:
+                - button "Action 5,626" [ref=f12e889]:
+                  - generic [ref=f12e890]:
+                    - generic [ref=f12e892]: Action
+                    - generic [ref=f12e893]: 5,626
+                - img [ref=f12e895]
+              - generic [ref=f12e896] [cursor=pointer]:
+                - button "RPG 5,462" [ref=f12e897]:
+                  - generic [ref=f12e898]:
+                    - generic [ref=f12e900]: RPG
+                    - generic [ref=f12e901]: 5,462
+                - img [ref=f12e903]
+              - generic [ref=f12e904] [cursor=pointer]:
+                - button "Adventure 5,204" [ref=f12e905]:
+                  - generic [ref=f12e906]:
+                    - generic [ref=f12e908]: Adventure
+                    - generic [ref=f12e909]: 5,204
+                - img [ref=f12e911]
+              - generic [ref=f12e912] [cursor=pointer]:
+                - button "Indie 5,068" [ref=f12e913]:
+                  - generic [ref=f12e914]:
+                    - generic [ref=f12e916]: Indie
+                    - generic [ref=f12e917]: 5,068
+                - img [ref=f12e919]
+              - generic [ref=f12e920] [cursor=pointer]:
+                - button "2D 4,260" [ref=f12e921]:
+                  - generic [ref=f12e922]:
+                    - generic [ref=f12e924]: 2D
+                    - generic [ref=f12e925]: 4,260
+                - img [ref=f12e927]
+              - generic [ref=f12e928] [cursor=pointer]:
+                - button "Combat 3,433" [ref=f12e929]:
+                  - generic [ref=f12e930]:
+                    - generic [ref=f12e932]: Combat
+                    - generic [ref=f12e933]: 3,433
+                - img [ref=f12e935]
+              - generic [ref=f12e936] [cursor=pointer]:
+                - button "Strategy 3,201" [ref=f12e937]:
+                  - generic [ref=f12e938]:
+                    - generic [ref=f12e940]: Strategy
+                    - generic [ref=f12e941]: 3,201
+                - img [ref=f12e943]
+              - generic [ref=f12e944] [cursor=pointer]:
+                - button "Dark Fantasy 2,968" [ref=f12e945]:
+                  - generic [ref=f12e946]:
+                    - generic [ref=f12e948]: Dark Fantasy
+                    - generic [ref=f12e949]: 2,968
+                - img [ref=f12e951]
+              - generic [ref=f12e952] [cursor=pointer]:
+                - button "3D 2,859" [ref=f12e953]:
+                  - generic [ref=f12e954]:
+                    - generic [ref=f12e956]: 3D
+                    - generic [ref=f12e957]: 2,859
+                - img [ref=f12e959]
+              - generic [ref=f12e960] [cursor=pointer]:
+                - button "Pixel Graphics 2,748" [ref=f12e961]:
+                  - generic [ref=f12e962]:
+                    - generic [ref=f12e964]: Pixel Graphics
+                    - generic [ref=f12e965]: 2,748
+                - img [ref=f12e967]
+              - generic [ref=f12e968] [cursor=pointer]:
+                - button "Magic 2,593" [ref=f12e969]:
+                  - generic [ref=f12e970]:
+                    - generic [ref=f12e972]: Magic
+                    - generic [ref=f12e973]: 2,593
+                - img [ref=f12e975]
+              - generic [ref=f12e976] [cursor=pointer]:
+                - button "Action-Adventure 2,450" [ref=f12e977]:
+                  - generic [ref=f12e978]:
+                    - generic [ref=f12e980]: Action-Adventure
+                    - generic [ref=f12e981]: 2,450
+                - img [ref=f12e983]
+              - generic [ref=f12e984] [cursor=pointer]:
+                - button "Medieval 2,365" [ref=f12e985]:
+                  - generic [ref=f12e986]:
+                    - generic [ref=f12e988]: Medieval
+                    - generic [ref=f12e989]: 2,365
+                - img [ref=f12e991]
+              - generic [ref=f12e992] [cursor=pointer]:
+                - button "Story Rich 2,323" [ref=f12e993]:
+                  - generic [ref=f12e994]:
+                    - generic [ref=f12e996]: Story Rich
+                    - generic [ref=f12e997]: 2,323
+                - img [ref=f12e999]
+            - textbox [ref=f12e1000]: search for more tags
+        - button "Show selected types" [ref=f12e1002] [cursor=pointer]:
+          - generic [ref=f12e1003]: Show selected types
+        - button "Narrow by number of players" [ref=f12e1005] [cursor=pointer]:
+          - generic [ref=f12e1006]: Narrow by number of players
+        - button "Narrow by feature" [ref=f12e1008] [cursor=pointer]:
+          - generic [ref=f12e1009]: Narrow by feature
+        - button "Narrow by Controller Support" [ref=f12e1011] [cursor=pointer]:
+          - generic [ref=f12e1012]: Narrow by Controller Support
+        - button "Narrow by accessibility feature" [ref=f12e1014] [cursor=pointer]:
+          - generic [ref=f12e1015]: Narrow by accessibility feature
+        - generic [ref=f12e1016]:
+          - generic [ref=f12e1018]: Narrow by Deck Compatibility
+          - generic [ref=f12e1019]:
+            - button "Verified 556" [ref=f12e1021] [cursor=pointer]:
+              - generic [ref=f12e1022]:
+                - generic [ref=f12e1024]: Verified
+                - generic [ref=f12e1025]: "556"
+            - button "Playable 1,100" [ref=f12e1027] [cursor=pointer]:
+              - generic [ref=f12e1028]:
+                - generic [ref=f12e1030]: Playable
+                - generic [ref=f12e1031]: 1,100
+            - link "Learn More" [ref=f12e1032] [cursor=pointer]:
+              - /url: https://steamdeck.com/en/verified
+        - button "Narrow by VR Support" [ref=f12e1034] [cursor=pointer]:
+          - generic [ref=f12e1035]: Narrow by VR Support
+        - generic [ref=f12e1036]:
+          - button "Narrow by OS" [ref=f12e1037] [cursor=pointer]:
+            - generic [ref=f12e1038]: Narrow by OS
+          - generic [ref=f12e1039]:
+            - button "Windows" [ref=f12e1041] [cursor=pointer]:
+              - generic [ref=f12e1044]: Windows
+            - button "macOS" [ref=f12e1046] [cursor=pointer]:
+              - generic [ref=f12e1049]: macOS
+            - button "SteamOS + Linux" [ref=f12e1051] [cursor=pointer]:
+              - generic [ref=f12e1054]: SteamOS + Linux
+        - button "Narrow by language" [ref=f12e1056] [cursor=pointer]:
+          - generic [ref=f12e1057]: Narrow by language
+  - contentinfo [ref=f12e1061]:
+    - generic [ref=f12e1062]:
+      - generic [ref=f12e1063]:
+        - link [ref=f12e1064] [cursor=pointer]:
+          - /url: https://store.steampowered.com/?snr=1_44_44_151
+          - img [ref=f12e1065]
+        - link [ref=f12e1075] [cursor=pointer]:
+          - /url: https://valvesoftware.com
+          - img [ref=f12e1076]
+      - paragraph [ref=f12e1081]:
+        - text: © 2026 Valve Corporation. All rights reserved. All trademarks are property of their respective owners in the US and other countries.
+        - text: VAT included in all prices where applicable.
+      - generic [ref=f12e1082]:
+        - link [ref=f12e1083] [cursor=pointer]:
+          - /url: https://www.youtube.com/@Steam
+          - img [ref=f12e1084]
+        - link [ref=f12e1086] [cursor=pointer]:
+          - /url: https://bsky.app/profile/steampowered.com
+          - img [ref=f12e1087]
+        - link [ref=f12e1089] [cursor=pointer]:
+          - /url: https://facebook.com/steam
+          - img [ref=f12e1090]
+        - link [ref=f12e1092] [cursor=pointer]:
+          - /url: https://twitter.com/steam
+          - img [ref=f12e1093]
+    - generic [ref=f12e1095]:
+      - heading "STEAM" [level=3] [ref=f12e1096]
+      - link "About Steam" [ref=f12e1097] [cursor=pointer]:
+        - /url: https://store.steampowered.com/about/?snr=1_44_44_151
+      - link "Steam SSA" [ref=f12e1098] [cursor=pointer]:
+        - /url: https://store.steampowered.com/subscriber_agreement/?snr=1_44_44_151
+      - link "Steamworks" [ref=f12e1099] [cursor=pointer]:
+        - /url: https://partner.steamgames.com/
+      - link "Steam Distribution" [ref=f12e1100] [cursor=pointer]:
+        - /url: https://partner.steamgames.com/steamdirect
+      - link "Gift Cards" [ref=f12e1101] [cursor=pointer]:
+        - /url: https://store.steampowered.com/digitalgiftcards/?snr=1_44_44_151
+    - generic [ref=f12e1102]:
+      - heading "VALVE" [level=3] [ref=f12e1103]
+      - link "About Valve" [ref=f12e1104] [cursor=pointer]:
+        - /url: https://valvesoftware.com/about
+      - link "Jobs" [ref=f12e1105] [cursor=pointer]:
+        - /url: https://valvesoftware.com/
+      - link "Hardware" [ref=f12e1106] [cursor=pointer]:
+        - /url: https://store.steampowered.com/hardware/?snr=1_44_44_151
+      - link "Recycling" [ref=f12e1107] [cursor=pointer]:
+        - /url: https://store.steampowered.com/hardware_recycling/?snr=1_44_44_151
+    - generic [ref=f12e1108]:
+      - heading "LEGAL" [level=3] [ref=f12e1109]
+      - link "Privacy" [ref=f12e1110] [cursor=pointer]:
+        - /url: https://store.steampowered.com/privacy_agreement/?snr=1_44_44_151
+      - link "Accessibility" [ref=f12e1111] [cursor=pointer]:
+        - /url: https://help.steampowered.com/faqs/view/10BB-D27A-6378-4436
+      - link "Notices & Policies" [ref=f12e1112] [cursor=pointer]:
+        - /url: https://store.steampowered.com/legal/?snr=1_44_44_151
+      - link "Cookies" [ref=f12e1113] [cursor=pointer]:
+        - /url: https://store.steampowered.com/account/cookiepreferences/?snr=1_44_44_151
+      - link "Refunds" [ref=f12e1114] [cursor=pointer]:
+        - /url: https://store.steampowered.com/steam_refunds/?snr=1_44_44_151
+    - generic [ref=f12e1115]:
+      - heading "MORE" [level=3] [ref=f12e1116]
+      - link "Get Steam" [ref=f12e1117] [cursor=pointer]:
+        - /url: https://store.steampowered.com/about/?snr=1_44_44_151
+      - link "Get Mobile Apps" [ref=f12e1118] [cursor=pointer]:
+        - /url: https://store.steampowered.com/mobile/?snr=1_44_44_151
+      - link "Get Support" [ref=f12e1119] [cursor=pointer]:
+        - /url: https://help.steampowered.com/
+      - link "My Account" [ref=f12e1120] [cursor=pointer]:
+        - /url: https://store.steampowered.com/account/?snr=1_44_44_151

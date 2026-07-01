@@ -1,0 +1,748 @@
+- generic [ref=f1e3]:
+  - banner [ref=f1e4]:
+    - generic [ref=f1e5]:
+      - link "Link to the Steam Homepage" [ref=f1e8] [cursor=pointer]:
+        - /url: https://store.steampowered.com/?snr=1_7_7_151_global-header
+        - img "Link to the Steam Homepage" [ref=f1e9]
+      - navigation "Global Menu" [ref=f1e10]:
+        - link "STORE" [ref=f1e11] [cursor=pointer]:
+          - /url: https://store.steampowered.com/?snr=1_7_7_151_global-header
+        - link "COMMUNITY" [ref=f1e12] [cursor=pointer]:
+          - /url: https://steamcommunity.com/
+        - link "About" [ref=f1e13] [cursor=pointer]:
+          - /url: https://store.steampowered.com/about/?snr=1_7_7_151_global-header
+        - link "SUPPORT" [ref=f1e14] [cursor=pointer]:
+          - /url: https://help.steampowered.com/en/
+      - navigation "Account Menu" [ref=f1e16]:
+        - link "Install Steam" [ref=f1e17] [cursor=pointer]:
+          - /url: https://store.steampowered.com/about/?snr=1_7_7_151_global-header
+          - generic [ref=f1e18]: Install Steam
+        - link "sign in" [ref=f1e19] [cursor=pointer]:
+          - /url: https://store.steampowered.com/login/?redir=search%2F%3Fterm%3D%2522choice%2Bof%2522%26supportedlang%3Dbrazilian&redir_ssl=1&snr=1_7_7_151_global-header
+        - text: "| language"
+  - navigation "Store menu" [ref=f1e22]:
+    - generic [ref=f1e23]:
+      - generic [ref=f1e25]:
+        - button "Browse" [ref=f1e26] [cursor=pointer]:
+          - generic [ref=f1e27]: Browse
+        - button "Recommendations" [ref=f1e30] [cursor=pointer]:
+          - generic [ref=f1e31]: Recommendations
+        - button "Categories" [ref=f1e34] [cursor=pointer]:
+          - generic [ref=f1e35]: Categories
+        - button "Ways to Play" [ref=f1e38] [cursor=pointer]:
+          - generic [ref=f1e39]: Ways to Play
+        - button "Special Sections" [ref=f1e42] [cursor=pointer]:
+          - generic [ref=f1e43]: Special Sections
+      - generic [ref=f1e46]:
+        - search [ref=f1e47]:
+          - combobox "Search the store" [ref=f1e49]
+          - button "Search" [ref=f1e50] [cursor=pointer]:
+            - img "Search" [ref=f1e51]
+        - link "Advanced Search" [ref=f1e54] [cursor=pointer]:
+          - /url: https://store.steampowered.com/search/?term=&snr=1_7_15__advancedsearch
+  - main [ref=f1e56]:
+    - generic [ref=f1e58]:
+      - heading [level=2] [ref=f1e60]
+      - generic [ref=f1e62]:
+        - text: "\"\"choice of\"\""
+        - link [ref=f1e63] [cursor=pointer]:
+          - /url: "#"
+    - generic [ref=f1e66]:
+      - generic [ref=f1e67]:
+        - generic [ref=f1e68]:
+          - generic [ref=f1e69]:
+            - generic [ref=f1e70]: Sort by
+            - combobox [ref=f1e72] [cursor=pointer]: Relevance
+          - generic [ref=f1e73]:
+            - textbox [ref=f1e74]: "\"choice of\""
+            - button "Search" [ref=f1e75] [cursor=pointer]:
+              - generic [ref=f1e76]: Search
+        - generic [ref=f1e77]:
+          - generic [ref=f1e78]:
+            - text: 5,432 results match your search. 19,266 titles (including
+            - link "Choice of Robots" [ref=f1e79] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/339350/Choice_of_Robots/?snr=1_7_7_151
+            - text: ) have been excluded based on your preferences.
+          - button [ref=f1e80] [cursor=pointer]
+        - generic [ref=f1e83]:
+          - 'link "Choice of Life: Samosbor 6 Nov, 2025 40% off. R$16,99 normally, discounted to R$10,19" [ref=f1e84] [cursor=pointer]':
+            - /url: https://store.steampowered.com/app/1574570/Choice_of_Life_Samosbor/?snr=1_7_7_151_150_1
+            - img [ref=f1e86]
+            - generic [ref=f1e87]:
+              - generic [ref=f1e88]: "Choice of Life: Samosbor"
+              - generic [ref=f1e93]: 6 Nov, 2025
+              - link "40% off. R$16,99 normally, discounted to R$10,19" [ref=f1e98]:
+                - generic [ref=f1e99]: "-40%"
+                - generic [ref=f1e100]:
+                  - generic [ref=f1e101]: R$16,99
+                  - generic [ref=f1e102]: R$10,19
+          - 'link "Choice of Life: Middle Ages 2 30 Sep, 2022 71% off. R$23,50 normally, discounted to R$6,81" [ref=f1e103] [cursor=pointer]':
+            - /url: https://store.steampowered.com/app/1573630/Choice_of_Life_Middle_Ages_2/?snr=1_7_7_151_150_1
+            - img [ref=f1e105]
+            - generic [ref=f1e106]:
+              - generic [ref=f1e107]: "Choice of Life: Middle Ages 2"
+              - generic [ref=f1e112]: 30 Sep, 2022
+              - link "71% off. R$23,50 normally, discounted to R$6,81" [ref=f1e117]:
+                - generic [ref=f1e118]: "-71%"
+                - generic [ref=f1e119]:
+                  - generic [ref=f1e120]: R$23,50
+                  - generic [ref=f1e121]: R$6,81
+          - 'link "Choice of Life: Middle Ages 6 Nov, 2020 71% off. R$16,99 normally, discounted to R$4,92" [ref=f1e122] [cursor=pointer]':
+            - /url: https://store.steampowered.com/app/1337890/Choice_of_Life_Middle_Ages/?snr=1_7_7_151_150_1
+            - img [ref=f1e124]
+            - generic [ref=f1e125]:
+              - generic [ref=f1e126]: "Choice of Life: Middle Ages"
+              - generic [ref=f1e131]: 6 Nov, 2020
+              - link "71% off. R$16,99 normally, discounted to R$4,92" [ref=f1e136]:
+                - generic [ref=f1e137]: "-71%"
+                - generic [ref=f1e138]:
+                  - generic [ref=f1e139]: R$16,99
+                  - generic [ref=f1e140]: R$4,92
+          - 'link "Choice of Life: Floors Soundtrack August 2026" [ref=f1e141] [cursor=pointer]':
+            - /url: https://store.steampowered.com/app/4688940/Choice_of_Life_Floors_Soundtrack/?snr=1_7_7_151_150_1
+            - img [ref=f1e143]
+            - generic [ref=f1e144]:
+              - generic [ref=f1e145]: "Choice of Life: Floors Soundtrack"
+              - generic [ref=f1e148]: August 2026
+          - 'link "Choice of Life: Samosbor Soundtrack 6 Nov, 2025 10% off. R$6,99 normally, discounted to R$6,29" [ref=f1e150] [cursor=pointer]':
+            - /url: https://store.steampowered.com/app/4086980/Choice_of_Life_Samosbor_Soundtrack/?snr=1_7_7_151_150_1
+            - img [ref=f1e152]
+            - generic [ref=f1e153]:
+              - generic [ref=f1e154]: "Choice of Life: Samosbor Soundtrack"
+              - generic [ref=f1e157]: 6 Nov, 2025
+              - link "10% off. R$6,99 normally, discounted to R$6,29" [ref=f1e161]:
+                - generic [ref=f1e162]: "-10%"
+                - generic [ref=f1e163]:
+                  - generic [ref=f1e164]: R$6,99
+                  - generic [ref=f1e165]: R$6,29
+          - 'link "Choice of Life: Middle Ages 2 - Soundtrack 30 Sep, 2022 20% off. R$10,49 normally, discounted to R$8,39" [ref=f1e166] [cursor=pointer]':
+            - /url: https://store.steampowered.com/app/1877950/Choice_of_Life_Middle_Ages_2__Soundtrack/?snr=1_7_7_151_150_1
+            - img [ref=f1e168]
+            - generic [ref=f1e169]:
+              - generic [ref=f1e170]: "Choice of Life: Middle Ages 2 - Soundtrack"
+              - generic [ref=f1e173]: 30 Sep, 2022
+              - link "20% off. R$10,49 normally, discounted to R$8,39" [ref=f1e177]:
+                - generic [ref=f1e178]: "-20%"
+                - generic [ref=f1e179]:
+                  - generic [ref=f1e180]: R$10,49
+                  - generic [ref=f1e181]: R$8,39
+          - 'link "Choice of Life: Wild Islands Soundtrack 26 Sep, 2024 20% off. R$10,49 normally, discounted to R$8,39" [ref=f1e182] [cursor=pointer]':
+            - /url: https://store.steampowered.com/app/3238620/Choice_of_Life_Wild_Islands_Soundtrack/?snr=1_7_7_151_150_1
+            - img [ref=f1e184]
+            - generic [ref=f1e185]:
+              - generic [ref=f1e186]: "Choice of Life: Wild Islands Soundtrack"
+              - generic [ref=f1e189]: 26 Sep, 2024
+              - link "20% off. R$10,49 normally, discounted to R$8,39" [ref=f1e193]:
+                - generic [ref=f1e194]: "-20%"
+                - generic [ref=f1e195]:
+                  - generic [ref=f1e196]: R$10,49
+                  - generic [ref=f1e197]: R$8,39
+          - 'link "Choice of Life: Middle Ages - Soundtrack 17 Nov, 2020 20% off. R$3,49 normally, discounted to R$2,79" [ref=f1e198] [cursor=pointer]':
+            - /url: https://store.steampowered.com/app/1472210/Choice_of_Life_Middle_Ages__Soundtrack/?snr=1_7_7_151_150_1
+            - img [ref=f1e200]
+            - generic [ref=f1e201]:
+              - generic [ref=f1e202]: "Choice of Life: Middle Ages - Soundtrack"
+              - generic [ref=f1e205]: 17 Nov, 2020
+              - link "20% off. R$3,49 normally, discounted to R$2,79" [ref=f1e209]:
+                - generic [ref=f1e210]: "-20%"
+                - generic [ref=f1e211]:
+                  - generic [ref=f1e212]: R$3,49
+                  - generic [ref=f1e213]: R$2,79
+          - link "Family of Choice Coming soon" [ref=f1e214] [cursor=pointer]:
+            - /url: https://store.steampowered.com/app/4296810/Family_of_Choice/?snr=1_7_7_151_150_1
+            - img [ref=f1e216]
+            - generic [ref=f1e217]:
+              - generic [ref=f1e218]: Family of Choice
+              - generic [ref=f1e221]: Coming soon
+          - link "Burden of Choice Coming soon" [ref=f1e223] [cursor=pointer]:
+            - /url: https://store.steampowered.com/app/3979500/Burden_of_Choice/?snr=1_7_7_151_150_1
+            - img [ref=f1e225]
+            - generic [ref=f1e226]:
+              - generic [ref=f1e227]: Burden of Choice
+              - generic [ref=f1e230]: Coming soon
+          - link "World of Warships — Composer’s Choice 20 Mar, 2020 Free" [ref=f1e232] [cursor=pointer]:
+            - /url: https://store.steampowered.com/app/1224060/World_of_Warships__Composers_Choice/?snr=1_7_7_151_150_1
+            - img [ref=f1e234]
+            - generic [ref=f1e235]:
+              - generic [ref=f1e236]: World of Warships — Composer’s Choice
+              - generic [ref=f1e239]: 20 Mar, 2020
+              - generic [ref=f1e246]: Free
+          - link "LoveChoice 15 Nov, 2021 20% off. R$6,99 normally, discounted to R$5,59" [ref=f1e247] [cursor=pointer]:
+            - /url: https://store.steampowered.com/app/939400/LoveChoice/?snr=1_7_7_151_150_1
+            - img [ref=f1e249]
+            - generic [ref=f1e250]:
+              - generic [ref=f1e251]: LoveChoice
+              - generic [ref=f1e255]: 15 Nov, 2021
+              - link "20% off. R$6,99 normally, discounted to R$5,59" [ref=f1e260]:
+                - generic [ref=f1e261]: "-20%"
+                - generic [ref=f1e262]:
+                  - generic [ref=f1e263]: R$6,99
+                  - generic [ref=f1e264]: R$5,59
+          - link "Red Dead Redemption 2 5 Dec, 2019 75% off. R$299,90 normally, discounted to R$74,97" [ref=f1e265] [cursor=pointer]:
+            - /url: https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/?snr=1_7_7_151_150_1
+            - img [ref=f1e267]
+            - generic [ref=f1e268]:
+              - generic [ref=f1e269]: Red Dead Redemption 2
+              - generic [ref=f1e272]: 5 Dec, 2019
+              - link "75% off. R$299,90 normally, discounted to R$74,97" [ref=f1e277]:
+                - generic [ref=f1e278]: "-75%"
+                - generic [ref=f1e279]:
+                  - generic [ref=f1e280]: R$299,90
+                  - generic [ref=f1e281]: R$74,97
+          - link "Baldur's Gate 3 3 Aug, 2023 25% off. R$199,99 normally, discounted to R$149,99" [ref=f1e282] [cursor=pointer]:
+            - /url: https://store.steampowered.com/app/1086940/Baldurs_Gate_3/?snr=1_7_7_151_150_1
+            - img [ref=f1e284]
+            - generic [ref=f1e285]:
+              - generic [ref=f1e286]: Baldur's Gate 3
+              - generic [ref=f1e290]: 3 Aug, 2023
+              - link "25% off. R$199,99 normally, discounted to R$149,99" [ref=f1e295]:
+                - generic [ref=f1e296]: "-25%"
+                - generic [ref=f1e297]:
+                  - generic [ref=f1e298]: R$199,99
+                  - generic [ref=f1e299]: R$149,99
+          - 'link "PUBG: BATTLEGROUNDS 21 Dec, 2017 Free" [ref=f1e300] [cursor=pointer]':
+            - /url: https://store.steampowered.com/app/578080/PUBG_BATTLEGROUNDS/?snr=1_7_7_151_150_1
+            - img [ref=f1e302]
+            - generic [ref=f1e303]:
+              - generic [ref=f1e304]: "PUBG: BATTLEGROUNDS"
+              - generic [ref=f1e307]: 21 Dec, 2017
+              - generic [ref=f1e314]: Free
+          - link "Sons Of The Forest 22 Feb, 2024 70% off. R$88,99 normally, discounted to R$26,69" [ref=f1e315] [cursor=pointer]:
+            - /url: https://store.steampowered.com/app/1326470/Sons_Of_The_Forest/?snr=1_7_7_151_150_1
+            - img [ref=f1e317]
+            - generic [ref=f1e318]:
+              - generic [ref=f1e319]: Sons Of The Forest
+              - generic [ref=f1e322]: 22 Feb, 2024
+              - link "70% off. R$88,99 normally, discounted to R$26,69" [ref=f1e327]:
+                - generic [ref=f1e328]: "-70%"
+                - generic [ref=f1e329]:
+                  - generic [ref=f1e330]: R$88,99
+                  - generic [ref=f1e331]: R$26,69
+          - link "Palworld 19 Jan, 2024 30% off. R$88,99 normally, discounted to R$62,29" [ref=f1e332] [cursor=pointer]:
+            - /url: https://store.steampowered.com/app/1623730/Palworld/?snr=1_7_7_151_150_1
+            - img [ref=f1e334]
+            - generic [ref=f1e335]:
+              - generic [ref=f1e336]: Palworld
+              - generic [ref=f1e339]: 19 Jan, 2024
+              - link "30% off. R$88,99 normally, discounted to R$62,29" [ref=f1e344]:
+                - generic [ref=f1e345]: "-30%"
+                - generic [ref=f1e346]:
+                  - generic [ref=f1e347]: R$88,99
+                  - generic [ref=f1e348]: R$62,29
+          - link "Marvel's Spider-Man 2 30 Jan, 2025 33% off. R$249,90 normally, discounted to R$167,43" [ref=f1e349] [cursor=pointer]:
+            - /url: https://store.steampowered.com/app/2651280/Marvels_SpiderMan_2/?snr=1_7_7_151_150_1
+            - img [ref=f1e351]
+            - generic [ref=f1e352]:
+              - generic [ref=f1e353]: Marvel's Spider-Man 2
+              - generic [ref=f1e356]: 30 Jan, 2025
+              - link "33% off. R$249,90 normally, discounted to R$167,43" [ref=f1e361]:
+                - generic [ref=f1e362]: "-33%"
+                - generic [ref=f1e363]:
+                  - generic [ref=f1e364]: R$249,90
+                  - generic [ref=f1e365]: R$167,43
+          - link "God of War Ragnarök 19 Sep, 2024 33% off. R$249,90 normally, discounted to R$167,43" [ref=f1e366] [cursor=pointer]:
+            - /url: https://store.steampowered.com/app/2322010/God_of_War_Ragnark/?snr=1_7_7_151_150_1
+            - img [ref=f1e368]
+            - generic [ref=f1e369]:
+              - generic [ref=f1e370]: God of War Ragnarök
+              - generic [ref=f1e373]: 19 Sep, 2024
+              - link "33% off. R$249,90 normally, discounted to R$167,43" [ref=f1e378]:
+                - generic [ref=f1e379]: "-33%"
+                - generic [ref=f1e380]:
+                  - generic [ref=f1e381]: R$249,90
+                  - generic [ref=f1e382]: R$167,43
+          - 'link "Detroit: Become Human 18 Jun, 2020 90% off. R$199,99 normally, discounted to R$19,99" [ref=f1e383] [cursor=pointer]':
+            - /url: https://store.steampowered.com/app/1222140/Detroit_Become_Human/?snr=1_7_7_151_150_1
+            - img [ref=f1e385]
+            - generic [ref=f1e386]:
+              - generic [ref=f1e387]: "Detroit: Become Human"
+              - generic [ref=f1e390]: 18 Jun, 2020
+              - link "90% off. R$199,99 normally, discounted to R$19,99" [ref=f1e395]:
+                - generic [ref=f1e396]: "-90%"
+                - generic [ref=f1e397]:
+                  - generic [ref=f1e398]: R$199,99
+                  - generic [ref=f1e399]: R$19,99
+          - link "HELLDIVERS™ 2 8 Feb, 2024 25% off. R$199,50 normally, discounted to R$149,62" [ref=f1e400] [cursor=pointer]:
+            - /url: https://store.steampowered.com/app/553850/HELLDIVERS_2/?snr=1_7_7_151_150_1
+            - img [ref=f1e402]
+            - generic [ref=f1e403]:
+              - generic [ref=f1e404]: HELLDIVERS™ 2
+              - generic [ref=f1e407]: 8 Feb, 2024
+              - link "25% off. R$199,50 normally, discounted to R$149,62" [ref=f1e412]:
+                - generic [ref=f1e413]: "-25%"
+                - generic [ref=f1e414]:
+                  - generic [ref=f1e415]: R$199,50
+                  - generic [ref=f1e416]: R$149,62
+          - link "Terraria 16 May, 2011 50% off. R$32,99 normally, discounted to R$16,49" [ref=f1e417] [cursor=pointer]:
+            - /url: https://store.steampowered.com/app/105600/Terraria/?snr=1_7_7_151_150_1
+            - img [ref=f1e419]
+            - generic [ref=f1e420]:
+              - generic [ref=f1e421]: Terraria
+              - generic [ref=f1e426]: 16 May, 2011
+              - link "50% off. R$32,99 normally, discounted to R$16,49" [ref=f1e431]:
+                - generic [ref=f1e432]: "-50%"
+                - generic [ref=f1e433]:
+                  - generic [ref=f1e434]: R$32,99
+                  - generic [ref=f1e435]: R$16,49
+          - link "ARC Raiders 30 Oct, 2025 25% off. R$169,00 normally, discounted to R$126,75" [ref=f1e436] [cursor=pointer]:
+            - /url: https://store.steampowered.com/app/1808500/ARC_Raiders/?snr=1_7_7_151_150_1
+            - img [ref=f1e438]
+            - generic [ref=f1e439]:
+              - generic [ref=f1e440]: ARC Raiders
+              - generic [ref=f1e443]: 30 Oct, 2025
+              - link "25% off. R$169,00 normally, discounted to R$126,75" [ref=f1e448]:
+                - generic [ref=f1e449]: "-25%"
+                - generic [ref=f1e450]:
+                  - generic [ref=f1e451]: R$169,00
+                  - generic [ref=f1e452]: R$126,75
+          - link "ELDEN RING 24 Feb, 2022 R$274,50" [ref=f1e453] [cursor=pointer]:
+            - /url: https://store.steampowered.com/app/1245620/ELDEN_RING/?snr=1_7_7_151_150_1
+            - img [ref=f1e455]
+            - generic [ref=f1e456]:
+              - generic [ref=f1e457]: ELDEN RING
+              - generic [ref=f1e460]: 24 Feb, 2022
+              - generic [ref=f1e467]: R$274,50
+          - link "Farming Simulator 25 12 Nov, 2024 25% off. R$143,95 normally, discounted to R$107,96" [ref=f1e468] [cursor=pointer]:
+            - /url: https://store.steampowered.com/app/2300320/Farming_Simulator_25/?snr=1_7_7_151_150_1
+            - img [ref=f1e470]
+            - generic [ref=f1e471]:
+              - generic [ref=f1e472]: Farming Simulator 25
+              - generic [ref=f1e476]: 12 Nov, 2024
+              - link "25% off. R$143,95 normally, discounted to R$107,96" [ref=f1e481]:
+                - generic [ref=f1e482]: "-25%"
+                - generic [ref=f1e483]:
+                  - generic [ref=f1e484]: R$143,95
+                  - generic [ref=f1e485]: R$107,96
+          - 'link "ReStory: Chill Electronics Repairs 2026" [ref=f1e486] [cursor=pointer]':
+            - /url: https://store.steampowered.com/app/3812600/ReStory_Chill_Electronics_Repairs/?snr=1_7_7_151_150_1
+            - img [ref=f1e488]
+            - generic [ref=f1e489]:
+              - generic [ref=f1e490]: "ReStory: Chill Electronics Repairs"
+              - generic [ref=f1e493]: "2026"
+          - 'link "Warhammer 40,000: Darktide 30 Nov, 2022 75% off. R$149,95 normally, discounted to R$37,48" [ref=f1e495] [cursor=pointer]':
+            - /url: https://store.steampowered.com/app/1361210/Warhammer_40000_Darktide/?snr=1_7_7_151_150_1
+            - img [ref=f1e497]
+            - generic [ref=f1e498]:
+              - generic [ref=f1e499]: "Warhammer 40,000: Darktide"
+              - generic [ref=f1e502]: 30 Nov, 2022
+              - link "75% off. R$149,95 normally, discounted to R$37,48" [ref=f1e507]:
+                - generic [ref=f1e508]: "-75%"
+                - generic [ref=f1e509]:
+                  - generic [ref=f1e510]: R$149,95
+                  - generic [ref=f1e511]: R$37,48
+          - link "No Man's Sky VR Supported 12 Aug, 2016 60% off. R$162,00 normally, discounted to R$64,80" [ref=f1e512] [cursor=pointer]:
+            - /url: https://store.steampowered.com/app/275850/No_Mans_Sky/?snr=1_7_7_151_150_1
+            - img [ref=f1e514]
+            - generic [ref=f1e515]:
+              - generic [ref=f1e516]: No Man's Sky
+              - generic [ref=f1e521]: VR Supported
+              - generic [ref=f1e522]: 12 Aug, 2016
+              - link "60% off. R$162,00 normally, discounted to R$64,80" [ref=f1e527]:
+                - generic [ref=f1e528]: "-60%"
+                - generic [ref=f1e529]:
+                  - generic [ref=f1e530]: R$162,00
+                  - generic [ref=f1e531]: R$64,80
+          - link "Black Desert 15 Nov, 2017 70% off. R$17,46 normally, discounted to R$5,23" [ref=f1e532] [cursor=pointer]:
+            - /url: https://store.steampowered.com/app/582660/Black_Desert/?snr=1_7_7_151_150_1
+            - img [ref=f1e534]
+            - generic [ref=f1e535]:
+              - generic [ref=f1e536]: Black Desert
+              - generic [ref=f1e539]: 15 Nov, 2017
+              - link "70% off. R$17,46 normally, discounted to R$5,23" [ref=f1e544]:
+                - generic [ref=f1e545]: "-70%"
+                - generic [ref=f1e546]:
+                  - generic [ref=f1e547]: R$17,46
+                  - generic [ref=f1e548]: R$5,23
+          - 'link "Cities: Skylines II 24 Oct, 2023 30% off. R$188,99 normally, discounted to R$132,29" [ref=f1e549] [cursor=pointer]':
+            - /url: https://store.steampowered.com/app/949230/Cities_Skylines_II/?snr=1_7_7_151_150_1
+            - img [ref=f1e551]
+            - generic [ref=f1e552]:
+              - generic [ref=f1e553]: "Cities: Skylines II"
+              - generic [ref=f1e556]: 24 Oct, 2023
+              - link "30% off. R$188,99 normally, discounted to R$132,29" [ref=f1e561]:
+                - generic [ref=f1e562]: "-30%"
+                - generic [ref=f1e563]:
+                  - generic [ref=f1e564]: R$188,99
+                  - generic [ref=f1e565]: R$132,29
+          - 'link "Dying Light: The Beast 18 Sep, 2025 34% off. R$249,00 normally, discounted to R$164,34" [ref=f1e566] [cursor=pointer]':
+            - /url: https://store.steampowered.com/app/3008130/Dying_Light_The_Beast/?snr=1_7_7_151_150_1
+            - img [ref=f1e568]
+            - generic [ref=f1e569]:
+              - generic [ref=f1e570]: "Dying Light: The Beast"
+              - generic [ref=f1e573]: 18 Sep, 2025
+              - link "34% off. R$249,00 normally, discounted to R$164,34" [ref=f1e578]:
+                - generic [ref=f1e579]: "-34%"
+                - generic [ref=f1e580]:
+                  - generic [ref=f1e581]: R$249,00
+                  - generic [ref=f1e582]: R$164,34
+          - link "Planet Zoo 5 Nov, 2019 95% off. R$100,00 normally, discounted to R$5,00" [ref=f1e583] [cursor=pointer]:
+            - /url: https://store.steampowered.com/app/703080/Planet_Zoo/?snr=1_7_7_151_150_1
+            - img [ref=f1e585]
+            - generic [ref=f1e586]:
+              - generic [ref=f1e587]: Planet Zoo
+              - generic [ref=f1e590]: 5 Nov, 2019
+              - link "95% off. R$100,00 normally, discounted to R$5,00" [ref=f1e595]:
+                - generic [ref=f1e596]: "-95%"
+                - generic [ref=f1e597]:
+                  - generic [ref=f1e598]: R$100,00
+                  - generic [ref=f1e599]: R$5,00
+          - link "Watch_Dogs™ 26 May, 2014 90% off. R$94,99 normally, discounted to R$9,49" [ref=f1e600] [cursor=pointer]:
+            - /url: https://store.steampowered.com/app/243470/Watch_Dogs/?snr=1_7_7_151_150_1
+            - img [ref=f1e602]
+            - generic [ref=f1e603]:
+              - generic [ref=f1e604]: Watch_Dogs™
+              - generic [ref=f1e607]: 26 May, 2014
+              - link "90% off. R$94,99 normally, discounted to R$9,49" [ref=f1e612]:
+                - generic [ref=f1e613]: "-90%"
+                - generic [ref=f1e614]:
+                  - generic [ref=f1e615]: R$94,99
+                  - generic [ref=f1e616]: R$9,49
+          - link "Hearts of Iron IV 6 Jun, 2016 80% off. R$188,99 normally, discounted to R$37,79" [ref=f1e617] [cursor=pointer]:
+            - /url: https://store.steampowered.com/app/394360/Hearts_of_Iron_IV/?snr=1_7_7_151_150_1
+            - img [ref=f1e619]
+            - generic [ref=f1e620]:
+              - generic [ref=f1e621]: Hearts of Iron IV
+              - generic [ref=f1e626]: 6 Jun, 2016
+              - link "80% off. R$188,99 normally, discounted to R$37,79" [ref=f1e631]:
+                - generic [ref=f1e632]: "-80%"
+                - generic [ref=f1e633]:
+                  - generic [ref=f1e634]: R$188,99
+                  - generic [ref=f1e635]: R$37,79
+          - link "BeamNG.drive 29 May, 2015 20% off. R$59,99 normally, discounted to R$47,99" [ref=f1e636] [cursor=pointer]:
+            - /url: https://store.steampowered.com/app/284160/BeamNGdrive/?snr=1_7_7_151_150_1
+            - img [ref=f1e638]
+            - generic [ref=f1e639]:
+              - generic [ref=f1e640]: BeamNG.drive
+              - generic [ref=f1e643]: 29 May, 2015
+              - link "20% off. R$59,99 normally, discounted to R$47,99" [ref=f1e648]:
+                - generic [ref=f1e649]: "-20%"
+                - generic [ref=f1e650]:
+                  - generic [ref=f1e651]: R$59,99
+                  - generic [ref=f1e652]: R$47,99
+          - 'link "Age of Empires IV: Anniversary Edition 28 Oct, 2021 65% off. R$99,99 normally, discounted to R$34,99" [ref=f1e653] [cursor=pointer]':
+            - /url: https://store.steampowered.com/app/1466860/Age_of_Empires_IV_Anniversary_Edition/?snr=1_7_7_151_150_1
+            - img [ref=f1e655]
+            - generic [ref=f1e656]:
+              - generic [ref=f1e657]: "Age of Empires IV: Anniversary Edition"
+              - generic [ref=f1e660]: 28 Oct, 2021
+              - link "65% off. R$99,99 normally, discounted to R$34,99" [ref=f1e665]:
+                - generic [ref=f1e666]: "-65%"
+                - generic [ref=f1e667]:
+                  - generic [ref=f1e668]: R$99,99
+                  - generic [ref=f1e669]: R$34,99
+          - link "Metro Exodus 14 Feb, 2020 90% off. R$149,00 normally, discounted to R$14,90" [ref=f1e670] [cursor=pointer]:
+            - /url: https://store.steampowered.com/app/412020/Metro_Exodus/?snr=1_7_7_151_150_1
+            - img [ref=f1e672]
+            - generic [ref=f1e673]:
+              - generic [ref=f1e674]: Metro Exodus
+              - generic [ref=f1e679]: 14 Feb, 2020
+              - link "90% off. R$149,00 normally, discounted to R$14,90" [ref=f1e684]:
+                - generic [ref=f1e685]: "-90%"
+                - generic [ref=f1e686]:
+                  - generic [ref=f1e687]: R$149,00
+                  - generic [ref=f1e688]: R$14,90
+          - link "Once Human 9 Jul, 2024 Free" [ref=f1e689] [cursor=pointer]:
+            - /url: https://store.steampowered.com/app/2139460/Once_Human/?snr=1_7_7_151_150_1
+            - img [ref=f1e691]
+            - generic [ref=f1e692]:
+              - generic [ref=f1e693]: Once Human
+              - generic [ref=f1e696]: 9 Jul, 2024
+              - generic [ref=f1e703]: Free
+          - link "Throne and Liberty 1 Oct, 2024 Free" [ref=f1e704] [cursor=pointer]:
+            - /url: https://store.steampowered.com/app/2429640/Throne_and_Liberty/?snr=1_7_7_151_150_1
+            - img [ref=f1e706]
+            - generic [ref=f1e707]:
+              - generic [ref=f1e708]: Throne and Liberty
+              - generic [ref=f1e711]: 1 Oct, 2024
+              - generic [ref=f1e718]: Free
+          - link "Dispatch 22 Oct, 2025 20% off. R$88,99 normally, discounted to R$71,19" [ref=f1e719] [cursor=pointer]:
+            - /url: https://store.steampowered.com/app/2592160/Dispatch/?snr=1_7_7_151_150_1
+            - img [ref=f1e721]
+            - generic [ref=f1e722]:
+              - generic [ref=f1e723]: Dispatch
+              - generic [ref=f1e726]: 22 Oct, 2025
+              - link "20% off. R$88,99 normally, discounted to R$71,19" [ref=f1e731]:
+                - generic [ref=f1e732]: "-20%"
+                - generic [ref=f1e733]:
+                  - generic [ref=f1e734]: R$88,99
+                  - generic [ref=f1e735]: R$71,19
+          - link "Echoes of Aincrad 9 Jul, 2026 R$303,50" [ref=f1e736] [cursor=pointer]:
+            - /url: https://store.steampowered.com/app/2244210/Echoes_of_Aincrad/?snr=1_7_7_151_150_1
+            - img [ref=f1e738]
+            - generic [ref=f1e739]:
+              - generic [ref=f1e740]: Echoes of Aincrad
+              - generic [ref=f1e743]: 9 Jul, 2026
+              - generic [ref=f1e749]: R$303,50
+          - link "Dying Light 12 Mar, 2025 90% off. R$99,00 normally, discounted to R$9,90" [ref=f1e750] [cursor=pointer]:
+            - /url: https://store.steampowered.com/app/239140/Dying_Light/?snr=1_7_7_151_150_1
+            - img [ref=f1e752]
+            - generic [ref=f1e753]:
+              - generic [ref=f1e754]: Dying Light
+              - generic [ref=f1e759]: 12 Mar, 2025
+              - link "90% off. R$99,00 normally, discounted to R$9,90" [ref=f1e764]:
+                - generic [ref=f1e765]: "-90%"
+                - generic [ref=f1e766]:
+                  - generic [ref=f1e767]: R$99,00
+                  - generic [ref=f1e768]: R$9,90
+          - link "Carcass Clad To be announced" [ref=f1e769] [cursor=pointer]:
+            - /url: https://store.steampowered.com/app/3327430/Carcass_Clad/?snr=1_7_7_151_150_1
+            - img [ref=f1e771]
+            - generic [ref=f1e772]:
+              - generic [ref=f1e773]: Carcass Clad
+              - generic [ref=f1e776]: To be announced
+          - link "Mewgenics 10 Feb, 2026 25% off. R$88,99 normally, discounted to R$66,74" [ref=f1e778] [cursor=pointer]:
+            - /url: https://store.steampowered.com/app/686060/Mewgenics/?snr=1_7_7_151_150_1
+            - img [ref=f1e780]
+            - generic [ref=f1e781]:
+              - generic [ref=f1e782]: Mewgenics
+              - generic [ref=f1e785]: 10 Feb, 2026
+              - link "25% off. R$88,99 normally, discounted to R$66,74" [ref=f1e790]:
+                - generic [ref=f1e791]: "-25%"
+                - generic [ref=f1e792]:
+                  - generic [ref=f1e793]: R$88,99
+                  - generic [ref=f1e794]: R$66,74
+          - link "Stellaris 9 May, 2016 70% off. R$188,99 normally, discounted to R$56,69" [ref=f1e795] [cursor=pointer]:
+            - /url: https://store.steampowered.com/app/281990/Stellaris/?snr=1_7_7_151_150_1
+            - img [ref=f1e797]
+            - generic [ref=f1e798]:
+              - generic [ref=f1e799]: Stellaris
+              - generic [ref=f1e804]: 9 May, 2016
+              - link "70% off. R$188,99 normally, discounted to R$56,69" [ref=f1e809]:
+                - generic [ref=f1e810]: "-70%"
+                - generic [ref=f1e811]:
+                  - generic [ref=f1e812]: R$188,99
+                  - generic [ref=f1e813]: R$56,69
+          - link "Satisfactory 10 Sep, 2024 30% off. R$107,99 normally, discounted to R$75,59" [ref=f1e814] [cursor=pointer]:
+            - /url: https://store.steampowered.com/app/526870/Satisfactory/?snr=1_7_7_151_150_1
+            - img [ref=f1e816]
+            - generic [ref=f1e817]:
+              - generic [ref=f1e818]: Satisfactory
+              - generic [ref=f1e821]: 10 Sep, 2024
+              - link "30% off. R$107,99 normally, discounted to R$75,59" [ref=f1e826]:
+                - generic [ref=f1e827]: "-30%"
+                - generic [ref=f1e828]:
+                  - generic [ref=f1e829]: R$107,99
+                  - generic [ref=f1e830]: R$75,59
+          - link "Jurassic World Evolution 3 21 Oct, 2025 33% off. R$226,00 normally, discounted to R$151,42" [ref=f1e831] [cursor=pointer]:
+            - /url: https://store.steampowered.com/app/2958130/Jurassic_World_Evolution_3/?snr=1_7_7_151_150_1
+            - img [ref=f1e833]
+            - generic [ref=f1e834]:
+              - generic [ref=f1e835]: Jurassic World Evolution 3
+              - generic [ref=f1e838]: 21 Oct, 2025
+              - link "33% off. R$226,00 normally, discounted to R$151,42" [ref=f1e843]:
+                - generic [ref=f1e844]: "-33%"
+                - generic [ref=f1e845]:
+                  - generic [ref=f1e846]: R$226,00
+                  - generic [ref=f1e847]: R$151,42
+          - link "Monster Fantasy To be announced" [ref=f1e848] [cursor=pointer]:
+            - /url: https://store.steampowered.com/app/4713940/Monster_Fantasy/?snr=1_7_7_151_150_1
+            - img [ref=f1e850]
+            - generic [ref=f1e851]:
+              - generic [ref=f1e852]: Monster Fantasy
+              - generic [ref=f1e855]: To be announced
+          - link "The Quarry 10 Jun, 2022 90% off. R$349,90 normally, discounted to R$34,99" [ref=f1e857] [cursor=pointer]:
+            - /url: https://store.steampowered.com/app/1577120/The_Quarry/?snr=1_7_7_151_150_1
+            - img [ref=f1e859]
+            - generic [ref=f1e860]:
+              - generic [ref=f1e861]: The Quarry
+              - generic [ref=f1e864]: 10 Jun, 2022
+              - link "90% off. R$349,90 normally, discounted to R$34,99" [ref=f1e869]:
+                - generic [ref=f1e870]: "-90%"
+                - generic [ref=f1e871]:
+                  - generic [ref=f1e872]: R$349,90
+                  - generic [ref=f1e873]: R$34,99
+          - 'link "1666: Amsterdam To be announced" [ref=f1e874] [cursor=pointer]':
+            - /url: https://store.steampowered.com/app/3949550/1666_Amsterdam/?snr=1_7_7_151_150_1
+            - img [ref=f1e876]
+            - generic [ref=f1e877]:
+              - generic [ref=f1e878]: "1666: Amsterdam"
+              - generic [ref=f1e881]: To be announced
+      - generic [ref=f1e883]:
+        - generic [ref=f1e884]:
+          - button "Narrow by Price" [ref=f1e885] [cursor=pointer]:
+            - generic [ref=f1e886]: Narrow by Price
+          - generic [ref=f1e887]:
+            - generic [ref=f1e888]:
+              - button [ref=f1e890]: "13"
+              - generic [ref=f1e891]: Any Price
+            - button "Discounts & Events" [ref=f1e894] [cursor=pointer]:
+              - generic [ref=f1e897]: Discounts & Events
+            - button "Hide free to play items" [ref=f1e899] [cursor=pointer]:
+              - generic [ref=f1e902]: Hide free to play items
+        - generic [ref=f1e903]:
+          - button "Narrow by tag" [ref=f1e904] [cursor=pointer]:
+            - generic [ref=f1e905]: Narrow by tag
+          - generic [ref=f1e906]:
+            - generic [ref=f1e907]:
+              - generic [ref=f1e908] [cursor=pointer]:
+                - button "Singleplayer 2,724" [ref=f1e909]:
+                  - generic [ref=f1e910]:
+                    - generic [ref=f1e912]: Singleplayer
+                    - generic [ref=f1e913]: 2,724
+                - img [ref=f1e915]
+              - generic [ref=f1e916] [cursor=pointer]:
+                - button "RPG 1,964" [ref=f1e917]:
+                  - generic [ref=f1e918]:
+                    - generic [ref=f1e920]: RPG
+                    - generic [ref=f1e921]: 1,964
+                - img [ref=f1e923]
+              - generic [ref=f1e924] [cursor=pointer]:
+                - button "Indie 1,836" [ref=f1e925]:
+                  - generic [ref=f1e926]:
+                    - generic [ref=f1e928]: Indie
+                    - generic [ref=f1e929]: 1,836
+                - img [ref=f1e931]
+              - generic [ref=f1e932] [cursor=pointer]:
+                - button "Adventure 1,815" [ref=f1e933]:
+                  - generic [ref=f1e934]:
+                    - generic [ref=f1e936]: Adventure
+                    - generic [ref=f1e937]: 1,815
+                - img [ref=f1e939]
+              - generic [ref=f1e940] [cursor=pointer]:
+                - button "Action 1,544" [ref=f1e941]:
+                  - generic [ref=f1e942]:
+                    - generic [ref=f1e944]: Action
+                    - generic [ref=f1e945]: 1,544
+                - img [ref=f1e947]
+              - generic [ref=f1e948] [cursor=pointer]:
+                - button "Design & Illustration 1,350" [ref=f1e949]:
+                  - generic [ref=f1e950]:
+                    - generic [ref=f1e952]: Design & Illustration
+                    - generic [ref=f1e953]: 1,350
+                - img [ref=f1e955]
+              - generic [ref=f1e956] [cursor=pointer]:
+                - button "2D 1,327" [ref=f1e957]:
+                  - generic [ref=f1e958]:
+                    - generic [ref=f1e960]: 2D
+                    - generic [ref=f1e961]: 1,327
+                - img [ref=f1e963]
+              - generic [ref=f1e964] [cursor=pointer]:
+                - button "Strategy 1,298" [ref=f1e965]:
+                  - generic [ref=f1e966]:
+                    - generic [ref=f1e968]: Strategy
+                    - generic [ref=f1e969]: 1,298
+                - img [ref=f1e971]
+              - generic [ref=f1e972] [cursor=pointer]:
+                - button "Casual 1,284" [ref=f1e973]:
+                  - generic [ref=f1e974]:
+                    - generic [ref=f1e976]: Casual
+                    - generic [ref=f1e977]: 1,284
+                - img [ref=f1e979]
+              - generic [ref=f1e980] [cursor=pointer]:
+                - button "Simulation 1,283" [ref=f1e981]:
+                  - generic [ref=f1e982]:
+                    - generic [ref=f1e984]: Simulation
+                    - generic [ref=f1e985]: 1,283
+                - img [ref=f1e987]
+              - generic [ref=f1e988] [cursor=pointer]:
+                - button "Story Rich 1,205" [ref=f1e989]:
+                  - generic [ref=f1e990]:
+                    - generic [ref=f1e992]: Story Rich
+                    - generic [ref=f1e993]: 1,205
+                - img [ref=f1e995]
+              - generic [ref=f1e996] [cursor=pointer]:
+                - button "Atmospheric 1,176" [ref=f1e997]:
+                  - generic [ref=f1e998]:
+                    - generic [ref=f1e1000]: Atmospheric
+                    - generic [ref=f1e1001]: 1,176
+                - img [ref=f1e1003]
+              - generic [ref=f1e1004] [cursor=pointer]:
+                - button "3D 1,095" [ref=f1e1005]:
+                  - generic [ref=f1e1006]:
+                    - generic [ref=f1e1008]: 3D
+                    - generic [ref=f1e1009]: 1,095
+                - img [ref=f1e1011]
+              - generic [ref=f1e1012] [cursor=pointer]:
+                - button "Choices Matter 1,014" [ref=f1e1013]:
+                  - generic [ref=f1e1014]:
+                    - generic [ref=f1e1016]: Choices Matter
+                    - generic [ref=f1e1017]: 1,014
+                - img [ref=f1e1019]
+              - generic [ref=f1e1020] [cursor=pointer]:
+                - button "Exploration 987" [ref=f1e1021]:
+                  - generic [ref=f1e1022]:
+                    - generic [ref=f1e1024]: Exploration
+                    - generic [ref=f1e1025]: "987"
+                - img [ref=f1e1027]
+              - generic [ref=f1e1028] [cursor=pointer]:
+                - button "First-Person 780" [ref=f1e1029]:
+                  - generic [ref=f1e1030]:
+                    - generic [ref=f1e1032]: First-Person
+                    - generic [ref=f1e1033]: "780"
+                - img [ref=f1e1035]
+            - textbox [ref=f1e1036]: search for more tags
+        - button "Show selected types" [ref=f1e1038] [cursor=pointer]:
+          - generic [ref=f1e1039]: Show selected types
+        - button "Narrow by number of players" [ref=f1e1041] [cursor=pointer]:
+          - generic [ref=f1e1042]: Narrow by number of players
+        - button "Narrow by feature" [ref=f1e1044] [cursor=pointer]:
+          - generic [ref=f1e1045]: Narrow by feature
+        - button "Narrow by Controller Support" [ref=f1e1047] [cursor=pointer]:
+          - generic [ref=f1e1048]: Narrow by Controller Support
+        - button "Narrow by accessibility feature" [ref=f1e1050] [cursor=pointer]:
+          - generic [ref=f1e1051]: Narrow by accessibility feature
+        - generic [ref=f1e1052]:
+          - generic [ref=f1e1054]: Narrow by Deck Compatibility
+          - generic [ref=f1e1055]:
+            - button "Verified 363" [ref=f1e1057] [cursor=pointer]:
+              - generic [ref=f1e1058]:
+                - generic [ref=f1e1060]: Verified
+                - generic [ref=f1e1061]: "363"
+            - button "Playable 574" [ref=f1e1063] [cursor=pointer]:
+              - generic [ref=f1e1064]:
+                - generic [ref=f1e1066]: Playable
+                - generic [ref=f1e1067]: "574"
+            - link "Learn More" [ref=f1e1068] [cursor=pointer]:
+              - /url: https://steamdeck.com/en/verified
+        - button "Narrow by VR Support" [ref=f1e1070] [cursor=pointer]:
+          - generic [ref=f1e1071]: Narrow by VR Support
+        - generic [ref=f1e1072]:
+          - button "Narrow by OS" [ref=f1e1073] [cursor=pointer]:
+            - generic [ref=f1e1074]: Narrow by OS
+          - generic [ref=f1e1075]:
+            - button "Windows" [ref=f1e1077] [cursor=pointer]:
+              - generic [ref=f1e1080]: Windows
+            - button "macOS" [ref=f1e1082] [cursor=pointer]:
+              - generic [ref=f1e1085]: macOS
+            - button "SteamOS + Linux" [ref=f1e1087] [cursor=pointer]:
+              - generic [ref=f1e1090]: SteamOS + Linux
+        - generic [ref=f1e1091]:
+          - button "Narrow by language" [ref=f1e1092] [cursor=pointer]:
+            - generic [ref=f1e1093]: Narrow by language
+          - generic [ref=f1e1094]:
+            - generic [ref=f1e1095]:
+              - button "Portuguese - Brazil" [ref=f1e1097] [cursor=pointer]:
+                - generic [ref=f1e1100]: Portuguese - Brazil
+              - button "English" [ref=f1e1102] [cursor=pointer]:
+                - generic [ref=f1e1105]: English
+              - button "Simplified Chinese" [ref=f1e1107] [cursor=pointer]:
+                - generic [ref=f1e1110]: Simplified Chinese
+              - button "Traditional Chinese" [ref=f1e1112] [cursor=pointer]:
+                - generic [ref=f1e1115]: Traditional Chinese
+              - button "Japanese" [ref=f1e1117] [cursor=pointer]:
+                - generic [ref=f1e1120]: Japanese
+              - button "Korean" [ref=f1e1122] [cursor=pointer]:
+                - generic [ref=f1e1125]: Korean
+              - button "Thai" [ref=f1e1127] [cursor=pointer]:
+                - generic [ref=f1e1130]: Thai
+              - button "Arabic" [ref=f1e1132] [cursor=pointer]:
+                - generic [ref=f1e1135]: Arabic
+              - button "Indonesian" [ref=f1e1137] [cursor=pointer]:
+                - generic [ref=f1e1140]: Indonesian
+              - button "Malay" [ref=f1e1142] [cursor=pointer]:
+                - generic [ref=f1e1145]: Malay
+              - button "Bulgarian" [ref=f1e1147] [cursor=pointer]:
+                - generic [ref=f1e1150]: Bulgarian
+              - button "Czech" [ref=f1e1152] [cursor=pointer]:
+                - generic [ref=f1e1155]: Czech
+              - button "Danish" [ref=f1e1157] [cursor=pointer]:
+                - generic [ref=f1e1160]: Danish
+              - button "German" [ref=f1e1162] [cursor=pointer]:
+                - generic [ref=f1e1165]: German
+              - button "Spanish - Spain" [ref=f1e1167] [cursor=pointer]:
+                - generic [ref=f1e1170]: Spanish - Spain
+              - button "Spanish - Latin America" [ref=f1e1172] [cursor=pointer]:
+                - generic [ref=f1e1175]: Spanish - Latin America
+            - textbox [ref=f1e1176]: search for more languages
+            - link "Manage language preferences" [ref=f1e1178] [cursor=pointer]:
+              - /url: https://store.steampowered.com/account/languagepreferences?snr=1_7_7_151

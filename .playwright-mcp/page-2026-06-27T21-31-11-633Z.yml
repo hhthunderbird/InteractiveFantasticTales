@@ -1,0 +1,422 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - link "Link to the Steam Homepage" [ref=e8] [cursor=pointer]:
+        - /url: https://store.steampowered.com/?snr=1_5_9__global-header
+        - img "Link to the Steam Homepage" [ref=e9]
+      - navigation "Global Menu" [ref=e10]:
+        - link "STORE" [ref=e11] [cursor=pointer]:
+          - /url: https://store.steampowered.com/?snr=1_5_9__global-header
+        - link "COMMUNITY" [ref=e12] [cursor=pointer]:
+          - /url: https://steamcommunity.com/
+        - link "About" [ref=e13] [cursor=pointer]:
+          - /url: https://store.steampowered.com/about/?snr=1_5_9__global-header
+        - link "SUPPORT" [ref=e14] [cursor=pointer]:
+          - /url: https://help.steampowered.com/en/
+      - navigation "Account Menu" [ref=e16]:
+        - link "Install Steam" [ref=e17] [cursor=pointer]:
+          - /url: https://store.steampowered.com/about/?snr=1_5_9__global-header
+          - generic [ref=e18]: Install Steam
+        - link "sign in" [ref=e19] [cursor=pointer]:
+          - /url: https://store.steampowered.com/login/?redir=app%2F856880%2FFighting_Fantasy_Classics%2F&redir_ssl=1&snr=1_5_9__global-header
+        - text: "| language"
+  - navigation "Store menu" [ref=e22]:
+    - generic [ref=e23]:
+      - generic [ref=e25]:
+        - button "Browse" [ref=e26] [cursor=pointer]:
+          - generic [ref=e27]: Browse
+        - button "Recommendations" [ref=e30] [cursor=pointer]:
+          - generic [ref=e31]: Recommendations
+        - button "Categories" [ref=e34] [cursor=pointer]:
+          - generic [ref=e35]: Categories
+        - button "Ways to Play" [ref=e38] [cursor=pointer]:
+          - generic [ref=e39]: Ways to Play
+        - button "Special Sections" [ref=e42] [cursor=pointer]:
+          - generic [ref=e43]: Special Sections
+      - generic [ref=e46]:
+        - search [ref=e47]:
+          - combobox "Search the store" [ref=e49]
+          - button "Search" [ref=e50] [cursor=pointer]:
+            - img "Search" [ref=e51]
+        - link "Advanced Search" [ref=e54] [cursor=pointer]:
+          - /url: https://store.steampowered.com/search/?term=&snr=1_7_15__advancedsearch
+  - main [ref=e56]:
+    - generic [ref=e60]:
+      - generic [ref=e61]:
+        - generic [ref=e63]:
+          - generic [ref=e65]:
+            - link "All Games" [ref=e66] [cursor=pointer]:
+              - /url: https://store.steampowered.com/search/?term=&snr=1_5_9__205
+            - text: ">"
+            - link "RPG Games" [ref=e67] [cursor=pointer]:
+              - /url: https://store.steampowered.com/genre/RPG/?snr=1_5_9__205
+            - text: ">"
+            - link "Fighting Fantasy Franchise" [ref=e68] [cursor=pointer]:
+              - /url: https://store.steampowered.com/curator/34383006?snr=1_5_9__205
+            - text: ">"
+            - link "Fighting Fantasy Classics" [ref=e69] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/856880/?snr=1_5_9__205
+          - generic [ref=e71]:
+            - link "Community Hub" [ref=e73] [cursor=pointer]:
+              - /url: https://steamcommunity.com/app/856880
+              - generic [ref=e74]: Community Hub
+            - heading "Fighting Fantasy Classics" [level=1] [ref=e75]
+        - generic [ref=e80]:
+          - generic [ref=e83]: Ready your sword, pack your provisions and prepare to embark upon quests in which YOU are the hero! Choose what happens at every turn of the page with Fighting Fantasy Classics – text-based roleplaying adventures remastered.
+          - generic [ref=e84]:
+            - generic [ref=e85]:
+              - 'link "All Reviews: Very Positive (361)" [ref=e87] [cursor=pointer]':
+                - /url: "#app_reviews_hash"
+                - generic [ref=e88]: "All Reviews:"
+                - generic [ref=e89]: Very Positive (361)
+              - generic [ref=e90]:
+                - generic [ref=e91]: "Release Date:"
+                - generic [ref=e92]: 5 Jun, 2018
+              - generic [ref=e93]:
+                - generic [ref=e94]: "Developer:"
+                - link "Tin Man Games" [ref=e96] [cursor=pointer]:
+                  - /url: https://store.steampowered.com/developer/tinmangames?snr=1_5_9__2000
+              - generic [ref=e97]:
+                - generic [ref=e98]: "Publisher:"
+                - link "Tin Man Games" [ref=e100] [cursor=pointer]:
+                  - /url: https://store.steampowered.com/publisher/tinmangames?snr=1_5_9__2000
+            - generic [ref=e102]:
+              - generic [ref=e103]: "Popular user-defined tags for this product:"
+              - generic [ref=e104]:
+                - link "Choose Your Own Adventure" [ref=e105] [cursor=pointer]:
+                  - /url: https://store.steampowered.com/tags/en/Choose%20Your%20Own%20Adventure/?snr=1_5_9__409
+                - link "RPG" [ref=e106] [cursor=pointer]:
+                  - /url: https://store.steampowered.com/tags/en/RPG/?snr=1_5_9__409
+                - link "Interactive Fiction" [ref=e107] [cursor=pointer]:
+                  - /url: https://store.steampowered.com/tags/en/Interactive%20Fiction/?snr=1_5_9__409
+                - link "Indie" [ref=e108] [cursor=pointer]:
+                  - /url: https://store.steampowered.com/tags/en/Indie/?snr=1_5_9__409
+                - button "+" [ref=e109] [cursor=pointer]
+      - generic [ref=e122]:
+        - paragraph [ref=e123]:
+          - link "Sign in" [ref=e124] [cursor=pointer]:
+            - /url: https://store.steampowered.com/login/?redir=app%2F856880&snr=1_5_9_
+          - text: to add this item to your wishlist, follow it, or mark it as ignored
+        - link [ref=e126] [cursor=pointer]:
+          - /url: javascript:void(0)
+          - img [ref=e128]
+      - generic [ref=e129]:
+        - generic [ref=e130]:
+          - generic [ref=e132]:
+            - link "Single-player" [ref=e133] [cursor=pointer]:
+              - /url: https://store.steampowered.com/search/?category2=2&snr=1_5_9__423
+              - generic [ref=e135]: Single-player
+            - link "Steam Achievements" [ref=e136] [cursor=pointer]:
+              - /url: https://store.steampowered.com/search/?category2=22&snr=1_5_9__423
+              - generic [ref=e138]: Steam Achievements
+            - link "In-App Purchases" [ref=e139] [cursor=pointer]:
+              - /url: https://store.steampowered.com/search/?category2=35&snr=1_5_9__423
+              - generic [ref=e141]: In-App Purchases
+            - link "Steam Cloud" [ref=e142] [cursor=pointer]:
+              - /url: https://store.steampowered.com/search/?category2=23&snr=1_5_9__423
+              - generic [ref=e144]: Steam Cloud
+            - link "Family Sharing" [ref=e145] [cursor=pointer]:
+              - /url: https://store.steampowered.com/search/?category2=62&snr=1_5_9__423
+              - generic [ref=e147]: Family Sharing
+          - generic [ref=e148]:
+            - generic [ref=e149]: "Languages:"
+            - table [ref=e151]:
+              - rowgroup [ref=e152]:
+                - row "Interface Full Audio Subtitles" [ref=e153]:
+                  - columnheader [ref=e154]
+                  - columnheader "Interface" [ref=e155]
+                  - columnheader "Full Audio" [ref=e156]
+                  - columnheader "Subtitles" [ref=e157]
+                - row "English ✔ ✔" [ref=e158]:
+                  - cell "English" [ref=e159]
+                  - cell "✔" [ref=e160]
+                  - cell [ref=e161]
+                  - cell "✔" [ref=e162]
+          - generic [ref=e164]:
+            - generic [ref=e165]: "Classificação Indicativa: 14 ANOS"
+            - generic [ref=e166]:
+              - img "14" [ref=e168]
+              - paragraph [ref=e171]:
+                - text: Violência
+                - text: Atos criminosos
+            - generic [ref=e172]:
+              - generic [ref=e173]: Includes Interactive Elements
+              - paragraph [ref=e174]: In-game purchases
+            - generic [ref=e175]: "Age rating for: Coordenação de Classificação Indicativa"
+          - generic [ref=e176]:
+            - generic [ref=e177]: Includes 151 Steam Achievements
+            - generic [ref=e178]:
+              - 'img "Citadel of Chaos: G-G-Ganjees!" [ref=e180]'
+              - 'img "Freeway Fighter: Adventurer Win" [ref=e182]'
+              - 'img "Citadel of Chaos: Lady Lucretia" [ref=e184]'
+              - 'img "Deathtrap Dungeon: Free Read Win" [ref=e186]'
+              - link "View all 151" [ref=e187] [cursor=pointer]:
+                - /url: https://steamcommunity.com/stats/856880/achievements
+                - text: View
+                - text: all 151
+          - generic [ref=e190]:
+            - generic [ref=e191]:
+              - text: "Title: Fighting Fantasy Classics"
+              - text: "Genre:"
+              - generic [ref=e192]:
+                - link "Indie" [ref=e193] [cursor=pointer]:
+                  - /url: https://store.steampowered.com/genre/Indie/?snr=1_5_9__408
+                - text: ","
+                - link "RPG" [ref=e194] [cursor=pointer]:
+                  - /url: https://store.steampowered.com/genre/RPG/?snr=1_5_9__408
+                - text: ","
+                - link "Free To Play" [ref=e195] [cursor=pointer]:
+                  - /url: https://store.steampowered.com/genre/Free%20to%20Play/?snr=1_5_9__408
+              - generic [ref=e196]:
+                - text: "Developer:"
+                - link "Tin Man Games" [ref=e197] [cursor=pointer]:
+                  - /url: https://store.steampowered.com/developer/tinmangames?snr=1_5_9__408
+              - generic [ref=e198]:
+                - text: "Publisher:"
+                - link "Tin Man Games" [ref=e199] [cursor=pointer]:
+                  - /url: https://store.steampowered.com/publisher/tinmangames?snr=1_5_9__408
+              - generic [ref=e200]:
+                - text: "Franchise:"
+                - link "Fighting Fantasy" [ref=e201] [cursor=pointer]:
+                  - /url: https://store.steampowered.com/curator/34383006?snr=1_5_9__408
+              - text: "Release Date: 5 Jun, 2018"
+            - generic [ref=e202]:
+              - link "Visit the website External" [ref=e203] [cursor=pointer]:
+                - /url: https://steamcommunity.com/linkfilter/?u=https%3A%2F%2Ftinmangames.com.au%2F
+                - text: Visit the website
+                - img "External" [ref=e204]
+              - link "Facebook External" [ref=e205] [cursor=pointer]:
+                - /url: https://steamcommunity.com/linkfilter/?u=https%3A%2F%2Fwww.facebook.com%2FTinManGames%2F
+                - generic [ref=e207]: Facebook
+                - img "External" [ref=e208]
+              - link "X External" [ref=e209] [cursor=pointer]:
+                - /url: https://steamcommunity.com/linkfilter/?u=https%3A%2F%2Fx.com%2FTinManGames
+                - generic [ref=e211]: X
+                - img "External" [ref=e212]
+              - link "YouTube External" [ref=e213] [cursor=pointer]:
+                - /url: https://www.youtube.com/TinManGames/
+                - generic [ref=e215]: YouTube
+                - img "External" [ref=e216]
+              - link "Discord External" [ref=e217] [cursor=pointer]:
+                - /url: https://steamcommunity.com/linkfilter/?u=https%3A%2F%2Fdiscord.gg%2Ftinmangames
+                - generic [ref=e219]: Discord
+                - img "External" [ref=e220]
+              - link "View update history" [ref=e221] [cursor=pointer]:
+                - /url: https://store.steampowered.com/newshub/?appids=856880&snr=1_5_9__408
+              - link "Read related news" [ref=e222] [cursor=pointer]:
+                - /url: https://store.steampowered.com/newshub/app/856880?snr=1_5_9__408
+              - link "View discussions" [ref=e223] [cursor=pointer]:
+                - /url: https://steamcommunity.com/app/856880/discussions/
+              - link "Find Community Groups" [ref=e224] [cursor=pointer]:
+                - /url: https://steamcommunity.com/actions/Search?T=ClanAccount&K=Fighting%20Fantasy%20Classics
+          - generic [ref=e225]:
+            - link "Embed" [ref=e226] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e227]: Embed
+            - link "Report this Product" [ref=e228] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic "Report this Product" [ref=e229]
+        - generic [ref=e231]:
+          - link "Check out the entire Fighting Fantasy collection on Steam" [ref=e232] [cursor=pointer]:
+            - /url: https://store.steampowered.com/curator/34383006?snr=1_5_9__2001
+            - generic [ref=e234]: Check out the entire Fighting Fantasy collection on Steam
+          - generic [ref=e236]:
+            - region "Play Fighting Fantasy Classics" [ref=e237]:
+              - heading "Play Fighting Fantasy Classics" [level=2] [ref=e241]
+              - generic [ref=e243]:
+                - generic [ref=e244]: Free To Play
+                - link "Play Game" [ref=e246] [cursor=pointer]:
+                  - /url: javascript:ShowGotSteamModal('steam://run/856880', "Fighting Fantasy Classics", 'Play this game now' )
+                  - generic [ref=e247]: Play Game
+            - generic [ref=e248]:
+              - heading "Content For This Game" [level=2] [ref=e249]:
+                - text: Content For This Game
+                - link "Browse all (21)" [ref=e251] [cursor=pointer]:
+                  - /url: https://store.steampowered.com/dlc/856880/Fighting_Fantasy_Classics/?snr=1_5_9__1061
+                  - text: Browse all
+                  - emphasis [ref=e252]: (21)
+              - generic [ref=e255]:
+                - generic [ref=e256]:
+                  - link "New Return to Firetop Mountain (Fighting Fantasy Classics) R$ 15,75" [ref=e257] [cursor=pointer]:
+                    - /url: https://store.steampowered.com/app/4692040/Return_to_Firetop_Mountain_Fighting_Fantasy_Classics/?snr=1_5_9__405
+                    - img [ref=e259]
+                    - generic [ref=e260]:
+                      - generic [ref=e262]: New
+                      - text: Return to Firetop Mountain (Fighting Fantasy Classics)
+                    - generic [ref=e263]: R$ 15,75
+                  - link "House of Hell (Fighting Fantasy Classics) 50% off. R$ 13,79 normally, discounted to R$ 6,89" [ref=e264] [cursor=pointer]:
+                    - /url: https://store.steampowered.com/app/897180/House_of_Hell_Fighting_Fantasy_Classics/?snr=1_5_9__405
+                    - generic [ref=e265]: House of Hell (Fighting Fantasy Classics)
+                    - link "50% off. R$ 13,79 normally, discounted to R$ 6,89" [ref=e267]:
+                      - generic [ref=e268]: "-50%"
+                      - generic [ref=e269]:
+                        - generic [ref=e270]: R$ 13,79
+                        - generic [ref=e271]: R$ 6,89
+                  - link "The Warlock of Firetop Mountain (Fighting Fantasy Classics) 50% off. R$ 13,79 normally, discounted to R$ 6,89" [ref=e272] [cursor=pointer]:
+                    - /url: https://store.steampowered.com/app/856960/The_Warlock_of_Firetop_Mountain_Fighting_Fantasy_Classics/?snr=1_5_9__405
+                    - generic [ref=e273]: The Warlock of Firetop Mountain (Fighting Fantasy Classics)
+                    - link "50% off. R$ 13,79 normally, discounted to R$ 6,89" [ref=e275]:
+                      - generic [ref=e276]: "-50%"
+                      - generic [ref=e277]:
+                        - generic [ref=e278]: R$ 13,79
+                        - generic [ref=e279]: R$ 6,89
+                  - link "The Forest of Doom (Fighting Fantasy Classics) 50% off. R$ 13,79 normally, discounted to R$ 6,89" [ref=e280] [cursor=pointer]:
+                    - /url: https://store.steampowered.com/app/856950/The_Forest_of_Doom_Fighting_Fantasy_Classics/?snr=1_5_9__405
+                    - generic [ref=e281]: The Forest of Doom (Fighting Fantasy Classics)
+                    - link "50% off. R$ 13,79 normally, discounted to R$ 6,89" [ref=e283]:
+                      - generic [ref=e284]: "-50%"
+                      - generic [ref=e285]:
+                        - generic [ref=e286]: R$ 13,79
+                        - generic [ref=e287]: R$ 6,89
+                  - link "Island of the Lizard King (Fighting Fantasy Classics) 50% off. R$ 13,79 normally, discounted to R$ 6,89" [ref=e288] [cursor=pointer]:
+                    - /url: https://store.steampowered.com/app/856940/Island_of_the_Lizard_King_Fighting_Fantasy_Classics/?snr=1_5_9__405
+                    - generic [ref=e289]: Island of the Lizard King (Fighting Fantasy Classics)
+                    - link "50% off. R$ 13,79 normally, discounted to R$ 6,89" [ref=e291]:
+                      - generic [ref=e292]: "-50%"
+                      - generic [ref=e293]:
+                        - generic [ref=e294]: R$ 13,79
+                        - generic [ref=e295]: R$ 6,89
+                - generic:
+                  - button "See All" [ref=e297] [cursor=pointer]
+                  - generic [ref=e298]: showing 1 - 5 of 21
+          - generic [ref=e300]:
+            - heading "Reviews" [level=2] [ref=e301]
+            - paragraph [ref=e302]:
+              - text: “Fighting Fantasy Classics is Tin Man's return to digital versions of traditional gamebooks, and what a comeback it is.”
+              - text: 5/5 –
+              - link "Touch Arcade" [ref=e303] [cursor=pointer]:
+                - /url: http://toucharcade.com/2018/03/27/fighting-fantasy-classics-review/
+              - text: “...noticeably cheaper than tracking down and acquiring printed versions..this way, you get a slew of benefits not in the originals.”
+              - link "Wraithkal" [ref=e304] [cursor=pointer]:
+                - /url: https://steamcommunity.com/linkfilter/?u=https%3A%2F%2Fwww.wraithkal.com%2Ffighting-fantasy-classics-steam-release%2F
+          - generic [ref=e305]:
+            - generic [ref=e307]:
+              - heading "NEW FIGHTING FANTASY RELEASE!" [level=2] [ref=e308]
+              - paragraph
+              - paragraph [ref=e309]:
+                - img [ref=e311]
+              - paragraph
+            - generic [ref=e313] [cursor=pointer]: READ MORE
+          - generic [ref=e314]:
+            - generic [ref=e316]:
+              - heading "About This Game" [level=2] [ref=e317]
+              - paragraph [ref=e318]:
+                - img [ref=e320]
+              - paragraph [ref=e321]: Ready your sword, pack your provisions and prepare to embark upon nostalgic quests of epic proportions where YOU choose what happens next! Journey a magical realm, fighting monsters and unravelling mysteries in Fighting Fantasy Classics – text-based roleplaying adventures remastered. Originally presented by Steve Jackson & Ian Livingstone in the 80s and 90s, Fighting Fantasy Classics brings these timeless tales back to your gaming library.
+              - paragraph [ref=e322]
+              - paragraph [ref=e323]:
+                - img [ref=e325]
+              - heading "FEATURES" [level=2] [ref=e326]
+              - list [ref=e327]:
+                - listitem [ref=e328]:
+                  - paragraph [ref=e329]:
+                    - text: Every player receives Jonathan Green's swashbuckling pirate adventure - Bloodbones - free with their download.
+                    - img [ref=e331]
+                - listitem [ref=e332]:
+                  - paragraph [ref=e333]: 20+ digital gamebooks are available to purchase including classics such as Deathtrap Dungeon, Starship Traveller, Caverns of the Snow Witch, Citadel of Chaos, City of Thieves, Scorpion Swamp, House of Hell, The Forest of Doom, Island of the Lizard King, Freeway Fighter, Armies of Death, Trial of Champions, Temple of Terror, Appointment with FEAR and The Warlock of Firetop Mountain (original gamebook version).
+                - listitem [ref=e334]:
+                  - paragraph [ref=e335]: More recent Fighting Fantasy gamebooks are also available, such as The Port of Peril and Assassins of Allansia, with many more in development!
+              - heading "Pause animation" [level=2] [ref=e336]:
+                - button "Pause animation" [ref=e340]:
+                  - img "Pause animation" [ref=e341]
+              - list [ref=e342]:
+                - listitem [ref=e343]:
+                  - paragraph [ref=e344]: Make the gamebooks as easy or hard as you like and even turn on a special 'Free Read' mode to play the book like an old-school cheater!
+                - listitem [ref=e345]:
+                  - paragraph [ref=e346]: Map feature makes it easy to keep track of everywhere you have explored during current and previous playthroughs.
+                - listitem [ref=e347]:
+                  - paragraph [ref=e348]: Unlimited Bookmarks allow you to revisit difficult sections as many times as desired.
+                - listitem [ref=e349]:
+                  - paragraph [ref=e350]: Classic, original artwork from Iain McCaig, Russ Nicholson, Malcolm Barter, Ian Miller and more! All viewable through a collectable artwork gallery.
+                - listitem [ref=e351]:
+                  - paragraph [ref=e352]: Automated Adventure Sheet that keeps track of your stats, inventory and knowledge gained during your journey.
+                - listitem [ref=e353]:
+                  - paragraph [ref=e354]: Specially composed, atmospheric soundtrack and effects.
+                - listitem [ref=e355]:
+                  - paragraph [ref=e356]: History of Fighting Fantasy and Rulebook titles, included as free books on the shelf for all players.
+              - paragraph [ref=e357]
+              - paragraph [ref=e358]: Traverse the realm of Allansia, using your might and magic to hunt down evil sorcerers. Brave the dangers of Darkwood Forest to help save a doomed village of dwarves. Seek vengeance from the Pirate Lord who murdered your family and destroyed your life many moons ago. Save a port-town from the wrath of an undead lord and his ghostly hound minions!
+              - paragraph [ref=e359]
+              - paragraph [ref=e360]: Part story, part game, in these adventures YOU ARE THE HERO!
+            - generic [ref=e362] [cursor=pointer]: READ MORE
+          - generic [ref=e364]:
+            - heading "System Requirements" [level=2] [ref=e365]
+            - generic [ref=e366]:
+              - generic [ref=e367] [cursor=pointer]: Windows
+              - generic [ref=e368] [cursor=pointer]: macOS
+            - generic [ref=e370]:
+              - list [ref=e372]:
+                - strong [ref=e373]: "Minimum:"
+                - list [ref=e374]:
+                  - listitem [ref=e375]:
+                    - strong [ref=e376]: "OS *:"
+                    - text: Windows 7
+                  - listitem [ref=e377]:
+                    - strong [ref=e378]: "Processor:"
+                    - text: 1.5 GHz
+                  - listitem [ref=e379]:
+                    - strong [ref=e380]: "Memory:"
+                    - text: 2 GB RAM
+                  - listitem [ref=e381]:
+                    - strong [ref=e382]: "Graphics:"
+                    - text: Hardware Accelerated Graphics with 1GB memory
+                  - listitem [ref=e383]:
+                    - strong [ref=e384]: "Network:"
+                    - text: Broadband Internet connection
+                  - listitem [ref=e385]:
+                    - strong [ref=e386]: "Storage:"
+                    - text: 1 GB available space
+              - generic [ref=e387]:
+                - strong [ref=e388]: "*"
+                - text: Starting January 1st, 2024, the Steam Client will only support Windows 10 and later versions.
+          - paragraph [ref=e392]:
+            - text: © Tin Man Games Pty Ltd, 2024
+            - text: Fighting Fantasy is a trademark owned by Steve Jackson and Ian Livingstone, all rights reserved.
+      - generic [ref=e396]:
+        - link "View all" [ref=e397] [cursor=pointer]:
+          - /url: https://store.steampowered.com/curators/curatorsreviewing/?appid=856880&snr=1_5_9__top-curators
+        - heading "What Curators Say" [level=2] [ref=e398]
+        - generic [ref=e399]:
+          - text: 11 Curators have reviewed this product. Click
+          - link "here" [ref=e400] [cursor=pointer]:
+            - /url: https://store.steampowered.com/curators/curatorsreviewing/?appid=856880&snr=1_5_9__top-curators
+          - text: to see them.
+      - generic [ref=e403]:
+        - heading "Customer reviews for Fighting Fantasy Classics About user reviews Your preferences" [level=2] [ref=e404]:
+          - text: Customer reviews for Fighting Fantasy Classics
+          - generic [ref=e406]:
+            - link "About user reviews" [ref=e407] [cursor=pointer]:
+              - /url: https://help.steampowered.com/faqs/view/2DA6-9CB3-F84A-643E
+            - link "Your preferences" [ref=e408] [cursor=pointer]:
+              - /url: https://store.steampowered.com/account/preferences/#review_score_preferences
+        - generic [ref=e412]:
+          - generic [ref=e413]: "Overall Reviews:"
+          - generic [ref=e414]: Very Positive
+          - generic [ref=e415]: (361 reviews)
+        - list "Filter options" [ref=e418]:
+          - listitem [ref=e419]:
+            - button "Review Type" [ref=e420] [cursor=pointer]
+          - listitem [ref=e421]:
+            - button "Purchase Type" [ref=e422] [cursor=pointer]
+          - listitem [ref=e423]:
+            - button "Language" [ref=e424] [cursor=pointer]
+          - listitem [ref=e425]:
+            - button "Date Range" [ref=e426] [cursor=pointer]
+          - listitem [ref=e427]:
+            - button "Playtime" [ref=e428] [cursor=pointer]
+          - listitem [ref=e429]:
+            - button "Display" [ref=e430] [cursor=pointer]
+          - button "Show graph" [ref=e432] [cursor=pointer]: Show graph
+        - group [ref=e435]:
+          - generic [ref=e436]: Filters
+          - button [ref=e437] [cursor=pointer]
+          - button [ref=e438] [cursor=pointer]
+          - button [ref=e439] [cursor=pointer]
+          - button [ref=e440] [cursor=pointer]
+          - button "Excluding Off-topic Review Activity" [ref=e441] [cursor=pointer]
+          - button "Playtime:" [ref=e442] [cursor=pointer]: "Playtime:"
+          - button "Played Mostly on Steam Deck" [ref=e443] [cursor=pointer]
+          - button "Operating System:" [ref=e444] [cursor=pointer]: "Operating System:"
+          - button "CPU:" [ref=e445] [cursor=pointer]: "CPU:"
+          - button "GPU:" [ref=e446] [cursor=pointer]: "GPU:"
+          - button "Device Type:" [ref=e447] [cursor=pointer]: "Device Type:"

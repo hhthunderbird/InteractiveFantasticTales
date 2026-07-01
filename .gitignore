@@ -1,9 +1,29 @@
-node_modules/
-dist/
+# GCP Private Service Keys
+firebase-key.json
+
+# Local Environment Variables
 .env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs and debug files
 *.log
+firebase-debug.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Node dependencies
+node_modules/
+
+# Production builds
+dist/
+dist-ssr/
+
+# IDEs and System Files
+.vscode/
+.idea/
 .DS_Store
 Thumbs.db
-.playwright-mcp/
-.firebase/
-firebase-key.json

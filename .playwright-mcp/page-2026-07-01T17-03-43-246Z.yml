@@ -1,0 +1,175 @@
+- generic [ref=f15e3]:
+  - banner [ref=f15e4]:
+    - generic [ref=f15e5]:
+      - link "Link to the Steam Homepage" [ref=f15e8] [cursor=pointer]:
+        - /url: https://store.steampowered.com/?snr=1_7_7_230_global-header
+        - img "Link to the Steam Homepage" [ref=f15e9]
+      - navigation "Global Menu" [ref=f15e10]:
+        - link "STORE" [ref=f15e11] [cursor=pointer]:
+          - /url: https://store.steampowered.com/?snr=1_7_7_230_global-header
+        - link "COMMUNITY" [ref=f15e12] [cursor=pointer]:
+          - /url: https://steamcommunity.com/
+        - link "About" [ref=f15e13] [cursor=pointer]:
+          - /url: https://store.steampowered.com/about/?snr=1_7_7_230_global-header
+        - link "SUPPORT" [ref=f15e14] [cursor=pointer]:
+          - /url: https://help.steampowered.com/en/
+      - navigation "Account Menu" [ref=f15e16]:
+        - link "Install Steam" [ref=f15e17] [cursor=pointer]:
+          - /url: https://store.steampowered.com/about/?snr=1_7_7_230_global-header
+          - generic [ref=f15e18]: Install Steam
+        - link "sign in" [ref=f15e19] [cursor=pointer]:
+          - /url: https://store.steampowered.com/login/?redir=search%2F%3Fdeveloper%3D%2522Hosted%2BGames%2522%26ndl%3D1&redir_ssl=1&snr=1_7_7_230_global-header
+        - text: "| language"
+  - navigation "Store menu" [ref=f15e22]:
+    - generic [ref=f15e23]:
+      - generic [ref=f15e25]:
+        - button "Browse" [ref=f15e26] [cursor=pointer]:
+          - generic [ref=f15e27]: Browse
+        - button "Recommendations" [ref=f15e30] [cursor=pointer]:
+          - generic [ref=f15e31]: Recommendations
+        - button "Categories" [ref=f15e34] [cursor=pointer]:
+          - generic [ref=f15e35]: Categories
+        - button "Ways to Play" [ref=f15e38] [cursor=pointer]:
+          - generic [ref=f15e39]: Ways to Play
+        - button "Special Sections" [ref=f15e42] [cursor=pointer]:
+          - generic [ref=f15e43]: Special Sections
+      - generic [ref=f15e46]:
+        - search [ref=f15e47]:
+          - combobox "Search the store" [ref=f15e49]
+          - button "Search" [ref=f15e50] [cursor=pointer]:
+            - img "Search" [ref=f15e51]
+        - link "Advanced Search" [ref=f15e54] [cursor=pointer]:
+          - /url: https://store.steampowered.com/search/?term=&snr=1_7_15__advancedsearch
+  - main [ref=f15e56]:
+    - generic [ref=f15e58]:
+      - heading [level=2] [ref=f15e60]
+      - generic [ref=f15e62]:
+        - text: "Developer: \"Hosted Games\""
+        - link [ref=f15e63] [cursor=pointer]:
+          - /url: "#"
+    - generic [ref=f15e66]:
+      - generic [ref=f15e67]:
+        - generic [ref=f15e68]:
+          - generic [ref=f15e69]:
+            - generic [ref=f15e70]: Sort by
+            - combobox [ref=f15e72] [cursor=pointer]: Relevance
+          - generic [ref=f15e73]:
+            - textbox [ref=f15e74]: enter search term or tag
+            - button "Search" [ref=f15e75] [cursor=pointer]:
+              - generic [ref=f15e76]: Search
+        - generic [ref=f15e78]: 0 results match your search.
+      - generic [ref=f15e79]:
+        - generic [ref=f15e80]:
+          - button "Narrow by Price" [ref=f15e81] [cursor=pointer]:
+            - generic [ref=f15e82]: Narrow by Price
+          - generic [ref=f15e83]:
+            - generic [ref=f15e84]:
+              - button [ref=f15e86]: "13"
+              - generic [ref=f15e87]: Any Price
+            - button "Discounts & Events" [ref=f15e90] [cursor=pointer]:
+              - generic [ref=f15e93]: Discounts & Events
+            - button "Hide free to play items" [ref=f15e95] [cursor=pointer]:
+              - generic [ref=f15e98]: Hide free to play items
+        - generic [ref=f15e99]:
+          - button "Narrow by tag" [ref=f15e100] [cursor=pointer]:
+            - generic [ref=f15e101]: Narrow by tag
+          - generic [ref=f15e102]:
+            - generic [ref=f15e103]:
+              - generic [ref=f15e104] [cursor=pointer]:
+                - button "Strategy" [ref=f15e105]:
+                  - generic [ref=f15e108]: Strategy
+                - img [ref=f15e110]
+              - generic [ref=f15e111] [cursor=pointer]:
+                - button "Action" [ref=f15e112]:
+                  - generic [ref=f15e115]: Action
+                - img [ref=f15e117]
+              - generic [ref=f15e118] [cursor=pointer]:
+                - button "Adventure" [ref=f15e119]:
+                  - generic [ref=f15e122]: Adventure
+                - img [ref=f15e124]
+              - generic [ref=f15e125] [cursor=pointer]:
+                - button "Design & Illustration" [ref=f15e126]:
+                  - generic [ref=f15e129]: Design & Illustration
+                - img [ref=f15e131]
+              - generic [ref=f15e132] [cursor=pointer]:
+                - button "Utilities" [ref=f15e133]:
+                  - generic [ref=f15e136]: Utilities
+                - img [ref=f15e138]
+              - generic [ref=f15e139] [cursor=pointer]:
+                - button "Free to Play" [ref=f15e140]:
+                  - generic [ref=f15e143]: Free to Play
+                - img [ref=f15e145]
+              - generic [ref=f15e146] [cursor=pointer]:
+                - button "RPG" [ref=f15e147]:
+                  - generic [ref=f15e150]: RPG
+                - img [ref=f15e152]
+              - generic [ref=f15e153] [cursor=pointer]:
+                - button "Massively Multiplayer" [ref=f15e154]:
+                  - generic [ref=f15e157]: Massively Multiplayer
+                - img [ref=f15e159]
+              - generic [ref=f15e160] [cursor=pointer]:
+                - button "Indie" [ref=f15e161]:
+                  - generic [ref=f15e164]: Indie
+                - img [ref=f15e166]
+              - generic [ref=f15e167] [cursor=pointer]:
+                - button "Early Access" [ref=f15e168]:
+                  - generic [ref=f15e171]: Early Access
+                - img [ref=f15e173]
+              - generic [ref=f15e174] [cursor=pointer]:
+                - button "Casual" [ref=f15e175]:
+                  - generic [ref=f15e178]: Casual
+                - img [ref=f15e180]
+              - generic [ref=f15e181] [cursor=pointer]:
+                - button "Simulation" [ref=f15e182]:
+                  - generic [ref=f15e185]: Simulation
+                - img [ref=f15e187]
+              - generic [ref=f15e188] [cursor=pointer]:
+                - button "Racing" [ref=f15e189]:
+                  - generic [ref=f15e192]: Racing
+                - img [ref=f15e194]
+              - generic [ref=f15e195] [cursor=pointer]:
+                - button "Sports" [ref=f15e196]:
+                  - generic [ref=f15e199]: Sports
+                - img [ref=f15e201]
+              - generic [ref=f15e202] [cursor=pointer]:
+                - button "Video Production" [ref=f15e203]:
+                  - generic [ref=f15e206]: Video Production
+                - img [ref=f15e208]
+              - generic [ref=f15e209] [cursor=pointer]:
+                - button "Photo Editing" [ref=f15e210]:
+                  - generic [ref=f15e213]: Photo Editing
+                - img [ref=f15e215]
+            - textbox [ref=f15e216]: search for more tags
+        - button "Show selected types" [ref=f15e218] [cursor=pointer]:
+          - generic [ref=f15e219]: Show selected types
+        - button "Narrow by number of players" [ref=f15e221] [cursor=pointer]:
+          - generic [ref=f15e222]: Narrow by number of players
+        - button "Narrow by feature" [ref=f15e224] [cursor=pointer]:
+          - generic [ref=f15e225]: Narrow by feature
+        - button "Narrow by Controller Support" [ref=f15e227] [cursor=pointer]:
+          - generic [ref=f15e228]: Narrow by Controller Support
+        - button "Narrow by accessibility feature" [ref=f15e230] [cursor=pointer]:
+          - generic [ref=f15e231]: Narrow by accessibility feature
+        - generic [ref=f15e232]:
+          - generic [ref=f15e234]: Narrow by Deck Compatibility
+          - generic [ref=f15e235]:
+            - button "Verified" [ref=f15e237] [cursor=pointer]:
+              - generic [ref=f15e240]: Verified
+            - button "Playable" [ref=f15e242] [cursor=pointer]:
+              - generic [ref=f15e245]: Playable
+            - link "Learn More" [ref=f15e246] [cursor=pointer]:
+              - /url: https://steamdeck.com/en/verified
+        - button "Narrow by VR Support" [ref=f15e248] [cursor=pointer]:
+          - generic [ref=f15e249]: Narrow by VR Support
+        - generic [ref=f15e250]:
+          - button "Narrow by OS" [ref=f15e251] [cursor=pointer]:
+            - generic [ref=f15e252]: Narrow by OS
+          - generic [ref=f15e253]:
+            - button "Windows" [ref=f15e255] [cursor=pointer]:
+              - generic [ref=f15e258]: Windows
+            - button "macOS" [ref=f15e260] [cursor=pointer]:
+              - generic [ref=f15e263]: macOS
+            - button "SteamOS + Linux" [ref=f15e265] [cursor=pointer]:
+              - generic [ref=f15e268]: SteamOS + Linux
+        - button "Narrow by language" [ref=f15e270] [cursor=pointer]:
+          - generic [ref=f15e271]: Narrow by language

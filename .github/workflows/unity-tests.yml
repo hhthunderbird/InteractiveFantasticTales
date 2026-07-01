@@ -1,0 +1,54 @@
+name: Unity Test Runner
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'player-app/Assets/**'
+      - 'player-app/Packages/**'
+      - '.github/workflows/unity-tests.yml'
+  workflow_dispatch:
+
+env:
+  UNITY_VERSION: 6000.3.11f1
+  PROJECT_PATH: player-app
+
+jobs:
+  tests:
+    name: Run All Tests (EditMode + PlayMode)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Cache Library
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.PROJECT_PATH }}/Library
+          key: Library-Tests-${{ env.UNITY_VERSION }}-${{ hashFiles('player-app/Assets/**', 'player-app/Packages/**', 'player-app/ProjectSettings/**', 'player-app/*.csproj') }}
+          restore-keys: |
+            Library-Tests-${{ env.UNITY_VERSION }}-
+            Library-Tests-
+
+      - name: Run EditMode Tests
+        uses: game-ci/unity-test-runner@v4
+        with:
+          projectPath: ${{ env.PROJECT_PATH }}
+          unityVersion: ${{ env.UNITY_VERSION }}
+          testMode: all
+          artifactsPath: test-results
+        env:
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+          UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }}
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: unity-test-results
+          path: test-results/
+          retention-days: 14

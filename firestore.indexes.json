@@ -1,0 +1,57 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "stories",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "metadata.isPublished", "order": "ASCENDING" },
+        { "fieldPath": "metadata.genre", "arrayConfig": "CONTAINS" },
+        { "fieldPath": "stats.purchaseCount", "order": "DESCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "stories",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "metadata.isPublished", "order": "ASCENDING" },
+        { "fieldPath": "metadata.language", "order": "ASCENDING" },
+        { "fieldPath": "stats.purchaseCount", "order": "DESCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "stories",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "metadata.isPublished", "order": "ASCENDING" },
+        { "fieldPath": "pricing.priceTier", "order": "ASCENDING" },
+        { "fieldPath": "stats.purchaseCount", "order": "DESCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "stories",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "metadata.isPublished", "order": "ASCENDING" },
+        { "fieldPath": "stats.purchaseCount", "order": "DESCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "stories",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "metadata.isPublished", "order": "ASCENDING" },
+        { "fieldPath": "pricing.type", "order": "ASCENDING" },
+        { "fieldPath": "stats.purchaseCount", "order": "DESCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "stories",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "metadata.isPublished", "order": "ASCENDING" },
+        { "fieldPath": "stats.averageRating", "order": "DESCENDING" }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}

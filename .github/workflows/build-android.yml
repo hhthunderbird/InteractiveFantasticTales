@@ -1,0 +1,106 @@
+name: Build Android (APK + AAB)
+
+# Required GitHub Secrets:
+#   UNITY_EMAIL, UNITY_PASSWORD, UNITY_SERIAL — Unity license
+#   ANDROID_KEYSTORE_NAME, _BASE64, _PASS, _KEYALIAS_NAME, _KEYALIAS_PASS — signing (AAB only)
+
+on:
+  push:
+    branches: [main, develop]
+    paths:
+      - 'player-app/**'
+      - '.github/workflows/build-android.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'player-app/**'
+  workflow_dispatch:
+    inputs:
+      buildType:
+        description: 'Build type'
+        type: choice
+        options: [apk, aab, both]
+        default: 'both'
+
+env:
+  UNITY_VERSION: 6000.3.11f1
+  PROJECT_PATH: player-app
+
+jobs:
+  build-android:
+    name: Build Android (${{ inputs.buildType || 'both' }})
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Cache Unity Library
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.PROJECT_PATH }}/Library
+          key: Android-${{ env.UNITY_VERSION }}-${{ hashFiles('player-app/Assets/**', 'player-app/Packages/**', 'player-app/ProjectSettings/**', 'player-app/*.csproj') }}
+          restore-keys: |
+            Android-${{ env.UNITY_VERSION }}-
+            Android-
+
+      # ── APK (Debug, testes) ────────────────────────────────────
+      - name: Build APK
+        if: ${{ inputs.buildType == 'apk' || inputs.buildType == 'both' || github.event_name != 'workflow_dispatch' }}
+        uses: game-ci/unity-builder@v4
+        env:
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+          UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }}
+        with:
+          projectPath: ${{ env.PROJECT_PATH }}
+          unityVersion: ${{ env.UNITY_VERSION }}
+          targetPlatform: Android
+          buildMethod: IFT.BuildScripts.BuildAndroidApk
+          versioning: Semantic
+          androidAppBundle: false
+
+      - name: Upload APK
+        if: ${{ inputs.buildType == 'apk' || inputs.buildType == 'both' || github.event_name != 'workflow_dispatch' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: IFT-Android-APK
+          path: ${{ env.PROJECT_PATH }}/build/**/*.apk
+          retention-days: 30
+
+      # ── AAB (Release, Play Store) ──────────────────────────────
+      - name: Build AAB
+        if: ${{ inputs.buildType == 'aab' || inputs.buildType == 'both' || (github.event_name == 'push' && github.ref == 'refs/heads/main') }}
+        uses: game-ci/unity-builder@v4
+        env:
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+          UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }}
+        with:
+          projectPath: ${{ env.PROJECT_PATH }}
+          unityVersion: ${{ env.UNITY_VERSION }}
+          targetPlatform: Android
+          buildMethod: IFT.BuildScripts.BuildAndroidAab
+          versioning: Semantic
+          androidAppBundle: true
+          androidKeystoreName: ${{ secrets.ANDROID_KEYSTORE_NAME }}
+          androidKeystoreBase64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          androidKeystorePass: ${{ secrets.ANDROID_KEYSTORE_PASS }}
+          androidKeyaliasName: ${{ secrets.ANDROID_KEYALIAS_NAME }}
+          androidKeyaliasPass: ${{ secrets.ANDROID_KEYALIAS_PASS }}
+
+      - name: Upload AAB
+        if: ${{ inputs.buildType == 'aab' || inputs.buildType == 'both' || (github.event_name == 'push' && github.ref == 'refs/heads/main') }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: IFT-Android-AAB
+          path: ${{ env.PROJECT_PATH }}/build/**/*.aab
+          retention-days: 90
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "### Android Build" >> $GITHUB_STEP_SUMMARY
+          echo "**Unity:** ${{ env.UNITY_VERSION }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Branch:** ${{ github.ref_name }}" >> $GITHUB_STEP_SUMMARY

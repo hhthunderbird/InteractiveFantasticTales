@@ -1,0 +1,753 @@
+- generic [ref=f7e3]:
+  - banner [ref=f7e4]:
+    - generic [ref=f7e5]:
+      - link "Link to the Steam Homepage" [ref=f7e8] [cursor=pointer]:
+        - /url: https://store.steampowered.com/?snr=1_7_7_151_global-header
+        - img "Link to the Steam Homepage" [ref=f7e9]
+      - navigation "Global Menu" [ref=f7e10]:
+        - link "STORE" [ref=f7e11] [cursor=pointer]:
+          - /url: https://store.steampowered.com/?snr=1_7_7_151_global-header
+        - link "COMMUNITY" [ref=f7e12] [cursor=pointer]:
+          - /url: https://steamcommunity.com/
+        - link "About" [ref=f7e13] [cursor=pointer]:
+          - /url: https://store.steampowered.com/about/?snr=1_7_7_151_global-header
+        - link "SUPPORT" [ref=f7e14] [cursor=pointer]:
+          - /url: https://help.steampowered.com/en/
+      - navigation "Account Menu" [ref=f7e16]:
+        - link "Install Steam" [ref=f7e17] [cursor=pointer]:
+          - /url: https://store.steampowered.com/about/?snr=1_7_7_151_global-header
+          - generic [ref=f7e18]: Install Steam
+        - link "sign in" [ref=f7e19] [cursor=pointer]:
+          - /url: https://store.steampowered.com/login/?redir=search%2F%3Fterm%3Dhosted%2Bgames%26ndl%3D1&redir_ssl=1&snr=1_7_7_151_global-header
+        - text: "| language"
+  - navigation "Store menu" [ref=f7e22]:
+    - generic [ref=f7e23]:
+      - generic [ref=f7e25]:
+        - button "Browse" [ref=f7e26] [cursor=pointer]:
+          - generic [ref=f7e27]: Browse
+        - button "Recommendations" [ref=f7e30] [cursor=pointer]:
+          - generic [ref=f7e31]: Recommendations
+        - button "Categories" [ref=f7e34] [cursor=pointer]:
+          - generic [ref=f7e35]: Categories
+        - button "Ways to Play" [ref=f7e38] [cursor=pointer]:
+          - generic [ref=f7e39]: Ways to Play
+        - button "Special Sections" [ref=f7e42] [cursor=pointer]:
+          - generic [ref=f7e43]: Special Sections
+      - generic [ref=f7e46]:
+        - search [ref=f7e47]:
+          - combobox "Search the store" [ref=f7e49]
+          - button "Search" [ref=f7e50] [cursor=pointer]:
+            - img "Search" [ref=f7e51]
+        - link "Advanced Search" [ref=f7e54] [cursor=pointer]:
+          - /url: https://store.steampowered.com/search/?term=&snr=1_7_15__advancedsearch
+  - main [ref=f7e56]:
+    - generic [ref=f7e58]:
+      - heading [level=2] [ref=f7e60]
+      - generic [ref=f7e62]:
+        - text: "\"hosted games\""
+        - link [ref=f7e63] [cursor=pointer]:
+          - /url: "#"
+    - generic [ref=f7e66]:
+      - generic [ref=f7e67]:
+        - generic [ref=f7e68]:
+          - generic [ref=f7e69]:
+            - generic [ref=f7e70]: Sort by
+            - combobox [ref=f7e72] [cursor=pointer]: Relevance
+          - generic [ref=f7e73]:
+            - textbox [ref=f7e74]: hosted games
+            - button "Search" [ref=f7e75] [cursor=pointer]:
+              - generic [ref=f7e76]: Search
+        - generic [ref=f7e77]:
+          - generic [ref=f7e78]: 3,326 results match your search.
+          - generic [ref=f7e80]:
+            - link "MECCHA CHAMELEON 9 Jun, 2026 R$23,49" [ref=f7e81] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/4704690/MECCHA_CHAMELEON/?snr=1_7_7_151_150_1
+              - img [ref=f7e83]
+              - generic [ref=f7e84]:
+                - generic [ref=f7e85]: MECCHA CHAMELEON
+                - generic [ref=f7e88]: 9 Jun, 2026
+                - generic [ref=f7e95]: R$23,49
+            - link "Jitter Games To be announced Free" [ref=f7e96] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/3541160/Jitter_Games/?snr=1_7_7_151_150_1
+              - img [ref=f7e98]
+              - generic [ref=f7e99]:
+                - generic [ref=f7e100]: Jitter Games
+                - generic [ref=f7e103]: To be announced
+                - generic [ref=f7e109]: Free
+            - link "Sidestream Games July 2026" [ref=f7e110] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/2185040/Sidestream_Games/?snr=1_7_7_151_150_1
+              - img [ref=f7e112]
+              - generic [ref=f7e113]:
+                - generic [ref=f7e114]: Sidestream Games
+                - generic [ref=f7e117]: July 2026
+            - link "Crowned Games 2026" [ref=f7e119] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/4699950/Crowned_Games/?snr=1_7_7_151_150_1
+              - img [ref=f7e121]
+              - generic [ref=f7e122]:
+                - generic [ref=f7e123]: Crowned Games
+                - generic [ref=f7e126]: "2026"
+            - link "God of War Ragnarök 19 Sep, 2024 33% off. R$249,90 normally, discounted to R$167,43" [ref=f7e128] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/2322010/God_of_War_Ragnark/?snr=1_7_7_151_150_1
+              - img [ref=f7e130]
+              - generic [ref=f7e131]:
+                - generic [ref=f7e132]: God of War Ragnarök
+                - generic [ref=f7e135]: 19 Sep, 2024
+                - link "33% off. R$249,90 normally, discounted to R$167,43" [ref=f7e140]:
+                  - generic [ref=f7e141]: "-33%"
+                  - generic [ref=f7e142]:
+                    - generic [ref=f7e143]: R$249,90
+                    - generic [ref=f7e144]: R$167,43
+            - link "Rust 8 Feb, 2018 50% off. R$119,99 normally, discounted to R$59,99" [ref=f7e145] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/252490/Rust/?snr=1_7_7_151_150_1
+              - img [ref=f7e147]
+              - generic [ref=f7e148]:
+                - generic [ref=f7e149]: Rust
+                - generic [ref=f7e153]: 8 Feb, 2018
+                - link "50% off. R$119,99 normally, discounted to R$59,99" [ref=f7e158]:
+                  - generic [ref=f7e159]: "-50%"
+                  - generic [ref=f7e160]:
+                    - generic [ref=f7e161]: R$119,99
+                    - generic [ref=f7e162]: R$59,99
+            - link "The Last of Us™ Part I 28 Mar, 2023 50% off. R$249,90 normally, discounted to R$124,95" [ref=f7e163] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/1888930/The_Last_of_Us_Part_I/?snr=1_7_7_151_150_1
+              - img [ref=f7e165]
+              - generic [ref=f7e166]:
+                - generic [ref=f7e167]: The Last of Us™ Part I
+                - generic [ref=f7e170]: 28 Mar, 2023
+                - link "50% off. R$249,90 normally, discounted to R$124,95" [ref=f7e175]:
+                  - generic [ref=f7e176]: "-50%"
+                  - generic [ref=f7e177]:
+                    - generic [ref=f7e178]: R$249,90
+                    - generic [ref=f7e179]: R$124,95
+            - link "The Laser Games Coming soon" [ref=f7e180] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/3152120/The_Laser_Games/?snr=1_7_7_151_150_1
+              - img [ref=f7e182]
+              - generic [ref=f7e183]:
+                - generic [ref=f7e184]: The Laser Games
+                - generic [ref=f7e188]: Coming soon
+            - link "Terraria 16 May, 2011 50% off. R$32,99 normally, discounted to R$16,49" [ref=f7e190] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/105600/Terraria/?snr=1_7_7_151_150_1
+              - img [ref=f7e192]
+              - generic [ref=f7e193]:
+                - generic [ref=f7e194]: Terraria
+                - generic [ref=f7e199]: 16 May, 2011
+                - link "50% off. R$32,99 normally, discounted to R$16,49" [ref=f7e204]:
+                  - generic [ref=f7e205]: "-50%"
+                  - generic [ref=f7e206]:
+                    - generic [ref=f7e207]: R$32,99
+                    - generic [ref=f7e208]: R$16,49
+            - link "iRacing 12 Jan, 2015 50% off. R$32,99 normally, discounted to R$16,49" [ref=f7e209] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/266410/iRacing/?snr=1_7_7_151_150_1
+              - img [ref=f7e211]
+              - generic [ref=f7e212]:
+                - generic [ref=f7e213]: iRacing
+                - generic [ref=f7e216]: 12 Jan, 2015
+                - link "50% off. R$32,99 normally, discounted to R$16,49" [ref=f7e221]:
+                  - generic [ref=f7e222]: "-50%"
+                  - generic [ref=f7e223]:
+                    - generic [ref=f7e224]: R$32,99
+                    - generic [ref=f7e225]: R$16,49
+            - 'link "Play Friends: Party Games To be announced" [ref=f7e226] [cursor=pointer]':
+              - /url: https://store.steampowered.com/app/3461130/Play_Friends_Party_Games/?snr=1_7_7_151_150_1
+              - img [ref=f7e228]
+              - generic [ref=f7e229]:
+                - generic [ref=f7e230]: "Play Friends: Party Games"
+                - generic [ref=f7e233]: To be announced
+            - link "The Last of Us™ Part II Remastered 3 Apr, 2025 20% off. R$199,90 normally, discounted to R$159,92" [ref=f7e235] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/2531310/The_Last_of_Us_Part_II_Remastered/?snr=1_7_7_151_150_1
+              - img [ref=f7e237]
+              - generic [ref=f7e238]:
+                - generic [ref=f7e239]: The Last of Us™ Part II Remastered
+                - generic [ref=f7e242]: 3 Apr, 2025
+                - link "20% off. R$199,90 normally, discounted to R$159,92" [ref=f7e247]:
+                  - generic [ref=f7e248]: "-20%"
+                  - generic [ref=f7e249]:
+                    - generic [ref=f7e250]: R$199,90
+                    - generic [ref=f7e251]: R$159,92
+            - link "The LEGO® Games Bundle Includes 4 games 8 Jul, 2020 87% off. R$479,99 normally, discounted to R$62,39" [ref=f7e252] [cursor=pointer]:
+              - /url: https://store.steampowered.com/sub/466140/?snr=1_7_7_151_150_1
+              - img [ref=f7e254]
+              - generic [ref=f7e255]:
+                - generic [ref=f7e256]: The LEGO® Games Bundle
+                - generic [ref=f7e259]: Includes 4 games
+                - generic [ref=f7e260]: 8 Jul, 2020
+                - link "87% off. R$479,99 normally, discounted to R$62,39" [ref=f7e265]:
+                  - generic [ref=f7e266]: "-87%"
+                  - generic [ref=f7e267]:
+                    - generic [ref=f7e268]: R$479,99
+                    - generic [ref=f7e269]: R$62,39
+            - 'link "Community College Hero: Fun and Games 3 Feb, 2022 40% off. R$16,99 normally, discounted to R$10,19" [ref=f7e270] [cursor=pointer]':
+              - /url: https://store.steampowered.com/app/1782860/Community_College_Hero_Fun_and_Games/?snr=1_7_7_151_150_1
+              - img [ref=f7e272]
+              - generic [ref=f7e273]:
+                - generic [ref=f7e274]: "Community College Hero: Fun and Games"
+                - generic [ref=f7e279]: 3 Feb, 2022
+                - link "40% off. R$16,99 normally, discounted to R$10,19" [ref=f7e284]:
+                  - generic [ref=f7e285]: "-40%"
+                  - generic [ref=f7e286]:
+                    - generic [ref=f7e287]: R$16,99
+                    - generic [ref=f7e288]: R$10,19
+            - 'link "Mount & Blade II: Bannerlord 25 Oct, 2022 60% off. R$199,99 normally, discounted to R$79,99" [ref=f7e289] [cursor=pointer]':
+              - /url: https://store.steampowered.com/app/261550/Mount__Blade_II_Bannerlord/?snr=1_7_7_151_150_1
+              - img [ref=f7e291]
+              - generic [ref=f7e292]:
+                - generic [ref=f7e293]: "Mount & Blade II: Bannerlord"
+                - generic [ref=f7e296]: 25 Oct, 2022
+                - link "60% off. R$199,99 normally, discounted to R$79,99" [ref=f7e301]:
+                  - generic [ref=f7e302]: "-60%"
+                  - generic [ref=f7e303]:
+                    - generic [ref=f7e304]: R$199,99
+                    - generic [ref=f7e305]: R$79,99
+            - link "Conan Exiles Enhanced 8 May, 2018 25% off. R$99,49 normally, discounted to R$74,61" [ref=f7e306] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/440900/Conan_Exiles_Enhanced/?snr=1_7_7_151_150_1
+              - img [ref=f7e308]
+              - generic [ref=f7e309]:
+                - generic [ref=f7e310]: Conan Exiles Enhanced
+                - generic [ref=f7e313]: 8 May, 2018
+                - link "25% off. R$99,49 normally, discounted to R$74,61" [ref=f7e318]:
+                  - generic [ref=f7e319]: "-25%"
+                  - generic [ref=f7e320]:
+                    - generic [ref=f7e321]: R$99,49
+                    - generic [ref=f7e322]: R$74,61
+            - 'link "UNCHARTED™: Legacy of Thieves Collection 19 Oct, 2022 67% off. R$199,90 normally, discounted to R$65,96" [ref=f7e323] [cursor=pointer]':
+              - /url: https://store.steampowered.com/app/1659420/UNCHARTED_Legacy_of_Thieves_Collection/?snr=1_7_7_151_150_1
+              - img [ref=f7e325]
+              - generic [ref=f7e326]:
+                - generic [ref=f7e327]: "UNCHARTED™: Legacy of Thieves Collection"
+                - generic [ref=f7e330]: 19 Oct, 2022
+                - link "67% off. R$199,90 normally, discounted to R$65,96" [ref=f7e335]:
+                  - generic [ref=f7e336]: "-67%"
+                  - generic [ref=f7e337]:
+                    - generic [ref=f7e338]: R$199,90
+                    - generic [ref=f7e339]: R$65,96
+            - 'link "Backrooms: Escape Together 18 Oct, 2022 31% off. R$32,99 normally, discounted to R$22,76" [ref=f7e340] [cursor=pointer]':
+              - /url: https://store.steampowered.com/app/2141730/Backrooms_Escape_Together/?snr=1_7_7_151_150_1
+              - img [ref=f7e342]
+              - generic [ref=f7e343]:
+                - generic [ref=f7e344]: "Backrooms: Escape Together"
+                - generic [ref=f7e347]: 18 Oct, 2022
+                - link "31% off. R$32,99 normally, discounted to R$22,76" [ref=f7e352]:
+                  - generic [ref=f7e353]: "-31%"
+                  - generic [ref=f7e354]:
+                    - generic [ref=f7e355]: R$32,99
+                    - generic [ref=f7e356]: R$22,76
+            - link "Stream Games Deluxe 15 Apr, 2022 R$10,49" [ref=f7e357] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/592640/Stream_Games_Deluxe/?snr=1_7_7_151_150_1
+              - img [ref=f7e359]
+              - generic [ref=f7e360]:
+                - generic [ref=f7e361]: Stream Games Deluxe
+                - generic [ref=f7e364]: 15 Apr, 2022
+                - generic [ref=f7e370]: R$10,49
+            - link "Super Galaxy Games 9 Oct, 2025 R$46,99" [ref=f7e371] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/2104430/Super_Galaxy_Games/?snr=1_7_7_151_150_1
+              - img [ref=f7e373]
+              - generic [ref=f7e374]:
+                - generic [ref=f7e375]: Super Galaxy Games
+                - generic [ref=f7e378]: 9 Oct, 2025
+                - generic [ref=f7e384]: R$46,99
+            - link "Windrose 14 Apr, 2026 10% off. R$89,99 normally, discounted to R$80,99" [ref=f7e385] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/3041230/Windrose/?snr=1_7_7_151_150_1
+              - img [ref=f7e387]
+              - generic [ref=f7e388]:
+                - generic [ref=f7e389]: Windrose
+                - generic [ref=f7e392]: 14 Apr, 2026
+                - link "10% off. R$89,99 normally, discounted to R$80,99" [ref=f7e397]:
+                  - generic [ref=f7e398]: "-10%"
+                  - generic [ref=f7e399]:
+                    - generic [ref=f7e400]: R$89,99
+                    - generic [ref=f7e401]: R$80,99
+            - link "MultiGames Coming soon Free" [ref=f7e402] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/2063270/MultiGames/?snr=1_7_7_151_150_1
+              - img [ref=f7e404]
+              - generic [ref=f7e405]:
+                - generic [ref=f7e406]: MultiGames
+                - generic [ref=f7e409]: Coming soon
+                - generic [ref=f7e415]: Free
+            - link "GRAIN ROT Q3 2026" [ref=f7e416] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/4450620/GRAIN_ROT/?snr=1_7_7_151_150_1
+              - img [ref=f7e418]
+              - generic [ref=f7e419]:
+                - generic [ref=f7e420]: GRAIN ROT
+                - generic [ref=f7e423]: Q3 2026
+            - 'link "Age of Empires IV: Anniversary Edition 28 Oct, 2021 65% off. R$99,99 normally, discounted to R$34,99" [ref=f7e425] [cursor=pointer]':
+              - /url: https://store.steampowered.com/app/1466860/Age_of_Empires_IV_Anniversary_Edition/?snr=1_7_7_151_150_1
+              - img [ref=f7e427]
+              - generic [ref=f7e428]:
+                - generic [ref=f7e429]: "Age of Empires IV: Anniversary Edition"
+                - generic [ref=f7e432]: 28 Oct, 2021
+                - link "65% off. R$99,99 normally, discounted to R$34,99" [ref=f7e437]:
+                  - generic [ref=f7e438]: "-65%"
+                  - generic [ref=f7e439]:
+                    - generic [ref=f7e440]: R$99,99
+                    - generic [ref=f7e441]: R$34,99
+            - 'link "Play Together: Party Games 18 Jun, 2025 60% off. R$30,00 normally, discounted to R$12,00" [ref=f7e442] [cursor=pointer]':
+              - /url: https://store.steampowered.com/app/746210/Play_Together_Party_Games/?snr=1_7_7_151_150_1
+              - img [ref=f7e444]
+              - generic [ref=f7e445]:
+                - generic [ref=f7e446]: "Play Together: Party Games"
+                - generic [ref=f7e449]: 18 Jun, 2025
+                - link "60% off. R$30,00 normally, discounted to R$12,00" [ref=f7e453]:
+                  - generic [ref=f7e454]: "-60%"
+                  - generic [ref=f7e455]:
+                    - generic [ref=f7e456]: R$30,00
+                    - generic [ref=f7e457]: R$12,00
+            - link "Romestead 26 May, 2026 10% off. R$44,99 normally, discounted to R$40,49" [ref=f7e458] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/1805320/Romestead/?snr=1_7_7_151_150_1
+              - img [ref=f7e460]
+              - generic [ref=f7e461]:
+                - generic [ref=f7e462]: Romestead
+                - generic [ref=f7e465]: 26 May, 2026
+                - link "10% off. R$44,99 normally, discounted to R$40,49" [ref=f7e470]:
+                  - generic [ref=f7e471]: "-10%"
+                  - generic [ref=f7e472]:
+                    - generic [ref=f7e473]: R$44,99
+                    - generic [ref=f7e474]: R$40,49
+            - link "The Laser Games (Demo) 8 Jun, 2025 Free" [ref=f7e475] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/3788440/The_Laser_Games_Demo/?snr=1_7_7_151_150_1
+              - img [ref=f7e477]
+              - generic [ref=f7e478]:
+                - generic [ref=f7e479]: The Laser Games (Demo)
+                - generic [ref=f7e483]: 8 Jun, 2025
+                - generic [ref=f7e489]: Free
+            - 'link "Selfie Games [TV]: A Multiplayer Couch Party Game Coming soon Free" [ref=f7e490] [cursor=pointer]':
+              - /url: https://store.steampowered.com/app/897650/Selfie_Games_TV_A_Multiplayer_Couch_Party_Game/?snr=1_7_7_151_150_1
+              - img [ref=f7e492]
+              - generic [ref=f7e493]:
+                - generic [ref=f7e494]: "Selfie Games [TV]: A Multiplayer Couch Party Game"
+                - generic [ref=f7e498]: Coming soon
+                - generic [ref=f7e504]: Free
+            - 'link "ARK: Survival Evolved 27 Aug, 2017 34% off. R$46,99 normally, discounted to R$31,01" [ref=f7e505] [cursor=pointer]':
+              - /url: https://store.steampowered.com/app/346110/ARK_Survival_Evolved/?snr=1_7_7_151_150_1
+              - img [ref=f7e507]
+              - generic [ref=f7e508]:
+                - generic [ref=f7e509]: "ARK: Survival Evolved"
+                - generic [ref=f7e513]: 27 Aug, 2017
+                - link "34% off. R$46,99 normally, discounted to R$31,01" [ref=f7e518]:
+                  - generic [ref=f7e519]: "-34%"
+                  - generic [ref=f7e520]:
+                    - generic [ref=f7e521]: R$46,99
+                    - generic [ref=f7e522]: R$31,01
+            - link "Grounded 27 Sep, 2022 50% off. R$197,72 normally, discounted to R$98,86" [ref=f7e523] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/962130/Grounded/?snr=1_7_7_151_150_1
+              - img [ref=f7e525]
+              - generic [ref=f7e526]:
+                - generic [ref=f7e527]: Grounded
+                - generic [ref=f7e530]: 27 Sep, 2022
+                - link "50% off. R$197,72 normally, discounted to R$98,86" [ref=f7e535]:
+                  - generic [ref=f7e536]: "-50%"
+                  - generic [ref=f7e537]:
+                    - generic [ref=f7e538]: R$197,72
+                    - generic [ref=f7e539]: R$98,86
+            - link "Valheim 2 Feb, 2021 50% off. R$79,09 normally, discounted to R$39,54" [ref=f7e540] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/892970/Valheim/?snr=1_7_7_151_150_1
+              - img [ref=f7e542]
+              - generic [ref=f7e543]:
+                - generic [ref=f7e544]: Valheim
+                - generic [ref=f7e549]: 2 Feb, 2021
+                - link "50% off. R$79,09 normally, discounted to R$39,54" [ref=f7e554]:
+                  - generic [ref=f7e555]: "-50%"
+                  - generic [ref=f7e556]:
+                    - generic [ref=f7e557]: R$79,09
+                    - generic [ref=f7e558]: R$39,54
+            - 'link "Play Together: Party Games Demo 11 Nov, 2024 Free" [ref=f7e559] [cursor=pointer]':
+              - /url: https://store.steampowered.com/app/2933900/Play_Together_Party_Games_Demo/?snr=1_7_7_151_150_1
+              - img [ref=f7e561]
+              - generic [ref=f7e562]:
+                - generic [ref=f7e563]: "Play Together: Party Games Demo"
+                - generic [ref=f7e566]: 11 Nov, 2024
+                - generic [ref=f7e572]: Free
+            - link "REANIMAL 13 Feb, 2026 25% off. R$107,99 normally, discounted to R$80,99" [ref=f7e573] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/2129530/REANIMAL/?snr=1_7_7_151_150_1
+              - img [ref=f7e575]
+              - generic [ref=f7e576]:
+                - generic [ref=f7e577]: REANIMAL
+                - generic [ref=f7e580]: 13 Feb, 2026
+                - link "25% off. R$107,99 normally, discounted to R$80,99" [ref=f7e585]:
+                  - generic [ref=f7e586]: "-25%"
+                  - generic [ref=f7e587]:
+                    - generic [ref=f7e588]: R$107,99
+                    - generic [ref=f7e589]: R$80,99
+            - 'link "Play Friends: Party Games Demo 30 Apr, 2025 Free" [ref=f7e590] [cursor=pointer]':
+              - /url: https://store.steampowered.com/app/3509680/Play_Friends_Party_Games_Demo/?snr=1_7_7_151_150_1
+              - img [ref=f7e592]
+              - generic [ref=f7e593]:
+                - generic [ref=f7e594]: "Play Friends: Party Games Demo"
+                - generic [ref=f7e597]: 30 Apr, 2025
+                - generic [ref=f7e603]: Free
+            - 'link "MindPrompt: Party Games with AI Coming soon Free" [ref=f7e604] [cursor=pointer]':
+              - /url: https://store.steampowered.com/app/4397070/MindPrompt_Party_Games_with_AI/?snr=1_7_7_151_150_1
+              - img [ref=f7e606]
+              - generic [ref=f7e607]:
+                - generic [ref=f7e608]: "MindPrompt: Party Games with AI"
+                - generic [ref=f7e611]: Coming soon
+                - generic [ref=f7e617]: Free
+            - link "Le Mans Ultimate VR Supported 22 Jul, 2025 33% off. R$200,00 normally, discounted to R$134,00" [ref=f7e618] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/2399420/Le_Mans_Ultimate/?snr=1_7_7_151_150_1
+              - img [ref=f7e620]
+              - generic [ref=f7e621]:
+                - generic [ref=f7e622]: Le Mans Ultimate
+                - generic [ref=f7e626]: VR Supported
+                - generic [ref=f7e627]: 22 Jul, 2025
+                - link "33% off. R$200,00 normally, discounted to R$134,00" [ref=f7e632]:
+                  - generic [ref=f7e633]: "-33%"
+                  - generic [ref=f7e634]:
+                    - generic [ref=f7e635]: R$200,00
+                    - generic [ref=f7e636]: R$134,00
+            - link "Among Us 16 Nov, 2018 40% off. R$14,99 normally, discounted to R$8,99" [ref=f7e637] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/945360/Among_Us/?snr=1_7_7_151_150_1
+              - img [ref=f7e639]
+              - generic [ref=f7e640]:
+                - generic [ref=f7e641]: Among Us
+                - generic [ref=f7e644]: 16 Nov, 2018
+                - link "40% off. R$14,99 normally, discounted to R$8,99" [ref=f7e649]:
+                  - generic [ref=f7e650]: "-40%"
+                  - generic [ref=f7e651]:
+                    - generic [ref=f7e652]: R$14,99
+                    - generic [ref=f7e653]: R$8,99
+            - 'link "Community College Hero: Fun and Games Demo 3 Feb, 2022 Free" [ref=f7e654] [cursor=pointer]':
+              - /url: https://store.steampowered.com/app/1782860/Community_College_Hero_Fun_and_Games/?snr=1_7_7_151_150_1
+              - img [ref=f7e656]
+              - generic [ref=f7e657]:
+                - generic [ref=f7e658]: "Community College Hero: Fun and Games Demo"
+                - generic [ref=f7e663]: 3 Feb, 2022
+                - generic [ref=f7e669]: Free
+            - link "Need for Speed™ Heat 4 Jun, 2020 90% off. R$279,00 normally, discounted to R$27,90" [ref=f7e670] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/1222680/Need_for_Speed_Heat/?snr=1_7_7_151_150_1
+              - img [ref=f7e672]
+              - generic [ref=f7e673]:
+                - generic [ref=f7e674]: Need for Speed™ Heat
+                - generic [ref=f7e677]: 4 Jun, 2020
+                - link "90% off. R$279,00 normally, discounted to R$27,90" [ref=f7e682]:
+                  - generic [ref=f7e683]: "-90%"
+                  - generic [ref=f7e684]:
+                    - generic [ref=f7e685]: R$279,00
+                    - generic [ref=f7e686]: R$27,90
+            - link "Dead Cells 6 Aug, 2018 50% off. R$47,49 normally, discounted to R$23,74" [ref=f7e687] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/588650/Dead_Cells/?snr=1_7_7_151_150_1
+              - img [ref=f7e689]
+              - generic [ref=f7e690]:
+                - generic [ref=f7e691]: Dead Cells
+                - generic [ref=f7e696]: 6 Aug, 2018
+                - link "50% off. R$47,49 normally, discounted to R$23,74" [ref=f7e701]:
+                  - generic [ref=f7e702]: "-50%"
+                  - generic [ref=f7e703]:
+                    - generic [ref=f7e704]: R$47,49
+                    - generic [ref=f7e705]: R$23,74
+            - link "Tabletop Simulator VR Supported 5 Jun, 2015 50% off. R$59,99 normally, discounted to R$29,99" [ref=f7e706] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/286160/Tabletop_Simulator/?snr=1_7_7_151_150_1
+              - img [ref=f7e708]
+              - generic [ref=f7e709]:
+                - generic [ref=f7e710]: Tabletop Simulator
+                - generic [ref=f7e716]: VR Supported
+                - generic [ref=f7e717]: 5 Jun, 2015
+                - link "50% off. R$59,99 normally, discounted to R$29,99" [ref=f7e722]:
+                  - generic [ref=f7e723]: "-50%"
+                  - generic [ref=f7e724]:
+                    - generic [ref=f7e725]: R$59,99
+                    - generic [ref=f7e726]: R$29,99
+            - link "Zenless Zone Zero 16 Jun, 2026 Free" [ref=f7e727] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/4162040/Zenless_Zone_Zero/?snr=1_7_7_151_150_1
+              - img [ref=f7e729]
+              - generic [ref=f7e730]:
+                - generic [ref=f7e731]: Zenless Zone Zero
+                - generic [ref=f7e734]: 16 Jun, 2026
+                - generic [ref=f7e741]: Free
+            - 'link "Monster Hunter World: Iceborne 9 Jan, 2020 85% off. R$169,00 normally, discounted to R$25,35" [ref=f7e742] [cursor=pointer]':
+              - /url: https://store.steampowered.com/app/1118010/Monster_Hunter_World_Iceborne/?snr=1_7_7_151_150_1
+              - img [ref=f7e744]
+              - generic [ref=f7e745]:
+                - generic [ref=f7e746]: "Monster Hunter World: Iceborne"
+                - generic [ref=f7e749]: 9 Jan, 2020
+                - link "85% off. R$169,00 normally, discounted to R$25,35" [ref=f7e754]:
+                  - generic [ref=f7e755]: "-85%"
+                  - generic [ref=f7e756]:
+                    - generic [ref=f7e757]: R$169,00
+                    - generic [ref=f7e758]: R$25,35
+            - 'link "Dune: Awakening 10 Jun, 2025 40% off. R$179,00 normally, discounted to R$107,40" [ref=f7e759] [cursor=pointer]':
+              - /url: https://store.steampowered.com/app/1172710/Dune_Awakening/?snr=1_7_7_151_150_1
+              - img [ref=f7e761]
+              - generic [ref=f7e762]:
+                - generic [ref=f7e763]: "Dune: Awakening"
+                - generic [ref=f7e766]: 10 Jun, 2025
+                - link "40% off. R$179,00 normally, discounted to R$107,40" [ref=f7e771]:
+                  - generic [ref=f7e772]: "-40%"
+                  - generic [ref=f7e773]:
+                    - generic [ref=f7e774]: R$179,00
+                    - generic [ref=f7e775]: R$107,40
+            - 'link "Total War: WARHAMMER II 28 Sep, 2017 75% off. R$252,00 normally, discounted to R$63,00" [ref=f7e776] [cursor=pointer]':
+              - /url: https://store.steampowered.com/app/594570/Total_War_WARHAMMER_II/?snr=1_7_7_151_150_1
+              - img [ref=f7e778]
+              - generic [ref=f7e779]:
+                - generic [ref=f7e780]: "Total War: WARHAMMER II"
+                - generic [ref=f7e785]: 28 Sep, 2017
+                - link "75% off. R$252,00 normally, discounted to R$63,00" [ref=f7e790]:
+                  - generic [ref=f7e791]: "-75%"
+                  - generic [ref=f7e792]:
+                    - generic [ref=f7e793]: R$252,00
+                    - generic [ref=f7e794]: R$63,00
+            - link "Core Keeper 27 Aug, 2024 30% off. R$59,99 normally, discounted to R$41,99" [ref=f7e795] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/1621690/Core_Keeper/?snr=1_7_7_151_150_1
+              - img [ref=f7e797]
+              - generic [ref=f7e798]:
+                - generic [ref=f7e799]: Core Keeper
+                - generic [ref=f7e803]: 27 Aug, 2024
+                - link "30% off. R$59,99 normally, discounted to R$41,99" [ref=f7e808]:
+                  - generic [ref=f7e809]: "-30%"
+                  - generic [ref=f7e810]:
+                    - generic [ref=f7e811]: R$59,99
+                    - generic [ref=f7e812]: R$41,99
+            - link "The Guild - Europa 1410 16 Jul, 2026" [ref=f7e813] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/2977260/The_Guild__Europa_1410/?snr=1_7_7_151_150_1
+              - img [ref=f7e815]
+              - generic [ref=f7e816]:
+                - generic [ref=f7e817]: The Guild - Europa 1410
+                - generic [ref=f7e820]: 16 Jul, 2026
+            - link "IdleOn 6 Nov, 2025 Free" [ref=f7e822] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/1476970/IdleOn/?snr=1_7_7_151_150_1
+              - img [ref=f7e824]
+              - generic [ref=f7e825]:
+                - generic [ref=f7e826]: IdleOn
+                - generic [ref=f7e829]: 6 Nov, 2025
+                - generic [ref=f7e836]: Free
+            - link "LEGO® Marvel™ Super Heroes 22 Oct, 2013 80% off. R$36,99 normally, discounted to R$7,39" [ref=f7e837] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/249130/LEGO_Marvel_Super_Heroes/?snr=1_7_7_151_150_1
+              - img [ref=f7e839]
+              - generic [ref=f7e840]:
+                - generic [ref=f7e841]: LEGO® Marvel™ Super Heroes
+                - generic [ref=f7e844]: 22 Oct, 2013
+                - link "80% off. R$36,99 normally, discounted to R$7,39" [ref=f7e849]:
+                  - generic [ref=f7e850]: "-80%"
+                  - generic [ref=f7e851]:
+                    - generic [ref=f7e852]: R$36,99
+                    - generic [ref=f7e853]: R$7,39
+            - 'link "Sniper Elite: Resistance 30 Jan, 2025 50% off. R$134,99 normally, discounted to R$67,49" [ref=f7e854] [cursor=pointer]':
+              - /url: https://store.steampowered.com/app/2169200/Sniper_Elite_Resistance/?snr=1_7_7_151_150_1
+              - img [ref=f7e856]
+              - generic [ref=f7e857]:
+                - generic [ref=f7e858]: "Sniper Elite: Resistance"
+                - generic [ref=f7e861]: 30 Jan, 2025
+                - link "50% off. R$134,99 normally, discounted to R$67,49" [ref=f7e866]:
+                  - generic [ref=f7e867]: "-50%"
+                  - generic [ref=f7e868]:
+                    - generic [ref=f7e869]: R$134,99
+                    - generic [ref=f7e870]: R$67,49
+      - generic [ref=f7e871]:
+        - generic [ref=f7e872]:
+          - button "Narrow by Price" [ref=f7e873] [cursor=pointer]:
+            - generic [ref=f7e874]: Narrow by Price
+          - generic [ref=f7e875]:
+            - generic [ref=f7e876]:
+              - button [ref=f7e878]: "13"
+              - generic [ref=f7e879]: Any Price
+            - button "Discounts & Events" [ref=f7e882] [cursor=pointer]:
+              - generic [ref=f7e885]: Discounts & Events
+            - button "Hide free to play items" [ref=f7e887] [cursor=pointer]:
+              - generic [ref=f7e890]: Hide free to play items
+        - generic [ref=f7e891]:
+          - button "Narrow by tag" [ref=f7e892] [cursor=pointer]:
+            - generic [ref=f7e893]: Narrow by tag
+          - generic [ref=f7e894]:
+            - generic [ref=f7e895]:
+              - generic [ref=f7e896] [cursor=pointer]:
+                - button "Indie 1,731" [ref=f7e897]:
+                  - generic [ref=f7e898]:
+                    - generic [ref=f7e900]: Indie
+                    - generic [ref=f7e901]: 1,731
+                - img [ref=f7e903]
+              - generic [ref=f7e904] [cursor=pointer]:
+                - button "Singleplayer 1,516" [ref=f7e905]:
+                  - generic [ref=f7e906]:
+                    - generic [ref=f7e908]: Singleplayer
+                    - generic [ref=f7e909]: 1,516
+                - img [ref=f7e911]
+              - generic [ref=f7e912] [cursor=pointer]:
+                - button "Action 1,259" [ref=f7e913]:
+                  - generic [ref=f7e914]:
+                    - generic [ref=f7e916]: Action
+                    - generic [ref=f7e917]: 1,259
+                - img [ref=f7e919]
+              - generic [ref=f7e920] [cursor=pointer]:
+                - button "Casual 1,258" [ref=f7e921]:
+                  - generic [ref=f7e922]:
+                    - generic [ref=f7e924]: Casual
+                    - generic [ref=f7e925]: 1,258
+                - img [ref=f7e927]
+              - generic [ref=f7e928] [cursor=pointer]:
+                - button "Adventure 1,256" [ref=f7e929]:
+                  - generic [ref=f7e930]:
+                    - generic [ref=f7e932]: Adventure
+                    - generic [ref=f7e933]: 1,256
+                - img [ref=f7e935]
+              - generic [ref=f7e936] [cursor=pointer]:
+                - button "RPG 1,059" [ref=f7e937]:
+                  - generic [ref=f7e938]:
+                    - generic [ref=f7e940]: RPG
+                    - generic [ref=f7e941]: 1,059
+                - img [ref=f7e943]
+              - generic [ref=f7e944] [cursor=pointer]:
+                - button "Multiplayer 1,037" [ref=f7e945]:
+                  - generic [ref=f7e946]:
+                    - generic [ref=f7e948]: Multiplayer
+                    - generic [ref=f7e949]: 1,037
+                - img [ref=f7e951]
+              - generic [ref=f7e952] [cursor=pointer]:
+                - button "Strategy 993" [ref=f7e953]:
+                  - generic [ref=f7e954]:
+                    - generic [ref=f7e956]: Strategy
+                    - generic [ref=f7e957]: "993"
+                - img [ref=f7e959]
+              - generic [ref=f7e960] [cursor=pointer]:
+                - button "Simulation 907" [ref=f7e961]:
+                  - generic [ref=f7e962]:
+                    - generic [ref=f7e964]: Simulation
+                    - generic [ref=f7e965]: "907"
+                - img [ref=f7e967]
+              - generic [ref=f7e968] [cursor=pointer]:
+                - button "3D 868" [ref=f7e969]:
+                  - generic [ref=f7e970]:
+                    - generic [ref=f7e972]: 3D
+                    - generic [ref=f7e973]: "868"
+                - img [ref=f7e975]
+              - generic [ref=f7e976] [cursor=pointer]:
+                - button "2D 748" [ref=f7e977]:
+                  - generic [ref=f7e978]:
+                    - generic [ref=f7e980]: 2D
+                    - generic [ref=f7e981]: "748"
+                - img [ref=f7e983]
+              - generic [ref=f7e984] [cursor=pointer]:
+                - button "PvP 685" [ref=f7e985]:
+                  - generic [ref=f7e986]:
+                    - generic [ref=f7e988]: PvP
+                    - generic [ref=f7e989]: "685"
+                - img [ref=f7e991]
+              - generic [ref=f7e992] [cursor=pointer]:
+                - button "Fantasy 543" [ref=f7e993]:
+                  - generic [ref=f7e994]:
+                    - generic [ref=f7e996]: Fantasy
+                    - generic [ref=f7e997]: "543"
+                - img [ref=f7e999]
+              - generic [ref=f7e1000] [cursor=pointer]:
+                - button "Colorful 531" [ref=f7e1001]:
+                  - generic [ref=f7e1002]:
+                    - generic [ref=f7e1004]: Colorful
+                    - generic [ref=f7e1005]: "531"
+                - img [ref=f7e1007]
+              - generic [ref=f7e1008] [cursor=pointer]:
+                - button "Online Co-Op 528" [ref=f7e1009]:
+                  - generic [ref=f7e1010]:
+                    - generic [ref=f7e1012]: Online Co-Op
+                    - generic [ref=f7e1013]: "528"
+                - img [ref=f7e1015]
+              - generic [ref=f7e1016] [cursor=pointer]:
+                - button "First-Person 525" [ref=f7e1017]:
+                  - generic [ref=f7e1018]:
+                    - generic [ref=f7e1020]: First-Person
+                    - generic [ref=f7e1021]: "525"
+                - img [ref=f7e1023]
+            - textbox [ref=f7e1024]: search for more tags
+        - button "Show selected types" [ref=f7e1026] [cursor=pointer]:
+          - generic [ref=f7e1027]: Show selected types
+        - button "Narrow by number of players" [ref=f7e1029] [cursor=pointer]:
+          - generic [ref=f7e1030]: Narrow by number of players
+        - button "Narrow by feature" [ref=f7e1032] [cursor=pointer]:
+          - generic [ref=f7e1033]: Narrow by feature
+        - button "Narrow by Controller Support" [ref=f7e1035] [cursor=pointer]:
+          - generic [ref=f7e1036]: Narrow by Controller Support
+        - button "Narrow by accessibility feature" [ref=f7e1038] [cursor=pointer]:
+          - generic [ref=f7e1039]: Narrow by accessibility feature
+        - generic [ref=f7e1040]:
+          - generic [ref=f7e1042]: Narrow by Deck Compatibility
+          - generic [ref=f7e1043]:
+            - button "Verified 185" [ref=f7e1045] [cursor=pointer]:
+              - generic [ref=f7e1046]:
+                - generic [ref=f7e1048]: Verified
+                - generic [ref=f7e1049]: "185"
+            - button "Playable 348" [ref=f7e1051] [cursor=pointer]:
+              - generic [ref=f7e1052]:
+                - generic [ref=f7e1054]: Playable
+                - generic [ref=f7e1055]: "348"
+            - link "Learn More" [ref=f7e1056] [cursor=pointer]:
+              - /url: https://steamdeck.com/en/verified
+        - button "Narrow by VR Support" [ref=f7e1058] [cursor=pointer]:
+          - generic [ref=f7e1059]: Narrow by VR Support
+        - generic [ref=f7e1060]:
+          - button "Narrow by OS" [ref=f7e1061] [cursor=pointer]:
+            - generic [ref=f7e1062]: Narrow by OS
+          - generic [ref=f7e1063]:
+            - button "Windows" [ref=f7e1065] [cursor=pointer]:
+              - generic [ref=f7e1068]: Windows
+            - button "macOS" [ref=f7e1070] [cursor=pointer]:
+              - generic [ref=f7e1073]: macOS
+            - button "SteamOS + Linux" [ref=f7e1075] [cursor=pointer]:
+              - generic [ref=f7e1078]: SteamOS + Linux
+        - button "Narrow by language" [ref=f7e1080] [cursor=pointer]:
+          - generic [ref=f7e1081]: Narrow by language
+  - contentinfo [ref=f7e1085]:
+    - generic [ref=f7e1086]:
+      - generic [ref=f7e1087]:
+        - link [ref=f7e1088] [cursor=pointer]:
+          - /url: https://store.steampowered.com/?snr=1_44_44_151
+          - img [ref=f7e1089]
+        - link [ref=f7e1099] [cursor=pointer]:
+          - /url: https://valvesoftware.com
+          - img [ref=f7e1100]
+      - paragraph [ref=f7e1105]:
+        - text: © 2026 Valve Corporation. All rights reserved. All trademarks are property of their respective owners in the US and other countries.
+        - text: VAT included in all prices where applicable.
+      - generic [ref=f7e1106]:
+        - link [ref=f7e1107] [cursor=pointer]:
+          - /url: https://www.youtube.com/@Steam
+          - img [ref=f7e1108]
+        - link [ref=f7e1110] [cursor=pointer]:
+          - /url: https://bsky.app/profile/steampowered.com
+          - img [ref=f7e1111]
+        - link [ref=f7e1113] [cursor=pointer]:
+          - /url: https://facebook.com/steam
+          - img [ref=f7e1114]
+        - link [ref=f7e1116] [cursor=pointer]:
+          - /url: https://twitter.com/steam
+          - img [ref=f7e1117]
+    - generic [ref=f7e1119]:
+      - heading "STEAM" [level=3] [ref=f7e1120]
+      - link "About Steam" [ref=f7e1121] [cursor=pointer]:
+        - /url: https://store.steampowered.com/about/?snr=1_44_44_151
+      - link "Steam SSA" [ref=f7e1122] [cursor=pointer]:
+        - /url: https://store.steampowered.com/subscriber_agreement/?snr=1_44_44_151
+      - link "Steamworks" [ref=f7e1123] [cursor=pointer]:
+        - /url: https://partner.steamgames.com/
+      - link "Steam Distribution" [ref=f7e1124] [cursor=pointer]:
+        - /url: https://partner.steamgames.com/steamdirect
+      - link "Gift Cards" [ref=f7e1125] [cursor=pointer]:
+        - /url: https://store.steampowered.com/digitalgiftcards/?snr=1_44_44_151
+    - generic [ref=f7e1126]:
+      - heading "VALVE" [level=3] [ref=f7e1127]
+      - link "About Valve" [ref=f7e1128] [cursor=pointer]:
+        - /url: https://valvesoftware.com/about
+      - link "Jobs" [ref=f7e1129] [cursor=pointer]:
+        - /url: https://valvesoftware.com/
+      - link "Hardware" [ref=f7e1130] [cursor=pointer]:
+        - /url: https://store.steampowered.com/hardware/?snr=1_44_44_151
+      - link "Recycling" [ref=f7e1131] [cursor=pointer]:
+        - /url: https://store.steampowered.com/hardware_recycling/?snr=1_44_44_151
+    - generic [ref=f7e1132]:
+      - heading "LEGAL" [level=3] [ref=f7e1133]
+      - link "Privacy" [ref=f7e1134] [cursor=pointer]:
+        - /url: https://store.steampowered.com/privacy_agreement/?snr=1_44_44_151
+      - link "Accessibility" [ref=f7e1135] [cursor=pointer]:
+        - /url: https://help.steampowered.com/faqs/view/10BB-D27A-6378-4436
+      - link "Notices & Policies" [ref=f7e1136] [cursor=pointer]:
+        - /url: https://store.steampowered.com/legal/?snr=1_44_44_151
+      - link "Cookies" [ref=f7e1137] [cursor=pointer]:
+        - /url: https://store.steampowered.com/account/cookiepreferences/?snr=1_44_44_151
+      - link "Refunds" [ref=f7e1138] [cursor=pointer]:
+        - /url: https://store.steampowered.com/steam_refunds/?snr=1_44_44_151
+    - generic [ref=f7e1139]:
+      - heading "MORE" [level=3] [ref=f7e1140]
+      - link "Get Steam" [ref=f7e1141] [cursor=pointer]:
+        - /url: https://store.steampowered.com/about/?snr=1_44_44_151
+      - link "Get Mobile Apps" [ref=f7e1142] [cursor=pointer]:
+        - /url: https://store.steampowered.com/mobile/?snr=1_44_44_151
+      - link "Get Support" [ref=f7e1143] [cursor=pointer]:
+        - /url: https://help.steampowered.com/
+      - link "My Account" [ref=f7e1144] [cursor=pointer]:
+        - /url: https://store.steampowered.com/account/?snr=1_44_44_151

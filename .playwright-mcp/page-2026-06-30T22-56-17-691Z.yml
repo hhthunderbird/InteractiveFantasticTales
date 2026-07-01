@@ -1,0 +1,187 @@
+- generic [ref=f6e1]:
+  - generic [ref=f6e2]:
+    - status [ref=f6e3]: Secao 5. Combate. Um Goblin da Chama avanca com sua adaga flamejante!
+    - banner "Cabecalho do jogo" [ref=f6e18]:
+      - 'button "Menu principal (atalho: , )" [ref=f6e19] [cursor=pointer]': ☰
+      - generic [ref=f6e20]:
+        - generic [ref=f6e21]: O Labirinto do Arquimago
+        - status [ref=f6e22]: Secao 5
+      - status "Status do personagem" [ref=f6e23]:
+        - generic "Vigor" [ref=f6e24]:
+          - generic [ref=f6e25]: "19"
+          - generic [ref=f6e26]: VIG
+        - generic "Sorte" [ref=f6e27]:
+          - generic [ref=f6e28]: "11"
+          - generic [ref=f6e29]: SOR
+        - generic "Ouro" [ref=f6e30]:
+          - generic [ref=f6e31]: "5"
+          - generic [ref=f6e32]: OUR
+    - img "Ilustracao da secao" [ref=f6e33]:
+      - img [ref=f6e105]
+      - generic [ref=f6e46]: Combate
+    - main "Conteudo da historia" [ref=f6e47]:
+      - article "Texto narrativo" [ref=f6e48]: Um Goblin da Chama avanca com sua adaga flamejante!
+      - listbox "Escolhas disponiveis"
+      - region "Combate" [ref=f6e114]:
+        - generic [ref=f6e115]:
+          - generic [ref=f6e116]: 👺
+          - generic [ref=f6e117]:
+            - generic [ref=f6e118]: Goblin da Chama
+            - generic [ref=f6e119]: SKILL 5 · STAM 5/5
+            - progressbar "Vida do inimigo" [ref=f6e121]
+        - generic [ref=f6e122]:
+          - generic [ref=f6e123]:
+            - text: Seu SKILL
+            - strong [ref=f6e124]: "12"
+          - generic [ref=f6e125]:
+            - text: Seu STAM
+            - strong [ref=f6e126]: 19/19
+        - generic [ref=f6e127]:
+          - button "Atacar" [active] [ref=f6e128] [cursor=pointer]:
+            - generic [ref=f6e129]: A
+            - text: Atacar
+          - button "Fugir" [ref=f6e130] [cursor=pointer]:
+            - generic [ref=f6e131]: F
+            - text: Fugir
+    - navigation "Barra de ferramentas" [ref=f6e61]:
+      - button "🔊 Ouvir" [ref=f6e62] [cursor=pointer]:
+        - generic [ref=f6e63]: "N"
+        - generic [ref=f6e64]: 🔊
+        - text: Ouvir
+      - button "📜 Ficha" [ref=f6e65] [cursor=pointer]:
+        - generic [ref=f6e66]: C
+        - generic [ref=f6e67]: 📜
+        - text: Ficha
+      - button "🎒 Itens" [ref=f6e68] [cursor=pointer]:
+        - generic [ref=f6e69]: I
+        - generic [ref=f6e70]: 🎒
+        - text: Itens
+      - button "💾 Salvar" [ref=f6e71] [cursor=pointer]:
+        - generic [ref=f6e72]: S
+        - generic [ref=f6e73]: 💾
+        - text: Salvar
+      - button "↩ Voltar" [ref=f6e74] [cursor=pointer]:
+        - generic [ref=f6e75]: T
+        - generic [ref=f6e76]: ↩
+        - text: Voltar
+      - button "⚙ Ajustes" [ref=f6e77] [cursor=pointer]:
+        - generic [ref=f6e78]: ","
+        - generic [ref=f6e79]: ⚙
+        - text: Ajustes
+  - generic:
+    - dialog "Ficha do Personagem":
+      - generic:
+        - heading "Ficha do Personagem" [level=3]
+        - 'button "Fechar ficha (atalho: Escape)"': ×
+  - generic:
+    - dialog "Inventario":
+      - generic:
+        - heading "Inventario" [level=3]
+        - 'button "Fechar inventario (atalho: Escape)"': ×
+  - generic:
+    - dialog "Ajustes":
+      - generic:
+        - heading "Ajustes" [level=3]
+        - 'button "Fechar ajustes (atalho: Escape)"': ×
+      - generic:
+        - generic:
+          - generic: Tamanho da fonte
+          - radiogroup "Tamanho da fonte":
+            - radio "P"
+            - radio "M" [checked]
+            - radio "G"
+            - radio "GG"
+        - generic:
+          - generic: Tema
+          - radiogroup "Tema de cores":
+            - radio "Escuro" [checked]
+            - radio "Sepia"
+            - radio "Contraste"
+        - generic:
+          - generic: Fonte Dyslexic
+          - switch "Desligado"
+        - generic:
+          - generic: Narracao TTS
+          - switch "Desligado"
+        - generic:
+          - generic: Vibracao
+          - switch "Ligado" [checked]
+        - generic:
+          - generic: Atalhos caractere (1-9)
+          - switch "Ligado" [checked]
+        - generic:
+          - text: Pressione
+          - generic: "?"
+          - text: para ver todos os atalhos.
+  - generic:
+    - dialog "Salvar / Carregar":
+      - generic:
+        - heading "Salvar / Carregar" [level=3]
+        - 'button "Fechar (atalho: Escape)"': ×
+  - generic:
+    - dialog "Linha do Tempo":
+      - generic:
+        - heading "Linha do Tempo" [level=3]
+        - 'button "Fechar (atalho: Escape)"': ×
+  - generic:
+    - dialog "Atalhos de Teclado":
+      - heading "Atalhos de Teclado" [level=2]
+      - generic:
+        - heading "Navegacao" [level=4]
+        - generic:
+          - generic: Escolher opcao 1-4
+          - generic: "1"
+          - generic: "2"
+          - generic: "3"
+          - generic: "4"
+        - generic:
+          - generic: Ficha do personagem
+          - generic: C
+        - generic:
+          - generic: Inventario
+          - generic: I
+        - generic:
+          - generic: Salvar/Carregar
+          - generic: S
+        - generic:
+          - generic: Linha do tempo
+          - generic: T
+        - generic:
+          - generic: Ajustes
+          - generic: ","
+        - generic:
+          - generic: Fechar painel / Voltar
+          - generic: Esc
+        - generic:
+          - generic: Esta ajuda
+          - generic: "?"
+      - generic:
+        - heading "Combate" [level=4]
+        - generic:
+          - generic: Atacar
+          - generic: A
+        - generic:
+          - generic: Fugir
+          - generic: F
+      - generic:
+        - heading "Narracao" [level=4]
+        - generic:
+          - generic: Ligar/Desligar TTS
+          - generic: "N"
+        - generic:
+          - generic: Ler secao atual
+          - generic: L
+      - generic:
+        - heading "Gestos (toque)" [level=4]
+        - generic:
+          - generic: Cima/Baixo/Esq/Dir
+          - generic: Escolhas 1-4
+        - generic:
+          - generic: Circulo horario
+          - generic: Avancar
+        - generic:
+          - generic: Circulo anti-horario
+          - generic: Voltar
+      - button "Fechar (Esc)"
+  - status
+  - alert

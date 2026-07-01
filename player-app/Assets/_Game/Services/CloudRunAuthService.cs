@@ -1,8 +1,7 @@
 using System;
-using System.Collections;
-using System.Text;
+using System.Threading.Tasks;
+using Firebase.Auth;
 using UnityEngine;
-using UnityEngine.Networking;
 using InteractiveFantasticTales.Core;
 
 namespace InteractiveFantasticTales.Services
@@ -15,9 +14,10 @@ namespace InteractiveFantasticTales.Services
         public long expiresAt;
     }
 
-    public class CloudRunAuthService
+    public class CloudRunAuthService : MonoBehaviour
     {
-        private const string CloudRunBaseUrl = "https://api-ift-cloudrun.example.com";
+        public static CloudRunAuthService Instance;
+
         private const string TokenCacheKey = "auth_cached_token";
         private const string UserIdCacheKey = "auth_user_id";
         private const string TokenExpiryCacheKey = "auth_token_expires";
@@ -26,16 +26,41 @@ namespace InteractiveFantasticTales.Services
 
         public event Action<bool> OnAuthStateChanged;
 
+        private FirebaseAuth _firebaseAuth;
+        private FirebaseUser _currentUser;
         private string _cachedToken;
         private string _cachedUserId;
         private long _tokenExpiresAt;
         private bool _isAuthenticated;
+        private bool _firebaseReady;
 
+        public bool Initialized { get; private set; }
         public bool IsAuthenticated => _isAuthenticated;
+        public bool IsFirebaseReady => _firebaseReady;
+        public string CachedUserId => _cachedUserId;
+
+        private void Awake()
+        {
+            if (Instance != null && Instance != this)
+            {
+                Destroy(gameObject);
+                return;
+            }
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+
+        private void Start()
+        {
+            Initialize();
+        }
 
         public void Initialize()
         {
+            if (Initialized) return;
+
             LoadTokenFromCache();
+            Initialized = true;
 
             if (!string.IsNullOrEmpty(_cachedToken) && _tokenExpiresAt > DateTimeOffset.UtcNow.ToUnixTimeSeconds())
             {
@@ -43,75 +68,93 @@ namespace InteractiveFantasticTales.Services
                 Debug.Log("[CloudRunAuthService] Restored auth session from cache");
             }
 
-#if UNITY_EDITOR || DEVELOPMENT_BUILD
-            if (IsMockMode() && !_isAuthenticated)
+            if (FirebaseBootstrap.Instance != null)
             {
-                SetMockAuth();
+                FirebaseBootstrap.Instance.OnFirebaseReady += OnFirebaseReadyHandler;
+                if (FirebaseBootstrap.Instance.IsReady)
+                    BindToFirebase();
             }
-#endif
-
-            if (!_isAuthenticated)
+            else
             {
-                Debug.Log("[CloudRunAuthService] No valid cached token - user not authenticated");
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
+                Debug.Log("[CloudRunAuthService] FirebaseBootstrap not available — using mock mode");
+                SetMockAuth();
+#endif
             }
         }
 
-        public IEnumerator GetAuthToken(Action<string> callback)
+        private void OnFirebaseReadyHandler(bool ready)
         {
-            if (callback == null) throw new ArgumentNullException(nameof(callback));
-
-            long now = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
-
-            if (!string.IsNullOrEmpty(_cachedToken) && _tokenExpiresAt > now + (RefreshBeforeExpiryMinutes * 60))
+            FirebaseBootstrap.Instance.OnFirebaseReady -= OnFirebaseReadyHandler;
+            if (ready)
+                BindToFirebase();
+            else
             {
-                callback(_cachedToken);
-                yield break;
-            }
-
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
-            if (IsMockMode())
-            {
+                Debug.Log("[CloudRunAuthService] Firebase not ready — using mock mode");
                 SetMockAuth();
-                callback(_cachedToken);
-                yield break;
-            }
+#else
+                Debug.LogError("[CloudRunAuthService] Firebase initialization failed — auth unavailable");
 #endif
+            }
+        }
 
-            var firebaseAuth = GetFirebaseAuthInstance();
-            if (firebaseAuth == null)
+        private void BindToFirebase()
+        {
+            _firebaseAuth = FirebaseBootstrap.Instance.Auth;
+            if (_firebaseAuth == null)
             {
-                Debug.LogWarning("[CloudRunAuthService] Firebase auth not available");
-                callback(null);
-                yield break;
+                Debug.LogError("[CloudRunAuthService] FirebaseAuth is null after bootstrap");
+                return;
             }
 
-            var currentUser = GetFirebaseCurrentUser(firebaseAuth);
-            if (currentUser == null)
+            _firebaseAuth.StateChanged += OnFirebaseStateChanged;
+            _firebaseReady = true;
+            _currentUser = _firebaseAuth.CurrentUser;
+
+            if (_currentUser != null)
             {
-                Debug.Log("[CloudRunAuthService] No Firebase user signed in");
+                _cachedUserId = _currentUser.UserId;
+                if (!_isAuthenticated)
+                    SetAuthenticated(true);
+
+                _ = RefreshTokenAsync();
+            }
+            else
+            {
+                _ = SignInAnonymouslyAsync();
+            }
+
+            Debug.Log("[CloudRunAuthService] Bound to Firebase Auth");
+        }
+
+        private void OnFirebaseStateChanged(object sender, EventArgs e)
+        {
+            if (_firebaseAuth == null) return;
+
+            _currentUser = _firebaseAuth.CurrentUser;
+
+            if (_currentUser != null)
+            {
+                _cachedUserId = _currentUser.UserId;
+                if (!_isAuthenticated)
+                    SetAuthenticated(true);
+                _ = RefreshTokenAsync();
+            }
+            else
+            {
                 SetAuthenticated(false);
-                callback(null);
-                yield break;
             }
+        }
 
-            var taskResult = GetTokenAsync(currentUser);
-            yield return new WaitUntil(() => IsTaskCompleted(taskResult));
+        public async Task<string> GetAuthTokenAsync()
+        {
+            var token = GetAuthTokenSync();
+            if (!string.IsNullOrEmpty(token))
+                return token;
 
-            if (IsTaskFaulted(taskResult) || IsTaskCanceled(taskResult))
-            {
-                Debug.LogWarning("[CloudRunAuthService] Token async failed: " + GetTaskExceptionMessage(taskResult));
-                callback(null);
-                yield break;
-            }
-
-            _cachedToken = GetTaskResult(taskResult);
-            _cachedUserId = GetFirebaseUserId(currentUser);
-            _tokenExpiresAt = now + (TokenTtlMinutes * 60);
-
-            SetAuthenticated(true);
-            SaveTokenToCache();
-            Debug.Log("[CloudRunAuthService] Token refreshed successfully");
-            callback(_cachedToken);
+            var refreshed = await RefreshTokenAsync();
+            return refreshed ? _cachedToken : null;
         }
 
         public string GetAuthTokenSync()
@@ -121,40 +164,121 @@ namespace InteractiveFantasticTales.Services
             if (!string.IsNullOrEmpty(_cachedToken) && _tokenExpiresAt > now + (RefreshBeforeExpiryMinutes * 60))
                 return _cachedToken;
 
+            if (_cachedToken != null && _tokenExpiresAt > now)
+                return _cachedToken;
+
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
-            if (IsMockMode())
+            if (!_firebaseReady)
             {
                 SetMockAuth();
                 return _cachedToken;
             }
 #endif
 
-            var firebaseAuth = GetFirebaseAuthInstance();
-            if (firebaseAuth == null) return null;
-
-            var currentUser = GetFirebaseCurrentUser(firebaseAuth);
-            if (currentUser == null) return null;
-
-            var taskResult = GetTokenAsync(currentUser);
-
-            try { WaitTask(taskResult, 5000); }
-            catch (Exception e) { Debug.LogWarning($"[CloudRunAuthService] WaitTask error: {e.Message}"); return null; }
-
-            if (IsTaskCompleted(taskResult) && !IsTaskFaulted(taskResult) && !IsTaskCanceled(taskResult))
+            if (_firebaseReady && _currentUser != null)
             {
-                _cachedToken = GetTaskResult(taskResult);
-                _cachedUserId = GetFirebaseUserId(currentUser);
-                _tokenExpiresAt = now + (TokenTtlMinutes * 60);
-                SetAuthenticated(true);
-                SaveTokenToCache();
+                _ = RefreshTokenAsync();
                 return _cachedToken;
             }
 
-            Debug.LogWarning("[CloudRunAuthService] Token task not completed successfully");
             return null;
         }
 
-        public void AttachAuthHeader(UnityWebRequest request)
+        public async Task<bool> RefreshTokenAsync()
+        {
+            if (!_firebaseReady || _currentUser == null)
+                return false;
+
+            try
+            {
+                var token = await _currentUser.TokenAsync(true);
+                _cachedToken = token;
+                _cachedUserId = _currentUser.UserId;
+                _tokenExpiresAt = DateTimeOffset.UtcNow.ToUnixTimeSeconds() + (TokenTtlMinutes * 60);
+                SaveTokenToCache();
+                SetAuthenticated(true);
+                return true;
+            }
+            catch (Exception e)
+            {
+                Debug.LogWarning($"[CloudRunAuthService] Token refresh failed: {e.Message}");
+                return false;
+            }
+        }
+
+        public async Task<bool> SignInAnonymouslyAsync()
+        {
+            if (!_firebaseReady)
+            {
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
+                SetMockAuth();
+                return true;
+#else
+                return false;
+#endif
+            }
+
+            try
+            {
+                var signInResult = await _firebaseAuth.SignInAnonymouslyAsync();
+                _currentUser = signInResult.User;
+                _cachedUserId = _currentUser.UserId;
+
+                await RefreshTokenAsync();
+                Debug.Log($"[CloudRunAuthService] Anonymous sign-in successful: {_currentUser.UserId}");
+                return true;
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"[CloudRunAuthService] Anonymous sign-in failed: {e.Message}");
+                SetAuthenticated(false);
+                return false;
+            }
+        }
+
+        public async Task<bool> LinkWithGoogleAsync(string idToken)
+        {
+            if (!_firebaseReady || _currentUser == null)
+                return false;
+
+            try
+            {
+                var credential = GoogleAuthProvider.GetCredential(idToken, null);
+                var linkResult = await _currentUser.LinkWithCredentialAsync(credential);
+                _currentUser = linkResult.User;
+                await RefreshTokenAsync();
+                Debug.Log($"[CloudRunAuthService] Google account linked: {_currentUser.UserId}");
+                return true;
+            }
+            catch (Exception e)
+            {
+                Debug.LogWarning($"[CloudRunAuthService] Google link failed: {e.Message}");
+                return false;
+            }
+        }
+
+        public async Task<bool> SignInWithGoogleAsync(string idToken)
+        {
+            if (!_firebaseReady)
+                return false;
+
+            try
+            {
+                var credential = GoogleAuthProvider.GetCredential(idToken, null);
+                _currentUser = await _firebaseAuth.SignInWithCredentialAsync(credential);
+                _cachedUserId = _currentUser.UserId;
+                await RefreshTokenAsync();
+                Debug.Log($"[CloudRunAuthService] Google sign-in: {_currentUser.UserId}");
+                return true;
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"[CloudRunAuthService] Google sign-in failed: {e.Message}");
+                return false;
+            }
+        }
+
+        public void AttachAuthHeader(UnityEngine.Networking.UnityWebRequest request)
         {
             if (request == null) throw new ArgumentNullException(nameof(request));
 
@@ -169,20 +293,16 @@ namespace InteractiveFantasticTales.Services
                 return _cachedUserId;
 
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
-            if (IsMockMode())
+            if (!_firebaseReady)
             {
                 SetMockAuth();
                 return _cachedUserId;
             }
 #endif
 
-            var firebaseAuth = GetFirebaseAuthInstance();
-            if (firebaseAuth == null) return null;
-
-            var currentUser = GetFirebaseCurrentUser(firebaseAuth);
-            if (currentUser != null)
+            if (_firebaseReady && _currentUser != null)
             {
-                _cachedUserId = GetFirebaseUserId(currentUser);
+                _cachedUserId = _currentUser.UserId;
                 return _cachedUserId;
             }
 
@@ -196,6 +316,13 @@ namespace InteractiveFantasticTales.Services
             _tokenExpiresAt = 0;
             SetAuthenticated(false);
             ClearTokenCache();
+            _currentUser = null;
+
+            if (_firebaseReady && _firebaseAuth != null)
+            {
+                _firebaseAuth.SignOut();
+            }
+
             Debug.Log("[CloudRunAuthService] User signed out");
         }
 
@@ -256,156 +383,10 @@ namespace InteractiveFantasticTales.Services
             SecureStorage.ObfuscatedPrefs.Save();
         }
 
-        #region Firebase Reflection Helpers
-
-        private static object GetFirebaseAuthInstance()
+        private void OnDestroy()
         {
-            try
-            {
-                var type = Type.GetType("Firebase.Auth.FirebaseAuth, Firebase.Auth");
-                if (type == null) return null;
-                var prop = type.GetProperty("DefaultInstance");
-                return prop?.GetValue(null);
-            }
-            catch
-            {
-                return null;
-            }
-        }
-
-        private static object GetFirebaseCurrentUser(object firebaseAuth)
-        {
-            if (firebaseAuth == null) return null;
-            try
-            {
-                var prop = firebaseAuth.GetType().GetProperty("CurrentUser");
-                return prop?.GetValue(firebaseAuth);
-            }
-            catch
-            {
-                return null;
-            }
-        }
-
-        private static string GetFirebaseUserId(object firebaseUser)
-        {
-            if (firebaseUser == null) return null;
-            try
-            {
-                var prop = firebaseUser.GetType().GetProperty("UserId");
-                return prop?.GetValue(firebaseUser) as string;
-            }
-            catch
-            {
-                return null;
-            }
-        }
-
-        private static object GetTokenAsync(object firebaseUser)
-        {
-            if (firebaseUser == null) return null;
-            try
-            {
-                var method = firebaseUser.GetType().GetMethod("TokenAsync", new[] { typeof(bool) });
-                return method?.Invoke(firebaseUser, new object[] { true });
-            }
-            catch
-            {
-                return null;
-            }
-        }
-
-        private static bool IsTaskCompleted(object task)
-        {
-            if (task == null) return false;
-            try
-            {
-                var prop = task.GetType().GetProperty("IsCompleted");
-                return prop != null && (bool)prop.GetValue(task);
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
-        private static bool IsTaskFaulted(object task)
-        {
-            if (task == null) return false;
-            try
-            {
-                var prop = task.GetType().GetProperty("IsFaulted");
-                return prop != null && (bool)prop.GetValue(task);
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
-        private static bool IsTaskCanceled(object task)
-        {
-            if (task == null) return false;
-            try
-            {
-                var prop = task.GetType().GetProperty("IsCanceled");
-                return prop != null && (bool)prop.GetValue(task);
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
-        private static string GetTaskResult(object task)
-        {
-            if (task == null) return null;
-            try
-            {
-                var prop = task.GetType().GetProperty("Result");
-                return prop?.GetValue(task) as string;
-            }
-            catch
-            {
-                return null;
-            }
-        }
-
-        private static string GetTaskExceptionMessage(object task)
-        {
-            if (task == null) return "null task";
-            try
-            {
-                var prop = task.GetType().GetProperty("Exception");
-                var ex = prop?.GetValue(task);
-                if (ex == null) return "unknown error";
-                var msgProp = ex.GetType().GetProperty("Message");
-                return msgProp?.GetValue(ex) as string ?? "unknown error";
-            }
-            catch
-            {
-                return "unknown error";
-            }
-        }
-
-        private static void WaitTask(object task, int millisecondsTimeout)
-        {
-            if (task == null) return;
-            try
-            {
-                var method = task.GetType().GetMethod("Wait", new[] { typeof(int) });
-                method?.Invoke(task, new object[] { millisecondsTimeout });
-            }
-            catch
-            {
-            }
-        }
-
-        #endregion
-
-        private bool IsMockMode()
-        {
-            return true;
+            if (_firebaseAuth != null)
+                _firebaseAuth.StateChanged -= OnFirebaseStateChanged;
         }
     }
 }

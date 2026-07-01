@@ -1,0 +1,478 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - link "Skip to main content":
+      - /url: "#main-content"
+    - banner [ref=e3]:
+      - generic [ref=e7]:
+        - link "Statista Homepage" [ref=e8] [cursor=pointer]:
+          - /url: https://www.statista.com
+          - img [ref=e9]
+        - search [ref=e24]:
+          - textbox "Search" [ref=e25]:
+            - /placeholder: Search Statistics
+          - button "Search for content" [ref=e26] [cursor=pointer]:
+            - img [ref=e27]
+        - generic [ref=e29]:
+          - navigation "Primary" [ref=e31]:
+            - list [ref=e32]:
+              - listitem [ref=e33]:
+                - generic [ref=e34]:
+                  - link "Statistics" [ref=e35] [cursor=pointer]:
+                    - /url: /markets/
+                  - button "Statistics" [ref=e36] [cursor=pointer]:
+                    - img [ref=e37]
+              - listitem [ref=e39]:
+                - button "Insights" [ref=e40] [cursor=pointer]:
+                  - text: Insights
+                  - img [ref=e41]
+              - listitem [ref=e43]:
+                - link "Research AI" [ref=e44] [cursor=pointer]:
+                  - /url: /research-ai/
+              - listitem [ref=e45]:
+                - generic [ref=e46]:
+                  - link "Connect" [ref=e47] [cursor=pointer]:
+                    - /url: /business/connect-api/
+                    - text: Connect
+                    - generic [ref=e48]: New
+                  - button "Connect" [ref=e49] [cursor=pointer]:
+                    - img [ref=e50]
+              - listitem [ref=e52]:
+                - link "Daily Data" [ref=e53] [cursor=pointer]:
+                  - /url: /chartoftheday/
+              - listitem [ref=e54]:
+                - generic [ref=e55]:
+                  - link "Services" [ref=e56] [cursor=pointer]:
+                    - /url: /business/about-us/
+                  - button "Services" [ref=e57] [cursor=pointer]:
+                    - img [ref=e58]
+              - listitem [ref=e60]:
+                - button "Solutions" [ref=e61] [cursor=pointer]:
+                  - text: Solutions
+                  - img [ref=e62]
+              - listitem [ref=e64]:
+                - generic [ref=e65]:
+                  - link "Prices & Access" [ref=e66] [cursor=pointer]:
+                    - /url: /accounts/individuals/
+                  - button "Prices & Access" [ref=e67] [cursor=pointer]:
+                    - img [ref=e68]
+          - navigation "Meta" [ref=e71]:
+            - list [ref=e72]:
+              - listitem [ref=e73]:
+                - button "Select language" [ref=e74] [cursor=pointer]:
+                  - img [ref=e75]
+              - listitem [ref=e77]:
+                - button "Login" [ref=e79] [cursor=pointer]
+    - main [ref=e81]:
+      - link "Skip to additional information":
+        - /url: "#topicSidebar"
+      - generic [ref=e83]:
+        - generic [ref=e84]:
+          - article [ref=e85]:
+            - navigation "breadcrumbs" [ref=e86]:
+              - list [ref=e87]:
+                - listitem [ref=e88]:
+                  - link "Media" [ref=e89] [cursor=pointer]:
+                    - /url: /markets/417/media/
+                  - text: ›
+                - listitem [ref=e90]:
+                  - link "TV, Video & Film" [ref=e91] [cursor=pointer]:
+                    - /url: /markets/417/topic/476/tv-video-film/
+            - heading "Connected TV viewership in the United States – statistics & facts" [level=1] [ref=e92]
+            - article [ref=e93]:
+              - generic [ref=e94]:
+                - text: With the proliferation of broadband internet access in U.S. homes, connected TV devices such as streaming boxes and sticks, smart TVs, and gaming consoles, are growing in popularity. It is now standard for modern TV sets and is a prerequisite for being able to use popular video or music streaming offers. American viewers are keen to stream via CTVs as they search for new options after cutting the cord. The
+                - link "penetration rates of smart TV and streaming media players" [ref=e95] [cursor=pointer]:
+                  - /url: /statistics/1240936/ctv-device-and-connected-smart-tv-penetration-united-states/
+                - text: steadily increased in recent years, making connected TV the device of choice when streaming video. While consumers can easily download major services such as Netflix, Max, and Disney+ to their connected devices, some TV and media player brands like Roku and Samsung even provide their own streaming services.
+              - generic [ref=e96]:
+                - generic [ref=e97]:
+                  - button "Show more" [ref=e98] [cursor=pointer]
+                  - generic [ref=e99]:
+                    - link "Log in" [ref=e100] [cursor=pointer]:
+                      - /url: /login
+                    - text: or
+                    - link "register" [ref=e101] [cursor=pointer]:
+                      - /url: /accounts/individuals?recommendation=discovery
+                    - text: to access full data.
+                - generic [ref=e102]:
+                  - generic [ref=e103]:
+                    - text: Published by
+                    - generic [ref=e104]:
+                      - link "Julia Stoll" [ref=e105] [cursor=pointer]:
+                        - /url: /aboutus/our-research-commitment/662/julia-stoll
+                      - tooltip "Julia Stoll Julia Stoll Research expert covering TV and video media" [ref=e106]:
+                        - generic [ref=e110]:
+                          - img "Julia Stoll" [ref=e112]
+                          - generic [ref=e113]:
+                            - generic [ref=e114]: Julia Stoll
+                            - generic [ref=e115]: Research expert covering TV and video media
+                    - text: ","
+                  - text: Dec 17, 2025
+          - generic [ref=e116]:
+            - heading "Editor’s Picks Current statistics on this topic" [level=2] [ref=e117]:
+              - generic [ref=e118]: Editor’s Picks
+              - generic [ref=e119]: Current statistics on this topic
+            - link "TV Revenue of the televisions industry worldwide 2018-2030" [ref=e121] [cursor=pointer]:
+              - /url: /forecasts/1283787/global-television-revenue/
+              - img [ref=e124]
+              - generic [ref=e126]:
+                - paragraph [ref=e127]: TV
+                - paragraph [ref=e128]: Revenue of the televisions industry worldwide 2018-2030
+            - link "TV Number of TV viewers worldwide 2017-2030" [ref=e130] [cursor=pointer]:
+              - /url: /forecasts/1207931/tv-viewers-worldwide-number/
+              - img [ref=e133]
+              - generic [ref=e135]:
+                - paragraph [ref=e136]: TV
+                - paragraph [ref=e137]: Number of TV viewers worldwide 2017-2030
+            - link "Consumer Electronics Americans owning a smart TV, by age 2024" [ref=e139] [cursor=pointer]:
+              - /url: /statistics/754397/people-living-in-households-that-own-smart-tv-usa/
+              - img [ref=e142]
+              - generic [ref=e144]:
+                - paragraph [ref=e145]: Consumer Electronics
+                - paragraph [ref=e146]: Americans owning a smart TV, by age 2024
+          - generic [ref=e147]:
+            - heading "Recommended statistics" [level=2] [ref=e148]
+            - generic [ref=e150]:
+              - heading "Overview" [level=3] [ref=e151]
+              - list [ref=e152]:
+                - listitem [ref=e153]:
+                  - link "VOD consumption time worldwide 2021-2024, by device" [ref=e154] [cursor=pointer]:
+                    - /url: /statistics/1329455/vod-daily-view-time-by-device/
+                    - generic [ref=e156]: VOD consumption time worldwide 2021-2024, by device
+                - listitem [ref=e157]:
+                  - link "VOD global device share 2021-2024" [ref=e158] [cursor=pointer]:
+                    - /url: /statistics/1329449/vod-device-usage-share-worldwide/
+                    - generic [ref=e160]: VOD global device share 2021-2024
+                - listitem [ref=e161]:
+                  - link "Americans owning a smart TV, by age 2024" [ref=e162] [cursor=pointer]:
+                    - /url: /statistics/754397/people-living-in-households-that-own-smart-tv-usa/
+                    - generic [ref=e164]: Americans owning a smart TV, by age 2024
+                - listitem [ref=e165]:
+                  - link "Most common TV features in the U.S. 2025" [ref=e166] [cursor=pointer]:
+                    - /url: /forecasts/997186/most-common-tv-features-in-the-us/
+                    - generic [ref=e168]: Most common TV features in the U.S. 2025
+                - listitem [ref=e169]:
+                  - link "Daily smart TV viewing time in the U.S. and Europe 2021-2024" [ref=e170] [cursor=pointer]:
+                    - /url: /statistics/1608223/average-daily-time-spent-watching-smart-tv-us-eu/
+                    - generic [ref=e172]: Daily smart TV viewing time in the U.S. and Europe 2021-2024
+                - listitem [ref=e173]:
+                  - link "Penetration of smart TV in the U.S. 2020-2025" [ref=e174] [cursor=pointer]:
+                    - /url: /statistics/1240936/ctv-device-and-connected-smart-tv-penetration-united-states/
+                    - generic [ref=e176]: Penetration of smart TV in the U.S. 2020-2025
+                - listitem [ref=e177]:
+                  - link "CTV advertising revenue worldwide 2020-2026" [ref=e178] [cursor=pointer]:
+                    - /url: /statistics/273713/global-online-ctv-television-advertising-revenue/
+                    - generic [ref=e180]: CTV advertising revenue worldwide 2020-2026
+            - generic [ref=e182]:
+              - heading "Device brands and streaming services" [level=3] [ref=e183]
+              - list [ref=e184]:
+                - listitem [ref=e185]:
+                  - link "Household reach of connected TV apps in the U.S. 2024, by service" [ref=e186] [cursor=pointer]:
+                    - /url: /statistics/1440726/household-reach-ctv-apps-us/
+                    - generic [ref=e188]: Household reach of connected TV apps in the U.S. 2024, by service
+                - listitem [ref=e189]:
+                  - link "Most watched SVOD services among CTV users in the U.S. 2024-2025" [ref=e190] [cursor=pointer]:
+                    - /url: /statistics/1616365/top-svod-users-us-ctv-viewers/
+                    - generic [ref=e192]: Most watched SVOD services among CTV users in the U.S. 2024-2025
+                - listitem [ref=e193]:
+                  - link "Time spent share on connected TV in the U.S. 2024, by service" [ref=e194] [cursor=pointer]:
+                    - /url: /statistics/1300892/time-spent-share-ctv-service-us/
+                    - generic [ref=e196]: Time spent share on connected TV in the U.S. 2024, by service
+                - listitem [ref=e197]:
+                  - link "Share of time spent viewing CTV in the U.S. 2024, by brand" [ref=e198] [cursor=pointer]:
+                    - /url: /statistics/1491323/time-spent-viewing-connected-tv-brand-us/
+                    - generic [ref=e200]: Share of time spent viewing CTV in the U.S. 2024, by brand
+                - listitem [ref=e201]:
+                  - link "Roku's active accounts worldwide 2016-2024" [ref=e202] [cursor=pointer]:
+                    - /url: /statistics/714052/roku-monthly-streamers/
+                    - generic [ref=e204]: Roku's active accounts worldwide 2016-2024
+                - listitem [ref=e205]:
+                  - link "Roku total hours streamed worldwide by quarter 2018-2025" [ref=e206] [cursor=pointer]:
+                    - /url: /statistics/726024/roku-hours-streamed/
+                    - generic [ref=e208]: Roku total hours streamed worldwide by quarter 2018-2025
+            - generic [ref=e210]:
+              - heading "Consumer behavior" [level=3] [ref=e211]
+              - list [ref=e212]:
+                - listitem [ref=e213]:
+                  - link "Share of connected TV users in the U.S. 2024, by generation" [ref=e214] [cursor=pointer]:
+                    - /url: /statistics/304853/number-of-connected-tv-users-usa/
+                    - generic [ref=e216]: Share of connected TV users in the U.S. 2024, by generation
+                - listitem [ref=e217]:
+                  - link "Major sources for CTV users to find new content to watch in the U.S. 2025" [ref=e218] [cursor=pointer]:
+                    - /url: /statistics/1616373/top-sources-find-new-content-to-watch-us/
+                    - generic [ref=e220]: Major sources for CTV users to find new content to watch in the U.S. 2025
+                - listitem [ref=e221]:
+                  - link "Major sources for Asian CTV users to find new content to watch in the U.S. 2024" [ref=e222] [cursor=pointer]:
+                    - /url: /statistics/1608369/top-sources-find-new-content-to-watch-asians-us/
+                    - generic [ref=e224]: Major sources for Asian CTV users to find new content to watch in the U.S. 2024
+                - listitem [ref=e225]:
+                  - link "Popular activities while watching TV among CTV users in the U.S. 2025" [ref=e226] [cursor=pointer]:
+                    - /url: /statistics/1559211/popular-activities-while-watching-tv-us/
+                    - generic [ref=e228]: Popular activities while watching TV among CTV users in the U.S. 2025
+                - listitem [ref=e229]:
+                  - link "Popular activities while watching TV among Asian CTV users in the U.S. 2024" [ref=e230] [cursor=pointer]:
+                    - /url: /statistics/1559203/popular-activities-while-watching-tv-asian-us/
+                    - generic [ref=e232]: Popular activities while watching TV among Asian CTV users in the U.S. 2024
+                - listitem [ref=e233]:
+                  - link "Popular activities while watching TV among Black CTV users in the U.S. 2024" [ref=e234] [cursor=pointer]:
+                    - /url: /statistics/1559213/popular-activities-while-watching-tv-black-americans/
+                    - generic [ref=e236]: Popular activities while watching TV among Black CTV users in the U.S. 2024
+                - listitem [ref=e237]:
+                  - link "Number of Super Bowl viewers on connected TV in the U.S. 2022-2025" [ref=e238] [cursor=pointer]:
+                    - /url: /statistics/1366376/super-bowl-viewership-connected-tv-us/
+                    - generic [ref=e240]: Number of Super Bowl viewers on connected TV in the U.S. 2022-2025
+            - generic [ref=e242]:
+              - heading "Perception of CTV ads" [level=3] [ref=e243]
+              - list [ref=e244]:
+                - listitem [ref=e245]:
+                  - link "Digital video ad views in the U.S. 2020-2025, by device" [ref=e246] [cursor=pointer]:
+                    - /url: /statistics/324910/digital-video-ad-views-device-usa/
+                    - generic [ref=e248]: Digital video ad views in the U.S. 2020-2025, by device
+                - listitem [ref=e249]:
+                  - link "Top ad preferences of CTV users in the U.S. 2025" [ref=e250] [cursor=pointer]:
+                    - /url: /statistics/1473041/top-ad-preferences-connected-tv-users-united-states/
+                    - generic [ref=e252]: Top ad preferences of CTV users in the U.S. 2025
+                - listitem [ref=e253]:
+                  - link "Preferred ad categories among CTV users U.S. 2024" [ref=e254] [cursor=pointer]:
+                    - /url: /statistics/1473048/most-popular-ad-categories-ctv-users-united-states/
+                    - generic [ref=e256]: Preferred ad categories among CTV users U.S. 2024
+                - listitem [ref=e257]:
+                  - link "Top methods used to buy product/service after seeing TV ad U.S. 2025" [ref=e258] [cursor=pointer]:
+                    - /url: /statistics/1472574/top-purchase-methods-tv-ads/
+                    - generic [ref=e260]: Top methods used to buy product/service after seeing TV ad U.S. 2025
+        - complementary [ref=e261]:
+          - generic [ref=e262]:
+            - link "Share on Twitter" [ref=e263] [cursor=pointer]:
+              - /url: https://twitter.com/intent/tweet?text=Connected%20TV%20viewership%20in%20the%20United%20States%20%E2%80%93%20statistics%20%26%20facts%20https%3A%2F%2Fwww.statista.com%2Ftopics%2F8687%2Fconnected-tv-viewership-in-the-united-states%2F
+              - img [ref=e264]
+            - link "Share on LinkedIn" [ref=e266] [cursor=pointer]:
+              - /url: https://www.linkedin.com/sharing/share-offsite/?url=https://www.statista.com/topics/8687/connected-tv-viewership-in-the-united-states/?latest
+              - img [ref=e267]
+            - link "Share on Facebook" [ref=e269] [cursor=pointer]:
+              - /url: https://www.facebook.com/sharer.php?u=https://www.statista.com/topics/8687/connected-tv-viewership-in-the-united-states/
+              - img [ref=e270]
+          - generic [ref=e272]:
+            - generic [ref=e273]:
+              - heading "Key insights" [level=2] [ref=e274]
+              - img [ref=e275]
+            - generic [ref=e277]:
+              - list [ref=e278]:
+                - listitem [ref=e279]: Most common TV feature in the U.S.
+                - listitem [ref=e280]:
+                  - link "Statistic - Most common TV features in the U.S. 2025 -" [ref=e281] [cursor=pointer]:
+                    - /url: /forecasts/997186/most-common-tv-features-in-the-us/
+                    - text: Smart TV
+              - list [ref=e282]:
+                - listitem [ref=e283]: Most popular device watching VOD worldwide
+                - listitem [ref=e284]:
+                  - link "Statistic - VOD consumption time worldwide 2021-2024, by device -" [ref=e285] [cursor=pointer]:
+                    - /url: /statistics/1329455/vod-daily-view-time-by-device/
+                    - text: Console
+              - list [ref=e286]:
+                - listitem [ref=e287]: Smart TV penetration rate in the U.S.
+                - listitem [ref=e288]:
+                  - generic [ref=e289]:
+                    - link "Statistic - Penetration of smart TV in the U.S. 2020-2025 - Log in or register to access full data." [ref=e290] [cursor=pointer]:
+                      - /url: /statistics/1240936/ctv-device-and-connected-smart-tv-penetration-united-states/
+                      - text: "**%"
+                    - tooltip "Log in or register to access full data. Get access now" [ref=e291]:
+                      - generic [ref=e292]:
+                        - text: Log in or register to access full data.
+                        - button "Get access now" [ref=e293] [cursor=pointer]
+            - button "Show all numbers" [ref=e295] [cursor=pointer]
+          - generic [ref=e296]:
+            - heading "Report on the topic" [level=2] [ref=e297]
+            - link "Explore this report - Connected TV viewership in the United States" [ref=e298] [cursor=pointer]:
+              - /url: /study/119797/connected-tv-viewership-in-the-united-states/
+              - generic [ref=e299]:
+                - img "Connected TV viewership in the United States" [ref=e300]
+                - generic [ref=e302]: Top Seller
+              - generic [ref=e303]:
+                - generic [ref=e304]: Explore this report
+                - img [ref=e305]
+          - generic [ref=e307]:
+            - heading "Related topics" [level=2] [ref=e308]
+            - list [ref=e310]:
+              - listitem [ref=e311]:
+                - link "TV technology" [ref=e312] [cursor=pointer]:
+                  - /url: /topics/6187/tv-technology/
+                  - img [ref=e313]
+                  - generic [ref=e315]: TV technology
+              - listitem [ref=e316]:
+                - link "Video streaming in the United States" [ref=e317] [cursor=pointer]:
+                  - /url: /topics/11015/video-streaming-in-the-united-states/
+                  - img [ref=e318]
+                  - generic [ref=e320]: Video streaming in the United States
+              - listitem [ref=e321]:
+                - link "TV signal technologies" [ref=e322] [cursor=pointer]:
+                  - /url: /topics/5023/tv-signal-technologies/
+                  - img [ref=e323]
+                  - generic [ref=e325]: TV signal technologies
+              - listitem [ref=e326]:
+                - link "Ad-supported video-on-demand in the United States" [ref=e327] [cursor=pointer]:
+                  - /url: /topics/7421/ad-supported-video-on-demand-in-the-us/
+                  - img [ref=e328]
+                  - generic [ref=e330]: Ad-supported video-on-demand in the United States
+              - listitem [ref=e331]:
+                - link "Subscription video-on-demand in the United States" [ref=e332] [cursor=pointer]:
+                  - /url: /topics/2702/subscription-video-on-demand/
+                  - img [ref=e333]
+                  - generic [ref=e335]: Subscription video-on-demand in the United States
+              - listitem [ref=e336]:
+                - link "Smart and connected TVs" [ref=e337] [cursor=pointer]:
+                  - /url: /topics/4761/smart-and-connected-tvs/
+                  - img [ref=e338]
+                  - generic [ref=e340]: Smart and connected TVs
+              - listitem [ref=e341]:
+                - link "Online TV in the United States" [ref=e342] [cursor=pointer]:
+                  - /url: /topics/1514/online-tv/
+                  - img [ref=e343]
+                  - generic [ref=e345]: Online TV in the United States
+              - listitem [ref=e346]:
+                - link "Smart TVs in Germany" [ref=e347] [cursor=pointer]:
+                  - /url: /topics/6649/smart-tvs-in-germany/
+                  - img [ref=e348]
+                  - generic [ref=e350]: Smart TVs in Germany
+          - generic [ref=e351]:
+            - heading "Key figures" [level=2] [ref=e352]
+            - generic [ref=e353]:
+              - generic [ref=e354]:
+                - generic [ref=e355]:
+                  - heading "Device brands and streaming services" [level=3] [ref=e356]
+                  - img [ref=e357]
+                - list [ref=e359]:
+                  - listitem [ref=e360]:
+                    - list [ref=e361]:
+                      - listitem [ref=e362]: Most popular SVOD service on CTVs in the U.S.
+                      - listitem [ref=e363]:
+                        - link "Statistic - Most watched SVOD services among CTV users in the U.S. 2024-2025 - Netflix" [ref=e364] [cursor=pointer]:
+                          - /url: /statistics/1616365/top-svod-users-us-ctv-viewers/
+                          - text: Netflix
+                  - listitem [ref=e365]:
+                    - list [ref=e366]:
+                      - listitem [ref=e367]: Number of active Roku accounts worldwide
+                      - listitem [ref=e368]:
+                        - link "Statistic - Roku's active accounts worldwide 2016-2024 - 89.8m" [ref=e369] [cursor=pointer]:
+                          - /url: /statistics/714052/roku-monthly-streamers/
+                          - text: 89.8m
+                  - listitem [ref=e370]:
+                    - list [ref=e371]:
+                      - listitem [ref=e372]: Most popular connected TV brand in the U.S.
+                      - listitem [ref=e373]:
+                        - link "Statistic - Share of time spent viewing CTV in the U.S. 2024, by brand - Roku" [ref=e374] [cursor=pointer]:
+                          - /url: /statistics/1491323/time-spent-viewing-connected-tv-brand-us/
+                          - text: Roku
+              - generic [ref=e375]:
+                - generic [ref=e376]:
+                  - heading "Consumer behavior" [level=3] [ref=e377]
+                  - img [ref=e378]
+                - list [ref=e380]:
+                  - listitem [ref=e381]:
+                    - list [ref=e382]:
+                      - listitem [ref=e383]: Most likely generation to use CTVs in the U.S.
+                      - listitem [ref=e384]:
+                        - link "Statistic - Share of connected TV users in the U.S. 2024, by generation - Baby boomers" [ref=e385] [cursor=pointer]:
+                          - /url: /statistics/304853/number-of-connected-tv-users-usa/
+                          - text: Baby boomers
+                  - listitem [ref=e386]:
+                    - list [ref=e387]:
+                      - listitem [ref=e388]: Number of households watching the Super Bowl on connected TV in the U.S.
+                      - listitem [ref=e389]:
+                        - generic [ref=e390]:
+                          - link "Statistic - Number of Super Bowl viewers on connected TV in the U.S. 2022-2025 - ****m" [ref=e391] [cursor=pointer]:
+                            - /url: /statistics/1366376/super-bowl-viewership-connected-tv-us/
+                            - text: "****m"
+                          - tooltip "Log in or register to access full data. Get access now" [ref=e392]:
+                            - generic [ref=e393]:
+                              - text: Log in or register to access full data.
+                              - button "Get access now" [ref=e394] [cursor=pointer]
+                  - listitem [ref=e395]:
+                    - list [ref=e396]:
+                      - listitem [ref=e397]: Top activity while watching content on CTVs in the U.S.
+                      - listitem [ref=e398]:
+                        - link "Statistic - Popular activities while watching TV among CTV users in the U.S. 2025 - Messaging" [ref=e399] [cursor=pointer]:
+                          - /url: /statistics/1559211/popular-activities-while-watching-tv-us/
+                          - text: Messaging
+      - generic [ref=e402]:
+        - heading "Further reports" [level=2] [ref=e403]
+        - heading "Get the best reports to understand your industry" [level=3] [ref=e404]:
+          - text: Get the best
+          - strong [ref=e405]: reports
+          - text: to understand your industry
+        - generic [ref=e406]:
+          - generic [ref=e407]:
+            - button "Previous Slide" [disabled]:
+              - img
+            - button "Next Slide" [ref=e408] [cursor=pointer]:
+              - img [ref=e409]
+          - region [ref=e411]:
+            - generic [ref=e412]:
+              - group "1 of 5" [ref=e413]:
+                - link "Netflix" [ref=e414] [cursor=pointer]:
+                  - /url: /study/15313/netflix-statista-dossier/
+                  - generic [ref=e415]: Netflix
+                  - figure [ref=e416]:
+                    - img "Netflix" [ref=e417]
+              - group "2 of 5" [ref=e418]:
+                - link "Smart and connected TVs" [ref=e419] [cursor=pointer]:
+                  - /url: /study/49477/smart-and-connected-tvs/
+                  - generic [ref=e420]: Smart and connected TVs
+                  - figure [ref=e421]:
+                    - img "Smart and connected TVs" [ref=e422]
+              - group "3 of 5" [ref=e423]:
+                - link "Connected TV advertising in the United States" [ref=e424] [cursor=pointer]:
+                  - /url: /study/88684/connected-tv-advertising-in-the-us/
+                  - generic [ref=e425]: Connected TV advertising in the United States
+                  - figure [ref=e426]:
+                    - img "Connected TV advertising in the United States" [ref=e427]
+              - group "4 of 5" [ref=e428]:
+                - link "Free ad-supported streaming TV in the United States" [ref=e429] [cursor=pointer]:
+                  - /url: /study/138009/free-ad-supported-streaming-tv-in-the-united-states/
+                  - generic [ref=e430]: Free ad-supported streaming TV in the United States
+                  - figure [ref=e431]:
+                    - img "Free ad-supported streaming TV in the United States" [ref=e432]
+              - group "5 of 5" [ref=e433]:
+                - link [ref=e434] [cursor=pointer]:
+                  - /url: /study/140425/free-ad-supported-streaming-tv-advertising-in-the-united-states/
+                  - generic [ref=e435]: Free ad-supported streaming TV advertising in the United States
+                  - figure [ref=e436]:
+                    - img [ref=e437]
+      - article "We’re happy to help" [ref=e438]:
+        - generic [ref=e439]:
+          - generic [ref=e440]:
+            - generic [ref=e441]: We’re happy to help
+            - heading "Get in touch with us for additional information" [level=2] [ref=e442]
+            - paragraph [ref=e443]: Feel free to contact us anytime. We will respond to your inquiry as quickly as possible.
+          - link "Get in touch" [ref=e445] [cursor=pointer]:
+            - /url: /contact/
+    - contentinfo [ref=e448]:
+      - navigation "Secondary" [ref=e450]:
+        - list [ref=e451]:
+          - listitem [ref=e452]:
+            - link "Home" [ref=e453] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e454]:
+            - link "About Statista" [ref=e455] [cursor=pointer]:
+              - /url: /business/about-us
+          - listitem [ref=e456]:
+            - link "Career" [ref=e457] [cursor=pointer]:
+              - /url: https://career.statista.com
+          - listitem [ref=e458]:
+            - link "Contact" [ref=e459] [cursor=pointer]:
+              - /url: /contact/
+          - listitem [ref=e460]:
+            - link "Help & FAQ" [ref=e461] [cursor=pointer]:
+              - /url: /help/
+          - listitem [ref=e462]:
+            - link "Report Bug" [ref=e463] [cursor=pointer]:
+              - /url: /bugreport/
+          - listitem [ref=e464]:
+            - link "Privacy" [ref=e465] [cursor=pointer]:
+              - /url: /imprint/#privacy/
+          - listitem [ref=e466]:
+            - button "Cookie settings" [ref=e467] [cursor=pointer]
+          - listitem [ref=e468]:
+            - link "Imprint" [ref=e469] [cursor=pointer]:
+              - /url: /imprint/
+  - generic:
+    - status

@@ -1,0 +1,11 @@
+player-app/Assets/Firebase/Plugins/x86_64/*.bundle filter=lfs diff=lfs merge=lfs -text
+player-app/Assets/Firebase/Plugins/x86_64/*.so filter=lfs diff=lfs merge=lfs -text
+player-app/Assets/Firebase/Plugins/x86_64/*.dll filter=lfs diff=lfs merge=lfs -text
+player-app/Assets/Plugins/iOS/Firebase/*.a filter=lfs diff=lfs merge=lfs -text
+player-app/Assets/Plugins/tvOS/Firebase/*.a filter=lfs diff=lfs merge=lfs -text
+player-app/Assets/Firebase/m2repository/**/*.srcaar filter=lfs diff=lfs merge=lfs -text
+player-app/Assets/Firebase/Editor/*.dll filter=lfs diff=lfs merge=lfs -text
+player-app/Assets/ExternalDependencyManager/Editor/1.2.187/*.dll filter=lfs diff=lfs merge=lfs -text
+player-app/Assets/GeneratedLocalRepo/**/*.aar filter=lfs diff=lfs merge=lfs -text
+player-app/Assets/Firebase/Editor/*.exe filter=lfs diff=lfs merge=lfs -text
+player-app/Assets/ExternalDependencyManager/Editor/*.dll filter=lfs diff=lfs merge=lfs -text

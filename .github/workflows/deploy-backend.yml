@@ -1,0 +1,78 @@
+name: Deploy Backend
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'cloud-run/**'
+      - 'firestore.rules'
+      - 'firestore.indexes.json'
+      - 'firebase.json'
+      - '.github/workflows/deploy-backend.yml'
+  workflow_dispatch:
+
+env:
+  GCP_PROJECT: interactive-tales-2026
+  SERVICE: ift-api
+  REGION: us-central1
+
+jobs:
+  firestore:
+    name: Deploy Firestore
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Auth GCP
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: '${{ secrets.GCP_SA_KEY }}'
+
+      - name: Install Firebase CLI
+        run: npm install -g firebase-tools
+
+      - name: Deploy Rules & Indexes
+        run: |
+          firebase deploy --only firestore:rules,firestore:indexes \
+            --project ${{ env.GCP_PROJECT }} \
+            --token "$(gcloud auth print-access-token)"
+
+  cloud-run:
+    name: Deploy Cloud Run
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    needs: firestore
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Auth GCP
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: '${{ secrets.GCP_SA_KEY }}'
+
+      - name: Setup gcloud
+        uses: google-github-actions/setup-gcloud@v2
+        with:
+          project_id: ${{ env.GCP_PROJECT }}
+
+      - name: Deploy
+        run: |
+          gcloud run deploy ${{ env.SERVICE }} \
+            --source ./cloud-run \
+            --region ${{ env.REGION }} \
+            --allow-unauthenticated \
+            --project ${{ env.GCP_PROJECT }} \
+            --quiet
+
+      - name: Health Check
+        run: |
+          URL=$(gcloud run services describe ${{ env.SERVICE }} \
+            --region ${{ env.REGION }} \
+            --format="value(status.url)" \
+            --project ${{ env.GCP_PROJECT }})
+          echo "Checking $URL/health..."
+          curl -sSf "$URL/health"
+          echo ""
+          echo "### Cloud Run: $URL" >> $GITHUB_STEP_SUMMARY
+          echo "### Health: OK" >> $GITHUB_STEP_SUMMARY

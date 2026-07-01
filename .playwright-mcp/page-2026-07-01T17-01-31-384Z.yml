@@ -1,0 +1,263 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - link "Link to the Steam Homepage" [ref=e8] [cursor=pointer]:
+        - /url: https://store.steampowered.com/?snr=1_7_7_151_global-header
+        - img "Link to the Steam Homepage" [ref=e9]
+      - navigation "Global Menu" [ref=e10]:
+        - link "STORE" [ref=e11] [cursor=pointer]:
+          - /url: https://store.steampowered.com/?snr=1_7_7_151_global-header
+        - link "COMMUNITY" [ref=e12] [cursor=pointer]:
+          - /url: https://steamcommunity.com/
+        - link "About" [ref=e13] [cursor=pointer]:
+          - /url: https://store.steampowered.com/about/?snr=1_7_7_151_global-header
+        - link "SUPPORT" [ref=e14] [cursor=pointer]:
+          - /url: https://help.steampowered.com/en/
+      - navigation "Account Menu" [ref=e16]:
+        - link "Install Steam" [ref=e17] [cursor=pointer]:
+          - /url: https://store.steampowered.com/about/?snr=1_7_7_151_global-header
+          - generic [ref=e18]: Install Steam
+        - link "sign in" [ref=e19] [cursor=pointer]:
+          - /url: https://store.steampowered.com/login/?redir=search%2F%3Fterm%3Dgamebook%26supportedlang%3Dbrazilian&redir_ssl=1&snr=1_7_7_151_global-header
+        - text: "| language"
+  - navigation "Store menu" [ref=e22]:
+    - generic [ref=e23]:
+      - generic [ref=e25]:
+        - button "Browse" [ref=e26] [cursor=pointer]:
+          - generic [ref=e27]: Browse
+        - button "Recommendations" [ref=e30] [cursor=pointer]:
+          - generic [ref=e31]: Recommendations
+        - button "Categories" [ref=e34] [cursor=pointer]:
+          - generic [ref=e35]: Categories
+        - button "Ways to Play" [ref=e38] [cursor=pointer]:
+          - generic [ref=e39]: Ways to Play
+        - button "Special Sections" [ref=e42] [cursor=pointer]:
+          - generic [ref=e43]: Special Sections
+      - generic [ref=e46]:
+        - search [ref=e47]:
+          - combobox "Search the store" [ref=e49]
+          - button "Search" [ref=e50] [cursor=pointer]:
+            - img "Search" [ref=e51]
+        - link "Advanced Search" [ref=e54] [cursor=pointer]:
+          - /url: https://store.steampowered.com/search/?term=&snr=1_7_15__advancedsearch
+  - main [ref=e56]:
+    - generic [ref=e58]:
+      - heading [level=2] [ref=e60]
+      - generic [ref=e62]:
+        - text: "\"gamebook\""
+        - link [ref=e63] [cursor=pointer]:
+          - /url: "#"
+    - generic [ref=e66]:
+      - generic [ref=e67]:
+        - generic [ref=e68]:
+          - generic [ref=e69]:
+            - generic [ref=e70]: Sort by
+            - combobox [ref=e72] [cursor=pointer]: Relevance
+          - generic [ref=e73]:
+            - textbox [ref=e74]: gamebook
+            - button "Search" [ref=e75] [cursor=pointer]:
+              - generic [ref=e76]: Search
+        - generic [ref=e77]:
+          - generic [ref=e78]: 1 exact match, censored based on your preferences.
+          - button [ref=e79] [cursor=pointer]
+        - generic [ref=e80]:
+          - link "GameBook 15 Mar, 2020 R$39,99" [ref=e81] [cursor=pointer]:
+            - /url: https://store.steampowered.com/app/1170390/GameBook/?snr=1_7_7_151_150_1
+            - img [ref=e83]
+            - generic [ref=e84]:
+              - generic [ref=e85]: GameBook
+              - generic [ref=e88]: 15 Mar, 2020
+              - generic [ref=e94]: R$39,99
+          - generic [ref=e96]: 4 results match your search. 93 titles have been excluded based on your preferences.
+          - generic [ref=e97]:
+            - generic [ref=e98]:
+              - 'link "Gamebook Edgar A. Poe: The Oval Portrait Soundtrack 28 Jun, 2022 R$3,99" [ref=e99] [cursor=pointer]':
+                - /url: https://store.steampowered.com/app/2066710/Gamebook_Edgar_A_Poe_The_Oval_Portrait_Soundtrack/?snr=1_7_7_151_150_1
+                - img [ref=e101]
+                - generic [ref=e102]:
+                  - generic [ref=e103]: "Gamebook Edgar A. Poe: The Oval Portrait Soundtrack"
+                  - generic [ref=e106]: 28 Jun, 2022
+                  - generic [ref=e112]: R$3,99
+              - link "Just One Line 12 Sep, 2018 Free" [ref=e113] [cursor=pointer]:
+                - /url: https://store.steampowered.com/app/640210/Just_One_Line/?snr=1_7_7_151_150_1
+                - img [ref=e115]
+                - generic [ref=e116]:
+                  - generic [ref=e117]: Just One Line
+                  - generic [ref=e121]: 12 Sep, 2018
+                  - generic [ref=e128]: Free
+              - 'link "Deathtrap Dungeon: The Golden Room Coming soon" [ref=e129] [cursor=pointer]':
+                - /url: https://store.steampowered.com/app/1251960/Deathtrap_Dungeon_The_Golden_Room/?snr=1_7_7_151_150_1
+                - img [ref=e131]
+                - generic [ref=e132]:
+                  - generic [ref=e133]: "Deathtrap Dungeon: The Golden Room"
+                  - generic [ref=e137]: Coming soon
+              - link "The Meridian Coming soon" [ref=e139] [cursor=pointer]:
+                - /url: https://store.steampowered.com/app/4655440/The_Meridian/?snr=1_7_7_151_150_1
+                - img [ref=e141]
+                - generic [ref=e142]:
+                  - generic [ref=e143]: The Meridian
+                  - generic [ref=e146]: Coming soon
+            - generic [ref=e154]: Loading more content...
+      - generic [ref=e155]:
+        - generic [ref=e156]:
+          - button "Narrow by Price" [ref=e157] [cursor=pointer]:
+            - generic [ref=e158]: Narrow by Price
+          - generic [ref=e159]:
+            - generic [ref=e160]:
+              - button [ref=e162]: "13"
+              - generic [ref=e163]: Any Price
+            - button "Discounts & Events" [ref=e166] [cursor=pointer]:
+              - generic [ref=e169]: Discounts & Events
+            - button "Hide free to play items" [ref=e171] [cursor=pointer]:
+              - generic [ref=e174]: Hide free to play items
+        - generic [ref=e175]:
+          - button "Narrow by tag" [ref=e176] [cursor=pointer]:
+            - generic [ref=e177]: Narrow by tag
+          - generic [ref=e178]:
+            - generic [ref=e179]:
+              - generic [ref=e180] [cursor=pointer]:
+                - button "Adventure 3" [ref=e181]:
+                  - generic [ref=e182]:
+                    - generic [ref=e184]: Adventure
+                    - generic [ref=e185]: "3"
+                - img [ref=e187]
+              - generic [ref=e188] [cursor=pointer]:
+                - button "Indie 3" [ref=e189]:
+                  - generic [ref=e190]:
+                    - generic [ref=e192]: Indie
+                    - generic [ref=e193]: "3"
+                - img [ref=e195]
+              - generic [ref=e196] [cursor=pointer]:
+                - button "Story Rich 3" [ref=e197]:
+                  - generic [ref=e198]:
+                    - generic [ref=e200]: Story Rich
+                    - generic [ref=e201]: "3"
+                - img [ref=e203]
+              - generic [ref=e204] [cursor=pointer]:
+                - button "Choose Your Own Adventure 3" [ref=e205]:
+                  - generic [ref=e206]:
+                    - generic [ref=e208]: Choose Your Own Adventure
+                    - generic [ref=e209]: "3"
+                - img [ref=e211]
+              - generic [ref=e212] [cursor=pointer]:
+                - button "Choices Matter 3" [ref=e213]:
+                  - generic [ref=e214]:
+                    - generic [ref=e216]: Choices Matter
+                    - generic [ref=e217]: "3"
+                - img [ref=e219]
+              - generic [ref=e220] [cursor=pointer]:
+                - button "Strategy" [ref=e221]:
+                  - generic [ref=e224]: Strategy
+                - img [ref=e226]
+              - generic [ref=e227] [cursor=pointer]:
+                - button "Action" [ref=e228]:
+                  - generic [ref=e231]: Action
+                - img [ref=e233]
+              - generic [ref=e234] [cursor=pointer]:
+                - button "Design & Illustration" [ref=e235]:
+                  - generic [ref=e238]: Design & Illustration
+                - img [ref=e240]
+              - generic [ref=e241] [cursor=pointer]:
+                - button "Utilities" [ref=e242]:
+                  - generic [ref=e245]: Utilities
+                - img [ref=e247]
+              - generic [ref=e248] [cursor=pointer]:
+                - button "Free to Play" [ref=e249]:
+                  - generic [ref=e252]: Free to Play
+                - img [ref=e254]
+              - generic [ref=e255] [cursor=pointer]:
+                - button "RPG" [ref=e256]:
+                  - generic [ref=e259]: RPG
+                - img [ref=e261]
+              - generic [ref=e262] [cursor=pointer]:
+                - button "Massively Multiplayer" [ref=e263]:
+                  - generic [ref=e266]: Massively Multiplayer
+                - img [ref=e268]
+              - generic [ref=e269] [cursor=pointer]:
+                - button "Early Access" [ref=e270]:
+                  - generic [ref=e273]: Early Access
+                - img [ref=e275]
+              - generic [ref=e276] [cursor=pointer]:
+                - button "Casual" [ref=e277]:
+                  - generic [ref=e280]: Casual
+                - img [ref=e282]
+              - generic [ref=e283] [cursor=pointer]:
+                - button "Simulation" [ref=e284]:
+                  - generic [ref=e287]: Simulation
+                - img [ref=e289]
+              - generic [ref=e290] [cursor=pointer]:
+                - button "Racing" [ref=e291]:
+                  - generic [ref=e294]: Racing
+                - img [ref=e296]
+            - textbox [ref=e297]: search for more tags
+        - button "Show selected types" [ref=e299] [cursor=pointer]:
+          - generic [ref=e300]: Show selected types
+        - button "Narrow by number of players" [ref=e302] [cursor=pointer]:
+          - generic [ref=e303]: Narrow by number of players
+        - button "Narrow by feature" [ref=e305] [cursor=pointer]:
+          - generic [ref=e306]: Narrow by feature
+        - button "Narrow by Controller Support" [ref=e308] [cursor=pointer]:
+          - generic [ref=e309]: Narrow by Controller Support
+        - button "Narrow by accessibility feature" [ref=e311] [cursor=pointer]:
+          - generic [ref=e312]: Narrow by accessibility feature
+        - generic [ref=e313]:
+          - generic [ref=e315]: Narrow by Deck Compatibility
+          - generic [ref=e316]:
+            - button "Verified" [ref=e318] [cursor=pointer]:
+              - generic [ref=e321]: Verified
+            - button "Playable" [ref=e323] [cursor=pointer]:
+              - generic [ref=e326]: Playable
+            - link "Learn More" [ref=e327] [cursor=pointer]:
+              - /url: https://steamdeck.com/en/verified
+        - button "Narrow by VR Support" [ref=e329] [cursor=pointer]:
+          - generic [ref=e330]: Narrow by VR Support
+        - generic [ref=e331]:
+          - button "Narrow by OS" [ref=e332] [cursor=pointer]:
+            - generic [ref=e333]: Narrow by OS
+          - generic [ref=e334]:
+            - button "Windows" [ref=e336] [cursor=pointer]:
+              - generic [ref=e339]: Windows
+            - button "macOS" [ref=e341] [cursor=pointer]:
+              - generic [ref=e344]: macOS
+            - button "SteamOS + Linux" [ref=e346] [cursor=pointer]:
+              - generic [ref=e349]: SteamOS + Linux
+        - generic [ref=e350]:
+          - button "Narrow by language" [ref=e351] [cursor=pointer]:
+            - generic [ref=e352]: Narrow by language
+          - generic [ref=e353]:
+            - generic [ref=e354]:
+              - button "Portuguese - Brazil" [ref=e356] [cursor=pointer]:
+                - generic [ref=e359]: Portuguese - Brazil
+              - button "English" [ref=e361] [cursor=pointer]:
+                - generic [ref=e364]: English
+              - button "Simplified Chinese" [ref=e366] [cursor=pointer]:
+                - generic [ref=e369]: Simplified Chinese
+              - button "Traditional Chinese" [ref=e371] [cursor=pointer]:
+                - generic [ref=e374]: Traditional Chinese
+              - button "Japanese" [ref=e376] [cursor=pointer]:
+                - generic [ref=e379]: Japanese
+              - button "Korean" [ref=e381] [cursor=pointer]:
+                - generic [ref=e384]: Korean
+              - button "Thai" [ref=e386] [cursor=pointer]:
+                - generic [ref=e389]: Thai
+              - button "Arabic" [ref=e391] [cursor=pointer]:
+                - generic [ref=e394]: Arabic
+              - button "Indonesian" [ref=e396] [cursor=pointer]:
+                - generic [ref=e399]: Indonesian
+              - button "Malay" [ref=e401] [cursor=pointer]:
+                - generic [ref=e404]: Malay
+              - button "Bulgarian" [ref=e406] [cursor=pointer]:
+                - generic [ref=e409]: Bulgarian
+              - button "Czech" [ref=e411] [cursor=pointer]:
+                - generic [ref=e414]: Czech
+              - button "Danish" [ref=e416] [cursor=pointer]:
+                - generic [ref=e419]: Danish
+              - button "German" [ref=e421] [cursor=pointer]:
+                - generic [ref=e424]: German
+              - button "Spanish - Spain" [ref=e426] [cursor=pointer]:
+                - generic [ref=e429]: Spanish - Spain
+              - button "Spanish - Latin America" [ref=e431] [cursor=pointer]:
+                - generic [ref=e434]: Spanish - Latin America
+            - textbox [ref=e435]: search for more languages
+            - link "Manage language preferences" [ref=e437] [cursor=pointer]:
+              - /url: https://store.steampowered.com/account/languagepreferences?snr=1_7_7_151

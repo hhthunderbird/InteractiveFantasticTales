@@ -413,6 +413,10 @@ namespace InteractiveFantasticTales.UI.UIToolkit
             _selectedStoryId = null;
             if (_storyDetail != null) _storyDetail.style.display = DisplayStyle.None;
             _storeScreen.style.display = DisplayStyle.Flex;
+
+            // Refresh grid to reflect any rating/progress changes
+            if (_catalog != null && _catalog.IsLoaded)
+                OnCatalogLoaded(_catalog.AllStories);
         }
 
         public void PlayPreview(string storyId)
@@ -482,9 +486,7 @@ namespace InteractiveFantasticTales.UI.UIToolkit
         {
             _mainUIController?.ShowToast(L["store_purchasing"] ?? "Processando compra...");
 
-            var authService = new CloudRunAuthService();
-            authService.Initialize();
-
+            var authService = CloudRunAuthService.Instance;
             var purchaseService = new PurchaseService(authService);
             purchaseService.Initialize();
 
@@ -798,6 +800,186 @@ namespace InteractiveFantasticTales.UI.UIToolkit
             return result;
         }
 
+        // ── Rating Widget ───────────────────────────────────────────────
+
+        private int _selectedRating = 0;
+        private Button[] _starButtons = new Button[5];
+
+        private void RenderRatingWidget(StoryCatalogEntry story)
+        {
+            // Remove old widget if exists
+            var existing = _root.Q<VisualElement>("detail-rating-widget");
+            if (existing != null) existing.RemoveFromHierarchy();
+            _starButtons = new Button[5];
+
+            var detailContent = _root.Q<VisualElement>("detail-content");
+            if (detailContent == null) return;
+
+            var container = new VisualElement();
+            container.name = "detail-rating-widget";
+            container.style.marginTop = 20;
+            container.style.paddingTop = 16;
+
+                var titleLabel = new Label("Avalie esta historia");
+                titleLabel.name = "rating-title";
+                titleLabel.style.fontSize = 14;
+                titleLabel.style.unityFontStyleAndWeight = FontStyle.Bold;
+                titleLabel.style.marginBottom = 8;
+                container.Add(titleLabel);
+
+                // Star row
+                var starRow = new VisualElement();
+                starRow.name = "rating-star-row";
+                starRow.style.flexDirection = FlexDirection.Row;
+                starRow.style.marginBottom = 8;
+
+                for (int i = 0; i < 5; i++)
+                {
+                    var starIdx = i + 1;
+                    var btn = new Button();
+                    btn.name = $"rating-star-{starIdx}";
+                    btn.text = "\u2606";
+                    btn.style.fontSize = 28;
+                    btn.style.width = 40;
+                    btn.style.height = 40;
+                    btn.style.marginRight = 4;
+                    btn.clicked += () => OnStarClicked(starIdx);
+                    _starButtons[i] = btn;
+                    starRow.Add(btn);
+                }
+                container.Add(starRow);
+
+                // Review field
+                var reviewField = new TextField();
+                reviewField.name = "rating-review";
+                reviewField.multiline = true;
+                reviewField.maxLength = 500;
+                reviewField.style.height = 60;
+                reviewField.style.marginBottom = 8;
+                reviewField.value = "";
+                container.Add(reviewField);
+
+                // Submit button + feedback label
+                var btnRow = new VisualElement();
+                btnRow.style.flexDirection = FlexDirection.Row;
+
+                var submitBtn = new Button();
+                submitBtn.name = "rating-submit-btn";
+                submitBtn.text = "Enviar Avaliacao";
+                submitBtn.AddToClassList("store-btn-primary");
+                submitBtn.style.flexGrow = 1;
+                submitBtn.style.marginRight = 8;
+                submitBtn.clicked += () => OnSubmitRating(story.id);
+                btnRow.Add(submitBtn);
+
+                var feedbackLbl = new Label();
+                feedbackLbl.name = "rating-feedback";
+                feedbackLbl.style.fontSize = 12;
+                feedbackLbl.style.color = new Color(0.4f, 0.8f, 0.4f);
+                feedbackLbl.style.unityTextAlign = TextAnchor.MiddleRight;
+                feedbackLbl.text = "";
+                btnRow.Add(feedbackLbl);
+
+                container.Add(btnRow);
+                detailContent.Add(container);
+
+            // Check if user already rated
+            _selectedRating = 0;
+            UpdateStarDisplay();
+
+            var reviewFieldEl = container.Q<TextField>("rating-review");
+            var submitBtnEl = container.Q<Button>("rating-submit-btn");
+            var feedbackEl = container.Q<Label>("rating-feedback");
+
+            if (reviewFieldEl != null) reviewFieldEl.value = "";
+            if (submitBtnEl != null) submitBtnEl.SetEnabled(false);
+            if (feedbackEl != null) feedbackEl.text = "";
+
+            StartCoroutine(RatingService.Instance.GetMyRating(story.id, resp =>
+            {
+                if (resp != null && resp.success && resp.hasRated && resp.rating != null)
+                {
+                    _selectedRating = resp.rating.score;
+                    UpdateStarDisplay();
+                    if (reviewFieldEl != null) reviewFieldEl.value = resp.rating.review ?? "";
+                    if (submitBtnEl != null) submitBtnEl.text = "Avaliacao Enviada";
+                    if (submitBtnEl != null) submitBtnEl.SetEnabled(false);
+                    if (feedbackEl != null) feedbackEl.text = $"Voce avaliou com {resp.rating.score} estrelas";
+                }
+            }));
+        }
+
+        private void OnStarClicked(int starIndex)
+        {
+            _selectedRating = starIndex;
+            UpdateStarDisplay();
+
+            var submitBtn = _root.Q<Button>("rating-submit-btn");
+            if (submitBtn != null) submitBtn.SetEnabled(true);
+        }
+
+        private void UpdateStarDisplay()
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                if (_starButtons[i] != null)
+                {
+                    _starButtons[i].text = (i < _selectedRating) ? "\u2605" : "\u2606";
+                    _starButtons[i].style.color = (i < _selectedRating)
+                        ? new Color(1f, 0.85f, 0.2f)
+                        : new Color(0.5f, 0.5f, 0.5f);
+                }
+            }
+        }
+
+        private void OnSubmitRating(string storyId)
+        {
+            if (_selectedRating < 1 || _selectedRating > 5) return;
+
+            var reviewField = _root.Q<TextField>("rating-review");
+            var review = reviewField?.value ?? "";
+
+            var submitBtn = _root.Q<Button>("rating-submit-btn");
+            var feedbackLbl = _root.Q<Label>("rating-feedback");
+
+            if (submitBtn != null) submitBtn.SetEnabled(false);
+            if (feedbackLbl != null) feedbackLbl.text = "Enviando...";
+
+            StartCoroutine(RatingService.Instance.SubmitRating(storyId, _selectedRating, review, resp =>
+            {
+                if (resp != null && resp.success)
+                {
+                    if (submitBtn != null) submitBtn.text = "Avaliacao Enviada";
+                    if (feedbackLbl != null) feedbackLbl.text = $"Obrigado! Voce avaliou com {_selectedRating} estrelas.";
+                    if (feedbackLbl != null) feedbackLbl.style.color = new Color(0.4f, 0.8f, 0.4f);
+
+                    // Update displayed stars in detail header
+                    var starsEl = _root.Q<Label>("detail-rating-stars");
+                    var countEl = _root.Q<Label>("detail-rating-count");
+                    if (starsEl != null) starsEl.text = FormatStars(resp.stats.averageRating);
+                    if (countEl != null) countEl.text = $"({resp.stats.ratingCount})";
+
+                    // Update catalog entry
+                    var catalog = StoryCatalogService.Instance;
+                    if (catalog != null)
+                    {
+                        var story = catalog.AllStories.Find(s => s.id == storyId);
+                        if (story != null)
+                        {
+                            story.rating = resp.stats.averageRating;
+                            story.ratingCount = resp.stats.ratingCount;
+                        }
+                    }
+                }
+                else
+                {
+                    if (submitBtn != null) submitBtn.SetEnabled(true);
+                    if (feedbackLbl != null) feedbackLbl.text = "Erro ao enviar. Tente novamente.";
+                    if (feedbackLbl != null) feedbackLbl.style.color = new Color(0.9f, 0.3f, 0.3f);
+                }
+            }));
+        }
+
         private void RenderStoryDetail(StoryCatalogEntry story)
         {
             if (story == null) return;
@@ -911,6 +1093,9 @@ namespace InteractiveFantasticTales.UI.UIToolkit
                     }
                 }
             }
+
+            // ── Rating Widget ───────────────────────────────────────────
+            RenderRatingWidget(story);
         }
 
         private void ShowLoading()

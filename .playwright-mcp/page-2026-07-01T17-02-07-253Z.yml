@@ -1,0 +1,852 @@
+- generic [ref=f9e3]:
+  - banner [ref=f9e4]:
+    - generic [ref=f9e5]:
+      - link "Link to the Steam Homepage" [ref=f9e8] [cursor=pointer]:
+        - /url: https://store.steampowered.com/?snr=1_5_9__global-header
+        - img "Link to the Steam Homepage" [ref=f9e9]
+      - navigation "Global Menu" [ref=f9e10]:
+        - link "STORE" [ref=f9e11] [cursor=pointer]:
+          - /url: https://store.steampowered.com/?snr=1_5_9__global-header
+        - link "COMMUNITY" [ref=f9e12] [cursor=pointer]:
+          - /url: https://steamcommunity.com/
+        - link "About" [ref=f9e13] [cursor=pointer]:
+          - /url: https://store.steampowered.com/about/?snr=1_5_9__global-header
+        - link "SUPPORT" [ref=f9e14] [cursor=pointer]:
+          - /url: https://help.steampowered.com/en/
+      - navigation "Account Menu" [ref=f9e16]:
+        - link "Install Steam" [ref=f9e17] [cursor=pointer]:
+          - /url: https://store.steampowered.com/about/?snr=1_5_9__global-header
+          - generic [ref=f9e18]: Install Steam
+        - link "sign in" [ref=f9e19] [cursor=pointer]:
+          - /url: https://store.steampowered.com/login/?redir=app%2F398850%2FFighting_Fantasy_Classics%2F&redir_ssl=1&snr=1_5_9__global-header
+        - text: "| language"
+  - navigation "Store menu" [ref=f9e22]:
+    - generic [ref=f9e23]:
+      - generic [ref=f9e25]:
+        - button "Browse" [ref=f9e26] [cursor=pointer]:
+          - generic [ref=f9e27]: Browse
+        - button "Recommendations" [ref=f9e30] [cursor=pointer]:
+          - generic [ref=f9e31]: Recommendations
+        - button "Categories" [ref=f9e34] [cursor=pointer]:
+          - generic [ref=f9e35]: Categories
+        - button "Ways to Play" [ref=f9e38] [cursor=pointer]:
+          - generic [ref=f9e39]: Ways to Play
+        - button "Special Sections" [ref=f9e42] [cursor=pointer]:
+          - generic [ref=f9e43]: Special Sections
+      - generic [ref=f9e46]:
+        - search [ref=f9e47]:
+          - combobox "Search the store" [ref=f9e49]
+          - button "Search" [ref=f9e50] [cursor=pointer]:
+            - img "Search" [ref=f9e51]
+        - link "Advanced Search" [ref=f9e54] [cursor=pointer]:
+          - /url: https://store.steampowered.com/search/?term=&snr=1_7_15__advancedsearch
+  - main [ref=f9e56]:
+    - generic [ref=f9e57]:
+      - generic [ref=f9e62]:
+        - generic [ref=f9e64] [cursor=pointer]: Open in Desktop App
+        - generic [ref=f9e66]:
+          - text: You're not signed in!
+          - text: Open this page in the Steam App to wishlist, follow, purchase and see recommendations
+      - generic [ref=f9e68]:
+        - generic [ref=f9e69]:
+          - generic [ref=f9e71]:
+            - generic [ref=f9e73]:
+              - link "All Games" [ref=f9e74] [cursor=pointer]:
+                - /url: https://store.steampowered.com/search/?term=&snr=1_5_9__205
+              - text: ">"
+              - link "Indie Games" [ref=f9e75] [cursor=pointer]:
+                - /url: https://store.steampowered.com/genre/Indie/?snr=1_5_9__205
+              - text: ">"
+              - link "Fishing Cactus Franchise" [ref=f9e76] [cursor=pointer]:
+                - /url: https://store.steampowered.com/franchise/fishingcactus?snr=1_5_9__205
+              - text: ">"
+              - link "Epistory - Typing Chronicles" [ref=f9e77] [cursor=pointer]:
+                - /url: https://store.steampowered.com/app/398850/?snr=1_5_9__205
+            - generic [ref=f9e79]:
+              - link "Community Hub" [ref=f9e81] [cursor=pointer]:
+                - /url: https://steamcommunity.com/app/398850
+                - generic [ref=f9e82]: Community Hub
+              - heading "Epistory - Typing Chronicles" [level=1] [ref=f9e83]
+          - generic [ref=f9e86]:
+            - generic [ref=f9e88]:
+              - generic [ref=f9e91]: Epistory immerses you in an atmospheric action/adventure game where you play a girl riding a giant fox who fights an insectile corruption from an origami world. As you progress and explore this world, the story literally unfolds and the mysteries of the magic power of the words are revealed.
+              - generic [ref=f9e92]:
+                - generic [ref=f9e93]:
+                  - 'link "English Reviews: Overwhelmingly Positive (2,215)" [ref=f9e95] [cursor=pointer]':
+                    - /url: "#app_reviews_hash"
+                    - generic [ref=f9e96]: "English Reviews:"
+                    - generic [ref=f9e97]: Overwhelmingly Positive (2,215)
+                  - generic [ref=f9e98]:
+                    - generic [ref=f9e99]: "Release Date:"
+                    - generic [ref=f9e100]: 30 Mar, 2016
+                  - generic [ref=f9e101]:
+                    - generic [ref=f9e102]: "Developer:"
+                    - link "Fishing Cactus" [ref=f9e104] [cursor=pointer]:
+                      - /url: https://store.steampowered.com/developer/fishingcactus?snr=1_5_9__2000
+                  - generic [ref=f9e105]:
+                    - generic [ref=f9e106]: "Publisher:"
+                    - generic [ref=f9e107]:
+                      - link "Fishing Cactus" [ref=f9e108] [cursor=pointer]:
+                        - /url: https://store.steampowered.com/publisher/fishingcactus?snr=1_5_9__2000
+                      - text: ","
+                      - link "PID Games" [ref=f9e109] [cursor=pointer]:
+                        - /url: https://store.steampowered.com/publisher/Dear-Villagers?snr=1_5_9__2000
+                      - text: ","
+                      - link "Dear Villagers" [ref=f9e110] [cursor=pointer]:
+                        - /url: https://store.steampowered.com/publisher/Dear-Villagers?snr=1_5_9__2000
+                    - generic [ref=f9e111] [cursor=pointer]: +
+                - generic [ref=f9e113]:
+                  - generic [ref=f9e114]: "Popular user-defined tags for this product:"
+                  - generic [ref=f9e115]:
+                    - link "Typing" [ref=f9e116] [cursor=pointer]:
+                      - /url: https://store.steampowered.com/tags/en/Typing/?snr=1_5_9__409
+                    - link "Adventure" [ref=f9e117] [cursor=pointer]:
+                      - /url: https://store.steampowered.com/tags/en/Adventure/?snr=1_5_9__409
+                    - link "Narrative" [ref=f9e118] [cursor=pointer]:
+                      - /url: https://store.steampowered.com/tags/en/Narrative/?snr=1_5_9__409
+                    - link "Exploration" [ref=f9e119] [cursor=pointer]:
+                      - /url: https://store.steampowered.com/tags/en/Exploration/?snr=1_5_9__409
+                    - link "Story Rich" [ref=f9e120] [cursor=pointer]:
+                      - /url: https://store.steampowered.com/tags/en/Story%20Rich/?snr=1_5_9__409
+                    - button "+" [ref=f9e121] [cursor=pointer]
+            - generic [ref=f9e127]:
+              - generic [ref=f9e130]:
+                - generic [ref=f9e132]:
+                  - generic [ref=f9e142]:
+                    - generic [ref=f9e143]:
+                      - img [ref=f9e146] [cursor=pointer]
+                      - img [ref=f9e151] [cursor=pointer]
+                      - generic [ref=f9e157]:
+                        - generic [ref=f9e158]: 0:00
+                        - generic [ref=f9e159]: /
+                        - generic [ref=f9e160]: 1:20
+                    - generic [ref=f9e161]:
+                      - img [ref=f9e164] [cursor=pointer]
+                      - img [ref=f9e168] [cursor=pointer]
+                      - img [ref=f9e172] [cursor=pointer]
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - img
+                - generic:
+                  - img
+                - generic:
+                  - img
+              - generic [ref=f9e174]:
+                - generic [ref=f9e175]:
+                  - generic [ref=f9e176] [cursor=pointer]:
+                    - img [ref=f9e177]
+                    - img [ref=f9e179]
+                  - generic [ref=f9e181] [cursor=pointer]:
+                    - img [ref=f9e182]
+                    - img [ref=f9e184]
+                  - img [ref=f9e187] [cursor=pointer]
+                  - img [ref=f9e189] [cursor=pointer]
+                  - img [ref=f9e191] [cursor=pointer]
+                  - img [ref=f9e193] [cursor=pointer]
+                  - img [ref=f9e195] [cursor=pointer]
+                  - img [ref=f9e197] [cursor=pointer]
+                  - img [ref=f9e199] [cursor=pointer]
+                  - img [ref=f9e201] [cursor=pointer]
+                  - img [ref=f9e203] [cursor=pointer]
+                  - img [ref=f9e205] [cursor=pointer]
+                  - img [ref=f9e207] [cursor=pointer]
+                  - img [ref=f9e209] [cursor=pointer]
+                  - img [ref=f9e211] [cursor=pointer]
+                  - img [ref=f9e213] [cursor=pointer]
+                  - img [ref=f9e215] [cursor=pointer]
+                  - img [ref=f9e217] [cursor=pointer]
+                  - img [ref=f9e219] [cursor=pointer]
+                  - img [ref=f9e221] [cursor=pointer]
+                  - img [ref=f9e223] [cursor=pointer]
+                  - img [ref=f9e225] [cursor=pointer]
+                  - img [ref=f9e227] [cursor=pointer]
+                  - img [ref=f9e229] [cursor=pointer]
+                  - img [ref=f9e231] [cursor=pointer]
+                  - img [ref=f9e233] [cursor=pointer]
+                  - img [ref=f9e235] [cursor=pointer]
+                  - img [ref=f9e237] [cursor=pointer]
+                  - img [ref=f9e239] [cursor=pointer]
+                  - img [ref=f9e241] [cursor=pointer]
+                  - img [ref=f9e243] [cursor=pointer]
+                  - img [ref=f9e245] [cursor=pointer]
+                  - img [ref=f9e247] [cursor=pointer]
+                - generic [ref=f9e248]:
+                  - img [ref=f9e250] [cursor=pointer]
+                  - img [ref=f9e255] [cursor=pointer]
+        - generic [ref=f9e262]:
+          - paragraph [ref=f9e263]:
+            - link "Sign in" [ref=f9e264] [cursor=pointer]:
+              - /url: https://store.steampowered.com/login/?redir=app%2F398850&snr=1_5_9_
+            - text: to add this item to your wishlist, follow it, or mark it as ignored
+          - link [ref=f9e266] [cursor=pointer]:
+            - /url: javascript:void(0)
+            - img [ref=f9e268]
+        - generic [ref=f9e269]:
+          - generic [ref=f9e270]:
+            - generic [ref=f9e272]:
+              - link "Single-player" [ref=f9e273] [cursor=pointer]:
+                - /url: https://store.steampowered.com/search/?category2=2&snr=1_5_9__423
+                - generic [ref=f9e275]: Single-player
+              - link "Steam Achievements" [ref=f9e276] [cursor=pointer]:
+                - /url: https://store.steampowered.com/search/?category2=22&snr=1_5_9__423
+                - generic [ref=f9e278]: Steam Achievements
+              - link "Steam Trading Cards" [ref=f9e279] [cursor=pointer]:
+                - /url: https://store.steampowered.com/search/?category2=29&snr=1_5_9__423
+                - generic [ref=f9e281]: Steam Trading Cards
+              - link "Steam Workshop" [ref=f9e282] [cursor=pointer]:
+                - /url: https://store.steampowered.com/search/?category2=30&snr=1_5_9__423
+                - generic [ref=f9e284]: Steam Workshop
+              - link "Steam Cloud" [ref=f9e285] [cursor=pointer]:
+                - /url: https://store.steampowered.com/search/?category2=23&snr=1_5_9__423
+                - generic [ref=f9e287]: Steam Cloud
+              - link "Steam Leaderboards" [ref=f9e288] [cursor=pointer]:
+                - /url: https://store.steampowered.com/search/?category2=25&snr=1_5_9__423
+                - generic [ref=f9e290]: Steam Leaderboards
+              - link "Family Sharing" [ref=f9e291] [cursor=pointer]:
+                - /url: https://store.steampowered.com/search/?category2=62&snr=1_5_9__423
+                - generic [ref=f9e293]: Family Sharing
+            - generic [ref=f9e294]:
+              - generic [ref=f9e295]: "Languages:"
+              - generic [ref=f9e296]:
+                - table [ref=f9e297]:
+                  - rowgroup [ref=f9e298]:
+                    - row "Interface Full Audio Subtitles" [ref=f9e299]:
+                      - columnheader [ref=f9e300]
+                      - columnheader "Interface" [ref=f9e301]
+                      - columnheader "Full Audio" [ref=f9e302]
+                      - columnheader "Subtitles" [ref=f9e303]
+                    - row "English ✔ ✔ ✔" [ref=f9e304]:
+                      - cell "English" [ref=f9e305]
+                      - cell "✔" [ref=f9e306]
+                      - cell "✔" [ref=f9e307]
+                      - cell "✔" [ref=f9e308]
+                    - row "French ✔ ✔" [ref=f9e309]:
+                      - cell "French" [ref=f9e310]
+                      - cell "✔" [ref=f9e311]
+                      - cell [ref=f9e312]
+                      - cell "✔" [ref=f9e313]
+                    - row "German ✔ ✔" [ref=f9e314]:
+                      - cell "German" [ref=f9e315]
+                      - cell "✔" [ref=f9e316]
+                      - cell [ref=f9e317]
+                      - cell "✔" [ref=f9e318]
+                    - row "Spanish - Spain ✔ ✔" [ref=f9e319]:
+                      - cell "Spanish - Spain" [ref=f9e320]
+                      - cell "✔" [ref=f9e321]
+                      - cell [ref=f9e322]
+                      - cell "✔" [ref=f9e323]
+                    - row "Polish ✔ ✔" [ref=f9e324]:
+                      - cell "Polish" [ref=f9e325]
+                      - cell "✔" [ref=f9e326]
+                      - cell [ref=f9e327]
+                      - cell "✔" [ref=f9e328]
+                - generic [ref=f9e329] [cursor=pointer]: See all 11 supported languages
+            - generic [ref=f9e331]:
+              - generic [ref=f9e332]:
+                - img "L" [ref=f9e334]
+                - paragraph [ref=f9e337]: violência fantasiosa
+              - generic [ref=f9e338]: "Age rating for: Coordenação de Classificação Indicativa"
+            - generic [ref=f9e339]:
+              - generic [ref=f9e340]: Includes 55 Steam Achievements
+              - generic [ref=f9e341]:
+                - img "Desert Dream" [ref=f9e343]
+                - img "Shattered Isles" [ref=f9e345]
+                - 'img "1% Muse: Foundation" [ref=f9e347]'
+                - img "Winds of Change" [ref=f9e349]
+                - link "View all 55" [ref=f9e350] [cursor=pointer]:
+                  - /url: https://steamcommunity.com/stats/398850/achievements
+                  - text: View
+                  - text: all 55
+            - generic [ref=f9e351]:
+              - generic [ref=f9e352]: Points Shop Items Available
+              - generic [ref=f9e353]:
+                - link ":episweat:" [ref=f9e354] [cursor=pointer]:
+                  - /url: https://store.steampowered.com/points/shop/app/398850/reward/40093/
+                  - img ":episweat:" [ref=f9e355]
+                - link ":epilove:" [ref=f9e356] [cursor=pointer]:
+                  - /url: https://store.steampowered.com/points/shop/app/398850/reward/40032/
+                  - img ":epilove:" [ref=f9e357]
+                - link ":epiwink:" [ref=f9e358] [cursor=pointer]:
+                  - /url: https://store.steampowered.com/points/shop/app/398850/reward/40121/
+                  - img ":epiwink:" [ref=f9e359]
+                - link ":epiwtf:" [ref=f9e360] [cursor=pointer]:
+                  - /url: https://store.steampowered.com/points/shop/app/398850/reward/40197/
+                  - img ":epiwtf:" [ref=f9e361]
+                - link "View all 13" [ref=f9e362] [cursor=pointer]:
+                  - /url: https://store.steampowered.com/points/shop/app/398850/
+                  - text: View
+                  - text: all 13
+            - generic [ref=f9e365]:
+              - generic [ref=f9e366]:
+                - text: "Title: Epistory - Typing Chronicles"
+                - text: "Genre:"
+                - generic [ref=f9e367]:
+                  - link "Action" [ref=f9e368] [cursor=pointer]:
+                    - /url: https://store.steampowered.com/genre/Action/?snr=1_5_9__408
+                  - text: ","
+                  - link "Adventure" [ref=f9e369] [cursor=pointer]:
+                    - /url: https://store.steampowered.com/genre/Adventure/?snr=1_5_9__408
+                  - text: ","
+                  - link "Indie" [ref=f9e370] [cursor=pointer]:
+                    - /url: https://store.steampowered.com/genre/Indie/?snr=1_5_9__408
+                - generic [ref=f9e371]:
+                  - text: "Developer:"
+                  - link "Fishing Cactus" [ref=f9e372] [cursor=pointer]:
+                    - /url: https://store.steampowered.com/developer/fishingcactus?snr=1_5_9__408
+                - generic [ref=f9e373]:
+                  - text: "Publisher:"
+                  - link "Fishing Cactus" [ref=f9e374] [cursor=pointer]:
+                    - /url: https://store.steampowered.com/publisher/fishingcactus?snr=1_5_9__408
+                  - text: ","
+                  - link "PID Games" [ref=f9e375] [cursor=pointer]:
+                    - /url: https://store.steampowered.com/publisher/Dear-Villagers?snr=1_5_9__408
+                  - text: ","
+                  - link "Dear Villagers" [ref=f9e376] [cursor=pointer]:
+                    - /url: https://store.steampowered.com/publisher/Dear-Villagers?snr=1_5_9__408
+                - generic [ref=f9e377]:
+                  - text: "Franchise:"
+                  - link "Typing Chronicles" [ref=f9e378] [cursor=pointer]:
+                    - /url: https://store.steampowered.com/franchise/fishingcactus?snr=1_5_9__408
+                  - text: ","
+                  - link "PID Games" [ref=f9e379] [cursor=pointer]:
+                    - /url: https://store.steampowered.com/franchise/Dear-Villagers?snr=1_5_9__408
+                - text: "Release Date: 30 Mar, 2016"
+              - generic [ref=f9e380]:
+                - link "Visit the website External" [ref=f9e381] [cursor=pointer]:
+                  - /url: https://steamcommunity.com/linkfilter/?u=http%3A%2F%2Fwww.epistorygame.com
+                  - text: Visit the website
+                  - img "External" [ref=f9e382]
+                - link "X External" [ref=f9e383] [cursor=pointer]:
+                  - /url: https://steamcommunity.com/linkfilter/?u=https%3A%2F%2Fx.com%2Fepistorygame
+                  - generic [ref=f9e385]: X
+                  - img "External" [ref=f9e386]
+                - link "Discord External" [ref=f9e387] [cursor=pointer]:
+                  - /url: https://steamcommunity.com/linkfilter/?u=https%3A%2F%2Fdiscord.com%2Finvite%2Ffishingcactus
+                  - generic [ref=f9e389]: Discord
+                  - img "External" [ref=f9e390]
+                - link "View update history" [ref=f9e391] [cursor=pointer]:
+                  - /url: https://store.steampowered.com/newshub/?appids=398850&snr=1_5_9__408
+                - link "Read related news" [ref=f9e392] [cursor=pointer]:
+                  - /url: https://store.steampowered.com/newshub/app/398850?snr=1_5_9__408
+                - link "View discussions" [ref=f9e393] [cursor=pointer]:
+                  - /url: https://steamcommunity.com/app/398850/discussions/
+                - link "Visit the Workshop" [ref=f9e394] [cursor=pointer]:
+                  - /url: https://steamcommunity.com/app/398850/workshop/
+                - link "Find Community Groups" [ref=f9e395] [cursor=pointer]:
+                  - /url: https://steamcommunity.com/actions/Search?T=ClanAccount&K=Epistory%20-%20Typing%20Chronicles
+            - generic [ref=f9e396]:
+              - link "Embed" [ref=f9e397] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=f9e398]: Embed
+              - link "Report this Product" [ref=f9e399] [cursor=pointer]:
+                - /url: javascript:void(0)
+                - generic "Report this Product" [ref=f9e400]
+            - generic [ref=f9e402]:
+              - generic:
+                - generic [ref=f9e403]: "74"
+                - generic [ref=f9e405]:
+                  - generic [ref=f9e406]: metacritic
+                  - generic [ref=f9e407]:
+                    - link "Read Critic Reviews" [ref=f9e408] [cursor=pointer]:
+                      - /url: https://www.metacritic.com/game/pc/epistory---typing-chronicles?ftag=MCD-06-10aaa1f
+                    - img [ref=f9e409]
+            - generic [ref=f9e410]:
+              - generic [ref=f9e411]: Awards
+              - generic [ref=f9e415]: Honorable Mentions for Best Art - Belgian Game Awards 2016
+          - generic [ref=f9e416]:
+            - link "Check out the entire Fishing Cactus collection on Steam" [ref=f9e417] [cursor=pointer]:
+              - /url: https://store.steampowered.com/franchise/fishingcactus?snr=1_5_9__2001
+              - generic [ref=f9e419]: Check out the entire Fishing Cactus collection on Steam
+            - generic [ref=f9e421]:
+              - generic [ref=f9e422]:
+                - heading "Download Epistory - Typing Chronicles Demo" [level=1] [ref=f9e427]
+                - link "Download" [ref=f9e431] [cursor=pointer]:
+                  - /url: javascript:ShowGotSteamModal( 'steam://install/497770', "Epistory - Typing Chronicles Demo", "Download" )
+                  - generic [ref=f9e432]: Download
+              - region "Buy Epistory - Typing Chronicles Soundtrack Edition" [ref=f9e434]:
+                - heading "Buy Epistory - Typing Chronicles Soundtrack Edition" [level=2] [ref=f9e439]
+                - paragraph [ref=f9e440]: Includes Epistory and the Original Soundtrack
+                - paragraph [ref=f9e441]: SPECIAL PROMOTION! Offer ends 9 July
+                - generic [ref=f9e443]:
+                  - link "80% off. R$ 49,99 normally, discounted to R$ 9,99" [ref=f9e444]:
+                    - generic [ref=f9e445]: "-80%"
+                    - generic [ref=f9e446]:
+                      - generic [ref=f9e447]: R$ 49,99
+                      - generic [ref=f9e448]: R$ 9,99
+                  - button "Add to Cart" [ref=f9e450] [cursor=pointer]:
+                    - generic [ref=f9e451]: Add to Cart
+              - region "Buy Epistory - Typing Chronicles" [ref=f9e453]:
+                - heading "Buy Epistory - Typing Chronicles" [level=2] [ref=f9e458]
+                - paragraph [ref=f9e459]: SPECIAL PROMOTION! Offer ends 9 July
+                - generic [ref=f9e461]:
+                  - link "75% off. R$ 42,99 normally, discounted to R$ 10,74" [ref=f9e462]:
+                    - generic [ref=f9e463]: "-75%"
+                    - generic [ref=f9e464]:
+                      - generic [ref=f9e465]: R$ 42,99
+                      - generic [ref=f9e466]: R$ 10,74
+                  - button "Add to Cart" [ref=f9e468] [cursor=pointer]:
+                    - generic [ref=f9e469]: Add to Cart
+              - region "Buy Typing Journey BUNDLE (?)" [ref=f9e471]:
+                - heading "Buy Typing Journey BUNDLE (?)" [level=2] [ref=f9e474]:
+                  - text: Buy Typing Journey
+                  - generic [ref=f9e475]: BUNDLE (?)
+                - paragraph [ref=f9e476]:
+                  - generic [ref=f9e477]: Buy this bundle to save 10% off all 3 items!
+                  - generic [ref=f9e479]:
+                    - link "Epistory - Typing Chronicles" [ref=f9e480] [cursor=pointer]:
+                      - /url: https://store.steampowered.com/app/398850/?snr=1_5_9__412
+                      - img "Epistory - Typing Chronicles" [ref=f9e481]
+                    - link "Nanotale - Typing Chronicles" [ref=f9e482] [cursor=pointer]:
+                      - /url: https://store.steampowered.com/app/944920/?snr=1_5_9__412
+                      - img "Nanotale - Typing Chronicles" [ref=f9e483]
+                    - link "Outshine" [ref=f9e484] [cursor=pointer]:
+                      - /url: https://store.steampowered.com/app/1288410/?snr=1_5_9__412
+                      - img "Outshine" [ref=f9e485]
+                - generic [ref=f9e486]:
+                  - link "Bundle info" [ref=f9e489] [cursor=pointer]:
+                    - /url: https://store.steampowered.com/bundle/12425/Typing_Journey/?snr=1_5_9__403
+                    - generic [ref=f9e490]: Bundle info
+                  - generic [ref=f9e491]:
+                    - link "77% off. R$ 108,87 normally, discounted to R$ 25,13" [ref=f9e492]:
+                      - generic [ref=f9e493]: "-10%"
+                      - generic [ref=f9e494]: "-77%"
+                      - generic [ref=f9e495]:
+                        - generic [ref=f9e496]: R$ 108,87
+                        - generic [ref=f9e497]: R$ 25,13
+                    - button "Add to Cart" [ref=f9e499] [cursor=pointer]:
+                      - generic [ref=f9e500]: Add to Cart
+              - region "Buy Touch Type Tale x Epistory BUNDLE (?)" [ref=f9e502]:
+                - heading "Buy Touch Type Tale x Epistory BUNDLE (?)" [level=2] [ref=f9e505]:
+                  - text: Buy Touch Type Tale x Epistory
+                  - generic [ref=f9e506]: BUNDLE (?)
+                - paragraph [ref=f9e507]:
+                  - generic [ref=f9e508]: Buy this bundle to save 15% off all 2 items!
+                  - generic [ref=f9e510]:
+                    - link "Touch Type Tale - Strategic Typing" [ref=f9e511] [cursor=pointer]:
+                      - /url: https://store.steampowered.com/app/909470/?snr=1_5_9__412
+                      - img "Touch Type Tale - Strategic Typing" [ref=f9e512]
+                    - link "Epistory - Typing Chronicles" [ref=f9e513] [cursor=pointer]:
+                      - /url: https://store.steampowered.com/app/398850/?snr=1_5_9__412
+                      - img "Epistory - Typing Chronicles" [ref=f9e514]
+                - generic [ref=f9e515]:
+                  - link "Bundle info" [ref=f9e518] [cursor=pointer]:
+                    - /url: https://store.steampowered.com/bundle/57799/Touch_Type_Tale_x_Epistory/?snr=1_5_9__403
+                    - generic [ref=f9e519]: Bundle info
+                  - generic [ref=f9e520]:
+                    - link "60% off. R$ 87,53 normally, discounted to R$ 34,62" [ref=f9e521]:
+                      - generic [ref=f9e522]: "-15%"
+                      - generic [ref=f9e523]: "-60%"
+                      - generic [ref=f9e524]:
+                        - generic [ref=f9e525]: R$ 87,53
+                        - generic [ref=f9e526]: R$ 34,62
+                    - button "Add to Cart" [ref=f9e528] [cursor=pointer]:
+                      - generic [ref=f9e529]: Add to Cart
+              - region "Buy Indie Cactus Collection BUNDLE (?)" [ref=f9e531]:
+                - heading "Buy Indie Cactus Collection BUNDLE (?)" [level=2] [ref=f9e534]:
+                  - text: Buy Indie Cactus Collection
+                  - generic [ref=f9e535]: BUNDLE (?)
+                - paragraph [ref=f9e536]:
+                  - generic [ref=f9e537]: Buy this bundle to save 15% off all 6 items!
+                  - generic [ref=f9e539]:
+                    - link "Shift Quantum" [ref=f9e540] [cursor=pointer]:
+                      - /url: https://store.steampowered.com/app/700520/?snr=1_5_9__412
+                      - img "Shift Quantum" [ref=f9e541]
+                    - link "Ary and the secret of seasons" [ref=f9e542] [cursor=pointer]:
+                      - /url: https://store.steampowered.com/app/935570/?snr=1_5_9__412
+                      - img "Ary and the secret of seasons" [ref=f9e543]
+                    - link "Algo Bot" [ref=f9e544] [cursor=pointer]:
+                      - /url: https://store.steampowered.com/app/286300/?snr=1_5_9__412
+                      - img "Algo Bot" [ref=f9e545]
+                    - link "Epistory - Typing Chronicles" [ref=f9e546] [cursor=pointer]:
+                      - /url: https://store.steampowered.com/app/398850/?snr=1_5_9__412
+                      - img "Epistory - Typing Chronicles" [ref=f9e547]
+                    - link "Outshine" [ref=f9e548] [cursor=pointer]:
+                      - /url: https://store.steampowered.com/app/1288410/?snr=1_5_9__412
+                      - img "Outshine" [ref=f9e549]
+                    - link "Nanotale - Typing Chronicles" [ref=f9e550] [cursor=pointer]:
+                      - /url: https://store.steampowered.com/app/944920/?snr=1_5_9__412
+                      - img "Nanotale - Typing Chronicles" [ref=f9e551]
+                - generic [ref=f9e552]:
+                  - link "Bundle info" [ref=f9e555] [cursor=pointer]:
+                    - /url: https://store.steampowered.com/bundle/72086/Indie_Cactus_Collection/?snr=1_5_9__403
+                    - generic [ref=f9e556]: Bundle info
+                  - generic [ref=f9e557]:
+                    - link "79% off. R$ 219,67 normally, discounted to R$ 46,06" [ref=f9e558]:
+                      - generic [ref=f9e559]: "-15%"
+                      - generic [ref=f9e560]: "-79%"
+                      - generic [ref=f9e561]:
+                        - generic [ref=f9e562]: R$ 219,67
+                        - generic [ref=f9e563]: R$ 46,06
+                    - button "Add to Cart" [ref=f9e565] [cursor=pointer]:
+                      - generic [ref=f9e566]: Add to Cart
+              - generic [ref=f9e567]:
+                - heading "Content For This Game" [level=2] [ref=f9e568]:
+                  - text: Content For This Game
+                  - link "Browse all (1)" [ref=f9e570] [cursor=pointer]:
+                    - /url: https://store.steampowered.com/dlc/398850/Epistory__Typing_Chronicles/?snr=1_5_9__1061
+                    - text: Browse all
+                    - emphasis [ref=f9e571]: (1)
+                - generic [ref=f9e575]:
+                  - link "Epistory - Original Soundtrack 50% off. R$ 12,99 normally, discounted to R$ 6,49" [ref=f9e576] [cursor=pointer]:
+                    - /url: https://store.steampowered.com/app/458530/Epistory__Original_Soundtrack/?snr=1_5_9__405
+                    - generic [ref=f9e577]: Epistory - Original Soundtrack
+                    - link "50% off. R$ 12,99 normally, discounted to R$ 6,49" [ref=f9e579]:
+                      - generic [ref=f9e580]: "-50%"
+                      - generic [ref=f9e581]:
+                        - generic [ref=f9e582]: R$ 12,99
+                        - generic [ref=f9e583]: R$ 6,49
+                  - generic [ref=f9e584]:
+                    - generic [ref=f9e585]: R$ 6,49
+                    - link "Add all DLC to Cart" [ref=f9e587] [cursor=pointer]:
+                      - /url: javascript:addAllDlcToCart();
+                      - generic [ref=f9e588]: Add all DLC to Cart
+            - generic [ref=f9e590]:
+              - heading "Reviews" [level=2] [ref=f9e591]
+              - paragraph [ref=f9e592]:
+                - text: “a really sweet, superbly atmospheric action RPG where all the controls are on your keyboard.”
+                - link "RockPaperShotgun" [ref=f9e593] [cursor=pointer]:
+                  - /url: https://www.rockpapershotgun.com/2016/03/31/epistory-typing-chronicles-review/
+                - text: “I loved every frustrating moment.”
+                - link "Kotaku" [ref=f9e594] [cursor=pointer]:
+                  - /url: http://kotaku.com/epistory-puts-your-combat-typing-skills-to-the-t-e-s-t-1767957423
+                - text: “Epistory – Typing Chronicles is differentiating itself with regards to gameplay mechanics and visuals.”
+                - link "HardcoreGamer" [ref=f9e595] [cursor=pointer]:
+                  - /url: https://steamcommunity.com/linkfilter/?u=http%3A%2F%2Fwww.hardcoregamer.com%2F2015%2F09%2F28%2Fepistory-typing-chronicles-arrives-on-early-access-this-week%2F169498%2F
+            - generic [ref=f9e598]:
+              - heading "Check our new Typing games!" [level=2] [ref=f9e599]
+              - paragraph [ref=f9e600]
+            - generic [ref=f9e601]:
+              - generic [ref=f9e603]:
+                - heading "About This Game" [level=2] [ref=f9e604]
+                - img [ref=f9e606]
+                - img [ref=f9e608]
+                - strong [ref=f9e609]: Epistory
+                - text: is an atmospheric adventure typing game that tells the story of a writer lacking inspiration who asks her muse to help write her latest book.
+                - text: In Epistory you play the muse, a fictional character in a world where everything is untold. Your adventure begins on a blank page, but the world will soon become larger and livelier as you
+                - strong [ref=f9e610]: gather inspiration
+                - text: ","
+                - strong [ref=f9e611]: solve its mysteries
+                - text: and
+                - strong [ref=f9e612]: defeat its enemies
+                - text: . From movement to opening chests and fighting in epic battles, every element in the game is controlled exclusively with the keyboard.
+                - text: As you progress and explore the fantasy origami world, the story literally unfolds in the writer’s mind and the mysteries of the magic power of the words are revealed.
+                - heading "Features" [level=2] [ref=f9e613]
+                - list [ref=f9e614]:
+                  - listitem [ref=f9e615]:
+                    - strong [ref=f9e616]: "Explore a beautiful paper craft world:"
+                    - text: play as the muse riding a giant three tailed fox, lost in a fantasy 3D world
+                  - listitem [ref=f9e617]:
+                    - strong [ref=f9e618]: "More than just typing:"
+                    - text: solve mysterious puzzles, unlock magic powers and defeat enemies in adrenaline pumping epic combats
+                  - listitem [ref=f9e619]:
+                    - strong [ref=f9e620]: A writer’s block?
+                    - text: Collect fragments and inspirations points to unfold the story as you explore the origami world in the writer’s head. But there is more to the story than meets the eye…
+                  - listitem [ref=f9e621]:
+                    - strong [ref=f9e622]: "All in keyboard:"
+                    - text: from movements, combats to even menus, control everything with a keyboard
+                  - listitem [ref=f9e623]:
+                    - strong [ref=f9e624]: "Adaptive difficulty:"
+                    - text: if your hands fly around the keyboard or if you are a slow typist, the game features a dynamic difficulty system that evolves to fit each players’ skill set
+                  - listitem [ref=f9e625]:
+                    - strong [ref=f9e626]: "Competitive Arena Mode:"
+                    - text: challenge other players for the top spot in the arena leaderboards
+                  - listitem [ref=f9e627]:
+                    - strong [ref=f9e628]: "Play in your own language:"
+                    - text: game texts are localized in English, French, German, Spanish, Portuguese (Brazil), Russian, Polish with voice overs in English. The game supports several keyboard layouts (QWERTY, QWERTZ, AZERTY, BEPO, Dvorak, Workman and Colemak)
+              - generic [ref=f9e630] [cursor=pointer]: READ MORE
+            - generic [ref=f9e632]:
+              - heading "System Requirements" [level=2] [ref=f9e633]
+              - generic [ref=f9e634]:
+                - generic [ref=f9e635] [cursor=pointer]: Windows
+                - generic [ref=f9e636] [cursor=pointer]: macOS
+                - generic [ref=f9e637] [cursor=pointer]: SteamOS + Linux
+              - generic [ref=f9e639]:
+                - list [ref=f9e641]:
+                  - strong [ref=f9e642]: "Minimum:"
+                  - list [ref=f9e643]:
+                    - listitem [ref=f9e644]:
+                      - strong [ref=f9e645]: "OS *:"
+                      - text: Microsoft Windows XP/Vista/7/8/8.1
+                    - listitem [ref=f9e646]:
+                      - strong [ref=f9e647]: "Processor:"
+                      - text: Intel Core i5 2400 -OR- AMD Phenom II X6 1100T
+                    - listitem [ref=f9e648]:
+                      - strong [ref=f9e649]: "Memory:"
+                      - text: 4 GB RAM
+                    - listitem [ref=f9e650]:
+                      - strong [ref=f9e651]: "Graphics:"
+                      - text: ATI Radeon HD4850 -OR- GeForce GTX 295 (Does not support Intel Integrated Graphics Cards)
+                    - listitem [ref=f9e652]:
+                      - strong [ref=f9e653]: "Storage:"
+                      - text: 1 GB available space
+                - list [ref=f9e655]:
+                  - strong [ref=f9e656]: "Recommended:"
+                  - list [ref=f9e657]:
+                    - listitem [ref=f9e658]:
+                      - strong [ref=f9e659]: "Memory:"
+                      - text: 4 GB RAM
+                - generic [ref=f9e660]:
+                  - strong [ref=f9e661]: "*"
+                  - text: Starting January 1st, 2024, the Steam Client will only support Windows 10 and later versions.
+        - generic [ref=f9e663]:
+          - generic [ref=f9e666]:
+            - generic [ref=f9e668]:
+              - generic [ref=f9e669]:
+                - link [ref=f9e671] [cursor=pointer]:
+                  - /url: https://store.steampowered.com/developer/fishingcactus/
+                  - img [ref=f9e672]
+                - img [ref=f9e673]
+                - link "More from Fishing Cactus" [ref=f9e675] [cursor=pointer]:
+                  - /url: https://store.steampowered.com/developer/fishingcactus/
+              - generic [ref=f9e676]:
+                - button "Follow" [ref=f9e677]:
+                  - generic [ref=f9e678]: Follow
+                - link "See All" [ref=f9e679] [cursor=pointer]:
+                  - /url: https://store.steampowered.com/franchise/fishingcactus?snr=1_5_9__317
+                  - generic [ref=f9e680]: See All
+            - generic [ref=f9e683]:
+              - generic [ref=f9e684]:
+                - button "Previous" [ref=f9e685] [cursor=pointer]
+                - list "slider" [ref=f9e687]:
+                  - generic [ref=f9e689]:
+                    - listitem [ref=f9e690]:
+                      - button "85% off. R$23,99 normally, discounted to R$3,59" [ref=f9e696]:
+                        - link "85% off. R$23,99 normally, discounted to R$3,59" [ref=f9e697] [cursor=pointer]:
+                          - /url: https://store.steampowered.com/app/286300/Algo_Bot?snr=1_5_9__18
+                          - generic "85% off. R$23,99 normally, discounted to R$3,59" [ref=f9e703]:
+                            - generic [ref=f9e704]: "-85%"
+                            - generic [ref=f9e705]:
+                              - generic [ref=f9e706]: R$23,99
+                              - generic [ref=f9e707]: R$3,59
+                    - listitem [ref=f9e708]:
+                      - button "50% off. R$12,99 normally, discounted to R$6,49" [ref=f9e714]:
+                        - link "50% off. R$12,99 normally, discounted to R$6,49" [ref=f9e715] [cursor=pointer]:
+                          - /url: https://store.steampowered.com/app/458530/Epistory__Original_Soundtrack?snr=1_5_9__18
+                          - generic "50% off. R$12,99 normally, discounted to R$6,49" [ref=f9e721]:
+                            - generic [ref=f9e722]: "-50%"
+                            - generic [ref=f9e723]:
+                              - generic [ref=f9e724]: R$12,99
+                              - generic [ref=f9e725]: R$6,49
+                    - listitem [ref=f9e726]:
+                      - button "Free Demo" [ref=f9e732]:
+                        - link "Free Demo" [ref=f9e733] [cursor=pointer]:
+                          - /url: https://store.steampowered.com/app/497770/Epistory__Typing_Chronicles_Demo?snr=1_5_9__18
+                          - generic [ref=f9e740]: Free Demo
+                    - listitem [ref=f9e741]:
+                      - button "80% off. R$37,99 normally, discounted to R$7,59" [ref=f9e747]:
+                        - link "80% off. R$37,99 normally, discounted to R$7,59" [ref=f9e748] [cursor=pointer]:
+                          - /url: https://store.steampowered.com/app/700520/Shift_Quantum__A_Cyber_Noir_Puzzle_Platformer?snr=1_5_9__18
+                          - generic "80% off. R$37,99 normally, discounted to R$7,59" [ref=f9e754]:
+                            - generic [ref=f9e755]: "-80%"
+                            - generic [ref=f9e756]:
+                              - generic [ref=f9e757]: R$37,99
+                              - generic [ref=f9e758]: R$7,59
+                    - listitem [ref=f9e759]
+                    - listitem [ref=f9e762]
+                    - listitem [ref=f9e765]
+                    - listitem [ref=f9e768]
+                    - listitem [ref=f9e771]
+                    - listitem [ref=f9e774]
+                - button "Next" [ref=f9e777] [cursor=pointer]
+              - generic [ref=f9e780]:
+                - button "previous" [ref=f9e784] [cursor=pointer]
+                - button "next" [ref=f9e786] [cursor=pointer]
+          - generic [ref=f9e789]:
+            - generic [ref=f9e790]:
+              - generic [ref=f9e791]: More like this
+              - link "See All" [ref=f9e792] [cursor=pointer]:
+                - /url: https://store.steampowered.com/recommended/morelike/app/398850/?snr=1_5_9__300
+                - generic [ref=f9e793]: See All
+            - generic [ref=f9e796]:
+              - generic [ref=f9e797]:
+                - button "Previous" [ref=f9e798] [cursor=pointer]
+                - list "slider" [ref=f9e800]:
+                  - generic [ref=f9e802]:
+                    - listitem [ref=f9e803]:
+                      - button "75% off. R$149,00 normally, discounted to R$37,25" [ref=f9e809]:
+                        - link "75% off. R$149,00 normally, discounted to R$37,25" [ref=f9e810] [cursor=pointer]:
+                          - /url: https://store.steampowered.com/app/489830/The_Elder_Scrolls_V_Skyrim_Special_Edition?snr=1_5_9__300
+                          - generic "75% off. R$149,00 normally, discounted to R$37,25" [ref=f9e816]:
+                            - generic [ref=f9e817]: "-75%"
+                            - generic [ref=f9e818]:
+                              - generic [ref=f9e819]: R$149,00
+                              - generic [ref=f9e820]: R$37,25
+                    - listitem [ref=f9e821]:
+                      - button "R$52,99" [ref=f9e827]:
+                        - link "R$52,99" [ref=f9e828] [cursor=pointer]:
+                          - /url: https://store.steampowered.com/app/39210/FINAL_FANTASY_XIV_Online?snr=1_5_9__300
+                          - generic [ref=f9e835]: R$52,99
+                    - listitem [ref=f9e836]:
+                      - button "85% off. R$249,99 normally, discounted to R$37,49" [ref=f9e842]:
+                        - link "85% off. R$249,99 normally, discounted to R$37,49" [ref=f9e843] [cursor=pointer]:
+                          - /url: https://store.steampowered.com/app/990080/Hogwarts_Legacy?snr=1_5_9__300
+                          - generic "85% off. R$249,99 normally, discounted to R$37,49" [ref=f9e849]:
+                            - generic [ref=f9e850]: "-85%"
+                            - generic [ref=f9e851]:
+                              - generic [ref=f9e852]: R$249,99
+                              - generic [ref=f9e853]: R$37,49
+                    - listitem [ref=f9e854]:
+                      - button "75% off. R$61,50 normally, discounted to R$15,37" [ref=f9e860]:
+                        - link "75% off. R$61,50 normally, discounted to R$15,37" [ref=f9e861] [cursor=pointer]:
+                          - /url: https://store.steampowered.com/app/306130/The_Elder_Scrolls_Online?snr=1_5_9__300
+                          - generic "75% off. R$61,50 normally, discounted to R$15,37" [ref=f9e867]:
+                            - generic [ref=f9e868]: "-75%"
+                            - generic [ref=f9e869]:
+                              - generic [ref=f9e870]: R$61,50
+                              - generic [ref=f9e871]: R$15,37
+                    - listitem [ref=f9e872]
+                    - listitem [ref=f9e875]
+                    - listitem [ref=f9e878]
+                    - listitem [ref=f9e881]
+                    - listitem [ref=f9e884]
+                    - listitem [ref=f9e887]
+                    - listitem [ref=f9e890]
+                    - listitem [ref=f9e893]
+                    - listitem [ref=f9e896]
+                    - listitem [ref=f9e899]
+                    - listitem [ref=f9e902]
+                    - listitem [ref=f9e905]
+                    - listitem [ref=f9e908]
+                    - listitem [ref=f9e911]
+                    - listitem [ref=f9e914]
+                    - listitem [ref=f9e917]
+                    - listitem [ref=f9e920]
+                    - listitem [ref=f9e923]
+                    - listitem [ref=f9e926]
+                    - listitem [ref=f9e929]
+                    - listitem [ref=f9e932]
+                    - listitem [ref=f9e935]
+                    - listitem [ref=f9e938]
+                    - listitem [ref=f9e941]
+                    - listitem [ref=f9e944]
+                    - listitem [ref=f9e947]
+                - button "Next" [ref=f9e950] [cursor=pointer]
+              - generic [ref=f9e953]:
+                - button "previous" [ref=f9e957] [cursor=pointer]
+                - button "next" [ref=f9e959] [cursor=pointer]
+          - generic [ref=f9e961]:
+            - link "View all" [ref=f9e962] [cursor=pointer]:
+              - /url: https://store.steampowered.com/curators/curatorsreviewing/?appid=398850&snr=1_5_9__top-curators
+            - heading "What Curators Say" [level=2] [ref=f9e963]
+            - generic [ref=f9e964]:
+              - text: 203 Curators have reviewed this product. Click
+              - link "here" [ref=f9e965] [cursor=pointer]:
+                - /url: https://store.steampowered.com/curators/curatorsreviewing/?appid=398850&snr=1_5_9__top-curators
+              - text: to see them.
+        - generic [ref=f9e968]:
+          - heading "Customer reviews for Epistory - Typing Chronicles See language breakdown About user reviews Your preferences" [level=2] [ref=f9e969]:
+            - text: Customer reviews for Epistory - Typing Chronicles
+            - generic [ref=f9e971]:
+              - link "See language breakdown" [ref=f9e972] [cursor=pointer]:
+                - /url: javascript:ViewLanguageReviewScores( 398850 )
+              - link "About user reviews" [ref=f9e973] [cursor=pointer]:
+                - /url: https://help.steampowered.com/faqs/view/2DA6-9CB3-F84A-643E
+              - link "Your preferences" [ref=f9e974] [cursor=pointer]:
+                - /url: https://store.steampowered.com/account/preferences/#review_score_preferences
+          - generic [ref=f9e975]:
+            - generic [ref=f9e978]:
+              - generic [ref=f9e979]: "English Reviews:"
+              - generic [ref=f9e980]: Overwhelmingly Positive
+              - generic [ref=f9e981]: (2,215 reviews)
+            - generic [ref=f9e983]:
+              - text: "Total reviews in all languages:"
+              - generic [ref=f9e984]: 4,001
+              - generic [ref=f9e985]: Very Positive
+          - list "Filter options" [ref=f9e988]:
+            - listitem [ref=f9e989]:
+              - button "Review Type" [ref=f9e990] [cursor=pointer]
+            - listitem [ref=f9e991]:
+              - button "Purchase Type" [ref=f9e992] [cursor=pointer]
+            - listitem [ref=f9e993]:
+              - button "Language" [ref=f9e994] [cursor=pointer]
+            - listitem [ref=f9e995]:
+              - button "Date Range" [ref=f9e996] [cursor=pointer]
+            - listitem [ref=f9e997]:
+              - button "Playtime" [ref=f9e998] [cursor=pointer]
+            - listitem [ref=f9e999]:
+              - button "Display" [ref=f9e1000] [cursor=pointer]
+            - button "Show graph" [ref=f9e1002] [cursor=pointer]: Show graph
+          - group [ref=f9e1005]:
+            - generic [ref=f9e1006]: Filters
+            - button [ref=f9e1007] [cursor=pointer]
+            - button [ref=f9e1008] [cursor=pointer]
+            - button [ref=f9e1009] [cursor=pointer]
+            - button [ref=f9e1010] [cursor=pointer]
+            - button "Excluding Off-topic Review Activity" [ref=f9e1011] [cursor=pointer]
+            - button "Playtime:" [ref=f9e1012] [cursor=pointer]: "Playtime:"
+            - button "Played Mostly on Steam Deck" [ref=f9e1013] [cursor=pointer]
+            - button "Operating System:" [ref=f9e1014] [cursor=pointer]: "Operating System:"
+            - button "CPU:" [ref=f9e1015] [cursor=pointer]: "CPU:"
+            - button "GPU:" [ref=f9e1016] [cursor=pointer]: "GPU:"
+            - button "Device Type:" [ref=f9e1017] [cursor=pointer]: "Device Type:"
+  - contentinfo [ref=f9e1025]:
+    - generic [ref=f9e1026]:
+      - generic [ref=f9e1027]:
+        - link [ref=f9e1028] [cursor=pointer]:
+          - /url: https://store.steampowered.com/?snr=1_44_44_
+          - img [ref=f9e1029]
+        - link [ref=f9e1039] [cursor=pointer]:
+          - /url: https://valvesoftware.com
+          - img [ref=f9e1040]
+      - paragraph [ref=f9e1045]:
+        - text: © 2026 Valve Corporation. All rights reserved. All trademarks are property of their respective owners in the US and other countries.
+        - text: VAT included in all prices where applicable.
+      - generic [ref=f9e1046]:
+        - link [ref=f9e1047] [cursor=pointer]:
+          - /url: https://www.youtube.com/@Steam
+          - img [ref=f9e1048]
+        - link [ref=f9e1050] [cursor=pointer]:
+          - /url: https://bsky.app/profile/steampowered.com
+          - img [ref=f9e1051]
+        - link [ref=f9e1053] [cursor=pointer]:
+          - /url: https://facebook.com/steam
+          - img [ref=f9e1054]
+        - link [ref=f9e1056] [cursor=pointer]:
+          - /url: https://twitter.com/steam
+          - img [ref=f9e1057]
+    - generic [ref=f9e1059]:
+      - heading "STEAM" [level=3] [ref=f9e1060]
+      - link "About Steam" [ref=f9e1061] [cursor=pointer]:
+        - /url: https://store.steampowered.com/about/?snr=1_44_44_
+      - link "Steam SSA" [ref=f9e1062] [cursor=pointer]:
+        - /url: https://store.steampowered.com/subscriber_agreement/?snr=1_44_44_
+      - link "Steamworks" [ref=f9e1063] [cursor=pointer]:
+        - /url: https://partner.steamgames.com/
+      - link "Steam Distribution" [ref=f9e1064] [cursor=pointer]:
+        - /url: https://partner.steamgames.com/steamdirect
+      - link "Gift Cards" [ref=f9e1065] [cursor=pointer]:
+        - /url: https://store.steampowered.com/digitalgiftcards/?snr=1_44_44_
+    - generic [ref=f9e1066]:
+      - heading "VALVE" [level=3] [ref=f9e1067]
+      - link "About Valve" [ref=f9e1068] [cursor=pointer]:
+        - /url: https://valvesoftware.com/about
+      - link "Jobs" [ref=f9e1069] [cursor=pointer]:
+        - /url: https://valvesoftware.com/
+      - link "Hardware" [ref=f9e1070] [cursor=pointer]:
+        - /url: https://store.steampowered.com/hardware/?snr=1_44_44_
+      - link "Recycling" [ref=f9e1071] [cursor=pointer]:
+        - /url: https://store.steampowered.com/hardware_recycling/?snr=1_44_44_
+    - generic [ref=f9e1072]:
+      - heading "LEGAL" [level=3] [ref=f9e1073]
+      - link "Privacy" [ref=f9e1074] [cursor=pointer]:
+        - /url: https://store.steampowered.com/privacy_agreement/?snr=1_44_44_
+      - link "Accessibility" [ref=f9e1075] [cursor=pointer]:
+        - /url: https://help.steampowered.com/faqs/view/10BB-D27A-6378-4436
+      - link "Notices & Policies" [ref=f9e1076] [cursor=pointer]:
+        - /url: https://store.steampowered.com/legal/?snr=1_44_44_
+      - link "Cookies" [ref=f9e1077] [cursor=pointer]:
+        - /url: https://store.steampowered.com/account/cookiepreferences/?snr=1_44_44_
+      - link "Refunds" [ref=f9e1078] [cursor=pointer]:
+        - /url: https://store.steampowered.com/steam_refunds/?snr=1_44_44_
+    - generic [ref=f9e1079]:
+      - heading "MORE" [level=3] [ref=f9e1080]
+      - link "Get Steam" [ref=f9e1081] [cursor=pointer]:
+        - /url: https://store.steampowered.com/about/?snr=1_44_44_
+      - link "Get Mobile Apps" [ref=f9e1082] [cursor=pointer]:
+        - /url: https://store.steampowered.com/mobile/?snr=1_44_44_
+      - link "Get Support" [ref=f9e1083] [cursor=pointer]:
+        - /url: https://help.steampowered.com/
+      - link "My Account" [ref=f9e1084] [cursor=pointer]:
+        - /url: https://store.steampowered.com/account/?snr=1_44_44_

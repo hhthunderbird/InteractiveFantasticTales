@@ -47,7 +47,7 @@ namespace InteractiveFantasticTales.Services
 
     public class PurchaseService
     {
-        private const string CloudRunBaseUrl = "https://api-ift-cloudrun.example.com";
+        private const string CloudRunBaseUrl = "https://ift-api-201008727431.us-central1.run.app";
         private const string EntitlementsCacheKey = "purchase_entitlements";
         private const int MaxRetries = 3;
         private const int RetryDelayBaseMs = 1000;
@@ -59,6 +59,8 @@ namespace InteractiveFantasticTales.Services
         private CloudRunAuthService _authService;
         private List<EntitlementData> _cachedEntitlements = new List<EntitlementData>();
         private bool _initialized;
+
+        public List<EntitlementData> CachedEntitlements => new List<EntitlementData>(_cachedEntitlements);
 
         public PurchaseService(CloudRunAuthService authService)
         {
@@ -87,8 +89,8 @@ namespace InteractiveFantasticTales.Services
 
             var idempotencyKey = GenerateIdempotencyKey();
 
-#if UNITY_EDITOR || DEVELOPMENT_BUILD
-            if (IsMockMode())
+            var isMock = IsMockMode();
+            if (isMock)
             {
                 Debug.Log($"[PurchaseService] MOCK: VerifyPurchase storyId={storyId} store={store}");
                 yield return new WaitForSeconds(0.5f);
@@ -110,7 +112,6 @@ namespace InteractiveFantasticTales.Services
                 callback(mockResp);
                 yield break;
             }
-#endif
 
             var requestBody = new PurchaseVerifyRequest
             {
@@ -134,10 +135,7 @@ namespace InteractiveFantasticTales.Services
                 using (var request = new UnityWebRequest($"{CloudRunBaseUrl}/api/purchases/verify", "POST"))
                 {
                     request.SetRequestHeader("Content-Type", "application/json");
-
-                    var token = _authService.GetAuthTokenSync();
-                    if (!string.IsNullOrEmpty(token))
-                        request.SetRequestHeader("Authorization", $"Bearer {token}");
+                    _authService.AttachAuthHeader(request);
 
                     var bodyRaw = Encoding.UTF8.GetBytes(jsonBody);
                     request.uploadHandler = new UploadHandlerRaw(bodyRaw);
@@ -183,14 +181,12 @@ namespace InteractiveFantasticTales.Services
 
         public IEnumerator RestorePurchases()
         {
-#if UNITY_EDITOR || DEVELOPMENT_BUILD
             if (IsMockMode())
             {
-                Debug.Log("[PurchaseService] MOCK: RestorePurchases - no purchases to restore");
+                Debug.Log("[PurchaseService] MOCK: RestorePurchases");
                 OnEntitlementsUpdated?.Invoke(new List<EntitlementData>(_cachedEntitlements));
                 yield break;
             }
-#endif
 
             for (int attempt = 0; attempt <= MaxRetries; attempt++)
             {
@@ -203,10 +199,7 @@ namespace InteractiveFantasticTales.Services
 
                 using (var request = UnityWebRequest.Get($"{CloudRunBaseUrl}/api/purchases/restore"))
                 {
-                    var token = _authService.GetAuthTokenSync();
-                    if (!string.IsNullOrEmpty(token))
-                        request.SetRequestHeader("Authorization", $"Bearer {token}");
-
+                    _authService.AttachAuthHeader(request);
                     request.downloadHandler = new DownloadHandlerBuffer();
                     yield return request.SendWebRequest();
 
@@ -294,7 +287,6 @@ namespace InteractiveFantasticTales.Services
                 var json = JsonUtility.ToJson(wrapper);
                 var path = System.IO.Path.Combine(Application.persistentDataPath, "purchase_entitlements.json");
                 SecureStorage.SaveToFile(path, json);
-                Debug.Log($"[PurchaseService] Saved {_cachedEntitlements.Count} entitlements to cache");
             }
             catch (Exception e)
             {
@@ -302,9 +294,14 @@ namespace InteractiveFantasticTales.Services
             }
         }
 
-        private bool IsMockMode()
+        private static bool IsMockMode()
         {
-            return true;
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
+            var auth = CloudRunAuthService.Instance;
+            return auth == null || !auth.IsFirebaseReady;
+#else
+            return false;
+#endif
         }
 
         [Serializable]

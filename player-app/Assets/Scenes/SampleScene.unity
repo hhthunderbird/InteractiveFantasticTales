@@ -1973,6 +1973,15 @@ GameObject:
   - component: {fileID: 2037920807}
   - component: {fileID: 2037920806}
   - component: {fileID: 2037920808}
+  - component: {fileID: 2037920817}
+  - component: {fileID: 2037920816}
+  - component: {fileID: 2037920815}
+  - component: {fileID: 2037920814}
+  - component: {fileID: 2037920813}
+  - component: {fileID: 2037920812}
+  - component: {fileID: 2037920811}
+  - component: {fileID: 2037920810}
+  - component: {fileID: 2037920809}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -2131,6 +2140,122 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cef01ad64106b9f4eaca1bf956806d22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractiveFantasticTales.Core.LocalizationManager
+--- !u!114 &2037920809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037920798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fb4cc38b4b780448a8ca42c764492a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractiveFantasticTales.Services.ProgressTracker
+--- !u!114 &2037920810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037920798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 384f1cbff490c804aabf4f40aed90f39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractiveFantasticTales.Services.LibraryManager
+--- !u!114 &2037920811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037920798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18ac73ccf184eba41b4315ccd09dca4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractiveFantasticTales.Services.CacheManager
+  _softLimitBytes: 400000000
+  _hardLimitBytes: 500000000
+  _maxStories: 10
+  _maxInactiveDays: 90
+--- !u!114 &2037920812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037920798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d24e5db781b575a419d05900b217046d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractiveFantasticTales.Services.DownloadManager
+  _maxConcurrentDownloads: 2
+  _maxRetries: 3
+  _retryDelaySeconds: 2
+  _chunkSizeBytes: 1048576
+--- !u!114 &2037920813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037920798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09643ac19dc18e64294bb5e0fc4af097, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractiveFantasticTales.Services.PurchaseManager
+--- !u!114 &2037920814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037920798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a18dac495757fc745ad006f01b5cfddd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractiveFantasticTales.Services.CloudSaveClient
+--- !u!114 &2037920815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037920798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6570c4dc4f0b901419ca03713b5b3aee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractiveFantasticTales.Services.StoryCatalogService
+--- !u!114 &2037920816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037920798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbd65acc04b18d8448a86681a2374a1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractiveFantasticTales.Services.CloudRunAuthService
+--- !u!114 &2037920817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037920798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4ba9b776cd957449b78d00e67f1f3cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractiveFantasticTales.Core.FirebaseBootstrap
 --- !u!1 &2045553890
 GameObject:
   m_ObjectHideFlags: 0

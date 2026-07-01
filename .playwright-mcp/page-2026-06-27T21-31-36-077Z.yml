@@ -1,0 +1,425 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - link "Link to the Steam Homepage" [ref=e8] [cursor=pointer]:
+          - /url: https://store.steampowered.com/
+          - img "Link to the Steam Homepage" [ref=e9]
+        - navigation "Global Menu" [ref=e10]:
+          - link "STORE" [ref=e11] [cursor=pointer]:
+            - /url: https://store.steampowered.com/
+          - link "COMMUNITY" [ref=e12] [cursor=pointer]:
+            - /url: https://steamcommunity.com/
+          - link "About" [ref=e13] [cursor=pointer]:
+            - /url: https://store.steampowered.com/about/
+          - link "SUPPORT" [ref=e14] [cursor=pointer]:
+            - /url: https://help.steampowered.com/en/
+        - navigation "Account Menu" [ref=e16]:
+          - link "Install Steam" [ref=e17] [cursor=pointer]:
+            - /url: https://store.steampowered.com/about/
+            - generic [ref=e18]: Install Steam
+          - link "sign in" [ref=e19] [cursor=pointer]:
+            - /url: https://steamcommunity.com/login/home/?goto=app%2F856880%2Freviews%2F%3Fbrowsefilter%3Dtoprated%26snr%3D1_5_100010_%26filterLanguage%3Denglish%26reviewType%3Dnegative
+          - text: "| language"
+    - main [ref=e20]:
+      - generic [ref=e21]:
+        - generic [ref=e23]:
+          - generic [ref=e25]:
+            - link "Store Page" [ref=e27] [cursor=pointer]:
+              - /url: https://store.steampowered.com/app/856880?snr=2_9_100010__apphubheader
+              - generic [ref=e28]: Store Page
+            - generic [ref=e30]: Fighting Fantasy Classics
+            - generic [ref=e31]:
+              - link "All" [ref=e32] [cursor=pointer]:
+                - /url: https://steamcommunity.com/app/856880
+              - link "Discussions" [ref=e33] [cursor=pointer]:
+                - /url: https://steamcommunity.com/app/856880/discussions/
+              - link "Screenshots" [ref=e34] [cursor=pointer]:
+                - /url: https://steamcommunity.com/app/856880/screenshots/
+              - link "Artwork" [ref=e35] [cursor=pointer]:
+                - /url: https://steamcommunity.com/app/856880/images/
+              - link "Broadcasts" [ref=e36] [cursor=pointer]:
+                - /url: https://steamcommunity.com/app/856880/broadcasts/
+              - link "Videos" [ref=e37] [cursor=pointer]:
+                - /url: https://steamcommunity.com/app/856880/videos/
+              - link "News" [ref=e38] [cursor=pointer]:
+                - /url: https://steamcommunity.com/app/856880/allnews/
+              - link "Guides" [ref=e39] [cursor=pointer]:
+                - /url: https://steamcommunity.com/app/856880/guides/
+              - link "Reviews" [ref=e40] [cursor=pointer]:
+                - /url: https://steamcommunity.com/app/856880/reviews/
+          - generic [ref=e42]:
+            - generic [ref=e43]: Show
+            - button "Most Helpful (All Time)" [ref=e44] [cursor=pointer]:
+              - button "Most Helpful (All Time)" [ref=e45]
+            - button "All" [ref=e47] [cursor=pointer]:
+              - generic [ref=e48]: All
+            - generic [ref=e50]: Language
+            - button "English" [ref=e51] [cursor=pointer]:
+              - generic [ref=e52]: English
+            - link "About Reviews" [ref=e55] [cursor=pointer]:
+              - /url: http://www.steampowered.com/reviews/
+              - generic [ref=e56]: About Reviews
+        - generic [ref=e59]:
+          - generic:
+            - button [ref=e60] [cursor=pointer]:
+              - generic [ref=e62]:
+                - generic [ref=e63]:
+                  - text: 85 people found this review helpful
+                  - generic [ref=e64]:
+                    - img [ref=e65]
+                    - text: "2"
+                - generic [ref=e67]:
+                  - img [ref=e69]
+                  - generic [ref=e70]: Recommended
+                  - generic [ref=e71]: 0.2 hrs on record
+                - generic [ref=e72]:
+                  - generic [ref=e73]: "Posted: 6 June, 2018"
+                  - text: I fully recommend this to both newcomers and veterans as it's a nice collection of a few of the best Fighting Fantasy gamebooks. Albeit the Warlock of Firetop Mountain is the original digital book form as opposed to the 3D turn-based RPG that was separately Kickstarted. For those not aware or don't remember, Fighting Fantasy is a long-running series of various books where you, the reader, are the hero/heroine of the story. The book speaks to you in second person as both the narration and characters. You create a character by your imagination and then roll dice to determine your Skill, Stamina and Luck and all three will be used at some point(s) in the story. You take damage, you deal damage, you can die and you may witness other characters dying, some as a direct result of your own actions, but mostly because you will "learn" the gamebook's ideal path the more you play.
+                  - text: For newcomers, this is right up your alley as you can "pick up and play" easily as there is a detailed but optional ruleset as well as the history of Fighting Fantasy, so you can become fully aware of what you're getting into and how to play these gamebooks. Not only that but as I just mentioned, these are just some of the finest Fighting Fantasy gamebooks out of dozens and dozens throughout the decades. I recommend playing the gamebooks in release of issue order, which can be arranged as such in the options cogwheel, this is so that you're playing them in the original row of releases the way the writers wanted their audience to experience them.
+                  - text: For veterans, it's a near 1:1 conversion if your favourites put into digital form with many quality of life conveniences such as the bookmark system, which works self-explanatory, automated dice rolling and stat changes, gallery section and page turning at the click of a button. You can view both the classic and "new" artwork at the click of a button.
+                  - text: Overall, this is a must-have for gamebook lovers, my favourite is Deathtrap Dungeon so I would recommend you'd give that a play through if you don't want to follow the issue release order. This is also the first time Deathtrap Dungeon has been made available digitally on PC.
+                  - text: Finally, the interface of this collection itself is nice, the selection of audio tracks is a welcome addition and it's nice to see the books on a shelf so to say. My gripes are the lack of a "mouse hover" effect, no dedicated quit button and the resolution option changing is buggy as it takes a few clicks for the changes to register.
+              - generic [ref=e76]:
+                - generic [ref=e77]:
+                  - link:
+                    - /url: https://steamcommunity.com/id/evil_incarnate/
+                  - generic [ref=e78]:
+                    - link:
+                      - /url: https://steamcommunity.com/id/evil_incarnate/
+                      - img [ref=e80]
+                    - generic [ref=e82]:
+                      - link:
+                        - /url: https://steamcommunity.com/id/evil_incarnate/
+                      - link "Evil incarnate" [ref=e83]:
+                        - /url: https://steamcommunity.com/id/evil_incarnate/
+                - generic [ref=e85]: "0"
+            - button [ref=e86] [cursor=pointer]:
+              - generic [ref=e88]:
+                - generic [ref=e89]:
+                  - text: 64 people found this review helpful
+                  - text: 5 people found this review funny
+                  - generic [ref=e90]:
+                    - img [ref=e91]
+                    - text: "5"
+                - generic [ref=e93]:
+                  - img [ref=e95]
+                  - generic [ref=e96]: Recommended
+                  - generic [ref=e97]: 63.0 hrs on record
+                - generic [ref=e98]:
+                  - generic [ref=e99]: "Posted: 7 August, 2018"
+                  - text: I don't usually write reviews, but this game definitely deserves higher rating.
+                  - text: It targets a niche market; namely the (former) fans of the Fighting Fantasy books. Whether you just read them back in the days or still own them, there is so much joy in rereading them. This new digital format is more convenient than the original paper copies, without weakening the strong nostalgia you can experiment.
+                  - text: A lot of the bad reviews come from people discouraged by the arbitrary difficulty. It is true that more often than not, it is impossible to distinguish the path that will give you the key item from the one that will lure you into an unwinnable journey. But this was the well intended design of these stories, and despite the differences with current gaming standards, Tin Man Games made the right choice and kept faithful to the source material. I still find it exciting to start the whole story again, explore different places, make better choices, trying to find the missing items or crucial knowledge that I need... By the way some of the puzzles are still very good and require some thinking (the carved stone door in Bloodbones!). Difficult enough for a grown man who eats his vegetables.
+                  - text: All in all, I strongly encourage you to try this game if you loved the Fighting Fantasy collection. You would certainly not want to deny the younger-you sitting at his desk, writing its progress with pencil on his spiral-bound notebook, rejoicing in solving puzzles, conveniently erasing a wrong paragraph number and backtracking without consequence, surprisingly throwing so much 6 with his dice to determine his initial skill, stamina and luck scores he could have won millions in gambling.
+              - generic [ref=e102]:
+                - generic [ref=e103]:
+                  - link:
+                    - /url: https://steamcommunity.com/id/boitiste/
+                  - generic [ref=e104]:
+                    - link:
+                      - /url: https://steamcommunity.com/id/boitiste/
+                      - img [ref=e106]
+                    - generic [ref=e108]:
+                      - link:
+                        - /url: https://steamcommunity.com/id/boitiste/
+                      - link "Bam" [ref=e109]:
+                        - /url: https://steamcommunity.com/id/boitiste/
+                    - generic [ref=e110]: 617 products in account
+                - generic [ref=e112]: "0"
+          - 'button "13 people found this review helpful 2 Recommended 22.9 hrs on record Posted: 17 January, 2025 six years after release, it''s being updated for full compatibility with Steam-deck and plans to add more gamebooks Jessie 611 products in account 0" [ref=e114] [cursor=pointer]':
+            - generic [ref=e116]:
+              - generic [ref=e117]:
+                - text: 13 people found this review helpful
+                - generic [ref=e118]:
+                  - img [ref=e119]
+                  - text: "2"
+              - generic [ref=e121]:
+                - img [ref=e123]
+                - generic [ref=e124]: Recommended
+                - generic [ref=e125]: 22.9 hrs on record
+              - generic [ref=e126]:
+                - generic [ref=e127]: "Posted: 17 January, 2025"
+                - text: six years after release, it's being updated for full compatibility with Steam-deck and plans to add more gamebooks
+            - generic [ref=e130]:
+              - generic [ref=e131]:
+                - link:
+                  - /url: https://steamcommunity.com/profiles/76561197970521530/
+                - generic [ref=e132]:
+                  - link:
+                    - /url: https://steamcommunity.com/profiles/76561197970521530/
+                    - img [ref=e134]
+                  - generic [ref=e136]:
+                    - link:
+                      - /url: https://steamcommunity.com/profiles/76561197970521530/
+                    - link "Jessie" [ref=e137]:
+                      - /url: https://steamcommunity.com/profiles/76561197970521530/
+                  - generic [ref=e138]: 611 products in account
+              - generic [ref=e140]: "0"
+          - generic [ref=e141]:
+            - button [ref=e142] [cursor=pointer]:
+              - generic [ref=e144]:
+                - generic [ref=e145]:
+                  - text: 152 people found this review helpful
+                  - text: 2 people found this review funny
+                  - generic [ref=e146]:
+                    - img [ref=e147]
+                    - text: "6"
+                - generic [ref=e149]:
+                  - img [ref=e151]
+                  - generic [ref=e152]: Not Recommended
+                  - generic [ref=e153]: 3.9 hrs on record
+                - generic [ref=e154]:
+                  - generic [ref=e155]: "Posted: 25 January, 2019"
+                  - text: "There are two major components to Fighting Fantasy Classics: the books themselves, and the program/interface."
+                  - text: The books are just as flavorful and fun as I remembered from years past. Make no mistake that many of these books have iconic scenes that have been in my memory since childhood. As an adult, I can appreciate them again in a different waty.
+                  - text: Having these books in digital format is wonderful. For those not familair, these are choose your own adventure books where your choices dictate where the story leads.... and very often it will mean your death. These are not puzzle books to be solved with wits. These adventures are meant to be replayed several times, making different choices, and using your knowledge of past reads to get you to the end. While most are fantasy/D&D themed, there are a scant few sci-fi, horror, and superhero iterations.
+                  - text: Each time you read, you sort of skip through what you already know and change your decisions. Your new character has different statistics that can influence the adventure as well. Oldschool cheaters (we ALL were to some degree) will do many things like fudge dice, "forget" to take damage, keep their finger on the last page until you see if your choice has an immediate negative impact.. then quickly go back... some of these cheats are built into the program and there is no punishment for doing so. It's all about how you want to play/read.
+                  - text: For the ability to read some of the best Fighting Fantasy titles, this gets a thumbs up. But you can always find and buy these books elsewhere. To that end, I put more weight on Final Fantasy Classic's ability to make the most out of the digital format. Sadly, this is a cheap mobile port. The inteface is meant ofr mobile. The popup dialogue still says "touch" instead of click. And due to this being a mobile game, it is sorely lacking in simple PC functionalities like mutiple mouse buttons, keyboard shortcuts, or just about anything other than basic one input commands. For example, you can bookmark pages and use them to go back to a previous book entry... this feature is great... except you can't name the bookmark and it defaults to the number entry, which tells you NOTHING. Basic, simple, obvious options that a PC version should support. But it doesnt because mobile port. And lazy devs. Yes, there is no skirting around the fact that these ports get almsot nothing in the way of development for PC platform. It's a shame. If this had a better, deeper, more accessible and option-rich interface, I'd gives this two thumbs up and yes I'd recommend buying it (books on sale for $2.50 each is a no-brainer pirce).
+                  - text: If choose-your-own-adventure books interest you... and these books do an amazing job at feeling like an adventure..., you're willing to die and/or cheat repeatedly, and you can tolerate bad mobile interface and dumbed-down options, then please check Final Fantasy Classics out. But I absolutely have to give this a thumbs down for yet another lazy mobile port from a dev who could take this golden opportunity and make a stellar digital product, re-ingniting the scene, but instead just do minimal work to tap into the PC market without much due respect for the platform.
+              - generic [ref=e158]:
+                - generic [ref=e159]:
+                  - link:
+                    - /url: https://steamcommunity.com/id/liquidid/
+                  - generic [ref=e160]:
+                    - link:
+                      - /url: https://steamcommunity.com/id/liquidid/
+                      - img [ref=e162]
+                    - generic [ref=e164]:
+                      - link:
+                        - /url: https://steamcommunity.com/id/liquidid/
+                      - link "Liquid ID" [ref=e165]:
+                        - /url: https://steamcommunity.com/id/liquidid/
+                - generic [ref=e167]: "0"
+            - button [ref=e168] [cursor=pointer]:
+              - generic [ref=e170]:
+                - generic [ref=e171]:
+                  - text: 23 people found this review helpful
+                  - text: 1 person found this review funny
+                  - generic [ref=e172]:
+                    - img [ref=e173]
+                    - text: "0"
+                - generic [ref=e175]:
+                  - img [ref=e177]
+                  - generic [ref=e178]: Recommended
+                  - generic [ref=e179]: 7.3 hrs on record
+                - generic [ref=e180]:
+                  - generic [ref=e181]: "Posted: 2 August, 2022"
+                  - text: "Gamebooks: the first role-playing games of many of us, before tabletop games and video games. They were full of dangers and evocative artworks. And they still are, in this faithful digital port."
+                  - text: But despite their nostalgic charm these games are poorly designed by modern standards. The cult classic Warlock of Firetop Mountain will spit in its player's face if they failed to pass through some specific points of its sprawling maze. My personal favourite House of Hell is chock-full of dead ends to learn through repeated trial and error, a process which can severely affect immersion. Bloodbones, the most recently written book of the collection (2006), fully embraces the old punishing design by preventing completion if the player didn't make the correct purchases at the very start of the adventure, which can ruin entire playthroughs.
+                  - text: This "blind choice" design philosophy goes hard against the suspension of disbelief necessary to enjoy the adventure. However this adaptation provides multiple ways to work (or rather cheat) around these hazards. Free read mode, infinite bookmarks (save slots), dice rerolls... It's also easier than ever to look up player-made guides.
+                  - text: On the visual front it's a real delight to rediscover the original covers and in-game illustrations of Ian Miller, Ian McCaig, Russ Nicholson and other classic artists from the 80s. On the other hand, the interface was clearly designed for mobile screens and controls. I wish it would allow the player to set font size and type, rename bookmarks or place the character sheet above the shortcut bar.
+                  - text: Anyway, welcome back to 1985.
+              - generic [ref=e184]:
+                - generic [ref=e185]:
+                  - link:
+                    - /url: https://steamcommunity.com/id/stscylla/
+                  - generic [ref=e186]:
+                    - link:
+                      - /url: https://steamcommunity.com/id/stscylla/
+                      - img [ref=e188]
+                    - generic [ref=e190]:
+                      - link:
+                        - /url: https://steamcommunity.com/id/stscylla/
+                      - link "Saint Scylla" [ref=e191]:
+                        - /url: https://steamcommunity.com/id/stscylla/
+                    - generic [ref=e192]: 567 products in account
+                - generic [ref=e194]: "0"
+          - 'button "207 people found this review helpful 10 people found this review funny 2 Not Recommended 0.2 hrs on record Posted: 3 August, 2018 I can''t believe TIN MAN Games expects me to rebuy the same products again so it can sit inside their parent program. They should have gifted the The forest of Doom, Caverns of the Snow Witch and House of Hell to the people that had already bought them on steam. It also appears that this review is now being semi hidden by steam algorithms. A developer has responded to this review Fisto (Shan) 1" [ref=e196] [cursor=pointer]':
+            - generic [ref=e197]:
+              - generic [ref=e198]:
+                - generic [ref=e199]:
+                  - text: 207 people found this review helpful
+                  - text: 10 people found this review funny
+                  - generic [ref=e200]:
+                    - img [ref=e201]
+                    - text: "2"
+                - generic [ref=e203]:
+                  - img [ref=e205]
+                  - generic [ref=e206]: Not Recommended
+                  - generic [ref=e207]: 0.2 hrs on record
+                - generic [ref=e208]:
+                  - generic [ref=e209]: "Posted: 3 August, 2018"
+                  - text: I can't believe TIN MAN Games expects me to rebuy the same products again so it can sit inside their parent program. They should have gifted the The forest of Doom, Caverns of the Snow Witch and House of Hell to the people that had already bought them on steam.
+                  - text: It also appears that this review is now being semi hidden by steam algorithms.
+              - generic [ref=e214]: A developer has responded to this review
+            - generic [ref=e215]:
+              - generic [ref=e216]:
+                - link:
+                  - /url: https://steamcommunity.com/profiles/76561198073375206/
+                - generic [ref=e217]:
+                  - link:
+                    - /url: https://steamcommunity.com/profiles/76561198073375206/
+                    - img [ref=e219]
+                  - generic [ref=e221]:
+                    - link:
+                      - /url: https://steamcommunity.com/profiles/76561198073375206/
+                    - link "Fisto (Shan)" [ref=e222]:
+                      - /url: https://steamcommunity.com/profiles/76561198073375206/
+              - generic [ref=e224]: "1"
+          - button [ref=e226] [cursor=pointer]:
+            - generic [ref=e228]:
+              - generic [ref=e229]:
+                - text: 28 people found this review helpful
+                - text: 2 people found this review funny
+                - generic [ref=e230]:
+                  - img [ref=e231]
+                  - text: "3"
+              - generic [ref=e233]:
+                - img [ref=e235]
+                - generic [ref=e236]: Recommended
+                - generic [ref=e237]: 280.2 hrs on record
+              - generic [ref=e238]:
+                - generic [ref=e239]: "Posted: 13 July, 2018"
+                - text: Krea Datura returns - YAY!
+                - text: This game collection is exactly what FF fans have been waiting for. A great selection of Ian Livingstone & Steve Jackson's original FF games in screen format. Pure nostalgia!
+                - text: You can name your character & choose your avatar from the large selection of black&white sketches of heroic adventurers.
+                - text: Battle evil creatures using the classic dice roll systems, find clues & artefacts and sometimes even use magic.
+                - text: These titles have a great range of different locations and missions and each title has a considerable amount of gameplay. Background music & sound effects optional.
+                - text: The game also has Steam achievements & Steam trading cards, if you like that sort of thing. (I do, for what it's worth....)
+                - text: The base game has a complimentary FF title "Bloodbones" included. Additional games can be purchased individually as DLC, at a very reasonable vfm.
+                - text: There is a stylish library-shelf look menu which stores each title as you buy it. There are currently 20 titles available, but more planned.
+                - text: Well done Tin Man Games.
+            - generic [ref=e242]:
+              - generic [ref=e243]:
+                - link:
+                  - /url: https://steamcommunity.com/id/analandsorceress/
+                - generic [ref=e244]:
+                  - link:
+                    - /url: https://steamcommunity.com/id/analandsorceress/
+                    - img [ref=e246]
+                  - generic [ref=e248]:
+                    - link:
+                      - /url: https://steamcommunity.com/id/analandsorceress/
+                    - link "Analand Sorceress" [ref=e249]:
+                      - /url: https://steamcommunity.com/id/analandsorceress/
+                  - generic [ref=e250]: 38 products in account
+              - generic [ref=e252]: "2"
+          - generic [ref=e253]:
+            - button [ref=e254] [cursor=pointer]:
+              - generic [ref=e256]:
+                - generic [ref=e257]:
+                  - text: 15 people found this review helpful
+                  - generic [ref=e258]:
+                    - img [ref=e259]
+                    - text: "2"
+                - generic [ref=e261]:
+                  - img [ref=e263]
+                  - generic [ref=e264]: Recommended
+                  - generic [ref=e265]: 109.2 hrs on record
+                - generic [ref=e266]:
+                  - generic [ref=e267]: "Posted: 9 September, 2024"
+                  - generic [ref=e268]: May your Screen Resolution never fail!
+                  - text: This is not a game but a gamebook collection (if you buy them as DLC, one is included for free). What is a gamebook? Those were books where you don't read from the first to the last page but instead you jump from different paragraphs to another one.
+                  - text: This was the ancestor of interactive role-playing video games, you can't go more old-school than this (except the basic pen & paper role-playing game, obviously).
+                  - text: For example, you get to a room, if you want to open the door on the left, it asks you to go to paragraph 200, if you kick the dwarf corpse, go to paragraph 6, if you want to listen to the door on the right, go to paragraph 99, and so on, in those paragraph you would read about the consequences of your choice and that way until the end.
+                  - text: The big difference with this digital version is that, even if the numbered paragraph are retained, you will never see the pages go back and forth which is different to when reading the physical books.
+                  - text: It also keeps track of all the items you encounter and most importantly your stats as an adventure, so that whenever you end up in a fight, it also rolls and calculate all the combat rolls and results for you.
+                  - text: Don't forget that if you die, you might have to go back to the latest paragraph you left a bookmark in. You have actually unlimited bookmarks so you shouldn't be scared to use them.
+                  - text: So this is it, grab a sword, read and get immersed in various adventures.
+                  - text: The free adventure isn't the oldest or the newest book but is sort of a modern one.
+                  - text: Written by jonathan Green, it's quite harder than most of the books available. Hopefully it serves more of showing how the concept is rather than make you throw your screen/laptop to the wall after many unsuccessful runs (it was cheaper to do that when it was a book!). :D
+                  - text: "Here is also a quick rundown of most of the books and a few personal recommendations:"
+                  - text: "-The Warlock of Firetop Moutain, the oldest one, the first one, good book but can also have a quite frustrating part."
+                  - text: "-Forest of Doom, an excellent entry-level book thanks to a unique system it has. It can be a bit hard but with enough trial and error, you can actually beat it."
+                  - text: "-Citadel of Chaos, another classic that's often cited as one of the best. It introduces the usage of some magic spell and it's quite well done."
+                  - text: "-Deathtrap Dungeon, one of the most liked book, it has great atmosphere and is pure dungeon crawling at its finest. It is actually quite hard but without challenges, there is no glory!"
+                  - text: "If you start with those, you already have a good selection of books. If you want to go for something completely different, you have the sci-fi ones:"
+                  - text: Appointment with FEAR, very complex multi power Superhero adventure.
+                  - text: Freeway Fighter, an obvious nod to Mad Max where you drive an armored car across hostile territories.
+                  - text: "Still not convinced? You even have an excellent book set in modern times (of the 80's):"
+                  - text: House of Hell, a scary adventure in a mansion where things aren't what they seem!
+                  - text: As you can see, there's plenty of choices, prices of each book are cheaper than what you would get from buying the physical versions on the internet. I recommend this if you love the Gamebook concept or if you want to enjoy how it was before the immersive computer role-playing games.
+                  - text: Please note that these stories actually influenced a lot most of modern game designers!
+              - generic [ref=e271]:
+                - generic [ref=e272]:
+                  - link:
+                    - /url: https://steamcommunity.com/id/Wild_Dunamite/
+                  - generic [ref=e273]:
+                    - link:
+                      - /url: https://steamcommunity.com/id/Wild_Dunamite/
+                      - img [ref=e275]
+                    - generic [ref=e277]:
+                      - link:
+                        - /url: https://steamcommunity.com/id/Wild_Dunamite/
+                      - link "Wildy" [ref=e278]:
+                        - /url: https://steamcommunity.com/id/Wild_Dunamite/
+                    - generic [ref=e279]: 419 products in account
+                - generic [ref=e281]: "0"
+            - 'button "11 people found this review helpful 1 Recommended 17.0 hrs on record Posted: 13 November, 2024 Jeez! It was practically thanks to these books that I fell in love with the fantasy genre for good. :) I''m glad that, in addition to the physical books, they are also available to enjoy digitally here on Steam. SgtAvitus[HUN] 1,249 products in account 0" [ref=e282] [cursor=pointer]':
+              - generic [ref=e284]:
+                - generic [ref=e285]:
+                  - text: 11 people found this review helpful
+                  - generic [ref=e286]:
+                    - img [ref=e287]
+                    - text: "1"
+                - generic [ref=e289]:
+                  - img [ref=e291]
+                  - generic [ref=e292]: Recommended
+                  - generic [ref=e293]: 17.0 hrs on record
+                - generic [ref=e294]:
+                  - generic [ref=e295]: "Posted: 13 November, 2024"
+                  - text: Jeez!
+                  - text: It was practically thanks to these books that I fell in love with the fantasy genre for good. :)
+                  - text: I'm glad that, in addition to the physical books, they are also available to enjoy digitally here on Steam.
+              - generic [ref=e298]:
+                - generic [ref=e299]:
+                  - link:
+                    - /url: https://steamcommunity.com/id/sgtavitus/
+                  - generic [ref=e300]:
+                    - link:
+                      - /url: https://steamcommunity.com/id/sgtavitus/
+                      - img [ref=e302]
+                    - generic [ref=e304]:
+                      - link:
+                        - /url: https://steamcommunity.com/id/sgtavitus/
+                      - link "SgtAvitus[HUN]" [ref=e305]:
+                        - /url: https://steamcommunity.com/id/sgtavitus/
+                    - generic [ref=e306]: 1,249 products in account
+                - generic [ref=e308]: "0"
+          - 'button "10 people found this review helpful 2 Recommended 3.8 hrs on record Posted: 8 June, 2025 These are the same paperbacks from the 1980s, but in PC form. These are a faithful recreation, same writing, same illustrations, but the computer handles the dice rolling and character sheet updating for you. If you''re a fan of the old-school game books, I highly recommend. xaagon 0" [ref=e310] [cursor=pointer]':
+            - generic [ref=e312]:
+              - generic [ref=e313]:
+                - text: 10 people found this review helpful
+                - generic [ref=e314]:
+                  - img [ref=e315]
+                  - text: "2"
+              - generic [ref=e317]:
+                - img [ref=e319]
+                - generic [ref=e320]: Recommended
+                - generic [ref=e321]: 3.8 hrs on record
+              - generic [ref=e322]:
+                - generic [ref=e323]: "Posted: 8 June, 2025"
+                - text: These are the same paperbacks from the 1980s, but in PC form. These are a faithful recreation, same writing, same illustrations, but the computer handles the dice rolling and character sheet updating for you. If you're a fan of the old-school game books, I highly recommend.
+            - generic [ref=e326]:
+              - generic [ref=e327]:
+                - link:
+                  - /url: https://steamcommunity.com/profiles/76561198027221726/
+                - generic [ref=e328]:
+                  - link:
+                    - /url: https://steamcommunity.com/profiles/76561198027221726/
+                    - img [ref=e330]
+                  - generic [ref=e332]:
+                    - link:
+                      - /url: https://steamcommunity.com/profiles/76561198027221726/
+                    - link "xaagon" [ref=e333]:
+                      - /url: https://steamcommunity.com/profiles/76561198027221726/
+              - generic [ref=e335]: "0"
+        - link "See More Content" [ref=e337] [cursor=pointer]:
+          - /url: javascript:CheckForMoreContent();
+  - generic [ref=e338]:
+    - generic [ref=e340]:
+      - generic [ref=e341]: ©
+      - link "Privacy Policy" [ref=e342] [cursor=pointer]:
+        - /url: http://store.steampowered.com/privacy_agreement/
+      - link "Legal" [ref=e343] [cursor=pointer]:
+        - /url: https://store.steampowered.com/legal/
+      - link "Accessibility" [ref=e344] [cursor=pointer]:
+        - /url: https://help.steampowered.com/faqs/view/10BB-D27A-6378-4436
+      - link "Cookies" [ref=e345] [cursor=pointer]:
+        - /url: http://store.steampowered.com/account/cookiepreferences/
+      - link "Steam Subscriber Agreement" [ref=e346] [cursor=pointer]:
+        - /url: http://store.steampowered.com/subscriber_agreement/
+      - generic [ref=e347]: © Valve Corporation.
+    - link "View mobile website" [ref=e349] [cursor=pointer]:
+      - generic [ref=e350]: View mobile website
